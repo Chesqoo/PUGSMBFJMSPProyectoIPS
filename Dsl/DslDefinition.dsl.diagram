@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<microsoft.VisualStudio.Modeling.DslDesigner.DslDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.259441832005976, 8.5" isCompleteView="false" name="DslDefinition">
+  <DslMoniker Name="/UPM_IPS.PUGSMBFJMSPProyectoIPS/PUGSMBFJMSPProyectoIPS" />
+  <nestedChildShapes>
+    <microsoft.VisualStudio.Modeling.DslDesigner.DomainModelElements Id="0301ba05-8f17-431e-9bd0-21267c63d382" absoluteBounds="0, 0, 2.4166666716337204, 8.5">
+      <nestedChildShapes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="3969bd07-7177-4d7d-9697-9e9e5e4b4f28" absoluteBounds="0.5, 0.5, 1.6666666716337204, 0.7493896484375">
+          <RootNodeMoniker Id="6d570d1c-4616-4b0e-8a56-842111cf53be" />
+          <nestedChildShapes>
+            <elementListCompartment Id="780e2886-2aec-4a90-bbdf-cee165f0759e" absoluteBounds="0.515, 0.9, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
+      </nestedChildShapes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.DomainModelElements>
+    <microsoft.VisualStudio.Modeling.DslDesigner.DiagramElements Id="876c15ac-39bb-4550-9fcd-20c5ad249e9d" absoluteBounds="2.4166666716337204, 0, 15.842775160372256, 8.5">
+      <nestedChildShapes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.DiagramShape Id="9975fd7b-79a8-459d-9b5e-99fe3467e075" absoluteBounds="2.9166666716337204, 0.5, 2.5502097100019454, 0.7493896484375">
+          <RootNodeMoniker Id="b33a809d-8486-4b0c-bb8e-92edb8ed7c90" />
+          <nestedChildShapes>
+            <elementListCompartment Id="c7892e6b-1bc4-420e-82ed-e373b46cf294" absoluteBounds="2.931666671633721, 0.89999999999999991, 2.5202097100019452, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.DiagramShape>
+      </nestedChildShapes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.DiagramElements>
+  </nestedChildShapes>
+  <diagramState>
+    <DslDesignerDiagramState>
+      <DomainModelElementTree>
+        <DslDesignerDiagramTree>
+          <Roots>
+            <RootNode Id="6d570d1c-4616-4b0e-8a56-842111cf53be">
+              <Class>
+                <DomainClassMoniker Name="/UPM_IPS.PUGSMBFJMSPProyectoIPS/ExampleModel" />
+              </Class>
+            </RootNode>
+          </Roots>
+        </DslDesignerDiagramTree>
+      </DomainModelElementTree>
+      <DiagramElementTree>
+        <DslDesignerDiagramTree>
+          <Roots>
+            <RootNode Id="b33a809d-8486-4b0c-bb8e-92edb8ed7c90">
+              <Class>
+                <DiagramMoniker Name="/UPM_IPS.PUGSMBFJMSPProyectoIPS/PUGSMBFJMSPProyectoIPSDiagram" />
+              </Class>
+            </RootNode>
+          </Roots>
+        </DslDesignerDiagramTree>
+      </DiagramElementTree>
+    </DslDesignerDiagramState>
+  </diagramState>
+</microsoft.VisualStudio.Modeling.DslDesigner.DslDesignerDiagram>

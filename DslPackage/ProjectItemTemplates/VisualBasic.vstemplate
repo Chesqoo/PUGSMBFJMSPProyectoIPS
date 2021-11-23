@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{a9ad8a75-dbc4-4a19-89cc-478be6b80dba}</TemplateID>
+		<Name Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="103"/>
+		<Description Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="102"/>
+		<Icon Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_DSLProyIPS</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.PUGSMBFJMSP_DSLProyIPS">PUGSMBFJMSP_DSLProyIPS.PUGSMBFJMSP_DSLProyIPS</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.PUGSMBFJMSP_DSLProyIPS.diagram">PUGSMBFJMSP_DSLProyIPS.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

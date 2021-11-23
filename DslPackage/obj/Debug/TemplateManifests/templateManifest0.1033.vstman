@@ -1,0 +1,32 @@
+﻿<VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\1033\PUGSMBFJMSPProyectoIPS</RelativePathOnDisk>
+    <TemplateFileName>CSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>{d8ee980f-f8f6-4214-b088-81e33d545e11}</TemplateID>
+        <Name Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="103" />
+        <Description Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="102" />
+        <Icon Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="201" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>360</SortOrder>
+        <DefaultName>PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_DSLProyIPS</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\1033\PUGSMBFJMSPProyectoIPS</RelativePathOnDisk>
+    <TemplateFileName>VisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>{a9ad8a75-dbc4-4a19-89cc-478be6b80dba}</TemplateID>
+        <Name Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="103" />
+        <Description Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="102" />
+        <Icon Package="{f6e633d7-c19f-4e35-ad59-b706deb224f6}" ID="201" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>360</SortOrder>
+        <DefaultName>PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_DSLProyIPS</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>
