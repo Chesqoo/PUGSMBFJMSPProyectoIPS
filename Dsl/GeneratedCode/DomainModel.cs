@@ -67,15 +67,20 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			return new global::System.Type[]
 			{
-				typeof(ExampleModel),
-				typeof(ExampleElement),
-				typeof(ExampleModelHasElements),
-				typeof(ExampleElementReferencesTargets),
+				typeof(TapizGUIs),
+				typeof(Ventana),
+				typeof(VentanaPrincipal),
+				typeof(VentanaSecundaria),
+				typeof(Menu),
+				typeof(ItemDeMenu),
+				typeof(Boton),
+				typeof(TapizGUIsHasVentana),
+				typeof(VentanaHasMenu),
+				typeof(MenuHasItemDeMenu),
+				typeof(VentanaHasBoton),
 				typeof(PUGSMBFJMSPProyectoIPSDiagram),
-				typeof(ExampleConnector),
-				typeof(ExampleShape),
+				typeof(CompartmentShape1),
 				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram),
-				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged),
 			};
 		}
 		/// <summary>
@@ -87,7 +92,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			return new DomainMemberInfo[]
 			{
-				new DomainMemberInfo(typeof(ExampleElement), "Name", ExampleElement.NameDomainPropertyId, typeof(ExampleElement.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(TapizGUIs), "solucionGUIs", TapizGUIs.solucionGUIsDomainPropertyId, typeof(TapizGUIs.solucionGUIsPropertyHandler)),
+				new DomainMemberInfo(typeof(Ventana), "nombre", Ventana.nombreDomainPropertyId, typeof(Ventana.nombrePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -98,10 +104,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(ExampleModelHasElements), "ExampleModel", ExampleModelHasElements.ExampleModelDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ExampleModelHasElements), "Element", ExampleModelHasElements.ElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ExampleElementReferencesTargets), "Source", ExampleElementReferencesTargets.SourceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ExampleElementReferencesTargets), "Target", ExampleElementReferencesTargets.TargetDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIsHasVentana), "TapizGUIs", TapizGUIsHasVentana.TapizGUIsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIsHasVentana), "Ventana", TapizGUIsHasVentana.VentanaDomainRoleId),
+				new DomainRolePlayerInfo(typeof(VentanaHasMenu), "Ventana", VentanaHasMenu.VentanaDomainRoleId),
+				new DomainRolePlayerInfo(typeof(VentanaHasMenu), "Menu", VentanaHasMenu.MenuDomainRoleId),
+				new DomainRolePlayerInfo(typeof(MenuHasItemDeMenu), "Menu", MenuHasItemDeMenu.MenuDomainRoleId),
+				new DomainRolePlayerInfo(typeof(MenuHasItemDeMenu), "ItemDeMenu", MenuHasItemDeMenu.ItemDeMenuDomainRoleId),
+				new DomainRolePlayerInfo(typeof(VentanaHasBoton), "Ventana", VentanaHasBoton.VentanaDomainRoleId),
+				new DomainRolePlayerInfo(typeof(VentanaHasBoton), "Boton", VentanaHasBoton.BotonDomainRoleId),
 			};
 		}
 		#endregion
@@ -123,12 +133,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
-				createElementMap.Add(typeof(ExampleModel), 0);
-				createElementMap.Add(typeof(ExampleElement), 1);
-				createElementMap.Add(typeof(PUGSMBFJMSPProyectoIPSDiagram), 2);
-				createElementMap.Add(typeof(ExampleConnector), 3);
-				createElementMap.Add(typeof(ExampleShape), 4);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
+				createElementMap.Add(typeof(TapizGUIs), 0);
+				createElementMap.Add(typeof(VentanaPrincipal), 1);
+				createElementMap.Add(typeof(VentanaSecundaria), 2);
+				createElementMap.Add(typeof(Menu), 3);
+				createElementMap.Add(typeof(ItemDeMenu), 4);
+				createElementMap.Add(typeof(Boton), 5);
+				createElementMap.Add(typeof(PUGSMBFJMSPProyectoIPSDiagram), 6);
+				createElementMap.Add(typeof(CompartmentShape1), 7);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -142,11 +155,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			switch (index)
 			{
-				case 0: return new ExampleModel(partition, propertyAssignments);
-				case 1: return new ExampleElement(partition, propertyAssignments);
-				case 2: return new PUGSMBFJMSPProyectoIPSDiagram(partition, propertyAssignments);
-				case 3: return new ExampleConnector(partition, propertyAssignments);
-				case 4: return new ExampleShape(partition, propertyAssignments);
+				case 0: return new TapizGUIs(partition, propertyAssignments);
+				case 1: return new VentanaPrincipal(partition, propertyAssignments);
+				case 2: return new VentanaSecundaria(partition, propertyAssignments);
+				case 3: return new Menu(partition, propertyAssignments);
+				case 4: return new ItemDeMenu(partition, propertyAssignments);
+				case 5: return new Boton(partition, propertyAssignments);
+				case 6: return new PUGSMBFJMSPProyectoIPSDiagram(partition, propertyAssignments);
+				case 7: return new CompartmentShape1(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -169,9 +185,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
-				createElementLinkMap.Add(typeof(ExampleModelHasElements), 0);
-				createElementLinkMap.Add(typeof(ExampleElementReferencesTargets), 1);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
+				createElementLinkMap.Add(typeof(TapizGUIsHasVentana), 0);
+				createElementLinkMap.Add(typeof(VentanaHasMenu), 1);
+				createElementLinkMap.Add(typeof(MenuHasItemDeMenu), 2);
+				createElementLinkMap.Add(typeof(VentanaHasBoton), 3);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -186,8 +204,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			switch (index)
 			{
-				case 0: return new ExampleModelHasElements(partition, roleAssignments, propertyAssignments);
-				case 1: return new ExampleElementReferencesTargets(partition, roleAssignments, propertyAssignments);
+				case 0: return new TapizGUIsHasVentana(partition, roleAssignments, propertyAssignments);
+				case 1: return new VentanaHasMenu(partition, roleAssignments, propertyAssignments);
+				case 2: return new MenuHasItemDeMenu(partition, roleAssignments, propertyAssignments);
+				case 3: return new VentanaHasBoton(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -308,7 +328,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram));
-			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged));
 		}
 		
 		/// <summary>
@@ -320,7 +339,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram));
-			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged));
 		}
 		#endregion
 	}
@@ -356,7 +374,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		public PUGSMBFJMSPProyectoIPSDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.ElementDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.MenuDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenuDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

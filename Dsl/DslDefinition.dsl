@@ -1,8 +1,240 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="118256bc-8d74-47bc-978d-1cb9d310e236" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPS" Name="PUGSMBFJMSPProyectoIPS" DisplayName="PUGSMBFJMSPProyectoIPS" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" ProductName="PUGSMBFJMSPProyectoIPS" CompanyName="UPM_IPS" PackageGuid="f6e633d7-c19f-4e35-ad59-b706deb224f6" PackageNamespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="a09bf113-d90d-4cde-8cc8-9526f4784123" Description="The root in which all other elements are embedded. Appears as a diagram." Name="ExampleModel" DisplayName="Example Model" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" />
+    <DomainClass Id="a09bf113-d90d-4cde-8cc8-9526f4784123" Description="The root in which all other elements are embedded. Appears as a diagram." Name="TapizGUIs" DisplayName="Tapiz GUIs" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Properties>
+        <DomainProperty Id="1bd814c5-2747-4def-b0d4-acf3989bfb57" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Solucion GUIs" Name="solucionGUIs" DisplayName="Solucion GUIs">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Ventana" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>TapizGUIsHasVentana.Ventana</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="EstadoFin" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>TapizGUIsHasEstadoFin.EstadoFin</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="7fc839cd-5309-48d1-9a17-1a51437c88cb" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana" Name="Ventana" DisplayName="Ventana" InheritanceModifier="Abstract" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Properties>
+        <DomainProperty Id="d76bdded-3c28-4363-b3c8-6a43cf103214" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Nombre" Name="nombre" DisplayName="Nombre">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="76c31192-f807-44a7-a0ae-baca4ac5f132" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Ancho" Name="ancho" DisplayName="Ancho">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int16" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="6d0e179c-e1c0-453b-b0a6-86a0d343d0e1" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Alto" Name="alto" DisplayName="Alto">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int16" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Menu" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>VentanaHasMenu.Menu</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Boton" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>VentanaHasBoton.Boton</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="da1a9b8e-2cee-45e6-9a44-f987cfdb9479" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal" Name="VentanaPrincipal" DisplayName="Ventana Principal" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <BaseClass>
+        <DomainClassMoniker Name="Ventana" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="16beb939-a3f4-49ef-9b05-66757f1acfdb" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria" Name="VentanaSecundaria" DisplayName="Ventana Secundaria" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <BaseClass>
+        <DomainClassMoniker Name="Ventana" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="dded60a8-3684-4d66-8b6d-e23ddfcedbd2" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.Es Modal" Name="esModal" DisplayName="Es Modal">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="736d42c0-8e1b-421f-80b6-d39250f15dbb" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu" Name="Menu" DisplayName="Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Properties>
+        <DomainProperty Id="478d81b8-86e8-4ced-9c23-671f79adc3ba" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.Titulo" Name="titulo" DisplayName="Titulo">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="ItemDeMenu" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>MenuHasItemDeMenu.ItemDeMenu</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="c4391778-13fb-43cf-b6d9-dc7d5343cd51" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu" Name="ItemDeMenu" DisplayName="Item De Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Properties>
+        <DomainProperty Id="001de6d6-d8f9-4af4-875b-430ca1ff2f40" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.Titulo" Name="titulo" DisplayName="Titulo">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="2aefa29b-6b75-42b2-a9a8-20d3680f4d57" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton" Name="Boton" DisplayName="Boton" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Properties>
+        <DomainProperty Id="1a752cea-e3c9-4372-85a5-6be9c172b451" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Titulo" Name="titulo" DisplayName="Titulo">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="d9a87412-2844-4df2-a3a6-746210476a98" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" />
   </Classes>
+  <Relationships>
+    <DomainRelationship Id="17558f14-286a-4fd6-87de-6544205db297" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana" Name="TapizGUIsHasVentana" DisplayName="Tapiz GUIs Has Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="f6d783b4-0e9c-4f94-ae99-7a4ef7955f06" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIs" Name="TapizGUIs" DisplayName="Tapiz GUIs" PropertyName="Ventana" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ventana">
+          <RolePlayer>
+            <DomainClassMoniker Name="TapizGUIs" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="e6076d1f-e567-4604-83d5-aaa81a98d52d" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="TapizGUIs" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Tapiz GUIs">
+          <RolePlayer>
+            <DomainClassMoniker Name="Ventana" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="6b8216be-66fc-43e1-b475-2e84e232dcd4" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu" Name="VentanaHasMenu" DisplayName="Ventana Has Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="f8dc9b5d-90f1-4279-9ce4-9d63108f1198" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="Menu" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Menu">
+          <RolePlayer>
+            <DomainClassMoniker Name="Ventana" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="20c03a87-7f55-4374-b4b4-6de9feef922f" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Menu" Name="Menu" DisplayName="Menu" PropertyName="Ventana" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Ventana">
+          <RolePlayer>
+            <DomainClassMoniker Name="Menu" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="b0901aaa-c39e-4d65-affa-dcf2baae4e86" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu" Name="MenuHasItemDeMenu" DisplayName="Menu Has Item De Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="1a9485da-bfff-4be8-ab5a-589558b5f6ef" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu" Name="Menu" DisplayName="Menu" PropertyName="ItemDeMenu" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Item De Menu">
+          <RolePlayer>
+            <DomainClassMoniker Name="Menu" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="24d7eab4-0437-4e60-a0f6-4e8d456b60e8" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenu" Name="ItemDeMenu" DisplayName="Item De Menu" PropertyName="Menu" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Menu">
+          <RolePlayer>
+            <DomainClassMoniker Name="ItemDeMenu" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="d324c2b1-c90c-48a7-a26f-5bd68c6a3dd8" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton" Name="VentanaHasBoton" DisplayName="Ventana Has Boton" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="2e516a77-0134-4c2e-a9d4-83da29cdbf93" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="Boton" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Boton">
+          <RolePlayer>
+            <DomainClassMoniker Name="Ventana" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="d1fe6e41-0b51-4234-9809-d19ca85cb35c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Boton" Name="Boton" DisplayName="Boton" PropertyName="Ventana" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Ventana">
+          <RolePlayer>
+            <DomainClassMoniker Name="Boton" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="8ddfefe0-570d-4915-b3af-deee023265d3" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaLeadBoton" Name="BotonReferencesVentanaLeadBoton" DisplayName="Boton References Ventana Lead Boton" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Source>
+        <DomainRole Id="1e7060a5-0c5b-4fa7-9f83-10ede79c5191" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaLeadBoton.Boton" Name="Boton" DisplayName="Boton" PropertyName="VentanaLeadBoton" PropertyDisplayName="Ventana Lead Boton">
+          <RolePlayer>
+            <DomainClassMoniker Name="Boton" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="e8080c99-f79e-4390-bde3-f4caec0f435d" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaLeadBoton.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="BotonLeadVentana" PropertyDisplayName="Boton Lead Ventana">
+          <RolePlayer>
+            <DomainClassMoniker Name="Ventana" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="ce711a5c-3c43-48a3-b140-0b1563747dec" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuReferencesVentanaLeadMenu" Name="ItemDeMenuReferencesVentanaLeadMenu" DisplayName="Item De Menu References Ventana Lead Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Source>
+        <DomainRole Id="cdf95f35-a7d3-4ff7-9959-1677ad4cddbf" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuReferencesVentanaLeadMenu.ItemDeMenu" Name="ItemDeMenu" DisplayName="Item De Menu" PropertyName="VentanaLeadMenu" PropertyDisplayName="Ventana Lead Menu">
+          <RolePlayer>
+            <DomainClassMoniker Name="ItemDeMenu" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="62b2cc05-8229-4070-b837-0a8c8f2c45de" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuReferencesVentanaLeadMenu.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="ItemDeMenuLeadVentana" PropertyDisplayName="Item De Menu Lead Ventana">
+          <RolePlayer>
+            <DomainClassMoniker Name="Ventana" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="5006fedd-36df-43ad-880f-6f5ebb9e105b" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin" Name="TapizGUIsHasEstadoFin" DisplayName="Tapiz GUIs Has Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="251bce3c-dfe3-4d97-bc68-98b7a95bd714" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIs" Name="TapizGUIs" DisplayName="Tapiz GUIs" PropertyName="EstadoFin" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Estado Fin">
+          <RolePlayer>
+            <DomainClassMoniker Name="TapizGUIs" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="5cc99b01-ce88-47c7-954d-978939255bec" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" PropertyName="TapizGUIs" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Tapiz GUIs">
+          <RolePlayer>
+            <DomainClassMoniker Name="EstadoFin" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+  </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
     <ExternalType Name="String" Namespace="System" />
@@ -20,25 +252,199 @@
     <ExternalType Name="Boolean" Namespace="System" />
     <ExternalType Name="Char" Namespace="System" />
   </Types>
+  <Shapes>
+    <CompartmentShape Id="831d3dde-3ee6-41eb-962f-7ab6a883dd5c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana" Name="Ventana" DisplayName="Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Ventana" InitialWidth="1" InitialHeight="1.5" Geometry="RoundedRectangle" />
+  </Shapes>
+  <Connectors>
+    <Connector Id="0c1e583f-8192-4e2a-b75b-62a7e978ed51" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana" Name="ConectorBotonVentana" DisplayName="Conector Boton Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conector Boton Ventana" Color="Cyan" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow" />
+    <Connector Id="8f9be635-1b8c-4d1a-bc86-85e6578cf62b" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana" Name="ConectoriMenuVentana" DisplayName="Conectori Menu Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conectori Menu Ventana" TextColor="Gold" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow" />
+  </Connectors>
   <XmlSerializationBehavior Name="PUGSMBFJMSPProyectoIPSSerializationBehavior" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
     <ClassData>
-      <XmlClassData TypeName="ExampleModel" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleModelMoniker" ElementName="exampleModel" MonikerTypeName="ExampleModelMoniker">
-        <DomainClassMoniker Name="ExampleModel" />
+      <XmlClassData TypeName="TapizGUIs" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsMoniker" ElementName="tapizGUIs" MonikerTypeName="TapizGUIsMoniker">
+        <DomainClassMoniker Name="TapizGUIs" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ventana">
+            <DomainRelationshipMoniker Name="TapizGUIsHasVentana" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="solucionGUIs">
+            <DomainPropertyMoniker Name="TapizGUIs/solucionGUIs" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="estadoFin">
+            <DomainRelationshipMoniker Name="TapizGUIsHasEstadoFin" />
+          </XmlRelationshipData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="PUGSMBFJMSPProyectoIPSDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="pUGSMBFJMSPProyectoIPSDiagramMoniker" ElementName="pUGSMBFJMSPProyectoIPSDiagram" MonikerTypeName="PUGSMBFJMSPProyectoIPSDiagramMoniker">
         <DiagramMoniker Name="PUGSMBFJMSPProyectoIPSDiagram" />
       </XmlClassData>
+      <XmlClassData TypeName="Ventana" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaMoniker" ElementName="ventana" MonikerTypeName="VentanaMoniker">
+        <DomainClassMoniker Name="Ventana" />
+        <ElementData>
+          <XmlPropertyData XmlName="nombre">
+            <DomainPropertyMoniker Name="Ventana/nombre" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="menu">
+            <DomainRelationshipMoniker Name="VentanaHasMenu" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="boton">
+            <DomainRelationshipMoniker Name="VentanaHasBoton" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="ancho">
+            <DomainPropertyMoniker Name="Ventana/ancho" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="alto">
+            <DomainPropertyMoniker Name="Ventana/alto" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="TapizGUIsHasVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsHasVentanaMoniker" ElementName="tapizGUIsHasVentana" MonikerTypeName="TapizGUIsHasVentanaMoniker">
+        <DomainRelationshipMoniker Name="TapizGUIsHasVentana" />
+      </XmlClassData>
+      <XmlClassData TypeName="VentanaPrincipal" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaPrincipalMoniker" ElementName="ventanaPrincipal" MonikerTypeName="VentanaPrincipalMoniker">
+        <DomainClassMoniker Name="VentanaPrincipal" />
+      </XmlClassData>
+      <XmlClassData TypeName="VentanaSecundaria" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaSecundariaMoniker" ElementName="ventanaSecundaria" MonikerTypeName="VentanaSecundariaMoniker">
+        <DomainClassMoniker Name="VentanaSecundaria" />
+        <ElementData>
+          <XmlPropertyData XmlName="esModal">
+            <DomainPropertyMoniker Name="VentanaSecundaria/esModal" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="Ventana" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaMoniker" ElementName="ventana" MonikerTypeName="VentanaMoniker">
+        <CompartmentShapeMoniker Name="Ventana" />
+      </XmlClassData>
+      <XmlClassData TypeName="Menu" MonikerAttributeName="" SerializeId="true" MonikerElementName="menuMoniker" ElementName="menu" MonikerTypeName="MenuMoniker">
+        <DomainClassMoniker Name="Menu" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="itemDeMenu">
+            <DomainRelationshipMoniker Name="MenuHasItemDeMenu" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="titulo">
+            <DomainPropertyMoniker Name="Menu/titulo" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="VentanaHasMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaHasMenuMoniker" ElementName="ventanaHasMenu" MonikerTypeName="VentanaHasMenuMoniker">
+        <DomainRelationshipMoniker Name="VentanaHasMenu" />
+      </XmlClassData>
+      <XmlClassData TypeName="ItemDeMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="itemDeMenuMoniker" ElementName="itemDeMenu" MonikerTypeName="ItemDeMenuMoniker">
+        <DomainClassMoniker Name="ItemDeMenu" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ventanaLeadMenu">
+            <DomainRelationshipMoniker Name="ItemDeMenuReferencesVentanaLeadMenu" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="titulo">
+            <DomainPropertyMoniker Name="ItemDeMenu/titulo" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="MenuHasItemDeMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="menuHasItemDeMenuMoniker" ElementName="menuHasItemDeMenu" MonikerTypeName="MenuHasItemDeMenuMoniker">
+        <DomainRelationshipMoniker Name="MenuHasItemDeMenu" />
+      </XmlClassData>
+      <XmlClassData TypeName="Boton" MonikerAttributeName="" SerializeId="true" MonikerElementName="botonMoniker" ElementName="boton" MonikerTypeName="BotonMoniker">
+        <DomainClassMoniker Name="Boton" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ventanaLeadBoton">
+            <DomainRelationshipMoniker Name="BotonReferencesVentanaLeadBoton" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="titulo">
+            <DomainPropertyMoniker Name="Boton/titulo" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="VentanaHasBoton" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaHasBotonMoniker" ElementName="ventanaHasBoton" MonikerTypeName="VentanaHasBotonMoniker">
+        <DomainRelationshipMoniker Name="VentanaHasBoton" />
+      </XmlClassData>
+      <XmlClassData TypeName="BotonReferencesVentanaLeadBoton" MonikerAttributeName="" SerializeId="true" MonikerElementName="botonReferencesVentanaLeadBotonMoniker" ElementName="botonReferencesVentanaLeadBoton" MonikerTypeName="BotonReferencesVentanaLeadBotonMoniker">
+        <DomainRelationshipMoniker Name="BotonReferencesVentanaLeadBoton" />
+      </XmlClassData>
+      <XmlClassData TypeName="ItemDeMenuReferencesVentanaLeadMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="itemDeMenuReferencesVentanaLeadMenuMoniker" ElementName="itemDeMenuReferencesVentanaLeadMenu" MonikerTypeName="ItemDeMenuReferencesVentanaLeadMenuMoniker">
+        <DomainRelationshipMoniker Name="ItemDeMenuReferencesVentanaLeadMenu" />
+      </XmlClassData>
+      <XmlClassData TypeName="EstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="estadoFinMoniker" ElementName="estadoFin" MonikerTypeName="EstadoFinMoniker">
+        <DomainClassMoniker Name="EstadoFin" />
+      </XmlClassData>
+      <XmlClassData TypeName="TapizGUIsHasEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsHasEstadoFinMoniker" ElementName="tapizGUIsHasEstadoFin" MonikerTypeName="TapizGUIsHasEstadoFinMoniker">
+        <DomainRelationshipMoniker Name="TapizGUIsHasEstadoFin" />
+      </XmlClassData>
+      <XmlClassData TypeName="ConectorBotonVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectorBotonVentanaMoniker" ElementName="conectorBotonVentana" MonikerTypeName="ConectorBotonVentanaMoniker">
+        <ConnectorMoniker Name="ConectorBotonVentana" />
+      </XmlClassData>
+      <XmlClassData TypeName="ConectoriMenuVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectoriMenuVentanaMoniker" ElementName="conectoriMenuVentana" MonikerTypeName="ConectoriMenuVentanaMoniker">
+        <ConnectorMoniker Name="ConectoriMenuVentana" />
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="PUGSMBFJMSPProyectoIPSExplorer" />
+  <ConnectionBuilders>
+    <ConnectionBuilder Name="BotonReferencesVentanaLeadBotonBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="BotonReferencesVentanaLeadBoton" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Boton" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Ventana" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+    <ConnectionBuilder Name="ItemDeMenuReferencesVentanaLeadMenuBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="ItemDeMenuReferencesVentanaLeadMenu" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="ItemDeMenu" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Ventana" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+  </ConnectionBuilders>
   <Diagram Id="756a5d6c-4264-487d-9076-1f6c4b6280d7" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDiagram" Name="PUGSMBFJMSPProyectoIPSDiagram" DisplayName="Minimal Language Diagram" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FillColor="PeachPuff">
     <Class>
-      <DomainClassMoniker Name="ExampleModel" />
+      <DomainClassMoniker Name="TapizGUIs" />
     </Class>
+    <ShapeMaps>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="Ventana" />
+        <ParentElementPath>
+          <DomainPath>TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
+        </ParentElementPath>
+        <CompartmentShapeMoniker Name="Ventana" />
+      </CompartmentShapeMap>
+    </ShapeMaps>
+    <ConnectorMaps>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ConectorBotonVentana" />
+        <DomainRelationshipMoniker Name="BotonReferencesVentanaLeadBoton" />
+      </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ConectoriMenuVentana" />
+        <DomainRelationshipMoniker Name="ItemDeMenuReferencesVentanaLeadMenu" />
+      </ConnectorMap>
+    </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="PUGSMBFJMSP_DSLProyIPS" EditorGuid="49f976d1-261c-4397-a8ec-18a6df8ec66b">
     <RootClass>
-      <DomainClassMoniker Name="ExampleModel" />
+      <DomainClassMoniker Name="TapizGUIs" />
     </RootClass>
     <XmlSerializationDefinition CustomPostLoad="false">
       <XmlSerializationBehaviorMoniker Name="PUGSMBFJMSPProyectoIPSSerializationBehavior" />

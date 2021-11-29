@@ -125,113 +125,213 @@
     <value>PUGSMBFJMSPProyectoIPS</value>
     <comment>DisplayName for DslLibrary &apos;PUGSMBFJMSPProyectoIPS&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModel.Description" xml:space="preserve">
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Description" xml:space="preserve">
     <value>The root in which all other elements are embedded. Appears as a diagram.</value>
-    <comment>Description for DomainClass &apos;ExampleModel&apos;</comment>
+    <comment>Description for DomainClass &apos;TapizGUIs&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModel.DisplayName" xml:space="preserve">
-    <value>Example Model</value>
-    <comment>DisplayName for DomainClass &apos;ExampleModel&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.DisplayName" xml:space="preserve">
+    <value>Tapiz GUIs</value>
+    <comment>DisplayName for DomainClass &apos;TapizGUIs&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.Description" xml:space="preserve">
-    <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
-    <comment>Description for DomainClass &apos;ExampleElement&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs/solucionGUIs.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Solucion GUIs</value>
+    <comment>Description for DomainProperty &apos;solucionGUIs&apos; on DomainClass &apos;TapizGUIs&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.DisplayName" xml:space="preserve">
-    <value>Example Element</value>
-    <comment>DisplayName for DomainClass &apos;ExampleElement&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs/solucionGUIs.DisplayName" xml:space="preserve">
+    <value>Solucion GUIs</value>
+    <comment>DisplayName for DomainProperty &apos;solucionGUIs&apos; on DomainClass &apos;TapizGUIs&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement/Name.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.Name</value>
-    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;ExampleElement&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana</value>
+    <comment>Description for DomainClass &apos;Ventana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement/Name.DisplayName" xml:space="preserve">
-    <value>Name</value>
-    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;ExampleElement&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.DisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>DisplayName for DomainClass &apos;Ventana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.Description" xml:space="preserve">
-    <value>Embedding relationship between the Model and Elements</value>
-    <comment>Description for DomainClass &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/nombre.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Nombre</value>
+    <comment>Description for DomainProperty &apos;nombre&apos; on DomainClass &apos;Ventana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.DisplayName" xml:space="preserve">
-    <value>Example Model Has Elements</value>
-    <comment>DisplayName for DomainClass &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;nombre&apos; on DomainClass &apos;Ventana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements/ExampleModel.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;ExampleModel&apos; on DomainRelationship &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal</value>
+    <comment>Description for DomainClass &apos;VentanaPrincipal&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements/ExampleModel.DisplayName" xml:space="preserve">
-    <value>Example Model</value>
-    <comment>DisplayName for DomainRole &apos;ExampleModel&apos; on DomainRelationship &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal.DisplayName" xml:space="preserve">
+    <value>Ventana Principal</value>
+    <comment>DisplayName for DomainClass &apos;VentanaPrincipal&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements/ExampleModel.PropertyDisplayName" xml:space="preserve">
-    <value>Elements</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ExampleModel&apos; on DomainRelationship &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria</value>
+    <comment>Description for DomainClass &apos;VentanaSecundaria&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements/Element.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;Element&apos; on DomainRelationship &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.DisplayName" xml:space="preserve">
+    <value>Ventana Secundaria</value>
+    <comment>DisplayName for DomainClass &apos;VentanaSecundaria&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements/Element.DisplayName" xml:space="preserve">
-    <value>Element</value>
-    <comment>DisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu</value>
+    <comment>Description for DomainClass &apos;Menu&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements/Element.PropertyDisplayName" xml:space="preserve">
-    <value>Example Model</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;ExampleModelHasElements&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.DisplayName" xml:space="preserve">
+    <value>Menu</value>
+    <comment>DisplayName for DomainClass &apos;Menu&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets.Description" xml:space="preserve">
-    <value>Reference relationship between Elements.</value>
-    <comment>Description for DomainClass &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu</value>
+    <comment>Description for DomainClass &apos;ItemDeMenu&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets.DisplayName" xml:space="preserve">
-    <value>Example Element References Targets</value>
-    <comment>DisplayName for DomainClass &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.DisplayName" xml:space="preserve">
+    <value>Item De Menu</value>
+    <comment>DisplayName for DomainClass &apos;ItemDeMenu&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets/Source.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleRelationship.Target</value>
-    <comment>Description for DomainRole &apos;Source&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton</value>
+    <comment>Description for DomainClass &apos;Boton&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets/Source.DisplayName" xml:space="preserve">
-    <value>Source</value>
-    <comment>DisplayName for DomainRole &apos;Source&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.DisplayName" xml:space="preserve">
+    <value>Boton</value>
+    <comment>DisplayName for DomainClass &apos;Boton&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets/Source.PropertyDisplayName" xml:space="preserve">
-    <value>Targets</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Source&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana</value>
+    <comment>Description for DomainClass &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets/Target.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleRelationship.Source</value>
-    <comment>Description for DomainRole &apos;Target&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.DisplayName" xml:space="preserve">
+    <value>Tapiz GUIs Has Ventana</value>
+    <comment>DisplayName for DomainClass &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets/Target.DisplayName" xml:space="preserve">
-    <value>Target</value>
-    <comment>DisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana/TapizGUIs.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIs</value>
+    <comment>Description for DomainRole &apos;TapizGUIs&apos; on DomainRelationship &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets/Target.PropertyDisplayName" xml:space="preserve">
-    <value>Sources</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana/TapizGUIs.DisplayName" xml:space="preserve">
+    <value>Tapiz GUIs</value>
+    <comment>DisplayName for DomainRole &apos;TapizGUIs&apos; on DomainRelationship &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleShape.Description" xml:space="preserve">
-    <value>Shape used to represent ExampleElements on a Diagram.</value>
-    <comment>Description for DomainClass &apos;ExampleShape&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana/TapizGUIs.PropertyDisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TapizGUIs&apos; on DomainRelationship &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleShape.DisplayName" xml:space="preserve">
-    <value>Example Shape</value>
-    <comment>DisplayName for DomainClass &apos;ExampleShape&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana/Ventana.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.Ventana</value>
+    <comment>Description for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="ExampleShapeNameDecoratorDefaultText" xml:space="preserve">
-    <value>NameDecorator</value>
-    <comment>Text decorator default text</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana/Ventana.DisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>DisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleConnector.Description" xml:space="preserve">
-    <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
-    <comment>Description for DomainClass &apos;ExampleConnector&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana/Ventana.PropertyDisplayName" xml:space="preserve">
+    <value>Tapiz GUIs</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;TapizGUIsHasVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleConnector.DisplayName" xml:space="preserve">
-    <value>Example Connector</value>
-    <comment>DisplayName for DomainClass &apos;ExampleConnector&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu</value>
+    <comment>Description for DomainClass &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.DisplayName" xml:space="preserve">
+    <value>Ventana Has Menu</value>
+    <comment>DisplayName for DomainClass &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu/Ventana.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Ventana</value>
+    <comment>Description for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu/Ventana.DisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>DisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu/Ventana.PropertyDisplayName" xml:space="preserve">
+    <value>Menu</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu/Menu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Menu</value>
+    <comment>Description for DomainRole &apos;Menu&apos; on DomainRelationship &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu/Menu.DisplayName" xml:space="preserve">
+    <value>Menu</value>
+    <comment>DisplayName for DomainRole &apos;Menu&apos; on DomainRelationship &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu/Menu.PropertyDisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Menu&apos; on DomainRelationship &apos;VentanaHasMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu</value>
+    <comment>Description for DomainClass &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.DisplayName" xml:space="preserve">
+    <value>Menu Has Item De Menu</value>
+    <comment>DisplayName for DomainClass &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu</value>
+    <comment>Description for DomainRole &apos;Menu&apos; on DomainRelationship &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.DisplayName" xml:space="preserve">
+    <value>Menu</value>
+    <comment>DisplayName for DomainRole &apos;Menu&apos; on DomainRelationship &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.PropertyDisplayName" xml:space="preserve">
+    <value>Item De Menu</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Menu&apos; on DomainRelationship &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/ItemDeMenu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenu</value>
+    <comment>Description for DomainRole &apos;ItemDeMenu&apos; on DomainRelationship &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/ItemDeMenu.DisplayName" xml:space="preserve">
+    <value>Item De Menu</value>
+    <comment>DisplayName for DomainRole &apos;ItemDeMenu&apos; on DomainRelationship &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/ItemDeMenu.PropertyDisplayName" xml:space="preserve">
+    <value>Menu</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ItemDeMenu&apos; on DomainRelationship &apos;MenuHasItemDeMenu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton</value>
+    <comment>Description for DomainClass &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.DisplayName" xml:space="preserve">
+    <value>Ventana Has Boton</value>
+    <comment>DisplayName for DomainClass &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton/Ventana.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Ventana</value>
+    <comment>Description for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton/Ventana.DisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>DisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton/Ventana.PropertyDisplayName" xml:space="preserve">
+    <value>Boton</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton/Boton.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Boton</value>
+    <comment>Description for DomainRole &apos;Boton&apos; on DomainRelationship &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton/Boton.DisplayName" xml:space="preserve">
+    <value>Boton</value>
+    <comment>DisplayName for DomainRole &apos;Boton&apos; on DomainRelationship &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton/Boton.PropertyDisplayName" xml:space="preserve">
+    <value>Ventana</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Boton&apos; on DomainRelationship &apos;VentanaHasBoton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1</value>
+    <comment>Description for DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1.DisplayName" xml:space="preserve">
+    <value>Compartment Shape1</value>
+    <comment>DisplayName for DomainClass &apos;CompartmentShape1&apos;</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
     <value>PUGSMBFJMSPProyectoIPS (*.PUGSMBFJMSP_DSLProyIPS)|*.PUGSMBFJMSP_DSLProyIPS</value>
@@ -252,22 +352,6 @@
   <data name="PUGSMBFJMSPProyectoIPSToolboxTab" xml:space="preserve">
     <value>PUGSMBFJMSPProyectoIPS</value>
     <comment>Toolbox item tab name</comment>
-  </data>
-  <data name="ExampleElementToolboxItem" xml:space="preserve">
-    <value>ExampleElement</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="ExampleElementToolboxTooltip" xml:space="preserve">
-    <value>Create an ExampleElement</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
-  <data name="ExampleRelationshipToolboxItem" xml:space="preserve">
-    <value>ExampleRelationship</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="ExampleRelationshipToolboxTooltip" xml:space="preserve">
-    <value>Drag between ExampleElements to create an ExampleRelationship</value>
-    <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
     <value>ToolboxItem {0} was not found</value>
@@ -392,15 +476,6 @@ A DomainClass can be serialized as a moniker only if
   <data name="UnloadableSaveValidationFailed" xml:space="preserve">
     <value>There were validation errors. Continuing to save may cause the file to become unloadable, do you want to continue?</value>
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ExampleElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
-  <data name="ExampleRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\resources\exampleconnectortoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
   </data>
 </root>
 

@@ -29,22 +29,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	[VSShell::ProvideToolWindow(typeof(PUGSMBFJMSPProyectoIPSExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
 	[VSShell::ProvideToolWindowVisibility(typeof(PUGSMBFJMSPProyectoIPSExplorerToolWindow), Constants.PUGSMBFJMSPProyectoIPSEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@PUGSMBFJMSPProyectoIPSToolboxTab;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", "UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab")]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
-					"@ExampleElementToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"CreateExampleClassF1Keyword", 
-					"@ExampleElementToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					0xff00ff,
-					Index = 0)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
-					"@ExampleRelationshipToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleRelationshipToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ConnectExampleRelationF1Keyword", 
-					"@ExampleRelationshipToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					0xff00ff,
-					Index = 1)]
 	[VSShell::ProvideEditorFactory(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

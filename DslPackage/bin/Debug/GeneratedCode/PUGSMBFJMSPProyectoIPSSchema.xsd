@@ -1,34 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema id="PUGSMBFJMSPProyectoIPSSchema" targetNamespace="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
-  <!-- ExampleModel -->
-  <xsd:element name="exampleModel" type="ExampleModel" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleModel">
+  <!-- TapizGUIs -->
+  <xsd:element name="tapizGUIs" type="TapizGUIs" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TapizGUIs">
     <xsd:annotation>
       <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: ExampleModelHasElements -->
-          <xsd:element name="elements" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: TapizGUIsHasVentana -->
+          <xsd:element name="ventana" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ExampleModelHasElements</xsd:documentation>
+              <xsd:documentation>Instances of TapizGUIsHasVentana</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="exampleModelHasElements">
-                    <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from ExampleModelHasElements needs to be serialized in full-form]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element ref="exampleElement" >
-                    <xsd:annotation>
-                      <xsd:documentation>[Target role-player]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                </xsd:choice>
+                <xsd:element ref="tapizGUIsHasVentana" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of TapizGUIsHasVentana needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
@@ -45,15 +38,17 @@
             <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: solucionGUIs -->
+        <xsd:attribute name="solucionGUIs" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleModel Moniker -->
-  <xsd:element name="exampleModelMoniker" type="ExampleModelMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleModelMoniker">
+  <!-- TapizGUIs Moniker -->
+  <xsd:element name="tapizGUIsMoniker" type="TapizGUIsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TapizGUIsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleModel instance.</xsd:documentation>
+      <xsd:documentation>Moniker for TapizGUIs instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -66,59 +61,30 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleElement -->
-  <xsd:element name="exampleElement" type="ExampleElement" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleElement">
-    <xsd:annotation>
-      <xsd:documentation>Elements embedded in the model. Appear as boxes on the diagram.</xsd:documentation>
-    </xsd:annotation>
+  <!-- Ventana -->
+  <xsd:element name="ventana" abstract="true" type="Ventana" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Ventana" abstract="true" >
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: ExampleElementReferencesTargets -->
-          <xsd:element name="targets" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of ExampleElementReferencesTargets</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="exampleElementReferencesTargets">
-                    <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from ExampleElementReferencesTargets needs to be serialized in full-form]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element ref="exampleElementMoniker" >
-                    <xsd:annotation>
-                      <xsd:documentation>[Target role-player]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                </xsd:choice>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleElement Moniker -->
-  <xsd:element name="exampleElementMoniker" type="ExampleElementMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleElementMoniker">
+  <!-- Ventana Moniker -->
+  <xsd:element name="ventanaMoniker" abstract="true" type="VentanaMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="VentanaMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleElement instance.</xsd:documentation>
+      <xsd:documentation>Moniker for Ventana instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
+        <xsd:attribute name="Id" type="xsd:string" >
           <xsd:annotation>
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
@@ -127,17 +93,68 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleModelHasElements -->
-  <xsd:element name="exampleModelHasElements" abstract="true" type="ExampleModelHasElements" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleModelHasElements" abstract="true" >
+  <!-- VentanaPrincipal -->
+  <xsd:element name="ventanaPrincipal" type="VentanaPrincipal" substitutionGroup="ventana" />
+  <xsd:complexType name="VentanaPrincipal">
+    <xsd:complexContent>
+      <xsd:extension base="Ventana">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaPrincipal Moniker -->
+  <xsd:element name="ventanaPrincipalMoniker" type="VentanaPrincipalMoniker" substitutionGroup="ventanaMoniker" />
+  <xsd:complexType name="VentanaPrincipalMoniker">
     <xsd:annotation>
-      <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
+      <xsd:documentation>Moniker for VentanaPrincipal instance.</xsd:documentation>
     </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="VentanaMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaSecundaria -->
+  <xsd:element name="ventanaSecundaria" type="VentanaSecundaria" substitutionGroup="ventana" />
+  <xsd:complexType name="VentanaSecundaria">
+    <xsd:complexContent>
+      <xsd:extension base="Ventana">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaSecundaria Moniker -->
+  <xsd:element name="ventanaSecundariaMoniker" type="VentanaSecundariaMoniker" substitutionGroup="ventanaMoniker" />
+  <xsd:complexType name="VentanaSecundariaMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for VentanaSecundaria instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="VentanaMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TapizGUIsHasVentana -->
+  <xsd:element name="tapizGUIsHasVentana" type="TapizGUIsHasVentana" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TapizGUIsHasVentana">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end ExampleElement -->
-          <xsd:element ref="exampleElement" minOccurs="1" maxOccurs="1">
+          <!-- Target end Ventana -->
+          <xsd:element ref="ventana" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -153,54 +170,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleModelHasElements Moniker -->
-  <xsd:element name="exampleModelHasElementsMoniker" type="ExampleModelHasElementsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleModelHasElementsMoniker">
+  <!-- TapizGUIsHasVentana Moniker -->
+  <xsd:element name="tapizGUIsHasVentanaMoniker" type="TapizGUIsHasVentanaMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TapizGUIsHasVentanaMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleModelHasElements instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ExampleElementReferencesTargets -->
-  <xsd:element name="exampleElementReferencesTargets" abstract="true" type="ExampleElementReferencesTargets" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleElementReferencesTargets" abstract="true" >
-    <xsd:annotation>
-      <xsd:documentation>Reference relationship between Elements.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end ExampleElement -->
-          <xsd:element ref="exampleElementMoniker" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ExampleElementReferencesTargets Moniker -->
-  <xsd:element name="exampleElementReferencesTargetsMoniker" type="ExampleElementReferencesTargetsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleElementReferencesTargetsMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleElementReferencesTargets instance.</xsd:documentation>
+      <xsd:documentation>Moniker for TapizGUIsHasVentana instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

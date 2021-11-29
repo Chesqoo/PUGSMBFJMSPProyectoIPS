@@ -12,20 +12,20 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass ExampleModel
+	/// DomainClass TapizGUIs
 	/// The root in which all other elements are embedded. Appears as a diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModel.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModel.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("a09bf113-d90d-4cde-8cc8-9526f4784123")]
-	public partial class ExampleModel : DslModeling::ModelElement
+	public partial class TapizGUIs : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ExampleModel domain class Id.
+		/// TapizGUIs domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xa09bf113, 0xd90d, 0x4cde, 0x8c, 0xc8, 0x95, 0x26, 0xf4, 0x78, 0x41, 0x23);
 		/// <summary>
@@ -33,7 +33,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleModel(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public TapizGUIs(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -43,22 +43,110 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleModel(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public TapizGUIs(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
 		#endregion
-		#region Elements opposite domain role accessor
+		#region solucionGUIs domain property code
 		
 		/// <summary>
-		/// Gets a list of Elements.
+		/// solucionGUIs domain property Id.
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ExampleElement> Elements
+		public static readonly global::System.Guid solucionGUIsDomainPropertyId = new global::System.Guid(0x1bd814c5, 0x2747, 0x4def, 0xb0, 0xd4, 0xac, 0xf3, 0x98, 0x9b, 0xfb, 0x57);
+		
+		/// <summary>
+		/// Storage for solucionGUIs
+		/// </summary>
+		private global::System.String solucionGUIsPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of solucionGUIs domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Solucion GUIs
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs/solucionGUIs.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs/solucionGUIs.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("1bd814c5-2747-4def-b0d4-acf3989bfb57")]
+		public global::System.String solucionGUIs
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.ExampleModelDomainRoleId);
+				return solucionGUIsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				solucionGUIsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the TapizGUIs.solucionGUIs domain property.
+		/// </summary>
+		internal sealed partial class solucionGUIsPropertyHandler : DslModeling::DomainPropertyValueHandler<TapizGUIs, global::System.String>
+		{
+			private solucionGUIsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the TapizGUIs.solucionGUIs domain property value handler.
+			/// </summary>
+			public static readonly solucionGUIsPropertyHandler Instance = new solucionGUIsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the TapizGUIs.solucionGUIs domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return solucionGUIsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(TapizGUIs element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.solucionGUIsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(TapizGUIs element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.solucionGUIsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Ventana opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Ventana.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIs
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Ventana> Ventana
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIsDomainRoleId);
 			}
 		}
 		#endregion
@@ -82,7 +170,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.DomainClassId)) 
 				{
 					return true;
 				}
@@ -111,11 +199,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement sourceExampleElement1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement;
-			if (sourceExampleElement1 != null)
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana sourceVentana1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana;
+			if (sourceVentana1 != null)
 			{
-				// Create link for path ExampleModelHasElements.Elements
-				this.Elements.Add(sourceExampleElement1);
+				// Create link for path TapizGUIsHasVentana.Ventana
+				this.Ventana.Add(sourceVentana1);
 
 				return;
 			}
@@ -142,15 +230,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement sourceExampleElement1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement;
-			if (sourceExampleElement1 != null)
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana sourceVentana1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana;
+			if (sourceVentana1 != null)
 			{
-				// Delete link for path ExampleModelHasElements.Elements
+				// Delete link for path TapizGUIsHasVentana.Ventana
 				
-				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModel)this, sourceExampleElement1))
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs)this, sourceVentana1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.ExampleModelDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.ElementDomainRoleId);
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIsDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId);
 				}
 
 				return;
@@ -164,29 +252,320 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass ExampleElement
-	/// Elements embedded in the model. Appear as boxes on the diagram.
+	/// DomainClass Ventana
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
-	[DslModeling::DomainObjectId("95ac15a9-3627-4d03-bcf0-025a8a684f2e")]
-	public partial class ExampleElement : DslModeling::ModelElement
+	[DslModeling::DomainObjectId("7fc839cd-5309-48d1-9a17-1a51437c88cb")]
+	public abstract partial class Ventana : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ExampleElement domain class Id.
+		/// Ventana domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x95ac15a9, 0x3627, 0x4d03, 0xbc, 0xf0, 0x02, 0x5a, 0x8a, 0x68, 0x4f, 0x2e);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7fc839cd, 0x5309, 0x48d1, 0x9a, 0x17, 0x1a, 0x51, 0x43, 0x7c, 0x88, 0xcb);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected Ventana(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region nombre domain property code
+		
+		/// <summary>
+		/// nombre domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid nombreDomainPropertyId = new global::System.Guid(0xd76bdded, 0x3c28, 0x4363, 0xb3, 0xc8, 0x6a, 0x43, 0xcf, 0x10, 0x32, 0x14);
+		
+		/// <summary>
+		/// Storage for nombre
+		/// </summary>
+		private global::System.String nombrePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of nombre domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Nombre
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/nombre.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/nombre.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d76bdded-3c28-4363-b3c8-6a43cf103214")]
+		public global::System.String nombre
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return nombrePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				nombrePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Ventana.nombre domain property.
+		/// </summary>
+		internal sealed partial class nombrePropertyHandler : DslModeling::DomainPropertyValueHandler<Ventana, global::System.String>
+		{
+			private nombrePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Ventana.nombre domain property value handler.
+			/// </summary>
+			public static readonly nombrePropertyHandler Instance = new nombrePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Ventana.nombre domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return nombreDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Ventana element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.nombrePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Ventana element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.nombrePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region TapizGUIs opposite domain role accessor
+		/// <summary>
+		/// Gets or sets TapizGUIs.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.Ventana
+		/// </summary>
+		public virtual TapizGUIs TapizGUIs
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId) as TapizGUIs;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Menu opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Menu.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Ventana
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Menu> Menu
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Menu>, Menu>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.VentanaDomainRoleId);
+			}
+		}
+		#endregion
+		#region Boton opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Boton.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Ventana
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Boton> Boton
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Boton>, Boton>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.VentanaDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu sourceMenu1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu;
+			if (sourceMenu1 != null)
+			{
+				// Create link for path VentanaHasMenu.Menu
+				this.Menu.Add(sourceMenu1);
+
+				return;
+			}
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton sourceBoton2 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton;
+			if (sourceBoton2 != null)
+			{
+				// Create link for path VentanaHasBoton.Boton
+				this.Boton.Add(sourceBoton2);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu sourceMenu1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu;
+			if (sourceMenu1 != null)
+			{
+				// Delete link for path VentanaHasMenu.Menu
+				
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)this, sourceMenu1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.VentanaDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.MenuDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton sourceBoton2 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton;
+			if (sourceBoton2 != null)
+			{
+				// Delete link for path VentanaHasBoton.Boton
+				
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)this, sourceBoton2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.VentanaDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass VentanaPrincipal
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("da1a9b8e-2cee-45e6-9a44-f987cfdb9479")]
+	public partial class VentanaPrincipal : Ventana
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// VentanaPrincipal domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xda1a9b8e, 0x2cee, 0x45e6, 0x9a, 0x44, 0xf9, 0x87, 0xcf, 0xdb, 0x94, 0x79);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleElement(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public VentanaPrincipal(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -196,145 +575,341 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleElement(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public VentanaPrincipal(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
 		#endregion
-		#region Name domain property code
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass VentanaSecundaria
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("16beb939-a3f4-49ef-9b05-66757f1acfdb")]
+	public partial class VentanaSecundaria : Ventana
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// VentanaSecundaria domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x16beb939, 0xa3f4, 0x49ef, 0x9b, 0x05, 0x66, 0x75, 0x7f, 0x1a, 0xcf, 0xdb);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public VentanaSecundaria(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
 		
 		/// <summary>
-		/// Name domain property Id.
+		/// Constructor
 		/// </summary>
-		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x7b89a754, 0xb329, 0x4c91, 0x96, 0x26, 0x32, 0x3c, 0xc6, 0x06, 0x53, 0x3d);
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public VentanaSecundaria(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass Menu
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("736d42c0-8e1b-421f-80b6-d39250f15dbb")]
+	public partial class Menu : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Menu domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x736d42c0, 0x8e1b, 0x421f, 0x80, 0xb6, 0xd3, 0x92, 0x50, 0xf1, 0x5d, 0xbb);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Menu(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
 		
 		/// <summary>
-		/// Storage for Name
+		/// Constructor
 		/// </summary>
-		private global::System.String namePropertyStorage = string.Empty;
-		
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Menu(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Ventana opposite domain role accessor
 		/// <summary>
-		/// Gets or sets the value of Name domain property.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement.Name
+		/// Gets or sets Ventana.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Menu
 		/// </summary>
-		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement/Name.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElement/Name.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-		[global::System.ComponentModel.DefaultValue("")]
-		[DslModeling::ElementName]
-		[DslModeling::DomainObjectId("7b89a754-b329-4c91-9626-323cc606533d")]
-		public global::System.String Name
+		public virtual Ventana Ventana
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return namePropertyStorage;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.MenuDomainRoleId) as Ventana;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				NamePropertyHandler.Instance.SetValue(this, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.MenuDomainRoleId, value);
 			}
 		}
+		#endregion
+		#region ItemDeMenu opposite domain role accessor
+		
 		/// <summary>
-		/// Value handler for the ExampleElement.Name domain property.
+		/// Gets a list of ItemDeMenu.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu
 		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<ExampleElement, global::System.String>
+		public virtual DslModeling::LinkedElementCollection<ItemDeMenu> ItemDeMenu
 		{
-			private NamePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the ExampleElement.Name domain property value handler.
-			/// </summary>
-			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the ExampleElement.Name domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
 			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return NameDomainPropertyId;
-				}
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ItemDeMenu>, ItemDeMenu>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId);
 			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
 			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(ExampleElement element)
+			if (rootElement != null)
 			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.namePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(ExampleElement element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.DomainClassId)) 
 				{
-					ValueChanging(element, oldValue, newValue);
-					element.namePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
+					return true;
 				}
 			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
 		}
 		
-		#endregion
-		#region ExampleModel opposite domain role accessor
 		/// <summary>
-		/// Gets or sets ExampleModel.
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
 		/// </summary>
-		public virtual ExampleModel ExampleModel
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu sourceItemDeMenu1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu;
+			if (sourceItemDeMenu1 != null)
+			{
+				// Create link for path MenuHasItemDeMenu.ItemDeMenu
+				this.ItemDeMenu.Add(sourceItemDeMenu1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu sourceItemDeMenu1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu;
+			if (sourceItemDeMenu1 != null)
+			{
+				// Delete link for path MenuHasItemDeMenu.ItemDeMenu
+				
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)this, sourceItemDeMenu1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenuDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass ItemDeMenu
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("c4391778-13fb-43cf-b6d9-dc7d5343cd51")]
+	public partial class ItemDeMenu : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ItemDeMenu domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc4391778, 0x13fb, 0x43cf, 0xb6, 0xd9, 0xdc, 0x7d, 0x53, 0x43, 0xcd, 0x51);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ItemDeMenu(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ItemDeMenu(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Menu opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Menu.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenu
+		/// </summary>
+		public virtual Menu Menu
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.ElementDomainRoleId) as ExampleModel;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenuDomainRoleId) as Menu;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModelHasElements.ElementDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenuDomainRoleId, value);
 			}
 		}
 		#endregion
-		#region Targets opposite domain role accessor
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass Boton
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("2aefa29b-6b75-42b2-a9a8-20d3680f4d57")]
+	public partial class Boton : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Boton domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2aefa29b, 0x6b75, 0x42b2, 0xa9, 0xa8, 0x20, 0xd3, 0x68, 0x0f, 0x4d, 0x57);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Boton(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
 		
 		/// <summary>
-		/// Gets a list of Targets.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleRelationship.Target
+		/// Constructor
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ExampleElement> Targets
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Boton(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Ventana opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Ventana.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.Boton
+		/// </summary>
+		public virtual Ventana Ventana
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets.SourceDomainRoleId);
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId) as Ventana;
 			}
-		}
-		#endregion
-		#region Sources opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Sources.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleRelationship.Source
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ExampleElement> Sources
-		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get
+			set
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleElementReferencesTargets.TargetDomainRoleId);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId, value);
 			}
 		}
 		#endregion

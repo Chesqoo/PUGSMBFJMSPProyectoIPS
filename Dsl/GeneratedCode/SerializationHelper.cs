@@ -309,10 +309,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	{
 	
 		/// <summary>
-		/// Loads a ExampleModel instance into the default partition of the given store, and ignore serialization result.
+		/// Loads a TapizGUIs instance into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="store">The new TapizGUIs instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -324,8 +324,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded ExampleModel instance.</returns>
-		public virtual ExampleModel LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded TapizGUIs instance.</returns>
+		public virtual TapizGUIs LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -336,11 +336,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Loads a ExampleModel instance into the default partition of the given store.
+		/// Loads a TapizGUIs instance into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="store">The new TapizGUIs instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -352,8 +352,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded ExampleModel instance.</returns>
-		public virtual ExampleModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded TapizGUIs instance.</returns>
+		public virtual TapizGUIs LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -364,11 +364,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Loads a ExampleModel instance.
+		/// Loads a TapizGUIs instance.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new ExampleModel instance will be created.</param>
-		/// <param name="fileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="partition">Partition in which the new TapizGUIs instance will be created.</param>
+		/// <param name="fileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -380,9 +380,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded ExampleModel instance.</returns>
+		/// <returns>The loaded TapizGUIs instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual ExampleModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual TapizGUIs LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (string.IsNullOrEmpty(fileName))
@@ -396,11 +396,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Loads a ExampleModel instance from a stream.
+		/// Loads a TapizGUIs instance from a stream.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new ExampleModel instance will be created.</param>
-		/// <param name="location">Source location associated with stream from which the ExampleModel instance is to be loaded. Usually a file path, but can be any string, including null.</param>
+		/// <param name="partition">Partition in which the new TapizGUIs instance will be created.</param>
+		/// <param name="location">Source location associated with stream from which the TapizGUIs instance is to be loaded. Usually a file path, but can be any string, including null.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -412,10 +412,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <param name="stream">The Stream from which the ExampleModel will be deserialized.</param>
-		/// <returns>The loaded ExampleModel instance.</returns>
+		/// <param name="stream">The Stream from which the TapizGUIs will be deserialized.</param>
+		/// <returns>The loaded TapizGUIs instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual ExampleModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
+		public virtual TapizGUIs LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -432,10 +432,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				throw new global::System.InvalidOperationException(PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("MissingTransaction"));
 			}
 			
-			ExampleModel modelRoot = null;
+			TapizGUIs modelRoot = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(partition.Store);
-			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(ExampleModel.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for ExampleModel!");
+			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(TapizGUIs.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for TapizGUIs!");
 			if (modelRootSerializer != null)
 			{
 				DslModeling::SerializationContext serializationContext = new DslModeling::SerializationContext(directory, location, serializationResult);
@@ -466,7 +466,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 								
 								reader.MoveToContent();
 									
-								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as ExampleModel;
+								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as TapizGUIs;
 								if (modelRoot != null && !serializationResult.Failed)
 								{
 									this.ReadRootElement(serializationContext, modelRoot, reader, schemaResolver);
@@ -535,9 +535,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName)
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the TapizGUIs instance will be saved.</param>
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string fileName)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -546,10 +546,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Saves the given model to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the TapizGUIs instance will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
@@ -558,12 +558,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Saves the given model root to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the ExampleModel instance.</param>
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the TapizGUIs instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the TapizGUIs instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -598,13 +598,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the ExampleModel instance.</param>
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the TapizGUIs instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the TapizGUIs instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized ExampleModel instance.</returns>
+		/// <returns>In-memory stream containing the serialized TapizGUIs instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -670,19 +670,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new ExampleModel.
+		/// Helper method to create and initialize a new TapizGUIs.
 		/// </summary>
-		internal protected virtual ExampleModel CreateModelHelper(DslModeling::Partition modelPartition)
+		internal protected virtual TapizGUIs CreateModelHelper(DslModeling::Partition modelPartition)
 		{
-			ExampleModel model = new ExampleModel(modelPartition);
+			TapizGUIs model = new TapizGUIs(modelPartition);
 			return model;
 		}
 		
 		/// <summary>
-		/// Loads a ExampleModel instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
+		/// Loads a TapizGUIs instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="store">The new TapizGUIs instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the PUGSMBFJMSPProyectoIPSDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -695,18 +695,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded ExampleModel instance.</returns>
-		public virtual ExampleModel LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded TapizGUIs instance.</returns>
+		public virtual TapizGUIs LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			return this.LoadModelAndDiagram(new DslModeling::SerializationResult(), store, modelFileName, diagramFileName, schemaResolver, validationController, serializerLocator);
 		}
 		
 		/// <summary>
-		/// Loads a ExampleModel instance and its associated diagram file into the default partition of the given store.
+		/// Loads a TapizGUIs instance and its associated diagram file into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="store">The new TapizGUIs instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the PUGSMBFJMSPProyectoIPSDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -719,8 +719,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded ExampleModel instance.</returns>
-		public virtual ExampleModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded TapizGUIs instance.</returns>
+		public virtual TapizGUIs LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null)
@@ -732,11 +732,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 			
 		/// <summary>
-		/// Loads a ExampleModel instance and its associated diagram file.
+		/// Loads a TapizGUIs instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="modelPartition">Partition in which the new ExampleModel instance will be created.</param>
-		/// <param name="modelFileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="modelPartition">Partition in which the new TapizGUIs instance will be created.</param>
+		/// <param name="modelFileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
 		/// <param name="diagramPartition">Partition in which the new PUGSMBFJMSPProyectoIPSDiagram instance will be created.</param>
 		/// <param name="diagramFileName">Name of the file from which the PUGSMBFJMSPProyectoIPSDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
@@ -750,9 +750,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded ExampleModel instance.</returns>
+		/// <returns>The loaded TapizGUIs instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-		public virtual ExampleModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual TapizGUIs LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -765,7 +765,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				throw new global::System.ArgumentNullException("diagramFileName");
 			#endregion
 	
-			ExampleModel modelRoot;
+			TapizGUIs modelRoot;
 	
 			// Ensure there is an outer transaction spanning both model and diagram load, so moniker resolution works properly.
 			if (!diagramPartition.Store.TransactionActive)
@@ -890,11 +890,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">PUGSMBFJMSPProyectoIPSDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string modelFileName, PUGSMBFJMSPProyectoIPSDiagram diagram, string diagramFileName)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string modelFileName, PUGSMBFJMSPProyectoIPSDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -903,28 +903,28 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">PUGSMBFJMSPProyectoIPSDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string modelFileName, PUGSMBFJMSPProyectoIPSDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string modelFileName, PUGSMBFJMSPProyectoIPSDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given ExampleModel and PUGSMBFJMSPProyectoIPSDiagram to the given files, with specified encoding.
+		/// Saves the given TapizGUIs and PUGSMBFJMSPProyectoIPSDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">PUGSMBFJMSPProyectoIPSDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string modelFileName, PUGSMBFJMSPProyectoIPSDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, TapizGUIs modelRoot, string modelFileName, PUGSMBFJMSPProyectoIPSDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1296,7 +1296,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="modelRoot">Root instance to be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the root instance.</param>
 		/// <returns>Model in XML form</returns>
-		public virtual string GetSerializedModelString(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ExampleModel modelRoot, global::System.Text.Encoding encoding)
+		public virtual string GetSerializedModelString(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs modelRoot, global::System.Text.Encoding encoding)
 		{
 			string result = string.Empty;
 			if (modelRoot == null)
@@ -1499,7 +1499,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
-	public partial class ExampleModel
+	public partial class TapizGUIs
 	{
 		/// <summary>
 		/// Check to make sure all elements in the model will have unambiguous monikers when serialized.
