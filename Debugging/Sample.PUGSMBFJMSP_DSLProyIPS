@@ -1,11 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<exampleModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="180563a1-e2e1-4a71-a0a1-e5b00897e6e4" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS">
-  <elements>
-    <exampleElement Id="541e315b-1595-4e47-90e7-261cb9193486" name="ExampleElement1">
-      <targets>
-        <exampleElementMoniker name="/180563a1-e2e1-4a71-a0a1-e5b00897e6e4/ExampleElement2" />
-      </targets>
-    </exampleElement>
-    <exampleElement Id="0d1c1997-a256-4ec1-980c-3efcf608a09f" name="ExampleElement2" />
-  </elements>
-</exampleModel>
+<tapizGUIs xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="799a2ecf-a589-4aed-adf4-c0c6c46bddf9" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS">
+  <ventana>
+    <tapizGUIsHasVentana Id="8dd686b5-3085-4726-94ed-6d0ba3ff1299">
+      <ventanaPrincipal Id="3936de21-8096-443e-9693-374d455bf1f3" ancho="0" alto="0">
+        <menu>
+          <ventanaHasMenu Id="fec5246c-c889-4425-9512-c56fdb5a80f8">
+            <menu Id="2713bb1b-bd2a-4876-b826-62d0b8d67ec5" titulo="Menu Cualquiera">
+              <itemDeMenu>
+                <menuHasItemDeMenu Id="3310a242-22c4-445d-8a04-af2f25102b00">
+                  <itemDeMenu Id="373abf65-ef47-49a6-9c04-c7b7451b9450" />
+                </menuHasItemDeMenu>
+              </itemDeMenu>
+            </menu>
+          </ventanaHasMenu>
+        </menu>
+        <boton>
+          <ventanaHasBoton Id="cbedf32f-ce96-4c0d-8f53-bf6ff97dd9ba">
+            <itemDeMenu Id="1aaa3cf8-dc23-4840-a268-f73af1860089" titulo="Item Generico">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="4d412efe-7c45-47a5-9bdd-bf45f9f8643c">
+                  <ventanaSecundariaMoniker Id="8f58311c-4a1f-4ce4-a92f-7e7d753382d9" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </itemDeMenu>
+          </ventanaHasBoton>
+        </boton>
+        <estadoFin>
+          <ventanaReferencesEstadoFin Id="07562b55-b423-427a-9d54-5b4ee1cc2c52">
+            <estadoFinMoniker Id="88d356e5-9d3f-49af-88a2-2f64568a6b01" />
+          </ventanaReferencesEstadoFin>
+        </estadoFin>
+      </ventanaPrincipal>
+    </tapizGUIsHasVentana>
+    <tapizGUIsHasVentana Id="abf046ef-aa71-453f-8974-008cdbdd3cd4">
+      <ventanaSecundaria Id="8f58311c-4a1f-4ce4-a92f-7e7d753382d9" ancho="0" alto="0" esModal="false">
+        <boton>
+          <ventanaHasBoton Id="d789b728-098e-488a-8dbf-6003e236c6bb">
+            <boton Id="aa2827aa-b7c6-4f0e-ba6f-7ea711799a13" titulo="Boton" />
+          </ventanaHasBoton>
+        </boton>
+        <estadoFin>
+          <ventanaReferencesEstadoFin Id="4695349b-31b4-4baf-9614-c8fc4759209a">
+            <estadoFinMoniker Id="88d356e5-9d3f-49af-88a2-2f64568a6b01" />
+          </ventanaReferencesEstadoFin>
+        </estadoFin>
+      </ventanaSecundaria>
+    </tapizGUIsHasVentana>
+  </ventana>
+  <estadoFin>
+    <tapizGUIsHasEstadoFin Id="09ffe8f0-eaea-41f9-af43-83c31c0e234e">
+      <estadoFin Id="88d356e5-9d3f-49af-88a2-2f64568a6b01" />
+    </tapizGUIsHasEstadoFin>
+  </estadoFin>
+</tapizGUIs>

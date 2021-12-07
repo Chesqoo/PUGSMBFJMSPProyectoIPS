@@ -69,6 +69,30 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					"@ElemMenuToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 4)]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+					"@ConectorBotVentToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ConectorBotVent", 
+					"@ConectorBotVentToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					0xff00ff,
+					Index = 5)]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+					"@FinToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					"UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Fin", 
+					"@FinToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+					"@ConectorVentFinToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ConectorVentFin", 
+					"@ConectorVentFinToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					0xff00ff,
+					Index = 7)]
 	[VSShell::ProvideEditorFactory(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

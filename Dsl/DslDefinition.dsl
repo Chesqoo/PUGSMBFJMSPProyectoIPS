@@ -214,6 +214,22 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="9be14ee7-66dc-41d6-ae4c-563ab8efe8cc" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin" Name="VentanaReferencesEstadoFin" DisplayName="Ventana References Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+      <Source>
+        <DomainRole Id="9fcb2179-6b9a-4ca8-9e54-bcb330ba972f" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="EstadoFin" PropertyDisplayName="Estado Fin">
+          <RolePlayer>
+            <DomainClassMoniker Name="Ventana" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="8c4e6a41-eecb-4dd9-a7f9-3ae35ab67e81" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" PropertyName="Ventana" PropertyDisplayName="Ventana">
+          <RolePlayer>
+            <DomainClassMoniker Name="EstadoFin" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -233,19 +249,24 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <CompartmentShape Id="831d3dde-3ee6-41eb-962f-7ab6a883dd5c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana" Name="ShapeVentana" DisplayName="Shape Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Ventana" InitialWidth="1" InitialHeight="1.5" Geometry="RoundedRectangle">
-      <Compartment Name="compartBoton" />
-      <Compartment Name="compartMenu" />
-    </CompartmentShape>
-    <GeometryShape Id="4258508f-08ac-4632-9ae7-1e16d7205989" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape" Name="BotonShape" DisplayName="Boton Shape" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Boton Shape" FillColor="PaleGreen" InitialHeight="1" Geometry="Rectangle">
+    <CompartmentShape Id="831d3dde-3ee6-41eb-962f-7ab6a883dd5c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana" Name="ShapeVentana" DisplayName="Shape Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Ventana" InitialWidth="1" InitialHeight="1.5" Geometry="RoundedRectangle" />
+    <CompartmentShape Id="0124312f-75cf-4418-8e03-a2d5cb9ce8c5" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu" Name="ShapeMenu" DisplayName="Shape Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Menu" FillColor="Yellow" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="nombre" DisplayName="Nombre" DefaultText="nombre" />
+        <TextDecorator Name="nombreMenu" DisplayName="Nombre Menu" DefaultText="nombreMenu" />
       </ShapeHasDecorators>
-    </GeometryShape>
+    </CompartmentShape>
+    <GeometryShape Id="ce659b56-086b-4edb-ae94-54e4a1e5c58f" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma" Name="EFinForma" DisplayName="EFin Forma" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="EFin Forma" FillColor="DarkRed" InitialHeight="1" OutlineThickness="0.005" Geometry="Circle" />
+    <CompartmentShape Id="5c617f95-13db-4fc0-bc31-7afcff35f19a" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart" Name="BotonCompart" DisplayName="Boton Compart" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Boton Compart" FillColor="PowderBlue" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="nombreBoton" DisplayName="Nombre Boton" DefaultText="nombreBoton" />
+      </ShapeHasDecorators>
+    </CompartmentShape>
+    <CompartmentShape Id="a87bc5bb-5944-465e-a996-3bcfb0486f4e" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp" Name="ItemDeMenuComp" DisplayName="Item De Menu Comp" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Item De Menu Comp" FillColor="Orange" InitialHeight="1" Geometry="Rectangle" />
   </Shapes>
   <Connectors>
     <Connector Id="0c1e583f-8192-4e2a-b75b-62a7e978ed51" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana" Name="ConectorBotonVentana" DisplayName="Conector Boton Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conector Boton Ventana" Color="Cyan" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow" />
     <Connector Id="8f9be635-1b8c-4d1a-bc86-85e6578cf62b" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana" Name="ConectoriMenuVentana" DisplayName="Conectori Menu Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conectori Menu Ventana" TextColor="Gold" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow" />
+    <Connector Id="111eb5ca-a25e-43f8-b044-a1b9f04e096b" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin" Name="ConectorVentanaFin" DisplayName="Conector Ventana Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conector Ventana Fin" Color="Red" />
   </Connectors>
   <XmlSerializationBehavior Name="PUGSMBFJMSPProyectoIPSSerializationBehavior" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
     <ClassData>
@@ -284,6 +305,9 @@
           <XmlPropertyData XmlName="alto">
             <DomainPropertyMoniker Name="Ventana/alto" />
           </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="estadoFin">
+            <DomainRelationshipMoniker Name="VentanaReferencesEstadoFin" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="TapizGUIsHasVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsHasVentanaMoniker" ElementName="tapizGUIsHasVentana" MonikerTypeName="TapizGUIsHasVentanaMoniker">
@@ -352,8 +376,23 @@
       <XmlClassData TypeName="ConectoriMenuVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectoriMenuVentanaMoniker" ElementName="conectoriMenuVentana" MonikerTypeName="ConectoriMenuVentanaMoniker">
         <ConnectorMoniker Name="ConectoriMenuVentana" />
       </XmlClassData>
-      <XmlClassData TypeName="BotonShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="botonShapeMoniker" ElementName="botonShape" MonikerTypeName="BotonShapeMoniker">
-        <GeometryShapeMoniker Name="BotonShape" />
+      <XmlClassData TypeName="ShapeMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="shapeMenuMoniker" ElementName="shapeMenu" MonikerTypeName="ShapeMenuMoniker">
+        <CompartmentShapeMoniker Name="ShapeMenu" />
+      </XmlClassData>
+      <XmlClassData TypeName="EFinForma" MonikerAttributeName="" SerializeId="true" MonikerElementName="eFinFormaMoniker" ElementName="eFinForma" MonikerTypeName="EFinFormaMoniker">
+        <GeometryShapeMoniker Name="EFinForma" />
+      </XmlClassData>
+      <XmlClassData TypeName="VentanaReferencesEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaReferencesEstadoFinMoniker" ElementName="ventanaReferencesEstadoFin" MonikerTypeName="VentanaReferencesEstadoFinMoniker">
+        <DomainRelationshipMoniker Name="VentanaReferencesEstadoFin" />
+      </XmlClassData>
+      <XmlClassData TypeName="ConectorVentanaFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectorVentanaFinMoniker" ElementName="conectorVentanaFin" MonikerTypeName="ConectorVentanaFinMoniker">
+        <ConnectorMoniker Name="ConectorVentanaFin" />
+      </XmlClassData>
+      <XmlClassData TypeName="BotonCompart" MonikerAttributeName="" SerializeId="true" MonikerElementName="botonCompartMoniker" ElementName="botonCompart" MonikerTypeName="BotonCompartMoniker">
+        <CompartmentShapeMoniker Name="BotonCompart" />
+      </XmlClassData>
+      <XmlClassData TypeName="ItemDeMenuComp" MonikerAttributeName="" SerializeId="true" MonikerElementName="itemDeMenuCompMoniker" ElementName="itemDeMenuComp" MonikerTypeName="ItemDeMenuCompMoniker">
+        <CompartmentShapeMoniker Name="ItemDeMenuComp" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -378,8 +417,27 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
+    <ConnectionBuilder Name="VentanaReferencesEstadoFinBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="VentanaReferencesEstadoFin" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Ventana" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="EstadoFin" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
   </ConnectionBuilders>
-  <Diagram Id="756a5d6c-4264-487d-9076-1f6c4b6280d7" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDiagram" Name="PUGSMBFJMSPProyectoIPSDiagram" DisplayName="Minimal Language Diagram" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FillColor="PeachPuff">
+  <Diagram Id="756a5d6c-4264-487d-9076-1f6c4b6280d7" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDiagram" Name="PUGSMBFJMSPProyectoIPSDiagram" DisplayName="Minimal Language Diagram" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FillColor="DimGray">
     <Class>
       <DomainClassMoniker Name="TapizGUIs" />
     </Class>
@@ -390,49 +448,53 @@
           <DomainPath>TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
         </ParentElementPath>
         <CompartmentShapeMoniker Name="ShapeVentana" />
-        <CompartmentMap>
-          <CompartmentMoniker Name="ShapeVentana/compartBoton" />
-          <ElementsDisplayed>
-            <DomainPath>VentanaHasBoton.Boton/!Boton</DomainPath>
-          </ElementsDisplayed>
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Boton/titulo" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </CompartmentMap>
-        <CompartmentMap>
-          <CompartmentMoniker Name="ShapeVentana/compartMenu" />
-          <ElementsDisplayed>
-            <DomainPath>VentanaHasMenu.Menu/!Menu</DomainPath>
-          </ElementsDisplayed>
+      </CompartmentShapeMap>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="Menu" />
+        <ParentElementPath>
+          <DomainPath>VentanaHasMenu.Ventana/!Ventana/TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ShapeMenu/nombreMenu" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="Menu/titulo" />
             </PropertyPath>
           </PropertyDisplayed>
-        </CompartmentMap>
+        </DecoratorMap>
+        <CompartmentShapeMoniker Name="ShapeMenu" />
       </CompartmentShapeMap>
       <ShapeMap>
+        <DomainClassMoniker Name="EstadoFin" />
+        <ParentElementPath>
+          <DomainPath>TapizGUIsHasEstadoFin.TapizGUIs/!TapizGUIs</DomainPath>
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="EFinForma" />
+      </ShapeMap>
+      <CompartmentShapeMap>
         <DomainClassMoniker Name="Boton" />
         <ParentElementPath>
           <DomainPath>VentanaHasBoton.Ventana/!Ventana/TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="BotonShape/nombre" />
+          <TextDecoratorMoniker Name="BotonCompart/nombreBoton" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="Boton/titulo" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="BotonShape" />
-      </ShapeMap>
+        <CompartmentShapeMoniker Name="BotonCompart" />
+      </CompartmentShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
         <ConnectorMoniker Name="ConectorBotonVentana" />
         <DomainRelationshipMoniker Name="BotonReferencesVentanaTarget" />
+      </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ConectorVentanaFin" />
+        <DomainRelationshipMoniker Name="VentanaReferencesEstadoFin" />
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
@@ -459,6 +521,15 @@
       <ElementTool Name="ElemMenu" ToolboxIcon="C:\Users\Javier\Downloads\Menu.bmp" Caption="ElemMenu" Tooltip="Elem Menu" HelpKeyword="ElemMenu">
         <DomainClassMoniker Name="Menu" />
       </ElementTool>
+      <ConnectionTool Name="ConectorBotVent" ToolboxIcon="C:\Users\Javier\Downloads\EnlaceAVentana.bmp" Caption="ConectorBotVent" Tooltip="Conector Bot Vent" HelpKeyword="ConectorBotVent">
+        <ConnectionBuilderMoniker Name="PUGSMBFJMSPProyectoIPS/BotonReferencesVentanaTargetBuilder" />
+      </ConnectionTool>
+      <ElementTool Name="Fin" ToolboxIcon="C:\Users\Javier\Downloads\FIN.bmp" Caption="Fin" Tooltip="Fin" HelpKeyword="Fin">
+        <DomainClassMoniker Name="EstadoFin" />
+      </ElementTool>
+      <ConnectionTool Name="ConectorVentFin" ToolboxIcon="C:\Users\Javier\Downloads\EAFin.bmp" Caption="ConectorVentFin" Tooltip="Conector Vent Fin" HelpKeyword="ConectorVentFin">
+        <ConnectionBuilderMoniker Name="PUGSMBFJMSPProyectoIPS/VentanaReferencesEstadoFinBuilder" />
+      </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="PUGSMBFJMSPProyectoIPSDiagram" />

@@ -1445,3 +1445,225 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		#endregion
 	}
 }
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainRelationship VentanaReferencesEstadoFin
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("9be14ee7-66dc-41d6-ae4c-563ab8efe8cc")]
+	public partial class VentanaReferencesEstadoFin : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// VentanaReferencesEstadoFin domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9be14ee7, 0x66dc, 0x41d6, 0xae, 0x4c, 0x56, 0x3a, 0xb8, 0xef, 0xe8, 0xcc);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a VentanaReferencesEstadoFin link in the same Partition as the given Ventana
+		/// </summary>
+		/// <param name="source">Ventana to use as the source of the relationship.</param>
+		/// <param name="target">EstadoFin to use as the target of the relationship.</param>
+		public VentanaReferencesEstadoFin(Ventana source, EstadoFin target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(VentanaReferencesEstadoFin.VentanaDomainRoleId, source), new DslModeling::RoleAssignment(VentanaReferencesEstadoFin.EstadoFinDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public VentanaReferencesEstadoFin(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public VentanaReferencesEstadoFin(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public VentanaReferencesEstadoFin(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public VentanaReferencesEstadoFin(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Ventana domain role code
+		
+		/// <summary>
+		/// Ventana domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid VentanaDomainRoleId = new global::System.Guid(0x9fcb2179, 0x6b9a, 0x4ca8, 0x9e, 0x54, 0xbc, 0xb3, 0x30, 0xba, 0x97, 0x2f);
+		
+		/// <summary>
+		/// DomainRole Ventana
+		/// Description for
+		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.Ventana
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/Ventana.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/Ventana.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "EstadoFin", PropertyDisplayNameKey="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/Ventana.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("9fcb2179-6b9a-4ca8-9e54-bcb330ba972f")]
+		public virtual Ventana Ventana
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Ventana)DslModeling::DomainRoleInfo.GetRolePlayer(this, VentanaDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, VentanaDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Ventana of a EstadoFin
+		/// <summary>
+		/// Gets a list of Ventana.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Ventana> GetVentana(EstadoFin element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(element, EstadoFinDomainRoleId);
+		}
+		#endregion
+		#region EstadoFin domain role code
+		
+		/// <summary>
+		/// EstadoFin domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid EstadoFinDomainRoleId = new global::System.Guid(0x8c4e6a41, 0xeecb, 0x4dd9, 0xa7, 0xf9, 0x3a, 0xe3, 0x5a, 0xb6, 0x7e, 0x81);
+		
+		/// <summary>
+		/// DomainRole EstadoFin
+		/// Description for
+		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.EstadoFin
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/EstadoFin.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/EstadoFin.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Ventana", PropertyDisplayNameKey="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/EstadoFin.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("8c4e6a41-eecb-4dd9-a7f9-3ae35ab67e81")]
+		public virtual EstadoFin EstadoFin
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (EstadoFin)DslModeling::DomainRoleInfo.GetRolePlayer(this, EstadoFinDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, EstadoFinDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access EstadoFin of a Ventana
+		/// <summary>
+		/// Gets a list of EstadoFin.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<EstadoFin> GetEstadoFin(Ventana element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<EstadoFin>, EstadoFin>(element, VentanaDomainRoleId);
+		}
+		#endregion
+		#region Ventana link accessor
+		/// <summary>
+		/// Get the list of VentanaReferencesEstadoFin links to a Ventana.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin> GetLinksToEstadoFin ( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana ventanaInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin>(ventanaInstance, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.VentanaDomainRoleId);
+		}
+		#endregion
+		#region EstadoFin link accessor
+		/// <summary>
+		/// Get the list of VentanaReferencesEstadoFin links to a EstadoFin.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin> GetLinksToVentana ( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin estadoFinInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin>(estadoFinInstance, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.EstadoFinDomainRoleId);
+		}
+		#endregion
+		#region VentanaReferencesEstadoFin instance accessors
+		
+		/// <summary>
+		/// Get any VentanaReferencesEstadoFin links between a given Ventana and a EstadoFin.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin> GetLinks( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana source, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin target )
+		{
+			global::System.Collections.Generic.List<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin> outLinks = new global::System.Collections.Generic.List<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin>();
+			global::System.Collections.Generic.IList<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin> links = DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin>(source, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.VentanaDomainRoleId);
+			foreach ( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin link in links )
+			{
+				if ( target.Equals(link.EstadoFin) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one VentanaReferencesEstadoFin link between a given Ventanaand a EstadoFin.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin GetLink( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana source, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin target )
+		{
+			global::System.Collections.Generic.IList<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin> links = DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin>(source, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.VentanaDomainRoleId);
+			foreach ( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin link in links )
+			{
+				if ( target.Equals(link.EstadoFin) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

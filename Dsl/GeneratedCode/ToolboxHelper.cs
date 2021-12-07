@@ -47,6 +47,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// item filters.
 		/// </remarks>
 		public const string ToolboxFilterString = "PUGSMBFJMSPProyectoIPS.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify ConectorBotVent connector tool.
+		/// </summary>
+		public const string ConectorBotVentFilterString = "ConectorBotVent.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify ConectorVentFin connector tool.
+		/// </summary>
+		public const string ConectorVentFinFilterString = "ConectorVentFin.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -94,7 +102,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return 5;
+				return 8;
 			}
 		}
 		
@@ -221,6 +229,58 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentToolboxItem":
+
+					// Add ConectorBotVent connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						6, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ConectorBotVentToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConectorBotVentToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"ConectorBotVent", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ConectorBotVentToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ConectorBotVentFilterString)
+						});
+					break;
+				case "UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem":
+					// Add Fin shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						7, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("FinToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("FinToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Fin", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("FinToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem":
+
+					// Add ConectorVentFin connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						8, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ConectorVentFinToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConectorVentFinToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"ConectorVentFin", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ConectorVentFinToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ConectorVentFinFilterString)
 						});
 					break;
 				default:

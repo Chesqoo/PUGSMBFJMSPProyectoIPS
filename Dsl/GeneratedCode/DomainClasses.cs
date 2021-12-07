@@ -647,6 +647,22 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 		}
 		#endregion
+		#region EstadoFin opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of EstadoFin.
+		/// Description for
+		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.Ventana
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<EstadoFin> EstadoFin
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<EstadoFin>, EstadoFin>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.VentanaDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -1489,6 +1505,22 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Ventana opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Ventana.
+		/// Description for
+		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.EstadoFin
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Ventana> Ventana
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.EstadoFinDomainRoleId);
 			}
 		}
 		#endregion
