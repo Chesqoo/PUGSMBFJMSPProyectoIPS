@@ -102,6 +102,88 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 		}
 		#endregion
+		#region Compartment support
+		/// <summary>
+		/// Whether compartment items change events are subscribed to.
+		/// </summary>
+		private bool subscribedCompartmentItemsEvents;
+		
+		/// <summary>
+		/// Subscribe to events fired when compartment items changes.
+		/// </summary>
+		public void SubscribeCompartmentItemsEvents()
+		{
+			if (!subscribedCompartmentItemsEvents && this.Store != null)
+			{
+				subscribedCompartmentItemsEvents = true;
+				this.Store.EventManagerDirectory.ElementAdded.Add(new global::System.EventHandler<DslModeling::ElementAddedEventArgs>(this.CompartmentItemAdded));
+				this.Store.EventManagerDirectory.ElementDeleted.Add(new global::System.EventHandler<DslModeling::ElementDeletedEventArgs>(this.CompartmentItemDeleted));
+				this.Store.EventManagerDirectory.ElementPropertyChanged.Add(new global::System.EventHandler<DslModeling::ElementPropertyChangedEventArgs>(this.CompartmentItemPropertyChanged));
+				this.Store.EventManagerDirectory.RolePlayerChanged.Add(new global::System.EventHandler<DslModeling::RolePlayerChangedEventArgs>(this.CompartmentItemRolePlayerChanged));
+				this.Store.EventManagerDirectory.RolePlayerOrderChanged.Add(new global::System.EventHandler<DslModeling::RolePlayerOrderChangedEventArgs>(this.CompartmentItemRolePlayerOrderChanged));
+			}
+		}
+		
+		/// <summary>
+		/// Unsubscribe to events fired when compartment items changes.
+		/// </summary>
+		public void UnsubscribeCompartmentItemsEvents()
+		{
+			if (subscribedCompartmentItemsEvents)
+			{
+				this.Store.EventManagerDirectory.ElementAdded.Remove(new global::System.EventHandler<DslModeling::ElementAddedEventArgs>(this.CompartmentItemAdded));
+				this.Store.EventManagerDirectory.ElementDeleted.Remove(new global::System.EventHandler<DslModeling::ElementDeletedEventArgs>(this.CompartmentItemDeleted));
+				this.Store.EventManagerDirectory.ElementPropertyChanged.Remove(new global::System.EventHandler<DslModeling::ElementPropertyChangedEventArgs>(this.CompartmentItemPropertyChanged));
+				this.Store.EventManagerDirectory.RolePlayerChanged.Remove(new global::System.EventHandler<DslModeling::RolePlayerChangedEventArgs>(this.CompartmentItemRolePlayerChanged));
+				this.Store.EventManagerDirectory.RolePlayerOrderChanged.Remove(new global::System.EventHandler<DslModeling::RolePlayerOrderChangedEventArgs>(this.CompartmentItemRolePlayerOrderChanged));
+				subscribedCompartmentItemsEvents = false;
+			}
+		}
+		
+		#region Event handlers
+		/// <summary>
+		/// Event for element added.
+		/// </summary>
+		private void CompartmentItemAdded(object sender, DslModeling::ElementAddedEventArgs e)
+		{
+			// If in Undo, Redo or Rollback the compartment item rules are not run so we must refresh the compartment list at this point if required
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemAddRule.ElementAdded(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for element deleted.
+		/// </summary>
+		private void CompartmentItemDeleted(object sender, DslModeling::ElementDeletedEventArgs e)
+		{
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemDeleteRule.ElementDeleted(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for element property changed.
+		/// </summary>
+		private void CompartmentItemPropertyChanged(object sender, DslModeling::ElementPropertyChangedEventArgs e)
+		{
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemChangeRule.ElementPropertyChanged(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for role-player changed.
+		/// </summary>
+		private void CompartmentItemRolePlayerChanged(object sender, DslModeling::RolePlayerChangedEventArgs e)
+		{
+			bool repaintOnly = !e.ElementLink.Store.InUndoRedoOrRollback;
+			CompartmentItemRolePlayerChangeRule.RolePlayerChanged(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for role-player order changed.
+		/// </summary>
+		private void CompartmentItemRolePlayerOrderChanged(object sender, DslModeling::RolePlayerOrderChangedEventArgs e)
+		{
+			bool repaintOnly = !e.Link.Store.InUndoRedoOrRollback;
+			CompartmentItemRolePlayerPositionChangeRule.RolePlayerPositionChanged(e, repaintOnly);
+		}
+		#endregion
+		#endregion
 		#region Shape mapping
 		/// <summary>
 		/// Called during view fixup to ask the parent whether a shape should be created for the given child element.
@@ -114,6 +196,107 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			return true;
 		}
 		
+		/// <summary>
+		/// Called during view fixup to configure the given child element, after it has been created.
+		/// </summary>
+		/// <remarks>
+		/// Custom code for choosing the shapes attached to either end of a connector is called from here.
+		/// </remarks>
+		protected override void OnChildConfiguring(DslDiagrams::ShapeElement child, bool createdDuringViewFixup)
+		{
+			DslDiagrams::NodeShape sourceShape;
+			DslDiagrams::NodeShape targetShape;
+			DslDiagrams::BinaryLinkShape connector = child as DslDiagrams::BinaryLinkShape;
+			if(connector == null)
+			{
+				base.OnChildConfiguring(child, createdDuringViewFixup);
+				return;
+			}
+			this.GetSourceAndTargetForConnector(connector, out sourceShape, out targetShape);
+			
+			global::System.Diagnostics.Debug.Assert(sourceShape != null && targetShape != null, "Unable to find source and target shapes for connector.");
+			connector.Connect(sourceShape, targetShape);
+		}
+		
+		/// <summary>
+		/// helper method to find the shapes for either end of a connector, including calling the user's custom code
+		/// </summary>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		internal void GetSourceAndTargetForConnector(DslDiagrams::BinaryLinkShape connector, out DslDiagrams::NodeShape sourceShape, out DslDiagrams::NodeShape targetShape)
+		{
+			sourceShape = null;
+			targetShape = null;
+			
+			if (sourceShape == null || targetShape == null)
+			{
+				DslDiagrams::NodeShape[] endShapes = GetEndShapesForConnector(connector);
+				if(sourceShape == null)
+				{
+					sourceShape = endShapes[0];
+				}
+				if(targetShape == null)
+				{
+					targetShape = endShapes[1];
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Helper method to find shapes for either end of a connector by looking for shapes associated with either end of the relationship mapped to the connector.
+		/// </summary>
+		private DslDiagrams::NodeShape[] GetEndShapesForConnector(DslDiagrams::BinaryLinkShape connector)
+		{
+			DslModeling::ElementLink link = connector.ModelElement as DslModeling::ElementLink;
+			DslDiagrams::NodeShape sourceShape = null, targetShape = null;
+			if (link != null)
+			{
+				global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::ModelElement> linkedElements = link.LinkedElements;
+				if (linkedElements.Count == 2)
+				{
+					DslDiagrams::Diagram currentDiagram = this.Diagram;
+					DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[0]);
+					foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+					{
+						DslDiagrams::NodeShape shape = presentationElement as DslDiagrams::NodeShape;
+						if (shape != null && shape.Diagram == currentDiagram)
+						{
+							sourceShape = shape;
+							break;
+						}
+					}
+					
+					presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[1]);
+					foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+					{
+						DslDiagrams::NodeShape shape = presentationElement as DslDiagrams::NodeShape;
+						if (shape != null && shape.Diagram == currentDiagram)
+						{
+							targetShape = shape;
+							break;
+						}
+					}
+		
+				}
+			}
+			
+			return new DslDiagrams::NodeShape[] { sourceShape, targetShape };
+		}
+		
+		/// <summary>
+		/// Most connectors are mapped to element links, but there can be exceptions. This method tell if a connector should be
+		/// mapped to an element link.
+		/// </summary>
+		public override bool IsConnectorMappedToLink(DslDiagrams::BinaryLinkShape connector)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert(connector != null);
+			if (connector == null)
+				throw new global::System.ArgumentNullException("connector");
+			#endregion
+			if (connector.GetType() == typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana))
+				return false;
+			return base.IsConnectorMappedToLink(connector);
+		}
 		
 		/// <summary>
 		/// Creates a new shape for the given model element as part of view fixup
@@ -124,8 +307,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
 			{
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1 newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1(this.Partition);
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)
+			{
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget)
+			{
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -139,9 +333,46 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape.DecoratorsInitialized += BotonShapeDecoratorMap.OnDecoratorsInitialized;
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for BotonShape.
+		/// </summary>
+		internal static partial class BotonShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for BotonShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.tituloDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "nombre").AssociateValueWith(shape.Store, propertyInfo);
+			}
 		}
 		
 		#endregion
+		
+		/// <summary>
+		/// Dispose of connect actions.
+		/// </summary>
+		protected override void Dispose(bool disposing)
+		{
+			try
+			{
+				if(disposing)
+				{
+					this.UnsubscribeCompartmentItemsEvents();
+				}
+			}
+			finally
+			{
+				base.Dispose(disposing);
+			}
+		}
 		#region Constructors, domain class Id
 	
 		/// <summary>
@@ -189,6 +420,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -200,9 +433,17 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if (this.SkipFixup(childElement))
 					return;
 				DslModeling::ModelElement parentElement;
+				if(childElement is DslModeling::ElementLink)
+				{
+					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
+				} else
 				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
 				{
 					parentElement = GetParentForVentana((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)childElement);
+				} else
+				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)
+				{
+					parentElement = GetParentForBoton((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)childElement);
 				} else
 				{
 					parentElement = null;
@@ -220,7 +461,436 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if ( result == null ) return null;
 				return result;
 			}
+			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs GetParentForBoton( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton root )
+			{
+				// Segments 0 and 1
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root2 = root.Ventana;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs result = root2.TapizGUIs;
+				if ( result == null ) return null;
+				return result;
+			}
+			private static DslModeling::ModelElement GetParentForRelationship(DslModeling::ElementLink elementLink)
+			{
+				global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::ModelElement> linkedElements = elementLink.LinkedElements;
+	
+				if (linkedElements.Count == 2)
+				{
+					DslDiagrams::ShapeElement sourceShape = linkedElements[0] as DslDiagrams::ShapeElement;
+					DslDiagrams::ShapeElement targetShape = linkedElements[1] as DslDiagrams::ShapeElement;
+	
+					if(sourceShape == null)
+					{
+						DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[0]);
+						foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+						{
+							DslDiagrams::ShapeElement shape = presentationElement as DslDiagrams::ShapeElement;
+							if (shape != null)
+							{
+								sourceShape = shape;
+								break;
+							}
+						}
+					}
+					
+					if(targetShape == null)
+					{
+						DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[1]);
+						foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+						{
+							DslDiagrams::ShapeElement shape = presentationElement as DslDiagrams::ShapeElement;
+							if (shape != null)
+							{
+								targetShape = shape;
+								break;
+							}
+						}
+					}
+					
+					if(sourceShape == null || targetShape == null)
+					{
+						global::System.Diagnostics.Debug.Fail("Unable to find source and/or target shape for view fixup.");
+						return null;
+					}
+	
+					DslDiagrams::ShapeElement sourceParent = sourceShape.ParentShape;
+					DslDiagrams::ShapeElement targetParent = targetShape.ParentShape;
+	
+					while (sourceParent != targetParent && sourceParent != null)
+					{
+						DslDiagrams::ShapeElement curParent = targetParent;
+						while (sourceParent != curParent && curParent != null)
+						{
+							curParent = curParent.ParentShape;
+						}
+	
+						if(sourceParent == curParent)
+						{
+							break;
+						}
+						else
+						{
+							sourceParent = sourceParent.ParentShape;
+						}
+					}
+	
+					while (sourceParent != null)
+					{
+						// ensure that the parent can parent connectors (i.e., a diagram or a swimlane).
+						if(sourceParent is DslDiagrams::Diagram || sourceParent is DslDiagrams::SwimlaneShape)
+						{
+							break;
+						}
+						else
+						{
+							sourceParent = sourceParent.ParentShape;
+						}
+					}
+	
+					global::System.Diagnostics.Debug.Assert(sourceParent != null && sourceParent.ModelElement != null, "Unable to find common parent for view fixup.");
+					return sourceParent.ModelElement;
+				}
+	
+				return null;
+			}
 		}
 		
+		/// <summary>
+		/// Rule to update compartments when an item is added to the list
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
+		{
+			/// <summary>
+			/// Called when an element is added. 
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementAdded(DslModeling::ElementAddedEventArgs e)
+			{
+				ElementAdded(e, false);
+			}
 	
+			internal static void ElementAdded(DslModeling::ElementAddedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if (e.ModelElement.IsDeleted)
+					return;
+				if(e.ModelElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton)
+				{
+					global::System.Collections.IEnumerable elements = GetVentanaForShapeVentanacompartBotonFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartBoton", repaintOnly);
+				}
+				if(e.ModelElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu)
+				{
+					global::System.Collections.IEnumerable elements = GetVentanaForShapeVentanacompartMenuFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartMenu", repaintOnly);
+				}
+			}
+			
+			#region static DomainPath traversal methods to get the list of compartments to update
+			internal static global::System.Collections.ICollection GetVentanaForShapeVentanacompartBotonFromLastLink(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton root)
+			{
+				// Segment 0
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana result = root.Ventana;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetVentanaForShapeVentanacompartBoton(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton root)
+			{
+				// Segments 1 and 0
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana result = root.Ventana;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetVentanaForShapeVentanacompartMenuFromLastLink(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu root)
+			{
+				// Segment 0
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana result = root.Ventana;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetVentanaForShapeVentanacompartMenu(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu root)
+			{
+				// Segments 1 and 0
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana result = root.Ventana;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			#endregion
+	
+			#region helper method to update compartments 
+			/// <summary>
+			/// Updates the compartments for the shapes associated to the given list of model elements
+			/// </summary>
+			/// <param name="elements">List of model elements</param>
+			/// <param name="shapeType">The type of shape that needs updating</param>
+			/// <param name="compartmentName">The name of the compartment to update</param>
+			/// <param name="repaintOnly">If true, the method will only invalidate the shape for a repaint, without re-initializing the shape.</param>
+			internal static void UpdateCompartments(global::System.Collections.IEnumerable elements, global::System.Type shapeType, string compartmentName, bool repaintOnly)
+			{
+				foreach (DslModeling::ModelElement element in elements)
+				{
+					DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+					foreach (DslDiagrams::PresentationElement pel in pels)
+					{
+						DslDiagrams::CompartmentShape compartmentShape = pel as DslDiagrams::CompartmentShape;
+						if (compartmentShape != null && shapeType.IsAssignableFrom(compartmentShape.GetType()))
+						{
+							if (repaintOnly)
+							{
+								compartmentShape.Invalidate();
+							}
+							else
+							{
+								foreach(DslDiagrams::CompartmentMapping mapping in compartmentShape.GetCompartmentMappings())
+								{
+									if(mapping.CompartmentId==compartmentName)
+									{
+										mapping.InitializeCompartmentShape(compartmentShape);
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			#endregion
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when an items is removed from the list
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
+		{
+			/// <summary>
+			/// Called when an element is deleted
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementDeleted(DslModeling::ElementDeletedEventArgs e)
+			{
+				ElementDeleted(e, false);
+			}
+			
+			internal static void ElementDeleted(DslModeling::ElementDeletedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(e.ModelElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartBotonFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartBoton", repaintOnly);
+				}
+				if(e.ModelElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartMenuFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartMenu", repaintOnly);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when the property on an item being displayed changes.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
+		{
+			/// <summary>
+			/// Called when an element is changed
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e)
+			{
+				ElementPropertyChanged(e, false);
+			}
+			
+			internal static void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(e.ModelElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton && e.DomainProperty.Id == global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.tituloDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartBoton((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartBoton", repaintOnly);
+				}
+				if(e.ModelElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu && e.DomainProperty.Id == global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.tituloDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartMenu((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartMenu", repaintOnly);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when a roleplayer change happens
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
+		{
+			/// <summary>
+			/// Called when the roleplayer on a link changes.
+			/// </summary>
+			/// <param name="e"></param>
+			public override void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e)
+			{
+				RolePlayerChanged(e, false);
+			}
+			
+			internal static void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartBotonFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana compartmentShape = pel as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartBotonFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartBoton", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartBoton((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartBoton", repaintOnly);
+					}
+				}
+				if(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartMenuFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana compartmentShape = pel as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[1].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartMenuFromLastLink((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartMenu", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartMenu((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartMenu", repaintOnly);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// Rule to update compartments when the order of items in the list changes.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
+		{
+			/// <summary>
+			/// Called when the order of a roleplayer in a relationship changes
+			/// </summary>
+			/// <param name="e"></param>
+			public override void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e)
+			{
+				RolePlayerPositionChanged(e, false);
+			}
+			
+			internal static void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartBoton((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartBoton", repaintOnly);
+					}
+				}
+				if(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetVentanaForShapeVentanacompartMenu((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana), "compartMenu", repaintOnly);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// Reroute a connector when the role players of its underlying relationship change
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
+		{
+			/// <summary>
+			/// Reroute a connector when the role players of its underlying relationship change
+			/// </summary>
+			public override void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e)
+			{
+				if (e == null) throw new global::System.ArgumentNullException("e");
+	
+				global::System.Collections.ObjectModel.ReadOnlyCollection<DslDiagrams::PresentationViewsSubject> connectorLinks = DslDiagrams::PresentationViewsSubject.GetLinksToPresentation(e.ElementLink);
+				foreach (DslDiagrams::PresentationViewsSubject connectorLink in connectorLinks)
+				{
+					// Fix up any binary link shapes attached to the element link.
+					DslDiagrams::BinaryLinkShape linkShape = connectorLink.Presentation as DslDiagrams::BinaryLinkShape;
+					if (linkShape != null)
+					{
+						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDiagram diagram = linkShape.Diagram as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDiagram;
+						if (diagram != null)
+						{
+							if (e.NewRolePlayer != null)
+							{
+								DslDiagrams::NodeShape fromShape;
+								DslDiagrams::NodeShape toShape;
+								diagram.GetSourceAndTargetForConnector(linkShape, out fromShape, out toShape);
+								if (fromShape != null && toShape != null)
+								{
+									if (!object.Equals(fromShape, linkShape.FromShape))
+									{
+										linkShape.FromShape = fromShape;
+									}
+									if (!object.Equals(linkShape.ToShape, toShape))
+									{
+										linkShape.ToShape = toShape;
+									}
+								}
+								else
+								{
+									// delete the connector if we cannot find an appropriate target shape.
+									linkShape.Delete();
+								}
+							}
+							else
+							{
+								// delete the connector if the new role player is null.
+								linkShape.Delete();
+							}
+						}
+					}
+				}
+			}
+		}
 	}

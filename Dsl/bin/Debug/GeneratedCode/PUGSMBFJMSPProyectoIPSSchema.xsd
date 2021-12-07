@@ -25,6 +25,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: TapizGUIsHasEstadoFin -->
+          <xsd:element name="estadoFin" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of TapizGUIsHasEstadoFin</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="tapizGUIsHasEstadoFin" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of TapizGUIsHasEstadoFin needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -66,12 +81,50 @@
   <xsd:complexType name="Ventana" abstract="true" >
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: VentanaHasMenu -->
+          <xsd:element name="menu" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of VentanaHasMenu</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="ventanaHasMenu" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of VentanaHasMenu needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: VentanaHasBoton -->
+          <xsd:element name="boton" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of VentanaHasBoton</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="ventanaHasBoton" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of VentanaHasBoton needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: nombre -->
+        <xsd:attribute name="nombre" type="xsd:string" />
+        <!-- Property: ancho -->
+        <xsd:attribute name="ancho" type="xsd:string" />
+        <!-- Property: alto -->
+        <xsd:attribute name="alto" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -131,6 +184,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: esModal -->
+        <xsd:attribute name="esModal" type="xsd:boolean" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -143,6 +198,167 @@
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="VentanaMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Menu -->
+  <xsd:element name="menu" type="Menu" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Menu">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: MenuHasItemDeMenu -->
+          <xsd:element name="itemDeMenu" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of MenuHasItemDeMenu</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="menuHasItemDeMenu" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of MenuHasItemDeMenu needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: titulo -->
+        <xsd:attribute name="titulo" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Menu Moniker -->
+  <xsd:element name="menuMoniker" type="MenuMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MenuMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Menu instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ItemDeMenu -->
+  <xsd:element name="itemDeMenu" type="ItemDeMenu" substitutionGroup="boton" />
+  <xsd:complexType name="ItemDeMenu">
+    <xsd:complexContent>
+      <xsd:extension base="Boton">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ItemDeMenu Moniker -->
+  <xsd:element name="itemDeMenuMoniker" type="ItemDeMenuMoniker" substitutionGroup="botonMoniker" />
+  <xsd:complexType name="ItemDeMenuMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ItemDeMenu instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="BotonMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Boton -->
+  <xsd:element name="boton" type="Boton" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Boton">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: BotonReferencesVentanaTarget -->
+          <xsd:element name="ventanaTarget" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of BotonReferencesVentanaTarget</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="botonReferencesVentanaTarget" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of BotonReferencesVentanaTarget needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: titulo -->
+        <xsd:attribute name="titulo" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Boton Moniker -->
+  <xsd:element name="botonMoniker" type="BotonMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="BotonMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Boton instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EstadoFin -->
+  <xsd:element name="estadoFin" type="EstadoFin" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="EstadoFin">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EstadoFin Moniker -->
+  <xsd:element name="estadoFinMoniker" type="EstadoFinMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="EstadoFinMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EstadoFin instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -175,6 +391,206 @@
   <xsd:complexType name="TapizGUIsHasVentanaMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for TapizGUIsHasVentana instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaHasMenu -->
+  <xsd:element name="ventanaHasMenu" type="VentanaHasMenu" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="VentanaHasMenu">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Menu -->
+          <xsd:element ref="menu" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaHasMenu Moniker -->
+  <xsd:element name="ventanaHasMenuMoniker" type="VentanaHasMenuMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="VentanaHasMenuMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for VentanaHasMenu instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MenuHasItemDeMenu -->
+  <xsd:element name="menuHasItemDeMenu" type="MenuHasItemDeMenu" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="MenuHasItemDeMenu">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ItemDeMenu -->
+          <xsd:element ref="itemDeMenu" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MenuHasItemDeMenu Moniker -->
+  <xsd:element name="menuHasItemDeMenuMoniker" type="MenuHasItemDeMenuMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MenuHasItemDeMenuMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for MenuHasItemDeMenu instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaHasBoton -->
+  <xsd:element name="ventanaHasBoton" type="VentanaHasBoton" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="VentanaHasBoton">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Boton -->
+          <xsd:element ref="boton" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- VentanaHasBoton Moniker -->
+  <xsd:element name="ventanaHasBotonMoniker" type="VentanaHasBotonMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="VentanaHasBotonMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for VentanaHasBoton instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- BotonReferencesVentanaTarget -->
+  <xsd:element name="botonReferencesVentanaTarget" type="BotonReferencesVentanaTarget" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="BotonReferencesVentanaTarget">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Ventana -->
+          <xsd:element ref="ventanaMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- BotonReferencesVentanaTarget Moniker -->
+  <xsd:element name="botonReferencesVentanaTargetMoniker" type="BotonReferencesVentanaTargetMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="BotonReferencesVentanaTargetMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for BotonReferencesVentanaTarget instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TapizGUIsHasEstadoFin -->
+  <xsd:element name="tapizGUIsHasEstadoFin" type="TapizGUIsHasEstadoFin" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TapizGUIsHasEstadoFin">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end EstadoFin -->
+          <xsd:element ref="estadoFin" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TapizGUIsHasEstadoFin Moniker -->
+  <xsd:element name="tapizGUIsHasEstadoFinMoniker" type="TapizGUIsHasEstadoFinMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TapizGUIsHasEstadoFinMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for TapizGUIsHasEstadoFin instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

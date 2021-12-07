@@ -150,6 +150,21 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 		}
 		#endregion
+		#region EstadoFin opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of EstadoFin.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIs
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<EstadoFin> EstadoFin
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<EstadoFin>, EstadoFin>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -171,6 +186,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.DomainClassId)) 
 				{
 					return true;
 				}
@@ -207,6 +227,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 
 				return;
 			}
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin sourceEstadoFin2 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin;
+			if (sourceEstadoFin2 != null)
+			{
+				// Create link for path TapizGUIsHasEstadoFin.EstadoFin
+				this.EstadoFin.Add(sourceEstadoFin2);
+
+				return;
+			}
 		
 			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
 			// during a "Paste".
@@ -239,6 +268,20 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIsDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin sourceEstadoFin2 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin;
+			if (sourceEstadoFin2 != null)
+			{
+				// Delete link for path TapizGUIsHasEstadoFin.EstadoFin
+				
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs)this, sourceEstadoFin2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId);
 				}
 
 				return;
@@ -365,6 +408,180 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		#endregion
+		#region ancho domain property code
+		
+		/// <summary>
+		/// ancho domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid anchoDomainPropertyId = new global::System.Guid(0x76c31192, 0xf807, 0x44a7, 0xa0, 0xae, 0xba, 0xca, 0x4a, 0xc5, 0xf1, 0x32);
+		
+		/// <summary>
+		/// Storage for ancho
+		/// </summary>
+		private global::System.Int16 anchoPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of ancho domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Ancho
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/ancho.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/ancho.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("76c31192-f807-44a7-a0ae-baca4ac5f132")]
+		public global::System.Int16 ancho
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return anchoPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				anchoPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Ventana.ancho domain property.
+		/// </summary>
+		internal sealed partial class anchoPropertyHandler : DslModeling::DomainPropertyValueHandler<Ventana, global::System.Int16>
+		{
+			private anchoPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Ventana.ancho domain property value handler.
+			/// </summary>
+			public static readonly anchoPropertyHandler Instance = new anchoPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Ventana.ancho domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return anchoDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int16 GetValue(Ventana element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.anchoPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Ventana element, global::System.Int16 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int16 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.anchoPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region alto domain property code
+		
+		/// <summary>
+		/// alto domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid altoDomainPropertyId = new global::System.Guid(0x6d0e179c, 0xe1c0, 0x453b, 0xb0, 0xa6, 0x86, 0xa0, 0xd3, 0x43, 0xd0, 0xe1);
+		
+		/// <summary>
+		/// Storage for alto
+		/// </summary>
+		private global::System.Int16 altoPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of alto domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Alto
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/alto.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/alto.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("6d0e179c-e1c0-453b-b0a6-86a0d343d0e1")]
+		public global::System.Int16 alto
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return altoPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				altoPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Ventana.alto domain property.
+		/// </summary>
+		internal sealed partial class altoPropertyHandler : DslModeling::DomainPropertyValueHandler<Ventana, global::System.Int16>
+		{
+			private altoPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Ventana.alto domain property value handler.
+			/// </summary>
+			public static readonly altoPropertyHandler Instance = new altoPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Ventana.alto domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return altoDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int16 GetValue(Ventana element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.altoPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Ventana element, global::System.Int16 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int16 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.altoPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region TapizGUIs opposite domain role accessor
 		/// <summary>
 		/// Gets or sets TapizGUIs.
@@ -411,6 +628,22 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<Boton>, Boton>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.VentanaDomainRoleId);
+			}
+		}
+		#endregion
+		#region BotonSource opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of BotonSource.
+		/// Description for
+		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Ventana
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Boton> BotonSource
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Boton>, Boton>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.VentanaDomainRoleId);
 			}
 		}
 		#endregion
@@ -621,6 +854,93 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 		}
 		#endregion
+		#region esModal domain property code
+		
+		/// <summary>
+		/// esModal domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid esModalDomainPropertyId = new global::System.Guid(0xdded60a8, 0x3684, 0x4d66, 0x8b, 0x6d, 0xe2, 0x3d, 0xdf, 0xce, 0xdb, 0xd2);
+		
+		/// <summary>
+		/// Storage for esModal
+		/// </summary>
+		private global::System.Boolean esModalPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of esModal domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.Es Modal
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria/esModal.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria/esModal.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("dded60a8-3684-4d66-8b6d-e23ddfcedbd2")]
+		public global::System.Boolean esModal
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return esModalPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				esModalPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the VentanaSecundaria.esModal domain property.
+		/// </summary>
+		internal sealed partial class esModalPropertyHandler : DslModeling::DomainPropertyValueHandler<VentanaSecundaria, global::System.Boolean>
+		{
+			private esModalPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the VentanaSecundaria.esModal domain property value handler.
+			/// </summary>
+			public static readonly esModalPropertyHandler Instance = new esModalPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the VentanaSecundaria.esModal domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return esModalDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(VentanaSecundaria element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.esModalPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(VentanaSecundaria element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.esModalPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
@@ -662,6 +982,93 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 		}
 		#endregion
+		#region titulo domain property code
+		
+		/// <summary>
+		/// titulo domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid tituloDomainPropertyId = new global::System.Guid(0x478d81b8, 0x86e8, 0x4ced, 0x9c, 0x23, 0x67, 0x1f, 0x79, 0xad, 0xc3, 0xba);
+		
+		/// <summary>
+		/// Storage for titulo
+		/// </summary>
+		private global::System.String tituloPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of titulo domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.Titulo
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu/titulo.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu/titulo.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("478d81b8-86e8-4ced-9c23-671f79adc3ba")]
+		public global::System.String titulo
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return tituloPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				tituloPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Menu.titulo domain property.
+		/// </summary>
+		internal sealed partial class tituloPropertyHandler : DslModeling::DomainPropertyValueHandler<Menu, global::System.String>
+		{
+			private tituloPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Menu.titulo domain property value handler.
+			/// </summary>
+			public static readonly tituloPropertyHandler Instance = new tituloPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Menu.titulo domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return tituloDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Menu element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.tituloPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Menu element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.tituloPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Ventana opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Ventana.
@@ -682,17 +1089,21 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		#endregion
 		#region ItemDeMenu opposite domain role accessor
-		
 		/// <summary>
-		/// Gets a list of ItemDeMenu.
+		/// Gets or sets ItemDeMenu.
 		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ItemDeMenu> ItemDeMenu
+		public virtual ItemDeMenu ItemDeMenu
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ItemDeMenu>, ItemDeMenu>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId);
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId) as ItemDeMenu;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -718,6 +1129,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.DomainClassId)) 
 				{
+					// Check that creating a link with this path doesn't cause multiplicity overflow: MenuHasItemDeMenu.ItemDeMenu
+					if (this.ItemDeMenu != null)
+					{
+						return false;
+					}
 					return true;
 				}
 			}
@@ -749,7 +1165,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			if (sourceItemDeMenu1 != null)
 			{
 				// Create link for path MenuHasItemDeMenu.ItemDeMenu
-				this.ItemDeMenu.Add(sourceItemDeMenu1);
+				this.ItemDeMenu = sourceItemDeMenu1;
 
 				return;
 			}
@@ -806,7 +1222,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("c4391778-13fb-43cf-b6d9-dc7d5343cd51")]
-	public partial class ItemDeMenu : DslModeling::ModelElement
+	public partial class ItemDeMenu : Boton
 	{
 		#region Constructors, domain class Id
 	
@@ -834,12 +1250,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 		}
 		#endregion
-		#region Menu opposite domain role accessor
+		#region MenuPadre opposite domain role accessor
 		/// <summary>
-		/// Gets or sets Menu.
+		/// Gets or sets MenuPadre.
 		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenu
 		/// </summary>
-		public virtual Menu Menu
+		public virtual Menu MenuPadre
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -894,6 +1310,93 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 		}
 		#endregion
+		#region titulo domain property code
+		
+		/// <summary>
+		/// titulo domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid tituloDomainPropertyId = new global::System.Guid(0x1a752cea, 0xe3c9, 0x4372, 0x85, 0xa5, 0x6b, 0xe9, 0xc1, 0x72, 0xb4, 0x51);
+		
+		/// <summary>
+		/// Storage for titulo
+		/// </summary>
+		private global::System.String tituloPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of titulo domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Titulo
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton/titulo.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton/titulo.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("1a752cea-e3c9-4372-85a5-6be9c172b451")]
+		public global::System.String titulo
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return tituloPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				tituloPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Boton.titulo domain property.
+		/// </summary>
+		internal sealed partial class tituloPropertyHandler : DslModeling::DomainPropertyValueHandler<Boton, global::System.String>
+		{
+			private tituloPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Boton.titulo domain property value handler.
+			/// </summary>
+			public static readonly tituloPropertyHandler Instance = new tituloPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Boton.titulo domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return tituloDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Boton element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.tituloPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Boton element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.tituloPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Ventana opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Ventana.
@@ -910,6 +1413,82 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region VentanaTarget opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of VentanaTarget.
+		/// Description for
+		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Boton
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Ventana> VentanaTarget
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.BotonDomainRoleId);
+			}
+		}
+		#endregion
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass EstadoFin
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("d9a87412-2844-4df2-a3a6-746210476a98")]
+	public partial class EstadoFin : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// EstadoFin domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd9a87412, 0x2844, 0x4df2, 0xa3, 0xa6, 0x74, 0x62, 0x10, 0x47, 0x6a, 0x98);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EstadoFin(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EstadoFin(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region TapizGUIs opposite domain role accessor
+		/// <summary>
+		/// Gets or sets TapizGUIs.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFin
+		/// </summary>
+		public virtual TapizGUIs TapizGUIs
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId) as TapizGUIs;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId, value);
 			}
 		}
 		#endregion

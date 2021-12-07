@@ -14,15 +14,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass CompartmentShape1
-	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1
+	/// DomainClass ShapeVentana
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentShape1.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("831d3dde-3ee6-41eb-962f-7ab6a883dd5c")]
-	public partial class CompartmentShape1 : DslDiagrams::CompartmentShape
+	public partial class ShapeVentana : DslDiagrams::CompartmentShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -87,9 +87,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with CompartmentShape1.
+		/// Finds a decorator associated with ShapeVentana.
 		/// </summary>
-		public static DslDiagrams::Decorator FindCompartmentShape1Decorator(string decoratorName)
+		public static DslDiagrams::Decorator FindShapeVentanaDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -172,15 +172,33 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{
 					localCompartmentsOffset = baseCompartmentDescriptions.Length;
 				}
-				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[0+localCompartmentsOffset];
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[2+localCompartmentsOffset];
 				
 				if(baseCompartmentDescriptions!=null)
 				{
 					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
 				}
+				{
+					string title = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("ShapeVentanacompartBotonTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("compartBoton", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, null,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
+				}
+				{
+					string title = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("ShapeVentanacompartMenuTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("compartMenu", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, null,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+1] = descriptor;
+				}
 			}
 			
-			return CompartmentShape1.compartmentDescriptions;
+			return ShapeVentana.compartmentDescriptions;
 		}
 		
 		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
@@ -210,12 +228,28 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					{
 						localCompartmentMappingsOffset = baseMappings.Length;
 					}
-					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[0+localCompartmentMappingsOffset];
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[2+localCompartmentMappingsOffset];
 					
 					if(baseMappings!=null)
 					{
 						baseMappings.CopyTo(mappings, 0);
 					}
+					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
+																				"compartBoton", 
+																				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.tituloDomainPropertyId, 
+																				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.DomainClassId, 
+																				GetElementsFromVentanaForcompartBoton,
+																				null,
+																				null,
+																				null);
+					mappings[localCompartmentMappingsOffset+1] = new DslDiagrams::ElementListCompartmentMapping(
+																				"compartMenu", 
+																				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.tituloDomainPropertyId, 
+																				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.DomainClassId, 
+																				GetElementsFromVentanaForcompartMenu,
+																				null,
+																				null,
+																				null);
 					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana), mappings);
 				}
 			}
@@ -245,13 +279,27 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 			#region DomainPath traversal methods to get the list of elements to display in a compartment.
+			internal static global::System.Collections.IList GetElementsFromVentanaForcompartBoton(DslModeling::ModelElement rootElement)
+			{
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton> result = root.Boton;
+				return result;
+			}
+			internal static global::System.Collections.IList GetElementsFromVentanaForcompartMenu(DslModeling::ModelElement rootElement)
+			{
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu> result = root.Menu;
+				return result;
+			}
 			#endregion
 		
 		#endregion
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// CompartmentShape1 domain class Id.
+		/// ShapeVentana domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x831d3dde, 0x3ee6, 0x41eb, 0x96, 0x2f, 0x7a, 0xb6, 0xa8, 0x83, 0xdd, 0x5c);
 		/// <summary>
@@ -259,7 +307,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CompartmentShape1(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ShapeVentana(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -269,7 +317,242 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CompartmentShape1(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ShapeVentana(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	/// <summary>
+	/// DomainClass BotonShape
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonShape.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("4258508f-08ac-4632-9ae7-1e16d7205989")]
+	public partial class BotonShape : DslDiagrams::NodeShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with BotonShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindBotonShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Fill brush settings for this shape.
+			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.PaleGreen);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
+		
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return true;
+			}
+		}
+		
+		/// <summary>
+		/// Indicates the direction of the gradient.
+		/// </summary>
+		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
+		{
+			get
+			{
+				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("nombre");
+			field1.DefaultText = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("BotonShapenombreDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field1);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "nombre");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// BotonShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4258508f, 0x08ac, 0x4632, 0x9a, 0xe7, 0x1e, 0x16, 0xd7, 0x20, 0x59, 0x89);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public BotonShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public BotonShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

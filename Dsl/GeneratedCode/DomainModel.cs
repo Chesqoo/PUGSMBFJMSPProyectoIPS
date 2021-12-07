@@ -74,13 +74,25 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				typeof(Menu),
 				typeof(ItemDeMenu),
 				typeof(Boton),
+				typeof(EstadoFin),
 				typeof(TapizGUIsHasVentana),
 				typeof(VentanaHasMenu),
 				typeof(MenuHasItemDeMenu),
 				typeof(VentanaHasBoton),
+				typeof(BotonReferencesVentanaTarget),
+				typeof(TapizGUIsHasEstadoFin),
 				typeof(PUGSMBFJMSPProyectoIPSDiagram),
-				typeof(CompartmentShape1),
+				typeof(ConectorBotonVentana),
+				typeof(ConectoriMenuVentana),
+				typeof(BotonShape),
+				typeof(ShapeVentana),
 				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemAddRule),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemDeleteRule),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemRolePlayerChangeRule),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemRolePlayerPositionChangeRule),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemChangeRule),
 			};
 		}
 		/// <summary>
@@ -94,6 +106,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				new DomainMemberInfo(typeof(TapizGUIs), "solucionGUIs", TapizGUIs.solucionGUIsDomainPropertyId, typeof(TapizGUIs.solucionGUIsPropertyHandler)),
 				new DomainMemberInfo(typeof(Ventana), "nombre", Ventana.nombreDomainPropertyId, typeof(Ventana.nombrePropertyHandler)),
+				new DomainMemberInfo(typeof(Ventana), "ancho", Ventana.anchoDomainPropertyId, typeof(Ventana.anchoPropertyHandler)),
+				new DomainMemberInfo(typeof(Ventana), "alto", Ventana.altoDomainPropertyId, typeof(Ventana.altoPropertyHandler)),
+				new DomainMemberInfo(typeof(VentanaSecundaria), "esModal", VentanaSecundaria.esModalDomainPropertyId, typeof(VentanaSecundaria.esModalPropertyHandler)),
+				new DomainMemberInfo(typeof(Menu), "titulo", Menu.tituloDomainPropertyId, typeof(Menu.tituloPropertyHandler)),
+				new DomainMemberInfo(typeof(Boton), "titulo", Boton.tituloDomainPropertyId, typeof(Boton.tituloPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -112,6 +129,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				new DomainRolePlayerInfo(typeof(MenuHasItemDeMenu), "ItemDeMenu", MenuHasItemDeMenu.ItemDeMenuDomainRoleId),
 				new DomainRolePlayerInfo(typeof(VentanaHasBoton), "Ventana", VentanaHasBoton.VentanaDomainRoleId),
 				new DomainRolePlayerInfo(typeof(VentanaHasBoton), "Boton", VentanaHasBoton.BotonDomainRoleId),
+				new DomainRolePlayerInfo(typeof(BotonReferencesVentanaTarget), "Boton", BotonReferencesVentanaTarget.BotonDomainRoleId),
+				new DomainRolePlayerInfo(typeof(BotonReferencesVentanaTarget), "Ventana", BotonReferencesVentanaTarget.VentanaDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIsHasEstadoFin), "TapizGUIs", TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIsHasEstadoFin), "EstadoFin", TapizGUIsHasEstadoFin.EstadoFinDomainRoleId),
 			};
 		}
 		#endregion
@@ -133,15 +154,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(13);
 				createElementMap.Add(typeof(TapizGUIs), 0);
 				createElementMap.Add(typeof(VentanaPrincipal), 1);
 				createElementMap.Add(typeof(VentanaSecundaria), 2);
 				createElementMap.Add(typeof(Menu), 3);
 				createElementMap.Add(typeof(ItemDeMenu), 4);
 				createElementMap.Add(typeof(Boton), 5);
-				createElementMap.Add(typeof(PUGSMBFJMSPProyectoIPSDiagram), 6);
-				createElementMap.Add(typeof(CompartmentShape1), 7);
+				createElementMap.Add(typeof(EstadoFin), 6);
+				createElementMap.Add(typeof(PUGSMBFJMSPProyectoIPSDiagram), 7);
+				createElementMap.Add(typeof(ConectorBotonVentana), 8);
+				createElementMap.Add(typeof(ConectoriMenuVentana), 9);
+				createElementMap.Add(typeof(BotonShape), 10);
+				createElementMap.Add(typeof(ShapeVentana), 11);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -161,8 +186,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				case 3: return new Menu(partition, propertyAssignments);
 				case 4: return new ItemDeMenu(partition, propertyAssignments);
 				case 5: return new Boton(partition, propertyAssignments);
-				case 6: return new PUGSMBFJMSPProyectoIPSDiagram(partition, propertyAssignments);
-				case 7: return new CompartmentShape1(partition, propertyAssignments);
+				case 6: return new EstadoFin(partition, propertyAssignments);
+				case 7: return new PUGSMBFJMSPProyectoIPSDiagram(partition, propertyAssignments);
+				case 8: return new ConectorBotonVentana(partition, propertyAssignments);
+				case 9: return new ConectoriMenuVentana(partition, propertyAssignments);
+				case 10: return new BotonShape(partition, propertyAssignments);
+				case 11: return new ShapeVentana(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -185,11 +214,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(6);
 				createElementLinkMap.Add(typeof(TapizGUIsHasVentana), 0);
 				createElementLinkMap.Add(typeof(VentanaHasMenu), 1);
 				createElementLinkMap.Add(typeof(MenuHasItemDeMenu), 2);
 				createElementLinkMap.Add(typeof(VentanaHasBoton), 3);
+				createElementLinkMap.Add(typeof(BotonReferencesVentanaTarget), 4);
+				createElementLinkMap.Add(typeof(TapizGUIsHasEstadoFin), 5);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -208,6 +239,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				case 1: return new VentanaHasMenu(partition, roleAssignments, propertyAssignments);
 				case 2: return new MenuHasItemDeMenu(partition, roleAssignments, propertyAssignments);
 				case 3: return new VentanaHasBoton(partition, roleAssignments, propertyAssignments);
+				case 4: return new BotonReferencesVentanaTarget(partition, roleAssignments, propertyAssignments);
+				case 5: return new TapizGUIsHasEstadoFin(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -328,6 +361,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemAddRule));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemDeleteRule));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemRolePlayerChangeRule));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemChangeRule));
 		}
 		
 		/// <summary>
@@ -339,6 +378,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemAddRule));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemDeleteRule));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemRolePlayerChangeRule));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.CompartmentItemChangeRule));
 		}
 		#endregion
 	}
@@ -378,6 +423,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.MenuDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenuDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
