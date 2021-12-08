@@ -1105,21 +1105,17 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		#endregion
 		#region ItemDeMenu opposite domain role accessor
+		
 		/// <summary>
-		/// Gets or sets ItemDeMenu.
+		/// Gets a list of ItemDeMenu.
 		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu
 		/// </summary>
-		public virtual ItemDeMenu ItemDeMenu
+		public virtual DslModeling::LinkedElementCollection<ItemDeMenu> ItemDeMenu
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId) as ItemDeMenu;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId, value);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ItemDeMenu>, ItemDeMenu>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId);
 			}
 		}
 		#endregion
@@ -1145,11 +1141,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.DomainClassId)) 
 				{
-					// Check that creating a link with this path doesn't cause multiplicity overflow: MenuHasItemDeMenu.ItemDeMenu
-					if (this.ItemDeMenu != null)
-					{
-						return false;
-					}
 					return true;
 				}
 			}
@@ -1181,7 +1172,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			if (sourceItemDeMenu1 != null)
 			{
 				// Create link for path MenuHasItemDeMenu.ItemDeMenu
-				this.ItemDeMenu = sourceItemDeMenu1;
+				this.ItemDeMenu.Add(sourceItemDeMenu1);
 
 				return;
 			}

@@ -2,44 +2,60 @@
 <pUGSMBFJMSPProyectoIPSDiagram dslVersion="1.0.0.0" Id="25562770-b2dd-4991-a6d0-348be00c9e32" absoluteBounds="0, 0, 11, 8.5" name="Sample">
   <tapizGUIsMoniker Id="799a2ecf-a589-4aed-adf4-c0c6c46bddf9" />
   <nestedChildShapes>
-    <shapeVentana Id="6befef21-9885-4c2d-bc1e-acf39451e1ac" absoluteBounds="0.5, 2.25, 1, 1.5">
-      <ventanaPrincipalMoniker Id="3936de21-8096-443e-9693-374d455bf1f3" />
+    <shapeVentana Id="de464b8a-045e-40ca-8ee7-27be6c341f31" absoluteBounds="1.125, 1.75, 2.125, 2.9749999999999996">
+      <ventanaPrincipalMoniker Id="cea73bcd-0862-404f-85ae-3188dea85ad3" />
+      <nestedChildShapes>
+        <botonCompart Id="be1ee110-633c-43a3-90b6-03e7ae3f668a" absoluteBounds="1.125, 3.625, 0.875, 1">
+          <botonMoniker Id="98044a52-b575-4be5-a622-28786e084f79" />
+        </botonCompart>
+        <botonCompart Id="f04aefbd-9ca5-4e87-8c4b-78d107fb341c" absoluteBounds="2.375, 3.625, 0.875, 1">
+          <botonMoniker Id="91f53e7c-fadb-4fa5-93b3-0bf3e4c0fe70" />
+        </botonCompart>
+        <shapeMenu Id="2e07ee32-3000-4384-be47-de5486e1a0e4" absoluteBounds="1.125, 1.75, 2.125, 1.6">
+          <menuMoniker Id="0eea2b0a-be08-4abc-8c44-d472dc84df50" />
+          <nestedChildShapes>
+            <itemDeMenuComp Id="ff133099-9e81-412f-8fc8-a3d761b00027" absoluteBounds="1.125, 2.25, 2.125, 1">
+              <itemDeMenuMoniker Id="693207e7-e1b2-4b8b-aa6a-ce0f49f825cc" />
+            </itemDeMenuComp>
+          </nestedChildShapes>
+        </shapeMenu>
+      </nestedChildShapes>
     </shapeVentana>
-    <shapeVentana Id="58754684-8887-402d-8b90-c28757c7e063" absoluteBounds="3.375, 2.25, 1, 1.5">
-      <ventanaSecundariaMoniker Id="8f58311c-4a1f-4ce4-a92f-7e7d753382d9" />
+    <shapeVentana Id="92bda94c-6855-4acb-ac13-eba06000d16e" absoluteBounds="4.375, 1.75, 2.25, 2.9749999999999996">
+      <ventanaSecundariaMoniker Id="8b37c1fc-dcc3-4593-857a-695f6f995aca" />
+      <nestedChildShapes>
+        <botonCompart Id="5f7e96eb-fdf4-48bb-9651-5749760a7391" absoluteBounds="5.75, 3.625, 0.875, 1">
+          <botonMoniker Id="68ad24ea-6cff-44aa-aae6-1e059409a934" />
+        </botonCompart>
+        <botonCompart Id="d4560020-8831-4532-ad32-2e684786e7d8" absoluteBounds="4.375, 3.625, 0.875, 1">
+          <botonMoniker Id="c2033bba-feb9-434a-b63b-44209e6d02fc" />
+        </botonCompart>
+        <shapeMenu Id="abe229aa-40ea-439d-af33-9e26b726d194" absoluteBounds="4.375, 1.75, 2.25, 1.6">
+          <menuMoniker Id="563d7eb7-1d3c-4389-a2f6-f65c92ca2d61" />
+          <nestedChildShapes>
+            <itemDeMenuComp Id="535bef12-8f74-4337-934e-bcf1f14ef4bb" absoluteBounds="4.375, 2.25, 2.25, 1">
+              <itemDeMenuMoniker Id="6ee04603-e410-46b0-a251-a913098d3c0d" />
+            </itemDeMenuComp>
+          </nestedChildShapes>
+        </shapeMenu>
+      </nestedChildShapes>
     </shapeVentana>
-    <eFinForma Id="33013616-b977-46fe-9a6c-8825b37b01e3" absoluteBounds="2.125, 4.5, 0.625, 0.625">
-      <estadoFinMoniker Id="88d356e5-9d3f-49af-88a2-2f64568a6b01" />
-    </eFinForma>
-    <conectorVentanaFin Id="8e4003cc-3f2e-4bfa-aadf-cf380e65937b" edgePoints="[(1 : 3.75); (1 : 4.8125); (2.125 : 4.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <ventanaReferencesEstadoFinMoniker Id="07562b55-b423-427a-9d54-5b4ee1cc2c52" />
+    <conectorBotonVentana Id="ca4b6702-1af1-4405-a70f-0a7a91060891" edgePoints="[(3.25 : 4.125); (4.375 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <botonReferencesVentanaTargetMoniker Id="b1a8e188-32c6-49a0-8f98-3d514b222050" />
       <nodes>
-        <shapeVentanaMoniker Id="6befef21-9885-4c2d-bc1e-acf39451e1ac" />
-        <eFinFormaMoniker Id="33013616-b977-46fe-9a6c-8825b37b01e3" />
-      </nodes>
-    </conectorVentanaFin>
-    <conectorVentanaFin Id="958b5b74-607d-4724-baa0-f5490e8c9c77" edgePoints="[(3.875 : 3.75); (3.875 : 4.8125); (2.75 : 4.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <ventanaReferencesEstadoFinMoniker Id="4695349b-31b4-4baf-9614-c8fc4759209a" />
-      <nodes>
-        <shapeVentanaMoniker Id="58754684-8887-402d-8b90-c28757c7e063" />
-        <eFinFormaMoniker Id="33013616-b977-46fe-9a6c-8825b37b01e3" />
-      </nodes>
-    </conectorVentanaFin>
-    <shapeMenu Id="3001e597-58f0-4747-bea2-ab486be86a6e" absoluteBounds="0.5, 2.375, 1, 1">
-      <menuMoniker Id="2713bb1b-bd2a-4876-b826-62d0b8d67ec5" />
-    </shapeMenu>
-    <botonCompart Id="5191a73b-6b01-4eb0-be72-89a3e9a7d301" absoluteBounds="0.5, 2.75, 1, 1">
-      <itemDeMenuMoniker Id="1aaa3cf8-dc23-4840-a268-f73af1860089" />
-    </botonCompart>
-    <botonCompart Id="f043452e-30f8-452c-925e-b7e2e53d67d3" absoluteBounds="3.375, 2.125, 1, 1">
-      <botonMoniker Id="aa2827aa-b7c6-4f0e-ba6f-7ea711799a13" />
-    </botonCompart>
-    <conectorBotonVentana Id="6649553e-bd93-4251-9170-285688bad436" edgePoints="[(1.5 : 3.25); (3.375 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <botonReferencesVentanaTargetMoniker Id="4d412efe-7c45-47a5-9bdd-bf45f9f8643c" />
-      <nodes>
-        <botonCompartMoniker Id="5191a73b-6b01-4eb0-be72-89a3e9a7d301" />
-        <shapeVentanaMoniker Id="58754684-8887-402d-8b90-c28757c7e063" />
+        <botonCompartMoniker Id="f04aefbd-9ca5-4e87-8c4b-78d107fb341c" />
+        <shapeVentanaMoniker Id="92bda94c-6855-4acb-ac13-eba06000d16e" />
       </nodes>
     </conectorBotonVentana>
+    <shapeEstadoFin Id="d21a413a-7afb-401c-ba48-9e1c7e45d009" absoluteBounds="4, 5.875, 0.25, 0.25">
+      <estadoFinMoniker Id="b0633d3e-0f08-4f33-995f-dd8c326c91dc" />
+    </shapeEstadoFin>
+    <conectorVentanaFin Id="6155598e-ef1a-4053-95ce-6ee5f0224c71" edgePoints="[(5.5 : 4.725); (5.5 : 6); (4.25 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <ventanaReferencesEstadoFinMoniker Id="4c33dd81-5be0-48d8-b915-cdbd2a4b86f7" />
+      <nodes>
+        <shapeVentanaMoniker Id="92bda94c-6855-4acb-ac13-eba06000d16e" />
+        <shapeEstadoFinMoniker Id="d21a413a-7afb-401c-ba48-9e1c7e45d009" />
+      </nodes>
+    </conectorVentanaFin>
   </nestedChildShapes>
 </pUGSMBFJMSPProyectoIPSDiagram>

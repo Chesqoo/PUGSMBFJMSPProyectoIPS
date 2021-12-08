@@ -211,6 +211,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DomainModel.cs</LastGenOutput>
     </None>
+    <Compile Include="CodigoAdicional\FixUpDiagram.cs" />
     <Content Include="GeneratedCode\PUGSMBFJMSPProyectoIPSSchema.xsd">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

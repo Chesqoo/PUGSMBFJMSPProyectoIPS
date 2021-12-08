@@ -415,18 +415,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return true;
-			}
-		}
-		
-		/// <summary>
-		/// Indicates the direction of the gradient.
-		/// </summary>
-		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
-		{
-			get
-			{
-				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+				return false;
 			}
 		}
 		#endregion
@@ -620,15 +609,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass EFinForma
-	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma
+	/// DomainClass ShapeEstadoFin
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("ce659b56-086b-4edb-ae94-54e4a1e5c58f")]
-	public partial class EFinForma : DslDiagrams::NodeShape
+	public partial class ShapeEstadoFin : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -693,9 +682,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with EFinForma.
+		/// Finds a decorator associated with ShapeEstadoFin.
 		/// </summary>
-		public static DslDiagrams::Decorator FindEFinFormaDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindShapeEstadoFinDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -711,7 +700,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1.5, 1.5);
+				return new DslDiagrams::SizeD(0.25, 0.25);
 			}
 		}
 		#endregion
@@ -749,7 +738,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// EFinForma domain class Id.
+		/// ShapeEstadoFin domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xce659b56, 0x086b, 0x4edb, 0xae, 0x94, 0x54, 0xe4, 0xa1, 0xe5, 0xc5, 0x8f);
 		/// <summary>
@@ -757,7 +746,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public EFinForma(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ShapeEstadoFin(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -767,7 +756,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public EFinForma(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ShapeEstadoFin(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -913,18 +902,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return true;
-			}
-		}
-		
-		/// <summary>
-		/// Indicates the direction of the gradient.
-		/// </summary>
-		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
-		{
-			get
-			{
-				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+				return false;
 			}
 		}
 		#endregion
@@ -1126,7 +1104,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("a87bc5bb-5944-465e-a996-3bcfb0486f4e")]
-	public partial class ItemDeMenuComp : DslDiagrams::CompartmentShape
+	public partial class ItemDeMenuComp : BotonCompart
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -1166,7 +1144,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <summary>
 		/// Event fired when decorator initialization is complete for this shape type.
 		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
+		public static new event global::System.EventHandler DecoratorsInitialized;
 		
 		/// <summary>
 		/// List containing decorators used by this type.
@@ -1200,19 +1178,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		#endregion
-		#region Shape size
-		
-		/// <summary>
-		/// Default size for this shape.
-		/// </summary>
-		public override DslDiagrams::SizeD DefaultSize
-		{
-			get
-			{
-				return new DslDiagrams::SizeD(1.5, 1);
-			}
-		}
-		#endregion
 		#region Shape styles
 		/// <summary>
 		/// Initializes style set resources for this shape type
@@ -1236,18 +1201,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return true;
-			}
-		}
-		
-		/// <summary>
-		/// Indicates the direction of the gradient.
-		/// </summary>
-		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
-		{
-			get
-			{
-				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+				return false;
 			}
 		}
 		#endregion
@@ -1310,6 +1264,23 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				// The table contains an array of CompartmentMapping for every Type that this
 				// shape can be mapped to. 
 				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
+				{
+					// First we get the mappings defined for the base shape, and add on any mappings defined for this
+					// shape. 
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu));
+					int localCompartmentMappingsOffset = 0;
+					if(baseMappings!=null)
+					{
+						localCompartmentMappingsOffset = baseMappings.Length;
+					}
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[0+localCompartmentMappingsOffset];
+					
+					if(baseMappings!=null)
+					{
+						baseMappings.CopyTo(mappings, 0);
+					}
+					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu), mappings);
+				}
 			}
 			
 			// See if we can find the mapping being requested directly in the table. 

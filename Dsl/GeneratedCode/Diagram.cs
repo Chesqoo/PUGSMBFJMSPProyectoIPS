@@ -223,6 +223,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
+			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu)
+			{
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
 			{
 				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana(this.Partition);
@@ -237,7 +243,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin)
 			{
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma(this.Partition);
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -270,6 +276,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			base.InitializeShapeFields(shapeFields);
 			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu.DecoratorsInitialized += ShapeMenuDecoratorMap.OnDecoratorsInitialized;
 			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart.DecoratorsInitialized += BotonCompartDecoratorMap.OnDecoratorsInitialized;
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp.DecoratorsInitialized += ItemDeMenuCompDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -305,6 +312,21 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.tituloDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "nombreBoton").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ItemDeMenuComp.
+		/// </summary>
+		internal static partial class ItemDeMenuCompDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ItemDeMenuComp.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				BotonCompartDecoratorMap.OnDecoratorsInitialized(sender, e);
+				
 			}
 		}
 		
@@ -474,6 +496,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
@@ -495,12 +518,30 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
+				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu)
+				{
+					// Method:
+					// private Microsoft.VisualStudio.Modeling.ModelElement GetParentForItemDeMenu(ItemDeMenu childElement)
+					// {
+					// }
+					// must be implemented in a partial class of UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram.  Given a child element,
+					// this method should return the parent model element that is associated with the shape or diagram that will be the parent 
+					// of the shape created for this child.  If no shape should be created, the method should return null.
+					parentElement = GetParentForItemDeMenu((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu)childElement);
+				} else
 				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
 				{
 					parentElement = GetParentForVentana((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)childElement);
 				} else
 				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)
 				{
+					// Method:
+					// private Microsoft.VisualStudio.Modeling.ModelElement GetParentForMenu(Menu childElement)
+					// {
+					// }
+					// must be implemented in a partial class of UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram.  Given a child element,
+					// this method should return the parent model element that is associated with the shape or diagram that will be the parent 
+					// of the shape created for this child.  If no shape should be created, the method should return null.
 					parentElement = GetParentForMenu((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)childElement);
 				} else
 				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin)
@@ -509,6 +550,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				} else
 				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)
 				{
+					// Method:
+					// private Microsoft.VisualStudio.Modeling.ModelElement GetParentForBoton(Boton childElement)
+					// {
+					// }
+					// must be implemented in a partial class of UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram.  Given a child element,
+					// this method should return the parent model element that is associated with the shape or diagram that will be the parent 
+					// of the shape created for this child.  If no shape should be created, the method should return null.
 					parentElement = GetParentForBoton((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)childElement);
 				} else
 				{
@@ -527,30 +575,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs GetParentForMenu( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu root )
-			{
-				// Segments 0 and 1
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root2 = root.Ventana;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs result = root2.TapizGUIs;
-				if ( result == null ) return null;
-				return result;
-			}
 			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs GetParentForEstadoFin( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin root )
 			{
 				// Segments 0 and 1
 				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs result = root.TapizGUIs;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs GetParentForBoton( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton root )
-			{
-				// Segments 0 and 1
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root2 = root.Ventana;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs result = root2.TapizGUIs;
 				if ( result == null ) return null;
 				return result;
 			}

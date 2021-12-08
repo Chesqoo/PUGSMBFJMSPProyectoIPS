@@ -86,7 +86,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				typeof(ConectorBotonVentana),
 				typeof(ConectoriMenuVentana),
 				typeof(ConectorVentanaFin),
-				typeof(EFinForma),
+				typeof(ShapeEstadoFin),
 				typeof(ShapeVentana),
 				typeof(ShapeMenu),
 				typeof(BotonCompart),
@@ -168,7 +168,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				createElementMap.Add(typeof(ConectorBotonVentana), 8);
 				createElementMap.Add(typeof(ConectoriMenuVentana), 9);
 				createElementMap.Add(typeof(ConectorVentanaFin), 10);
-				createElementMap.Add(typeof(EFinForma), 11);
+				createElementMap.Add(typeof(ShapeEstadoFin), 11);
 				createElementMap.Add(typeof(ShapeVentana), 12);
 				createElementMap.Add(typeof(ShapeMenu), 13);
 				createElementMap.Add(typeof(BotonCompart), 14);
@@ -197,7 +197,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				case 8: return new ConectorBotonVentana(partition, propertyAssignments);
 				case 9: return new ConectoriMenuVentana(partition, propertyAssignments);
 				case 10: return new ConectorVentanaFin(partition, propertyAssignments);
-				case 11: return new EFinForma(partition, propertyAssignments);
+				case 11: return new ShapeEstadoFin(partition, propertyAssignments);
 				case 12: return new ShapeVentana(partition, propertyAssignments);
 				case 13: return new ShapeMenu(partition, propertyAssignments);
 				case 14: return new BotonCompart(partition, propertyAssignments);

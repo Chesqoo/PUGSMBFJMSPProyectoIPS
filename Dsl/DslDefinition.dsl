@@ -152,7 +152,7 @@
     </DomainRelationship>
     <DomainRelationship Id="b0901aaa-c39e-4d65-affa-dcf2baae4e86" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu" Name="MenuHasItemDeMenu" DisplayName="Menu Has Item De Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
       <Source>
-        <DomainRole Id="1a9485da-bfff-4be8-ab5a-589558b5f6ef" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu" Name="Menu" DisplayName="Menu" PropertyName="ItemDeMenu" Multiplicity="ZeroOne" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Item De Menu">
+        <DomainRole Id="1a9485da-bfff-4be8-ab5a-589558b5f6ef" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu" Name="Menu" DisplayName="Menu" PropertyName="ItemDeMenu" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Item De Menu">
           <RolePlayer>
             <DomainClassMoniker Name="Menu" />
           </RolePlayer>
@@ -250,18 +250,22 @@
   </Types>
   <Shapes>
     <CompartmentShape Id="831d3dde-3ee6-41eb-962f-7ab6a883dd5c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana" Name="ShapeVentana" DisplayName="Shape Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Ventana" InitialWidth="1" InitialHeight="1.5" Geometry="RoundedRectangle" />
-    <CompartmentShape Id="0124312f-75cf-4418-8e03-a2d5cb9ce8c5" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu" Name="ShapeMenu" DisplayName="Shape Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Menu" FillColor="Yellow" InitialHeight="1" Geometry="Rectangle">
+    <CompartmentShape Id="0124312f-75cf-4418-8e03-a2d5cb9ce8c5" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu" Name="ShapeMenu" DisplayName="Shape Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Menu" FillColor="Yellow" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="nombreMenu" DisplayName="Nombre Menu" DefaultText="nombreMenu" />
       </ShapeHasDecorators>
     </CompartmentShape>
-    <GeometryShape Id="ce659b56-086b-4edb-ae94-54e4a1e5c58f" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma" Name="EFinForma" DisplayName="EFin Forma" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="EFin Forma" FillColor="DarkRed" InitialHeight="1" OutlineThickness="0.005" Geometry="Circle" />
-    <CompartmentShape Id="5c617f95-13db-4fc0-bc31-7afcff35f19a" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart" Name="BotonCompart" DisplayName="Boton Compart" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Boton Compart" FillColor="PowderBlue" InitialHeight="1" Geometry="Rectangle">
+    <GeometryShape Id="ce659b56-086b-4edb-ae94-54e4a1e5c58f" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin" Name="ShapeEstadoFin" DisplayName="Shape Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Estado Fin" FillColor="DarkRed" InitialWidth="0.5" InitialHeight="0.5" OutlineThickness="0.005" FillGradientMode="None" Geometry="Circle" />
+    <CompartmentShape Id="5c617f95-13db-4fc0-bc31-7afcff35f19a" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart" Name="BotonCompart" DisplayName="Boton Compart" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Boton Compart" FillColor="PowderBlue" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="nombreBoton" DisplayName="Nombre Boton" DefaultText="nombreBoton" />
       </ShapeHasDecorators>
     </CompartmentShape>
-    <CompartmentShape Id="a87bc5bb-5944-465e-a996-3bcfb0486f4e" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp" Name="ItemDeMenuComp" DisplayName="Item De Menu Comp" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Item De Menu Comp" FillColor="Orange" InitialHeight="1" Geometry="Rectangle" />
+    <CompartmentShape Id="a87bc5bb-5944-465e-a996-3bcfb0486f4e" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp" Name="ItemDeMenuComp" DisplayName="Item De Menu Comp" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Item De Menu Comp" FillColor="Orange" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
+      <BaseCompartmentShape>
+        <CompartmentShapeMoniker Name="BotonCompart" />
+      </BaseCompartmentShape>
+    </CompartmentShape>
   </Shapes>
   <Connectors>
     <Connector Id="0c1e583f-8192-4e2a-b75b-62a7e978ed51" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana" Name="ConectorBotonVentana" DisplayName="Conector Boton Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conector Boton Ventana" Color="Cyan" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow" />
@@ -379,8 +383,8 @@
       <XmlClassData TypeName="ShapeMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="shapeMenuMoniker" ElementName="shapeMenu" MonikerTypeName="ShapeMenuMoniker">
         <CompartmentShapeMoniker Name="ShapeMenu" />
       </XmlClassData>
-      <XmlClassData TypeName="EFinForma" MonikerAttributeName="" SerializeId="true" MonikerElementName="eFinFormaMoniker" ElementName="eFinForma" MonikerTypeName="EFinFormaMoniker">
-        <GeometryShapeMoniker Name="EFinForma" />
+      <XmlClassData TypeName="ShapeEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="shapeEstadoFinMoniker" ElementName="shapeEstadoFin" MonikerTypeName="ShapeEstadoFinMoniker">
+        <GeometryShapeMoniker Name="ShapeEstadoFin" />
       </XmlClassData>
       <XmlClassData TypeName="VentanaReferencesEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaReferencesEstadoFinMoniker" ElementName="ventanaReferencesEstadoFin" MonikerTypeName="VentanaReferencesEstadoFinMoniker">
         <DomainRelationshipMoniker Name="VentanaReferencesEstadoFin" />
@@ -449,10 +453,10 @@
         </ParentElementPath>
         <CompartmentShapeMoniker Name="ShapeVentana" />
       </CompartmentShapeMap>
-      <CompartmentShapeMap>
+      <CompartmentShapeMap HasCustomParentElement="true">
         <DomainClassMoniker Name="Menu" />
         <ParentElementPath>
-          <DomainPath>VentanaHasMenu.Ventana/!Ventana/TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
+          <DomainPath />
         </ParentElementPath>
         <DecoratorMap>
           <TextDecoratorMoniker Name="ShapeMenu/nombreMenu" />
@@ -469,9 +473,9 @@
         <ParentElementPath>
           <DomainPath>TapizGUIsHasEstadoFin.TapizGUIs/!TapizGUIs</DomainPath>
         </ParentElementPath>
-        <GeometryShapeMoniker Name="EFinForma" />
+        <GeometryShapeMoniker Name="ShapeEstadoFin" />
       </ShapeMap>
-      <CompartmentShapeMap>
+      <CompartmentShapeMap HasCustomParentElement="true">
         <DomainClassMoniker Name="Boton" />
         <ParentElementPath>
           <DomainPath>VentanaHasBoton.Ventana/!Ventana/TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
@@ -485,6 +489,13 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <CompartmentShapeMoniker Name="BotonCompart" />
+      </CompartmentShapeMap>
+      <CompartmentShapeMap HasCustomParentElement="true">
+        <DomainClassMoniker Name="ItemDeMenu" />
+        <ParentElementPath>
+          <DomainPath />
+        </ParentElementPath>
+        <CompartmentShapeMoniker Name="ItemDeMenuComp" />
       </CompartmentShapeMap>
     </ShapeMaps>
     <ConnectorMaps>

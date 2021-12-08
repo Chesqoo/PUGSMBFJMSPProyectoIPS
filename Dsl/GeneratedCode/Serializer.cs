@@ -3137,7 +3137,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					else
 					{
 						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <itemDeMenu>
-						ReadMenuHasItemDeMenuInstance(serializationContext, element, reader);
+						ReadMenuHasItemDeMenuInstances(serializationContext, element, reader);
 						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </itemDeMenu>
 					}
 				}
@@ -3145,25 +3145,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Reads instance of relationship MenuHasItemDeMenu.
+		/// Reads all instances of relationship MenuHasItemDeMenu.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
-		/// either the first instance, or a bogus tag. This method will deserialize only the first valid instance and ignore all the
-		/// rest tags (because the multiplicity allows only one instance). When the method returns, the reader will be positioned at 
-		/// the end tag of the relationship (or EOF if somehow that happens).
+		/// either the first instance, or a bogus tag. This method will deserialize all instances and ignore all bogus tags. When the
+		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="element">In-memory Menu instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		private static void ReadMenuHasItemDeMenuInstance(DslModeling::SerializationContext serializationContext, Menu element, global::System.Xml.XmlReader reader)
+		private static void ReadMenuHasItemDeMenuInstances(DslModeling::SerializationContext serializationContext, Menu element, global::System.Xml.XmlReader reader)
 		{
-			if (DslModeling::DomainRoleInfo.GetElementLinks<MenuHasItemDeMenu> (element, MenuHasItemDeMenu.MenuDomainRoleId).Count > 0)
-			{	// Only allow one instance, which already exists, so skip everything
-				DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
-				return;
-			}
-	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
 				DslModeling::DomainClassXmlSerializer newMenuHasItemDeMenuSerializer = serializationContext.Directory.GetSerializer(MenuHasItemDeMenu.DomainClassId);
@@ -3175,7 +3168,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newMenuHasItemDeMenu.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newMenuHasItemDeMenu.GetDomainClass().Name + "!");
 					targetSerializer.Read(serializationContext, newMenuHasItemDeMenu, reader);
-					break;	// Only allow one instance.
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
@@ -3185,11 +3177,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					if (newItemDeMenuOfMenuHasItemDeMenu != null)
 					{
 						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(MenuHasItemDeMenu));
-						element.ItemDeMenu = newItemDeMenuOfMenuHasItemDeMenu;
+						element.ItemDeMenu.Add(newItemDeMenuOfMenuHasItemDeMenu);
 						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newItemDeMenuOfMenuHasItemDeMenu.GetDomainClass().Id);	
 						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newItemDeMenuOfMenuHasItemDeMenu.GetDomainClass().Name + "!");
 						targetSerializer.Read(serializationContext, newItemDeMenuOfMenuHasItemDeMenu, reader);
-						break;	// Only allow one instance.
 					}
 					else
 					{	// Unknown element, skip.
@@ -3643,13 +3634,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, Menu element, global::System.Xml.XmlWriter writer)
 		{
 			// MenuHasItemDeMenu
-			MenuHasItemDeMenu theMenuHasItemDeMenuInstance = MenuHasItemDeMenu.GetLinkToItemDeMenu(element);
-			if (!serializationContext.Result.Failed && theMenuHasItemDeMenuInstance != null)
+			global::System.Collections.ObjectModel.ReadOnlyCollection<MenuHasItemDeMenu> allMenuHasItemDeMenuInstances = MenuHasItemDeMenu.GetLinksToItemDeMenu(element);
+			if (!serializationContext.Result.Failed && allMenuHasItemDeMenuInstances.Count > 0)
 			{
 				writer.WriteStartElement("itemDeMenu");
-				DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(theMenuHasItemDeMenuInstance.GetDomainClass().Id);
-				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + theMenuHasItemDeMenuInstance.GetDomainClass().Name + "!");
-				relSerializer.Write(serializationContext, theMenuHasItemDeMenuInstance, writer);
+				foreach (MenuHasItemDeMenu eachMenuHasItemDeMenuInstance in allMenuHasItemDeMenuInstances)
+				{
+					if (serializationContext.Result.Failed)
+						break;
+	
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachMenuHasItemDeMenuInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachMenuHasItemDeMenuInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachMenuHasItemDeMenuInstance, writer);
+				}
 				writer.WriteEndElement();
 			}
 	
@@ -12494,15 +12491,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// Serializer EFinFormaSerializer for DomainClass EFinForma.
+	/// Serializer ShapeEstadoFinSerializer for DomainClass ShapeEstadoFin.
 	/// </summary>
-	public partial class EFinFormaSerializer : DslDiagrams::NodeShapeSerializer
+	public partial class ShapeEstadoFinSerializer : DslDiagrams::NodeShapeSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// EFinFormaSerializer Constructor
+		/// ShapeEstadoFinSerializer Constructor
 		/// </summary>
-		public EFinFormaSerializer ()
+		public ShapeEstadoFinSerializer ()
 			: base ()
 		{
 		}
@@ -12528,25 +12525,25 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of EFinForma.
+		/// This is the XML tag name used to serialize an instance of ShapeEstadoFin.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"eFinForma"; }
+			get { return @"shapeEstadoFin"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of EFinForma.
+		/// This is the XML tag name used to serialize a monikerized instance of ShapeEstadoFin.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"eFinFormaMoniker"; }
+			get { return @"shapeEstadoFinMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of EFinForma in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of ShapeEstadoFin in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -12557,16 +12554,16 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one EFinForma instance from XML.
+		/// Public Read() method that deserializes one ShapeEstadoFin instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the EFinForma element that is about to be deserialized. 
+		/// of the ShapeEstadoFin element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory EFinForma instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory ShapeEstadoFin instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -12618,8 +12615,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateInstance
 		/// <summary>
-		/// This method creates a correct instance of EFinForma based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized EFinForma, a new EFinForma instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of ShapeEstadoFin based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized ShapeEstadoFin, a new ShapeEstadoFin instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -12629,7 +12626,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created EFinForma instance, or null if the reader is not pointing to a serialized EFinForma instance.</returns>
+		/// <returns>Created ShapeEstadoFin instance, or null if the reader is not pointing to a serialized ShapeEstadoFin instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -12649,18 +12646,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "EFinForma" instance.
+				{	// New "ShapeEstadoFin" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "EFinForma".
+				{	// Check for derived classes of "ShapeEstadoFin".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class instance.
-						EFinFormaSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as EFinFormaSerializer;
+						ShapeEstadoFinSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ShapeEstadoFinSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -12671,8 +12668,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// This method creates an instance of EFinForma based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of EFinForma.
+		/// This method creates an instance of ShapeEstadoFin based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of ShapeEstadoFin.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -12680,8 +12677,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new EFinForma instance should be created.</param>	
-		/// <returns>Created EFinForma instance.</returns>
+		/// <param name="partition">Partition in which new ShapeEstadoFin instance should be created.</param>	
+		/// <returns>Created ShapeEstadoFin instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -12697,7 +12694,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{
 					id = new global::System.Guid (idStr);
 				}
-				return new EFinForma(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+				return new ShapeEstadoFin(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
 			}
 			catch (global::System.ArgumentNullException /* anEx */)
 			{	
@@ -12715,12 +12712,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from EFinForma, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from ShapeEstadoFin, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from EFinForma.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from ShapeEstadoFin.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -12729,7 +12726,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(EFinForma.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ShapeEstadoFin.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -12761,7 +12758,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including EFinForma itself) instance of EFinForma based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including ShapeEstadoFin itself) instance of ShapeEstadoFin based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -12795,18 +12792,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "EFinForma" moniker instance.
+				{	// New "ShapeEstadoFin" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "EFinForma".
+				{	// Check for derived classes of "ShapeEstadoFin".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						EFinFormaSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as EFinFormaSerializer;
+						ShapeEstadoFinSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ShapeEstadoFinSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -12817,7 +12814,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of EFinForma based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of ShapeEstadoFin based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -12842,7 +12839,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, EFinForma.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, ShapeEstadoFin.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -12866,12 +12863,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from EFinForma, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from ShapeEstadoFin, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from EFinForma.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from ShapeEstadoFin.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -12880,7 +12877,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(EFinForma.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ShapeEstadoFin.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -12906,13 +12903,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized EFinForma instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized ShapeEstadoFin instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">EFinForma instance to be monikerized.</param>
+		/// <param name="element">ShapeEstadoFin instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the EFinForma instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the EFinForma instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the ShapeEstadoFin instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the ShapeEstadoFin instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -12941,10 +12938,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one EFinForma instance into XML.
+		/// Public Write() method that serializes one ShapeEstadoFin instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">EFinForma instance to be serialized.</param>
+		/// <param name="element">ShapeEstadoFin instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -13004,11 +13001,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given EFinForma instance.
+		/// This method calculates a moniker to a given ShapeEstadoFin instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">EFinForma instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the EFinForma instance.</returns>
+		/// <param name="element">ShapeEstadoFin instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the ShapeEstadoFin instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -13020,8 +13017,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			EFinForma instance = element as EFinForma;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of EFinForma!");
+			ShapeEstadoFin instance = element as ShapeEstadoFin;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of ShapeEstadoFin!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -13032,7 +13029,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">EFinForma instance to get moniker qualifier from.</param>
+		/// <param name="element">ShapeEstadoFin instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -13622,7 +13619,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	/// <summary>
 	/// Serializer ItemDeMenuCompSerializer for DomainClass ItemDeMenuComp.
 	/// </summary>
-	public partial class ItemDeMenuCompSerializer : DslDiagrams::CompartmentShapeSerializer
+	public partial class ItemDeMenuCompSerializer : BotonCompartSerializer
 	{
 		#region Constructor
 		/// <summary>
@@ -16514,7 +16511,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(VentanaReferencesEstadoFin.DomainClassId, typeof(VentanaReferencesEstadoFinSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ShapeVentana.DomainClassId, typeof(ShapeVentanaSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ShapeMenu.DomainClassId, typeof(ShapeMenuSerializer)));
-					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(EFinForma.DomainClassId, typeof(EFinFormaSerializer)));
+					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ShapeEstadoFin.DomainClassId, typeof(ShapeEstadoFinSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(BotonCompart.DomainClassId, typeof(BotonCompartSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ItemDeMenuComp.DomainClassId, typeof(ItemDeMenuCompSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ConectorBotonVentana.DomainClassId, typeof(ConectorBotonVentanaSerializer)));

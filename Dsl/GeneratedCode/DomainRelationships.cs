@@ -575,7 +575,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ItemDeMenu", PropertyDisplayNameKey="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ItemDeMenu", PropertyDisplayNameKey="UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu/Menu.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("1a9485da-bfff-4be8-ab5a-589558b5f6ef")]
 		public virtual Menu Menu
 		{
@@ -645,43 +645,24 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		#endregion
 		#region Static methods to access ItemDeMenu of a Menu
 		/// <summary>
-		/// Gets ItemDeMenu.
+		/// Gets a list of ItemDeMenu.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ItemDeMenu GetItemDeMenu(Menu element)
+		public static DslModeling::LinkedElementCollection<ItemDeMenu> GetItemDeMenu(Menu element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, MenuDomainRoleId) as ItemDeMenu;
-		}
-		
-		/// <summary>
-		/// Sets ItemDeMenu.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetItemDeMenu(Menu element, ItemDeMenu newItemDeMenu)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, MenuDomainRoleId, newItemDeMenu);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ItemDeMenu>, ItemDeMenu>(element, MenuDomainRoleId);
 		}
 		#endregion
 		#region Menu link accessor
 		/// <summary>
-		/// Get the MenuHasItemDeMenu link to a Menu.
+		/// Get the list of MenuHasItemDeMenu links to a Menu.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu GetLinkToItemDeMenu (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu menuInstance)
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu> GetLinksToItemDeMenu ( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu menuInstance )
 		{
-			global::System.Collections.Generic.IList<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu> links = DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu>(menuInstance, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Menu not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu>(menuInstance, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.MenuDomainRoleId);
 		}
 		#endregion
 		#region ItemDeMenu link accessor

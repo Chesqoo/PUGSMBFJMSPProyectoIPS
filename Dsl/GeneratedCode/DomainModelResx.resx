@@ -489,13 +489,13 @@
     <value>nombreMenu</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma</value>
-    <comment>Description for DomainClass &apos;EFinForma&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin</value>
+    <comment>Description for DomainClass &apos;ShapeEstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.EFinForma.DisplayName" xml:space="preserve">
-    <value>EFin Forma</value>
-    <comment>DisplayName for DomainClass &apos;EFinForma&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin.DisplayName" xml:space="preserve">
+    <value>Shape Estado Fin</value>
+    <comment>DisplayName for DomainClass &apos;ShapeEstadoFin&apos;</comment>
   </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart.Description" xml:space="preserve">
     <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart</value>
