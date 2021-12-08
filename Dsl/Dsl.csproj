@@ -250,6 +250,14 @@
     <CodeAnalysisDictionary Include="..\CodeAnalysisDictionary.xml">
       <Link>CodeAnalysisDictionary.xml</Link>
     </CodeAnalysisDictionary>
+    <Content Include="Resources\CustomIcons\Boton.bmp" />
+    <Content Include="Resources\CustomIcons\EAFin.bmp" />
+    <Content Include="Resources\CustomIcons\EnlaceAVentana.bmp" />
+    <Content Include="Resources\CustomIcons\FIN.bmp" />
+    <Content Include="Resources\CustomIcons\ItemMenu.bmp" />
+    <Content Include="Resources\CustomIcons\Menu.bmp" />
+    <Content Include="Resources\CustomIcons\VentSec.bmp" />
+    <Content Include="Resources\CustomIcons\VPrincipal.bmp" />
     <Content Include="Resources\ExampleConnectorToolBitmap.bmp" />
     <Content Include="Resources\ExampleShapeToolBitmap.bmp" />
     <EmbeddedResource Include="Resources\ConnectorSourceSearch.cur" />

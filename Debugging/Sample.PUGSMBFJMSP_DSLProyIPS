@@ -5,10 +5,13 @@
       <ventanaPrincipal Id="cea73bcd-0862-404f-85ae-3188dea85ad3" ancho="0" alto="0">
         <menu>
           <ventanaHasMenu Id="a1d13bcd-81d1-4f11-9896-6e849ebcae95">
-            <menu Id="0eea2b0a-be08-4abc-8c44-d472dc84df50">
+            <menu Id="0eea2b0a-be08-4abc-8c44-d472dc84df50" titulo="Menu de Pelis">
               <itemDeMenu>
                 <menuHasItemDeMenu Id="cb3b367e-2b50-4852-8a62-da81d33d3cab">
-                  <itemDeMenu Id="693207e7-e1b2-4b8b-aa6a-ce0f49f825cc" />
+                  <itemDeMenu Id="693207e7-e1b2-4b8b-aa6a-ce0f49f825cc" titulo="Peli 1" />
+                </menuHasItemDeMenu>
+                <menuHasItemDeMenu Id="0e0d18aa-112d-4694-8dfc-0fd047b1f6ad">
+                  <itemDeMenu Id="0bf94f1e-d1fc-4739-b608-c1ba0e580063" titulo="Peli 2" />
                 </menuHasItemDeMenu>
               </itemDeMenu>
             </menu>
@@ -16,10 +19,10 @@
         </menu>
         <boton>
           <ventanaHasBoton Id="fc5188bd-2ecf-4bb0-a2e3-13a2c51f6b5e">
-            <boton Id="98044a52-b575-4be5-a622-28786e084f79" />
+            <boton Id="98044a52-b575-4be5-a622-28786e084f79" titulo="Fotos" />
           </ventanaHasBoton>
           <ventanaHasBoton Id="97b3e8e6-d5fc-48dd-ad0a-5d3d85335a00">
-            <boton Id="91f53e7c-fadb-4fa5-93b3-0bf3e4c0fe70">
+            <boton Id="91f53e7c-fadb-4fa5-93b3-0bf3e4c0fe70" titulo="Atrás">
               <ventanaTarget>
                 <botonReferencesVentanaTarget Id="b1a8e188-32c6-49a0-8f98-3d514b222050">
                   <ventanaSecundariaMoniker Id="8b37c1fc-dcc3-4593-857a-695f6f995aca" />
@@ -37,10 +40,10 @@
       <ventanaSecundaria Id="8b37c1fc-dcc3-4593-857a-695f6f995aca" ancho="0" alto="0" esModal="false">
         <menu>
           <ventanaHasMenu Id="be319fab-8ba4-4bec-b5e1-fe0c4bf1880a">
-            <menu Id="563d7eb7-1d3c-4389-a2f6-f65c92ca2d61">
+            <menu Id="563d7eb7-1d3c-4389-a2f6-f65c92ca2d61" titulo="Menú de cines">
               <itemDeMenu>
                 <menuHasItemDeMenu Id="458ac0f1-f07e-4830-bc2d-700f93c953ac">
-                  <itemDeMenu Id="6ee04603-e410-46b0-a251-a913098d3c0d" />
+                  <itemDeMenu Id="6ee04603-e410-46b0-a251-a913098d3c0d" titulo="Cine 1" />
                 </menuHasItemDeMenu>
               </itemDeMenu>
             </menu>
@@ -48,10 +51,10 @@
         </menu>
         <boton>
           <ventanaHasBoton Id="b282df63-6a59-4800-a89b-b693546b7067">
-            <boton Id="68ad24ea-6cff-44aa-aae6-1e059409a934" />
+            <boton Id="68ad24ea-6cff-44aa-aae6-1e059409a934" titulo="Atrás" />
           </ventanaHasBoton>
           <ventanaHasBoton Id="a5701f0c-eb81-416a-a9fd-9a4853479ce4">
-            <boton Id="c2033bba-feb9-434a-b63b-44209e6d02fc" />
+            <boton Id="c2033bba-feb9-434a-b63b-44209e6d02fc" titulo="Rotar" />
           </ventanaHasBoton>
         </boton>
         <estadoFin>

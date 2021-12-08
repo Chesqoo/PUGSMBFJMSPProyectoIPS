@@ -226,11 +226,11 @@
           <!-- Relationship: MenuHasItemDeMenu -->
           <xsd:element name="itemDeMenu" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instance of MenuHasItemDeMenu</xsd:documentation>
+              <xsd:documentation>Instances of MenuHasItemDeMenu</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="menuHasItemDeMenu" minOccurs="0" maxOccurs="1">
+                <xsd:element ref="menuHasItemDeMenu" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
                     <xsd:documentation>[Instance of MenuHasItemDeMenu needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>

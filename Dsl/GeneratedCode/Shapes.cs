@@ -700,7 +700,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(0.25, 0.25);
+				return new DslDiagrams::SizeD(0.5, 0.5);
 			}
 		}
 		#endregion
