@@ -245,38 +245,6 @@
     <value>Estado Fin</value>
     <comment>DisplayName for DomainClass &apos;EstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana</value>
-    <comment>Description for DomainClass &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.DisplayName" xml:space="preserve">
-    <value>Tapiz GUIHas Ventana</value>
-    <comment>DisplayName for DomainClass &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana/TapizGUI.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.TapizGUI</value>
-    <comment>Description for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana/TapizGUI.DisplayName" xml:space="preserve">
-    <value>Tapiz GUI</value>
-    <comment>DisplayName for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana/TapizGUI.PropertyDisplayName" xml:space="preserve">
-    <value>Ventana</value>
-    <comment>PropertyDisplayName for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana/Ventana.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.Ventana</value>
-    <comment>Description for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana/Ventana.DisplayName" xml:space="preserve">
-    <value>Ventana</value>
-    <comment>DisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana/Ventana.PropertyDisplayName" xml:space="preserve">
-    <value>Tapiz GUI</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;TapizGUIHasVentana&apos;</comment>
-  </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.Description" xml:space="preserve">
     <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu</value>
     <comment>Description for DomainClass &apos;VentanaHasMenu&apos;</comment>
@@ -437,37 +405,101 @@
     <value>Tapiz GUI</value>
     <comment>PropertyDisplayName for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;TapizGUIHasEstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin</value>
-    <comment>Description for DomainClass &apos;VentanaReferencesEstadoFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal</value>
+    <comment>Description for DomainClass &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.DisplayName" xml:space="preserve">
-    <value>Ventana References Estado Fin</value>
-    <comment>DisplayName for DomainClass &apos;VentanaReferencesEstadoFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal.DisplayName" xml:space="preserve">
+    <value>Tapiz GUIHas Ventana Principal</value>
+    <comment>DisplayName for DomainClass &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/Ventana.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.Ventana</value>
-    <comment>Description for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaReferencesEstadoFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal/TapizGUI.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal.TapizGUI</value>
+    <comment>Description for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/Ventana.DisplayName" xml:space="preserve">
-    <value>Ventana</value>
-    <comment>DisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaReferencesEstadoFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal/TapizGUI.DisplayName" xml:space="preserve">
+    <value>Tapiz GUI</value>
+    <comment>DisplayName for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/Ventana.PropertyDisplayName" xml:space="preserve">
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal/TapizGUI.PropertyDisplayName" xml:space="preserve">
+    <value>Ventana Principal</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal/VentanaPrincipal.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal.VentanaPrincipal</value>
+    <comment>Description for DomainRole &apos;VentanaPrincipal&apos; on DomainRelationship &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal/VentanaPrincipal.DisplayName" xml:space="preserve">
+    <value>Ventana Principal</value>
+    <comment>DisplayName for DomainRole &apos;VentanaPrincipal&apos; on DomainRelationship &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal/VentanaPrincipal.PropertyDisplayName" xml:space="preserve">
+    <value>Tapiz GUI</value>
+    <comment>PropertyDisplayName for DomainRole &apos;VentanaPrincipal&apos; on DomainRelationship &apos;TapizGUIHasVentanaPrincipal&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria</value>
+    <comment>Description for DomainClass &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria.DisplayName" xml:space="preserve">
+    <value>Tapiz GUIHas Ventana Secundaria</value>
+    <comment>DisplayName for DomainClass &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria/TapizGUI.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria.TapizGUI</value>
+    <comment>Description for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria/TapizGUI.DisplayName" xml:space="preserve">
+    <value>Tapiz GUI</value>
+    <comment>DisplayName for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria/TapizGUI.PropertyDisplayName" xml:space="preserve">
+    <value>Ventana Secundaria</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TapizGUI&apos; on DomainRelationship &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria/VentanaSecundaria.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria.VentanaSecundaria</value>
+    <comment>Description for DomainRole &apos;VentanaSecundaria&apos; on DomainRelationship &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria/VentanaSecundaria.DisplayName" xml:space="preserve">
+    <value>Ventana Secundaria</value>
+    <comment>DisplayName for DomainRole &apos;VentanaSecundaria&apos; on DomainRelationship &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria/VentanaSecundaria.PropertyDisplayName" xml:space="preserve">
+    <value>Tapiz GUI</value>
+    <comment>PropertyDisplayName for DomainRole &apos;VentanaSecundaria&apos; on DomainRelationship &apos;TapizGUIHasVentanaSecundaria&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin</value>
+    <comment>Description for DomainClass &apos;BotonReferencesEstadoFin&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin.DisplayName" xml:space="preserve">
+    <value>Boton References Estado Fin</value>
+    <comment>DisplayName for DomainClass &apos;BotonReferencesEstadoFin&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin/Boton.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin.Boton</value>
+    <comment>Description for DomainRole &apos;Boton&apos; on DomainRelationship &apos;BotonReferencesEstadoFin&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin/Boton.DisplayName" xml:space="preserve">
+    <value>Boton</value>
+    <comment>DisplayName for DomainRole &apos;Boton&apos; on DomainRelationship &apos;BotonReferencesEstadoFin&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin/Boton.PropertyDisplayName" xml:space="preserve">
     <value>Estado Fin</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Ventana&apos; on DomainRelationship &apos;VentanaReferencesEstadoFin&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;Boton&apos; on DomainRelationship &apos;BotonReferencesEstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/EstadoFin.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.EstadoFin</value>
-    <comment>Description for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;VentanaReferencesEstadoFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin/EstadoFin.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin.EstadoFin</value>
+    <comment>Description for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;BotonReferencesEstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/EstadoFin.DisplayName" xml:space="preserve">
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin/EstadoFin.DisplayName" xml:space="preserve">
     <value>Estado Fin</value>
-    <comment>DisplayName for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;VentanaReferencesEstadoFin&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;BotonReferencesEstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin/EstadoFin.PropertyDisplayName" xml:space="preserve">
-    <value>Ventana</value>
-    <comment>PropertyDisplayName for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;VentanaReferencesEstadoFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin/EstadoFin.PropertyDisplayName" xml:space="preserve">
+    <value>Boton</value>
+    <comment>PropertyDisplayName for DomainRole &apos;EstadoFin&apos; on DomainRelationship &apos;BotonReferencesEstadoFin&apos;</comment>
   </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana.Description" xml:space="preserve">
     <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana</value>
@@ -525,21 +557,13 @@
     <value>Conector Boton Ventana</value>
     <comment>DisplayName for DomainClass &apos;ConectorBotonVentana&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana</value>
-    <comment>Description for DomainClass &apos;ConectoriMenuVentana&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin</value>
+    <comment>Description for DomainClass &apos;ConectorBotonFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana.DisplayName" xml:space="preserve">
-    <value>Conectori Menu Ventana</value>
-    <comment>DisplayName for DomainClass &apos;ConectoriMenuVentana&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin</value>
-    <comment>Description for DomainClass &apos;ConectorVentanaFin&apos;</comment>
-  </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin.DisplayName" xml:space="preserve">
-    <value>Conector Ventana Fin</value>
-    <comment>DisplayName for DomainClass &apos;ConectorVentanaFin&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin.DisplayName" xml:space="preserve">
+    <value>Conector Boton Fin</value>
+    <comment>DisplayName for DomainClass &apos;ConectorBotonFin&apos;</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
     <value>PUGSMBFJMSPProyectoIPS (*.PUGSMBFJMSP_DSLProyIPS)|*.PUGSMBFJMSP_DSLProyIPS</value>
@@ -621,12 +645,12 @@
     <value>Conecta un Boton a Ventana</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="ConectorVentFinToolboxItem" xml:space="preserve">
-    <value>Conector Ventana_Fin</value>
+  <data name="ConectorBotFinToolboxItem" xml:space="preserve">
+    <value>Conector Boton_Fin</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ConectorVentFinToolboxTooltip" xml:space="preserve">
-    <value>Conecta Ventana a Fin</value>
+  <data name="ConectorBotFinToolboxTooltip" xml:space="preserve">
+    <value>Conecta Boton a Fin</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -782,7 +806,7 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\CustomIcons\EnlaceAVentana.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ConectorVentFinToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="ConectorBotFinToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\CustomIcons\EAFin.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

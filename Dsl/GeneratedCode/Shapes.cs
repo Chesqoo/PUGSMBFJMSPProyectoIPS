@@ -105,7 +105,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1, 1.5);
+				return new DslDiagrams::SizeD(2, 3);
 			}
 		}
 		#endregion
@@ -204,7 +204,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{
 					// First we get the mappings defined for the base shape, and add on any mappings defined for this
 					// shape. 
-					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana));
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal));
 					int localCompartmentMappingsOffset = 0;
 					if(baseMappings!=null)
 					{
@@ -216,7 +216,24 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					{
 						baseMappings.CopyTo(mappings, 0);
 					}
-					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana), mappings);
+					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal), mappings);
+				}
+				{
+					// First we get the mappings defined for the base shape, and add on any mappings defined for this
+					// shape. 
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria));
+					int localCompartmentMappingsOffset = 0;
+					if(baseMappings!=null)
+					{
+						localCompartmentMappingsOffset = baseMappings.Length;
+					}
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[0+localCompartmentMappingsOffset];
+					
+					if(baseMappings!=null)
+					{
+						baseMappings.CopyTo(mappings, 0);
+					}
+					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria), mappings);
 				}
 			}
 			
@@ -447,7 +464,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "nombreMenu");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
 		}
@@ -1177,6 +1194,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
 		}
 		
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 0.5);
+			}
+		}
 		#endregion
 		#region Shape styles
 		/// <summary>

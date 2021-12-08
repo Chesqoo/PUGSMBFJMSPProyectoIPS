@@ -75,17 +75,17 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				typeof(ItemDeMenu),
 				typeof(Boton),
 				typeof(EstadoFin),
-				typeof(TapizGUIHasVentana),
 				typeof(VentanaHasMenu),
 				typeof(MenuHasItemDeMenu),
 				typeof(VentanaHasBoton),
 				typeof(BotonReferencesVentanaTarget),
 				typeof(TapizGUIHasEstadoFin),
-				typeof(VentanaReferencesEstadoFin),
+				typeof(TapizGUIHasVentanaPrincipal),
+				typeof(TapizGUIHasVentanaSecundaria),
+				typeof(BotonReferencesEstadoFin),
 				typeof(PUGSMBFJMSPProyectoIPSDiagram),
 				typeof(ConectorBotonVentana),
-				typeof(ConectoriMenuVentana),
-				typeof(ConectorVentanaFin),
+				typeof(ConectorBotonFin),
 				typeof(ShapeEstadoFin),
 				typeof(ShapeVentana),
 				typeof(ShapeMenu),
@@ -121,8 +121,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(TapizGUIHasVentana), "TapizGUI", TapizGUIHasVentana.TapizGUIDomainRoleId),
-				new DomainRolePlayerInfo(typeof(TapizGUIHasVentana), "Ventana", TapizGUIHasVentana.VentanaDomainRoleId),
 				new DomainRolePlayerInfo(typeof(VentanaHasMenu), "Ventana", VentanaHasMenu.VentanaDomainRoleId),
 				new DomainRolePlayerInfo(typeof(VentanaHasMenu), "Menu", VentanaHasMenu.MenuDomainRoleId),
 				new DomainRolePlayerInfo(typeof(MenuHasItemDeMenu), "Menu", MenuHasItemDeMenu.MenuDomainRoleId),
@@ -133,8 +131,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				new DomainRolePlayerInfo(typeof(BotonReferencesVentanaTarget), "Ventana", BotonReferencesVentanaTarget.VentanaDomainRoleId),
 				new DomainRolePlayerInfo(typeof(TapizGUIHasEstadoFin), "TapizGUI", TapizGUIHasEstadoFin.TapizGUIDomainRoleId),
 				new DomainRolePlayerInfo(typeof(TapizGUIHasEstadoFin), "EstadoFin", TapizGUIHasEstadoFin.EstadoFinDomainRoleId),
-				new DomainRolePlayerInfo(typeof(VentanaReferencesEstadoFin), "Ventana", VentanaReferencesEstadoFin.VentanaDomainRoleId),
-				new DomainRolePlayerInfo(typeof(VentanaReferencesEstadoFin), "EstadoFin", VentanaReferencesEstadoFin.EstadoFinDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIHasVentanaPrincipal), "TapizGUI", TapizGUIHasVentanaPrincipal.TapizGUIDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIHasVentanaPrincipal), "VentanaPrincipal", TapizGUIHasVentanaPrincipal.VentanaPrincipalDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIHasVentanaSecundaria), "TapizGUI", TapizGUIHasVentanaSecundaria.TapizGUIDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TapizGUIHasVentanaSecundaria), "VentanaSecundaria", TapizGUIHasVentanaSecundaria.VentanaSecundariaDomainRoleId),
+				new DomainRolePlayerInfo(typeof(BotonReferencesEstadoFin), "Boton", BotonReferencesEstadoFin.BotonDomainRoleId),
+				new DomainRolePlayerInfo(typeof(BotonReferencesEstadoFin), "EstadoFin", BotonReferencesEstadoFin.EstadoFinDomainRoleId),
 			};
 		}
 		#endregion
@@ -156,7 +158,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(17);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(16);
 				createElementMap.Add(typeof(TapizGUI), 0);
 				createElementMap.Add(typeof(VentanaPrincipal), 1);
 				createElementMap.Add(typeof(VentanaSecundaria), 2);
@@ -166,13 +168,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				createElementMap.Add(typeof(EstadoFin), 6);
 				createElementMap.Add(typeof(PUGSMBFJMSPProyectoIPSDiagram), 7);
 				createElementMap.Add(typeof(ConectorBotonVentana), 8);
-				createElementMap.Add(typeof(ConectoriMenuVentana), 9);
-				createElementMap.Add(typeof(ConectorVentanaFin), 10);
-				createElementMap.Add(typeof(ShapeEstadoFin), 11);
-				createElementMap.Add(typeof(ShapeVentana), 12);
-				createElementMap.Add(typeof(ShapeMenu), 13);
-				createElementMap.Add(typeof(BotonCompart), 14);
-				createElementMap.Add(typeof(ItemDeMenuComp), 15);
+				createElementMap.Add(typeof(ConectorBotonFin), 9);
+				createElementMap.Add(typeof(ShapeEstadoFin), 10);
+				createElementMap.Add(typeof(ShapeVentana), 11);
+				createElementMap.Add(typeof(ShapeMenu), 12);
+				createElementMap.Add(typeof(BotonCompart), 13);
+				createElementMap.Add(typeof(ItemDeMenuComp), 14);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -195,13 +196,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				case 6: return new EstadoFin(partition, propertyAssignments);
 				case 7: return new PUGSMBFJMSPProyectoIPSDiagram(partition, propertyAssignments);
 				case 8: return new ConectorBotonVentana(partition, propertyAssignments);
-				case 9: return new ConectoriMenuVentana(partition, propertyAssignments);
-				case 10: return new ConectorVentanaFin(partition, propertyAssignments);
-				case 11: return new ShapeEstadoFin(partition, propertyAssignments);
-				case 12: return new ShapeVentana(partition, propertyAssignments);
-				case 13: return new ShapeMenu(partition, propertyAssignments);
-				case 14: return new BotonCompart(partition, propertyAssignments);
-				case 15: return new ItemDeMenuComp(partition, propertyAssignments);
+				case 9: return new ConectorBotonFin(partition, propertyAssignments);
+				case 10: return new ShapeEstadoFin(partition, propertyAssignments);
+				case 11: return new ShapeVentana(partition, propertyAssignments);
+				case 12: return new ShapeMenu(partition, propertyAssignments);
+				case 13: return new BotonCompart(partition, propertyAssignments);
+				case 14: return new ItemDeMenuComp(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -224,14 +224,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
-				createElementLinkMap.Add(typeof(TapizGUIHasVentana), 0);
-				createElementLinkMap.Add(typeof(VentanaHasMenu), 1);
-				createElementLinkMap.Add(typeof(MenuHasItemDeMenu), 2);
-				createElementLinkMap.Add(typeof(VentanaHasBoton), 3);
-				createElementLinkMap.Add(typeof(BotonReferencesVentanaTarget), 4);
-				createElementLinkMap.Add(typeof(TapizGUIHasEstadoFin), 5);
-				createElementLinkMap.Add(typeof(VentanaReferencesEstadoFin), 6);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
+				createElementLinkMap.Add(typeof(VentanaHasMenu), 0);
+				createElementLinkMap.Add(typeof(MenuHasItemDeMenu), 1);
+				createElementLinkMap.Add(typeof(VentanaHasBoton), 2);
+				createElementLinkMap.Add(typeof(BotonReferencesVentanaTarget), 3);
+				createElementLinkMap.Add(typeof(TapizGUIHasEstadoFin), 4);
+				createElementLinkMap.Add(typeof(TapizGUIHasVentanaPrincipal), 5);
+				createElementLinkMap.Add(typeof(TapizGUIHasVentanaSecundaria), 6);
+				createElementLinkMap.Add(typeof(BotonReferencesEstadoFin), 7);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -246,13 +247,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			switch (index)
 			{
-				case 0: return new TapizGUIHasVentana(partition, roleAssignments, propertyAssignments);
-				case 1: return new VentanaHasMenu(partition, roleAssignments, propertyAssignments);
-				case 2: return new MenuHasItemDeMenu(partition, roleAssignments, propertyAssignments);
-				case 3: return new VentanaHasBoton(partition, roleAssignments, propertyAssignments);
-				case 4: return new BotonReferencesVentanaTarget(partition, roleAssignments, propertyAssignments);
-				case 5: return new TapizGUIHasEstadoFin(partition, roleAssignments, propertyAssignments);
-				case 6: return new VentanaReferencesEstadoFin(partition, roleAssignments, propertyAssignments);
+				case 0: return new VentanaHasMenu(partition, roleAssignments, propertyAssignments);
+				case 1: return new MenuHasItemDeMenu(partition, roleAssignments, propertyAssignments);
+				case 2: return new VentanaHasBoton(partition, roleAssignments, propertyAssignments);
+				case 3: return new BotonReferencesVentanaTarget(partition, roleAssignments, propertyAssignments);
+				case 4: return new TapizGUIHasEstadoFin(partition, roleAssignments, propertyAssignments);
+				case 5: return new TapizGUIHasVentanaPrincipal(partition, roleAssignments, propertyAssignments);
+				case 6: return new TapizGUIHasVentanaSecundaria(partition, roleAssignments, propertyAssignments);
+				case 7: return new BotonReferencesEstadoFin(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -421,11 +423,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		public PUGSMBFJMSPProyectoIPSDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.VentanaDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasMenu.MenuDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.ItemDeMenuDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaHasBoton.BotonDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.EstadoFinDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaPrincipal.VentanaPrincipalDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentanaSecundaria.VentanaSecundariaDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

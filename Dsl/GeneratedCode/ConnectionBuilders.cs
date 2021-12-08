@@ -146,7 +146,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	/// <summary>
 	/// ConnectionBuilder class to provide logic for constructing connections between elements.
 	/// </summary>
-	public static partial class VentanaReferencesEstadoFinBuilder
+	public static partial class BotonReferencesEstadoFinBuilder
 	{
 		#region Accept Connection Methods
 		/// <summary>
@@ -158,7 +158,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		public static bool CanAcceptSource(DslModeling::ModelElement candidate)
 		{
 			if (candidate == null) return false;
-			else if (candidate is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
+			else if (candidate is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)
 			{ 
 				return true;
 			}
@@ -214,13 +214,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			else // Check combinations
 			{
-				if (candidateSource is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
+				if (candidateSource is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)
 				{
 					if (candidateTarget is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin)
 					{
-						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana sourceVentana = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)candidateSource;
+						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton sourceBoton = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)candidateSource;
 						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin targetEstadoFin = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin)candidateTarget;
-						if(targetEstadoFin == null || sourceVentana == null || global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin.GetLinks(sourceVentana, targetEstadoFin).Count > 0) return false;
+						if(sourceBoton == null || global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin.GetLinkToEstadoFin(sourceBoton) != null) return false;
+						if(targetEstadoFin == null || sourceBoton == null || global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin.GetLinks(sourceBoton, targetEstadoFin).Count > 0) return false;
 						return true;
 					}
 				}
@@ -252,13 +253,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			if (CanAcceptSourceAndTarget(source, target))
 			{
-				if (source is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
+				if (source is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)
 				{
 					if (target is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin)
 					{
-						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana sourceAccepted = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)source;
+						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton sourceAccepted = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)source;
 						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin targetAccepted = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin)target;
-						DslModeling::ElementLink result = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin(sourceAccepted, targetAccepted);
+						DslModeling::ElementLink result = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin(sourceAccepted, targetAccepted);
 						if (DslModeling::DomainClassInfo.HasNameProperty(result))
 						{
 							DslModeling::DomainClassInfo.SetUniqueName(result);
@@ -436,14 +437,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
  	/// <summary>
 	/// Handles interaction between the ConnectionBuilder and the corresponding ConnectionTool.
 	/// </summary>
-	internal partial class ConectorVentFinConnectAction : DslDiagrams::ConnectAction
+	internal partial class ConectorBotFinConnectAction : DslDiagrams::ConnectAction
 	{
 		private DslDiagrams::ConnectionType[] connectionTypes;
 		
 		/// <summary>
-		/// Constructs a new ConectorVentFinConnectAction for the given Diagram.
+		/// Constructs a new ConectorBotFinConnectAction for the given Diagram.
 		/// </summary>
-		public ConectorVentFinConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
+		public ConectorBotFinConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
 		{
 		}
 		
@@ -473,24 +474,24 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		
 		
 		/// <summary>
-		/// Returns the ConectorVentFinConnectionType associated with this action.
+		/// Returns the ConectorBotFinConnectionType associated with this action.
 		/// </summary>
 		protected override DslDiagrams::ConnectionType[] GetConnectionTypes(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement)
 		{
 			if(this.connectionTypes == null)
 			{
-				this.connectionTypes = new DslDiagrams::ConnectionType[] { new ConectorVentFinConnectionType() };
+				this.connectionTypes = new DslDiagrams::ConnectionType[] { new ConectorBotFinConnectionType() };
 			}
 			
 			return this.connectionTypes;
 		}
 		
-		private partial class ConectorVentFinConnectionTypeBase : DslDiagrams::ConnectionType
+		private partial class ConectorBotFinConnectionTypeBase : DslDiagrams::ConnectionType
 		{
 			/// <summary>
-			/// Constructs a new the ConectorVentFinConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the ConectorBotFinConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			protected ConectorVentFinConnectionTypeBase() : base() {}
+			protected ConectorBotFinConnectionTypeBase() : base() {}
 			
 			private static DslDiagrams::ShapeElement RemovePassThroughShapes(DslDiagrams::ShapeElement shape)
 			{
@@ -510,7 +511,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			/// Called by the base ConnectAction class to determine if the given shapes can be connected.
 			/// </summary>
 			/// <remarks>
-			/// This implementation delegates calls to the ConnectionBuilder VentanaReferencesEstadoFinBuilder.
+			/// This implementation delegates calls to the ConnectionBuilder BotonReferencesEstadoFinBuilder.
 			/// </remarks>
 			public override bool CanCreateConnection(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement, ref string connectionWarning)
 			{
@@ -536,11 +537,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{				
 					if(targetShapeElement == null)
 					{
-						return VentanaReferencesEstadoFinBuilder.CanAcceptSource(sourceElement);
+						return BotonReferencesEstadoFinBuilder.CanAcceptSource(sourceElement);
 					}
 					else
 					{				
-						return VentanaReferencesEstadoFinBuilder.CanAcceptSourceAndTarget(sourceElement, targetElement);
+						return BotonReferencesEstadoFinBuilder.CanAcceptSourceAndTarget(sourceElement, targetElement);
 					}
 				}
 				else
@@ -565,7 +566,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			/// Called by the base ConnectAction class to create the underlying relationship.
 			/// </summary>
 			/// <remarks>
-			/// This implementation delegates calls to the ConnectionBuilder VentanaReferencesEstadoFinBuilder.
+			/// This implementation delegates calls to the ConnectionBuilder BotonReferencesEstadoFinBuilder.
 			/// </remarks>
 			public override void CreateConnection(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement, DslDiagrams::PaintFeedbackArgs paintFeedbackArgs)
 			{
@@ -579,16 +580,16 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if(sourceElement == null) sourceElement = sourceShapeElement;
 				DslModeling::ModelElement targetElement = targetShapeElement.ModelElement;
 				if(targetElement == null) targetElement = targetShapeElement;
-				VentanaReferencesEstadoFinBuilder.Connect(sourceElement, targetElement);
+				BotonReferencesEstadoFinBuilder.Connect(sourceElement, targetElement);
 			}
 		}
 		
-		private partial class ConectorVentFinConnectionType : ConectorVentFinConnectionTypeBase
+		private partial class ConectorBotFinConnectionType : ConectorBotFinConnectionTypeBase
 		{
 			/// <summary>
-			/// Constructs a new the ConectorVentFinConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the ConectorBotFinConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			public ConectorVentFinConnectionType() : base() {}
+			public ConectorBotFinConnectionType() : base() {}
 		}
 	}
 }

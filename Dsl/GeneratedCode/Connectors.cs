@@ -159,155 +159,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass ConectoriMenuVentana
-	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana
+	/// DomainClass ConectorBotonFin
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("8f9be635-1b8c-4d1a-bc86-85e6578cf62b")]
-	public partial class ConectoriMenuVentana : DslDiagrams::BinaryLinkShape
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with ConectoriMenuVentana.
-		/// </summary>
-		public static DslDiagrams::Decorator FindConectoriMenuVentanaDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		#endregion
-		
-		#region Connector styles
-		/// <summary>
-		/// Initializes style set resources for this shape type
-		/// </summary>
-		/// <param name="classStyleSet">The style set for this shape class</param>
-		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
-		{
-			base.InitializeResources(classStyleSet);
-			
-			DslDiagrams::BrushSettings textBrush = new DslDiagrams::BrushSettings();
-			textBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Gold);
-			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeText, textBrush);
-		
-		}
-		
-		/// <summary>
-		/// Initializes resources associated with this connector instance.
-		/// </summary>
-		protected override void InitializeInstanceResources()
-		{
-			base.InitializeInstanceResources();
-			this.SetDecorators(DslDiagrams::LinkDecorator.DecoratorFilledDiamond, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorFilledArrow, new DslDiagrams::SizeD(0.1,0.1), false);
-		}
-		
-		#endregion
-		
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// ConectoriMenuVentana domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8f9be635, 0x1b8c, 0x4d1a, 0xbc, 0x86, 0x85, 0xe6, 0x57, 0x8c, 0xf6, 0x2b);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConectoriMenuVentana(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConectoriMenuVentana(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
-{
-	/// <summary>
-	/// DomainClass ConectorVentanaFin
-	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin
-	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("111eb5ca-a25e-43f8-b044-a1b9f04e096b")]
-	public partial class ConectorVentanaFin : DslDiagrams::BinaryLinkShape
+	public partial class ConectorBotonFin : DslDiagrams::BinaryLinkShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -372,9 +232,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with ConectorVentanaFin.
+		/// Finds a decorator associated with ConectorBotonFin.
 		/// </summary>
-		public static DslDiagrams::Decorator FindConectorVentanaFinDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindConectorBotonFinDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -407,7 +267,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ConectorVentanaFin domain class Id.
+		/// ConectorBotonFin domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x111eb5ca, 0xa25e, 0x43f8, 0xb0, 0x44, 0xa1, 0xb9, 0xf0, 0x4e, 0x09, 0x6b);
 		/// <summary>
@@ -415,7 +275,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConectorVentanaFin(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ConectorBotonFin(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -425,7 +285,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConectorVentanaFin(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ConectorBotonFin(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

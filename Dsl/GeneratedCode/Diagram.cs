@@ -201,22 +201,6 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Most connectors are mapped to element links, but there can be exceptions. This method tell if a connector should be
-		/// mapped to an element link.
-		/// </summary>
-		public override bool IsConnectorMappedToLink(DslDiagrams::BinaryLinkShape connector)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert(connector != null);
-			if (connector == null)
-				throw new global::System.ArgumentNullException("connector");
-			#endregion
-			if (connector.GetType() == typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectoriMenuVentana))
-				return false;
-			return base.IsConnectorMappedToLink(connector);
-		}
-		
-		/// <summary>
 		/// Creates a new shape for the given model element as part of view fixup
 		/// </summary>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Justification = "Generated code.")]
@@ -229,7 +213,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
+			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal)
+			{
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria)
 			{
 				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
@@ -258,9 +248,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana(this.Partition);
 				return newShape;
 			}
-			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin)
+			if(element is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin)
 			{
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentanaFin(this.Partition);
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin newShape = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonFin(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -335,7 +325,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		#region Connect actions
 		private bool changingMouseAction;
 		private global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentConnectAction conectorBotVentConnectAction;
-		private global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinConnectAction conectorVentFinConnectAction;
+		private global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotFinConnectAction conectorBotFinConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -367,14 +357,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					}
 					action = this.conectorBotVentConnectAction;
 				} 
-				else if (SelectedToolboxItemSupportsFilterString(activeView, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxHelper.ConectorVentFinFilterString))
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxHelper.ConectorBotFinFilterString))
 				{
-					if (this.conectorVentFinConnectAction == null)
+					if (this.conectorBotFinConnectAction == null)
 					{
-						this.conectorVentFinConnectAction = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinConnectAction(this);
-						this.conectorVentFinConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+						this.conectorBotFinConnectAction = new global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotFinConnectAction(this);
+						this.conectorBotFinConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
-					action = this.conectorVentFinConnectAction;
+					action = this.conectorBotFinConnectAction;
 				} 
 				else
 				{
@@ -438,10 +428,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						this.conectorBotVentConnectAction.Dispose();
 						this.conectorBotVentConnectAction = null;
 					}
-					if(this.conectorVentFinConnectAction != null)
+					if(this.conectorBotFinConnectAction != null)
 					{
-						this.conectorVentFinConnectAction.Dispose();
-						this.conectorVentFinConnectAction = null;
+						this.conectorBotFinConnectAction.Dispose();
+						this.conectorBotFinConnectAction = null;
 					}
 				}
 			}
@@ -497,12 +487,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -529,9 +520,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					// of the shape created for this child.  If no shape should be created, the method should return null.
 					parentElement = GetParentForItemDeMenu((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu)childElement);
 				} else
-				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)
+				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal)
 				{
-					parentElement = GetParentForVentana((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)childElement);
+					parentElement = GetParentForVentanaPrincipal((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal)childElement);
+				} else
+				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria)
+				{
+					parentElement = GetParentForVentanaSecundaria((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria)childElement);
 				} else
 				if(childElement is global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu)
 				{
@@ -568,14 +563,21 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					DslDiagrams::Diagram.FixUpDiagram(parentElement, childElement);
 				}
 			}
-			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForVentana( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root )
+			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForEstadoFin( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin root )
 			{
 				// Segments 0 and 1
 				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI result = root.TapizGUI;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForEstadoFin( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin root )
+			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForVentanaPrincipal( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal root )
+			{
+				// Segments 0 and 1
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI result = root.TapizGUI;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForVentanaSecundaria( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria root )
 			{
 				// Segments 0 and 1
 				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI result = root.TapizGUI;
@@ -672,7 +674,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaReferencesEstadoFin), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesEstadoFin), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

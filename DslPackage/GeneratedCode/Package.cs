@@ -87,11 +87,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					0xff00ff,
 					Index = 6)]
 	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConexionesToolboxTab",
-					"@ConectorVentFinToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem", 
+					"@ConectorBotFinToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotFinToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ConectorVentFin", 
-					"@ConectorVentFinToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					"ConectorBotFin", 
+					"@ConectorBotFinToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 7)]
 	[VSShell::ProvideEditorFactory(typeof(PUGSMBFJMSPProyectoIPSEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
