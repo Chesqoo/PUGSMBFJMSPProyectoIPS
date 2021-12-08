@@ -509,6 +509,10 @@
     <value>Shape Ventana</value>
     <comment>DisplayName for DomainClass &apos;ShapeVentana&apos;</comment>
   </data>
+  <data name="ShapeVentananombreDecDefaultText" xml:space="preserve">
+    <value>nombreDec</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu.Description" xml:space="preserve">
     <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu</value>
     <comment>Description for DomainClass &apos;ShapeMenu&apos;</comment>
@@ -517,8 +521,8 @@
     <value>Shape Menu</value>
     <comment>DisplayName for DomainClass &apos;ShapeMenu&apos;</comment>
   </data>
-  <data name="ShapeMenunombreMenuDefaultText" xml:space="preserve">
-    <value>nombreMenu</value>
+  <data name="ShapeMenunombreDecDefaultText" xml:space="preserve">
+    <value>nombreDec</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin.Description" xml:space="preserve">
@@ -529,25 +533,25 @@
     <value>Shape Estado Fin</value>
     <comment>DisplayName for DomainClass &apos;ShapeEstadoFin&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart</value>
-    <comment>Description for DomainClass &apos;BotonCompart&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton</value>
+    <comment>Description for DomainClass &apos;MetaforaBoton&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart.DisplayName" xml:space="preserve">
-    <value>Boton Compart</value>
-    <comment>DisplayName for DomainClass &apos;BotonCompart&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton.DisplayName" xml:space="preserve">
+    <value>Metafora Boton</value>
+    <comment>DisplayName for DomainClass &apos;MetaforaBoton&apos;</comment>
   </data>
-  <data name="BotonCompartnombreBotonDefaultText" xml:space="preserve">
-    <value>nombreBoton</value>
+  <data name="MetaforaBotonnombreDecDefaultText" xml:space="preserve">
+    <value>nombreDec</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp</value>
-    <comment>Description for DomainClass &apos;ItemDeMenuComp&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu</value>
+    <comment>Description for DomainClass &apos;MetaforaItemMenu&apos;</comment>
   </data>
-  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp.DisplayName" xml:space="preserve">
-    <value>Item De Menu Comp</value>
-    <comment>DisplayName for DomainClass &apos;ItemDeMenuComp&apos;</comment>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu.DisplayName" xml:space="preserve">
+    <value>Metafora Item Menu</value>
+    <comment>DisplayName for DomainClass &apos;MetaforaItemMenu&apos;</comment>
   </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana.Description" xml:space="preserve">
     <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana</value>

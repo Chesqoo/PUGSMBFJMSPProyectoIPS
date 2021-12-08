@@ -87,11 +87,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				typeof(ConectorBotonVentana),
 				typeof(ConectorBotonFin),
 				typeof(ShapeEstadoFin),
+				typeof(MetaforaBoton),
+				typeof(MetaforaItemMenu),
 				typeof(ShapeVentana),
 				typeof(ShapeMenu),
-				typeof(BotonCompart),
-				typeof(ItemDeMenuComp),
 				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram),
+				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.DecoratorPropertyChanged),
 				typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged),
 			};
 		}
@@ -170,10 +171,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				createElementMap.Add(typeof(ConectorBotonVentana), 8);
 				createElementMap.Add(typeof(ConectorBotonFin), 9);
 				createElementMap.Add(typeof(ShapeEstadoFin), 10);
-				createElementMap.Add(typeof(ShapeVentana), 11);
-				createElementMap.Add(typeof(ShapeMenu), 12);
-				createElementMap.Add(typeof(BotonCompart), 13);
-				createElementMap.Add(typeof(ItemDeMenuComp), 14);
+				createElementMap.Add(typeof(MetaforaBoton), 11);
+				createElementMap.Add(typeof(MetaforaItemMenu), 12);
+				createElementMap.Add(typeof(ShapeVentana), 13);
+				createElementMap.Add(typeof(ShapeMenu), 14);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -198,10 +199,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				case 8: return new ConectorBotonVentana(partition, propertyAssignments);
 				case 9: return new ConectorBotonFin(partition, propertyAssignments);
 				case 10: return new ShapeEstadoFin(partition, propertyAssignments);
-				case 11: return new ShapeVentana(partition, propertyAssignments);
-				case 12: return new ShapeMenu(partition, propertyAssignments);
-				case 13: return new BotonCompart(partition, propertyAssignments);
-				case 14: return new ItemDeMenuComp(partition, propertyAssignments);
+				case 11: return new MetaforaBoton(partition, propertyAssignments);
+				case 12: return new MetaforaItemMenu(partition, propertyAssignments);
+				case 13: return new ShapeVentana(partition, propertyAssignments);
+				case 14: return new ShapeMenu(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -375,6 +376,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged));
 		}
 		
@@ -387,6 +389,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ConnectorRolePlayerChanged));
 		}
 		#endregion

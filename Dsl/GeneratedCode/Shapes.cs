@@ -95,6 +95,24 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
 		}
 		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
 		#endregion
 		#region Shape size
 		
@@ -105,11 +123,36 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(2, 3);
+				return new DslDiagrams::SizeD(2.2, 3);
 			}
 		}
 		#endregion
 		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Outline pen settings for this shape.
+			DslDiagrams::PenSettings outlinePen = new DslDiagrams::PenSettings();
+			outlinePen.Width = 0.04F;
+			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ShapeOutline, outlinePen);
+			// Text brush settings for this shape.
+			DslDiagrams::BrushSettings textBrush = new DslDiagrams::BrushSettings();
+			textBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeText, textBrush);
+		
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
 		/// <summary>
 		/// Indicates whether this shape displays a background gradient.
 		/// </summary>
@@ -139,6 +182,57 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			get
 			{
 				return DslDiagrams::ShapeGeometries.RoundedRectangle;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("nombreDec");
+			field1.DefaultText = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("ShapeVentananombreDecDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
 			}
 		}
 		#endregion
@@ -405,7 +499,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1.5, 1);
+				return new DslDiagrams::SizeD(2, 1);
 			}
 		}
 		#endregion
@@ -423,6 +517,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Yellow);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
 		
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold |  global::System.Drawing.FontStyle.Underline ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold, Underline10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
 		}
 		
 		/// <summary>
@@ -443,13 +543,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("nombreMenu");
-			field1.DefaultText = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("ShapeMenunombreMenuDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("nombreDec");
+			field1.DefaultText = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("ShapeMenunombreDecDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold, Underline10");			
 			shapeFields.Add(field1);
 			
 		}
@@ -463,7 +564,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "nombreMenu");
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "nombreDec");
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
@@ -783,15 +884,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass BotonCompart
-	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart
+	/// DomainClass MetaforaBoton
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("5c617f95-13db-4fc0-bc31-7afcff35f19a")]
-	public partial class BotonCompart : DslDiagrams::CompartmentShape
+	[DslModeling::DomainObjectId("b460f003-9a92-4383-988e-99c28b6f9fa3")]
+	public partial class MetaforaBoton : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -856,9 +957,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with BotonCompart.
+		/// Finds a decorator associated with MetaforaBoton.
 		/// </summary>
-		public static DslDiagrams::Decorator FindBotonCompartDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindMetaforaBotonDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -892,7 +993,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1.5, 1);
+				return new DslDiagrams::SizeD(0.6, 0.6);
 			}
 		}
 		#endregion
@@ -907,7 +1008,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			
 			// Fill brush settings for this shape.
 			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
-			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.PowderBlue);
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightCoral);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
 		
 		}
@@ -930,8 +1031,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("nombreBoton");
-			field1.DefaultText = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("BotonCompartnombreBotonDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("nombreDec");
+			field1.DefaultText = global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("MetaforaBotonnombreDecDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -950,8 +1051,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "nombreBoton");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "nombreDec");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
 		}
@@ -976,124 +1077,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 		}
 		#endregion
-		#region CompartmentShape code
-		/// <summary>
-		/// Returns a value indicating whether compartment header should be visible if there is only one of them.
-		/// </summary>
-		public override bool IsSingleCompartmentHeaderVisible
-		{
-			get { return true; }
-		}
-		
-		private static DslDiagrams::CompartmentDescription[] compartmentDescriptions;
-		
-		/// <summary>
-		/// Gets an array of CompartmentDescription for all compartments shown on this shape
-		/// (including compartments defined on base shapes).
-		/// </summary>
-		/// <returns></returns>
-		public override DslDiagrams::CompartmentDescription[] GetCompartmentDescriptions()
-		{
-			if(compartmentDescriptions == null)
-			{
-				// Initialize the array of compartment descriptions if we haven't done so already. 
-				// First we get any compartment descriptions in base shapes, and add on any compartments
-				// that are defined on this shape. 
-				DslDiagrams::CompartmentDescription[] baseCompartmentDescriptions = base.GetCompartmentDescriptions();
-				
-				int localCompartmentsOffset = 0;
-				if(baseCompartmentDescriptions!=null)
-				{
-					localCompartmentsOffset = baseCompartmentDescriptions.Length;
-				}
-				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[0+localCompartmentsOffset];
-				
-				if(baseCompartmentDescriptions!=null)
-				{
-					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
-				}
-			}
-			
-			return BotonCompart.compartmentDescriptions;
-		}
-		
-		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
-		
-		/// <summary>
-		/// Gets an array of CompartmentMappings for all compartments displayed on this shape
-		/// (including compartment maps defined on base shapes). 
-		/// </summary>
-		/// <param name="melType">The type of the DomainClass that this shape is mapped to</param>
-		/// <returns></returns>
-		protected override DslDiagrams::CompartmentMapping[] GetCompartmentMappings(global::System.Type melType)
-		{
-			if(melType==null) throw new global::System.ArgumentNullException("melType");
-			
-			if(compartmentMappings==null)
-			{
-				// Initialize the table of compartment mappings if we haven't done so already. 
-				// The table contains an array of CompartmentMapping for every Type that this
-				// shape can be mapped to. 
-				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
-				{
-					// First we get the mappings defined for the base shape, and add on any mappings defined for this
-					// shape. 
-					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton));
-					int localCompartmentMappingsOffset = 0;
-					if(baseMappings!=null)
-					{
-						localCompartmentMappingsOffset = baseMappings.Length;
-					}
-					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[0+localCompartmentMappingsOffset];
-					
-					if(baseMappings!=null)
-					{
-						baseMappings.CopyTo(mappings, 0);
-					}
-					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton), mappings);
-				}
-			}
-			
-			// See if we can find the mapping being requested directly in the table. 
-			DslDiagrams::CompartmentMapping[] returnValue;
-			if(compartmentMappings.TryGetValue(melType, out returnValue))
-			{
-				return returnValue;
-			}
-			
-			// If not, loop through the types in the table, and find the 'most derived' base
-			// class of melType. 
-			global::System.Type selectedMappedType = null;
-			foreach(global::System.Type mappedType in compartmentMappings.Keys)
-			{
-				if(mappedType.IsAssignableFrom(melType) && (selectedMappedType==null || selectedMappedType.IsAssignableFrom(mappedType)))
-				{
-					selectedMappedType = mappedType;
-				}
-			}
-			if(selectedMappedType!=null)
-			{
-				return compartmentMappings[selectedMappedType];
-			}
-			return new DslDiagrams::CompartmentMapping[] {};
-		}
-		
-			#region DomainPath traversal methods to get the list of elements to display in a compartment.
-			#endregion
-		
-		#endregion
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// BotonCompart domain class Id.
+		/// MetaforaBoton domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5c617f95, 0x13db, 0x4fc0, 0xbc, 0x31, 0x7a, 0xfc, 0xff, 0x35, 0xf1, 0x9a);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb460f003, 0x9a92, 0x4383, 0x98, 0x8e, 0x99, 0xc2, 0x8b, 0x6f, 0x9f, 0xa3);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public BotonCompart(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public MetaforaBoton(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1103,7 +1098,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public BotonCompart(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public MetaforaBoton(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -1113,15 +1108,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass ItemDeMenuComp
-	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp
+	/// DomainClass MetaforaItemMenu
+	/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("a87bc5bb-5944-465e-a996-3bcfb0486f4e")]
-	public partial class ItemDeMenuComp : BotonCompart
+	[DslModeling::DomainObjectId("877c9f21-2b8b-4d56-a4be-06658b47332e")]
+	public partial class MetaforaItemMenu : MetaforaBoton
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -1186,9 +1181,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with ItemDeMenuComp.
+		/// Finds a decorator associated with MetaforaItemMenu.
 		/// </summary>
-		public static DslDiagrams::Decorator FindItemDeMenuCompDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindMetaforaItemMenuDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -1204,7 +1199,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1.5, 0.5);
+				return new DslDiagrams::SizeD(1.8, 0.5);
 			}
 		}
 		#endregion
@@ -1235,124 +1230,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 		}
 		#endregion
-		#region CompartmentShape code
-		/// <summary>
-		/// Returns a value indicating whether compartment header should be visible if there is only one of them.
-		/// </summary>
-		public override bool IsSingleCompartmentHeaderVisible
-		{
-			get { return true; }
-		}
-		
-		private static DslDiagrams::CompartmentDescription[] compartmentDescriptions;
-		
-		/// <summary>
-		/// Gets an array of CompartmentDescription for all compartments shown on this shape
-		/// (including compartments defined on base shapes).
-		/// </summary>
-		/// <returns></returns>
-		public override DslDiagrams::CompartmentDescription[] GetCompartmentDescriptions()
-		{
-			if(compartmentDescriptions == null)
-			{
-				// Initialize the array of compartment descriptions if we haven't done so already. 
-				// First we get any compartment descriptions in base shapes, and add on any compartments
-				// that are defined on this shape. 
-				DslDiagrams::CompartmentDescription[] baseCompartmentDescriptions = base.GetCompartmentDescriptions();
-				
-				int localCompartmentsOffset = 0;
-				if(baseCompartmentDescriptions!=null)
-				{
-					localCompartmentsOffset = baseCompartmentDescriptions.Length;
-				}
-				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[0+localCompartmentsOffset];
-				
-				if(baseCompartmentDescriptions!=null)
-				{
-					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
-				}
-			}
-			
-			return ItemDeMenuComp.compartmentDescriptions;
-		}
-		
-		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
-		
-		/// <summary>
-		/// Gets an array of CompartmentMappings for all compartments displayed on this shape
-		/// (including compartment maps defined on base shapes). 
-		/// </summary>
-		/// <param name="melType">The type of the DomainClass that this shape is mapped to</param>
-		/// <returns></returns>
-		protected override DslDiagrams::CompartmentMapping[] GetCompartmentMappings(global::System.Type melType)
-		{
-			if(melType==null) throw new global::System.ArgumentNullException("melType");
-			
-			if(compartmentMappings==null)
-			{
-				// Initialize the table of compartment mappings if we haven't done so already. 
-				// The table contains an array of CompartmentMapping for every Type that this
-				// shape can be mapped to. 
-				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
-				{
-					// First we get the mappings defined for the base shape, and add on any mappings defined for this
-					// shape. 
-					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu));
-					int localCompartmentMappingsOffset = 0;
-					if(baseMappings!=null)
-					{
-						localCompartmentMappingsOffset = baseMappings.Length;
-					}
-					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[0+localCompartmentMappingsOffset];
-					
-					if(baseMappings!=null)
-					{
-						baseMappings.CopyTo(mappings, 0);
-					}
-					compartmentMappings.Add(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu), mappings);
-				}
-			}
-			
-			// See if we can find the mapping being requested directly in the table. 
-			DslDiagrams::CompartmentMapping[] returnValue;
-			if(compartmentMappings.TryGetValue(melType, out returnValue))
-			{
-				return returnValue;
-			}
-			
-			// If not, loop through the types in the table, and find the 'most derived' base
-			// class of melType. 
-			global::System.Type selectedMappedType = null;
-			foreach(global::System.Type mappedType in compartmentMappings.Keys)
-			{
-				if(mappedType.IsAssignableFrom(melType) && (selectedMappedType==null || selectedMappedType.IsAssignableFrom(mappedType)))
-				{
-					selectedMappedType = mappedType;
-				}
-			}
-			if(selectedMappedType!=null)
-			{
-				return compartmentMappings[selectedMappedType];
-			}
-			return new DslDiagrams::CompartmentMapping[] {};
-		}
-		
-			#region DomainPath traversal methods to get the list of elements to display in a compartment.
-			#endregion
-		
-		#endregion
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ItemDeMenuComp domain class Id.
+		/// MetaforaItemMenu domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xa87bc5bb, 0x5944, 0x465e, 0xa9, 0x96, 0x3b, 0xcf, 0xb0, 0x48, 0x6f, 0x4e);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x877c9f21, 0x2b8b, 0x4d56, 0xa4, 0xbe, 0x06, 0x65, 0x8b, 0x47, 0x33, 0x2e);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ItemDeMenuComp(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public MetaforaItemMenu(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1362,7 +1251,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ItemDeMenuComp(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public MetaforaItemMenu(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

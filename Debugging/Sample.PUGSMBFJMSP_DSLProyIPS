@@ -1,2 +1,214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<tapizGUI xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0b8b524c-1961-446f-b639-0dcd5dc7bab7" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS" />
+<tapizGUI xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0b8b524c-1961-446f-b639-0dcd5dc7bab7" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS">
+  <estadoFin>
+    <tapizGUIHasEstadoFin Id="b5e2dbda-0973-4012-84c2-690155335828">
+      <estadoFin Id="fb67daae-302f-49dc-9565-c4385af4c455" />
+    </tapizGUIHasEstadoFin>
+  </estadoFin>
+  <ventanaPrincipal>
+    <tapizGUIHasVentanaPrincipal Id="5369cce6-68a6-48c7-bf8e-4428a7c65834">
+      <ventanaPrincipal Id="407ac6e6-c7b6-43d7-8dd1-5539744c894f" nombre="CINESA" ancho="0" alto="0">
+        <boton>
+          <ventanaHasBoton Id="c4c25cda-050e-49ce-a0bd-e2466e6603b9">
+            <boton Id="8941ab26-44cc-4c96-9d53-a8d8254815da" titulo="Cartelera">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="9be994c2-9e24-48bb-b01e-7753440404f9">
+                  <ventanaSecundariaMoniker Id="4d21d7d9-e180-443f-84c8-40243a34eac2" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="29430040-06a0-4f70-8c67-8641fc9cc9ec">
+            <boton Id="68e3c81b-3786-42fa-a0fb-deb03ee15b9a" titulo="Nuestros Cines">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="8607228e-0704-4781-84b6-62f9ae06df18">
+                  <ventanaSecundariaMoniker Id="7bf25408-d6d4-446a-8c91-572daf92cca8" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="13dc0626-f713-4b41-8615-2e3c12ee70f2">
+            <boton Id="45df3367-6b33-4b75-8586-bfbb61412ef5" titulo="Salir">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="8d6b4110-7765-44f7-a704-d164c31fbd20">
+                  <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+        </boton>
+      </ventanaPrincipal>
+    </tapizGUIHasVentanaPrincipal>
+  </ventanaPrincipal>
+  <ventanaSecundaria>
+    <tapizGUIHasVentanaSecundaria Id="a7bdd82a-ff71-46ec-9cab-720b2571a8a6">
+      <ventanaSecundaria Id="4d21d7d9-e180-443f-84c8-40243a34eac2" nombre="Peliculas" ancho="0" alto="0" esModal="false">
+        <menu>
+          <ventanaHasMenu Id="2a41040a-a3ad-417d-9586-d1328ad95894">
+            <menu Id="f94b32bc-31ad-49e7-947b-1d187402a435" titulo="Cartelera">
+              <itemDeMenu>
+                <menuHasItemDeMenu Id="63a6ecfb-8207-4557-9efc-8a9da8545f76">
+                  <itemDeMenu Id="568fa9e8-012f-4146-9097-e12749315bd4" titulo="Spudreman: De camino a casa">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="5f0ce602-c962-4cda-9afe-3556bf9a25ed">
+                        <ventanaSecundariaMoniker Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+                <menuHasItemDeMenu Id="6f2d0387-1d17-4488-a39c-d64b5072a135">
+                  <itemDeMenu Id="681945ab-2748-43c9-8091-9db3891e8c6f" titulo="Avotar 2: Otra vez?">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="342c8aa0-09c0-48da-a085-4379e4683b87">
+                        <ventanaSecundariaMoniker Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+                <menuHasItemDeMenu Id="a2ca3bbb-7f8c-4f03-9af3-8afd1197dce4">
+                  <itemDeMenu Id="ee598523-46c4-421e-bea8-dfd97d9ec4fa" titulo="Matriz: Resurrecciones">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="a3e65ce2-fa7b-4600-b0ff-9dac9b2071c6">
+                        <ventanaSecundariaMoniker Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+              </itemDeMenu>
+            </menu>
+          </ventanaHasMenu>
+        </menu>
+        <boton>
+          <ventanaHasBoton Id="8a1baca5-d6ab-4164-ae28-d3df10262e0c">
+            <boton Id="7a0bfb45-1f51-4545-ba7b-36da6167233b" titulo="Volver">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="74a7630e-dd20-4c49-ab62-1220de95cb1a">
+                  <ventanaPrincipalMoniker Id="407ac6e6-c7b6-43d7-8dd1-5539744c894f" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="263767e3-7207-4985-87ce-93ee5bd612df">
+            <boton Id="05723555-10d1-4b20-8a14-b9015205fef8" titulo="Salir">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="739cfc72-e0d6-49bb-8706-373a2757e78e">
+                  <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="3c2197e9-4576-4198-ae9e-218216efcf33">
+            <itemDeMenu Id="66f2b152-4532-4ec3-9e5e-cbeca24e18b1" />
+          </ventanaHasBoton>
+        </boton>
+      </ventanaSecundaria>
+    </tapizGUIHasVentanaSecundaria>
+    <tapizGUIHasVentanaSecundaria Id="07400d1e-36ff-4984-ae01-2311d09c0b7b">
+      <ventanaSecundaria Id="7bf25408-d6d4-446a-8c91-572daf92cca8" nombre="Cines" ancho="0" alto="0" esModal="false">
+        <menu>
+          <ventanaHasMenu Id="d52be996-4957-4a38-bb8f-fc178ab595c2">
+            <menu Id="ea4afeb6-1c00-44d2-9997-d092a5bb4853" titulo="Nuestros Cines">
+              <itemDeMenu>
+                <menuHasItemDeMenu Id="e3a3c00a-cad5-4db5-88fb-8c77621f6c9f">
+                  <itemDeMenu Id="94ba4f0b-eba3-4b18-b240-dee7d6e71ad6" titulo="Manoteras">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="8f7ec01c-1eb4-4a68-916d-9810da02fc6b">
+                        <ventanaSecundariaMoniker Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+                <menuHasItemDeMenu Id="9f4245f5-3c12-4c2b-adcb-34e23b4b0c81">
+                  <itemDeMenu Id="b5722569-ec57-4e72-8d25-631033f55316" titulo="Mendez Alvaro">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="59c1b7d2-61bf-47a9-bb6a-ae17d8511c62">
+                        <ventanaSecundariaMoniker Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+                <menuHasItemDeMenu Id="d9e5fc94-ec62-43b1-8fc8-5e3fe4bfcd14">
+                  <itemDeMenu Id="b9d30373-0668-4ddf-9084-0d4a0bb6990c" titulo="Nassica">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="f24d89dd-e2ae-4662-85ca-51f547b097ad">
+                        <ventanaSecundariaMoniker Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+              </itemDeMenu>
+            </menu>
+          </ventanaHasMenu>
+        </menu>
+        <boton>
+          <ventanaHasBoton Id="0b71ef3c-f901-4125-b427-2ec308da0687">
+            <boton Id="91b61ee9-da61-4584-b786-8864bc13b265" titulo="Volver">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="faecbfc5-5c0a-4b5c-9e00-08a6a8716cbb">
+                  <ventanaPrincipalMoniker Id="407ac6e6-c7b6-43d7-8dd1-5539744c894f" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="202dc711-1c6c-482b-a74b-f62dfbfc83d0">
+            <boton Id="ea90906c-d178-4c18-adcb-7bf8ba0078ec" titulo="Salir">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="5e85a06c-397d-4a01-9ac8-f01060553836">
+                  <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+        </boton>
+      </ventanaSecundaria>
+    </tapizGUIHasVentanaSecundaria>
+    <tapizGUIHasVentanaSecundaria Id="caccd7e0-7f65-46fe-8674-0fb3642993cc">
+      <ventanaSecundaria Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" nombre="Compra entradas" ancho="0" alto="0" esModal="false">
+        <boton>
+          <ventanaHasBoton Id="c33b8b6c-9d66-479a-89e3-5bee4de1436a">
+            <boton Id="dfcab6ce-c73a-4137-bb35-d5a7e58ffcb0" titulo="Comprar entradas en web">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="0f8fe34e-9590-48b7-8bf4-5bff01fb8c99">
+                  <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="644d1d2c-b063-4693-8e1e-82d7e8aa743e">
+            <boton Id="0889a617-b3b7-4a12-94e7-e21931569229" titulo="Volver">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="54a092ff-4de5-4dec-bad9-1d4c4f1f35a9">
+                  <ventanaSecundariaMoniker Id="4d21d7d9-e180-443f-84c8-40243a34eac2" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+        </boton>
+      </ventanaSecundaria>
+    </tapizGUIHasVentanaSecundaria>
+    <tapizGUIHasVentanaSecundaria Id="e739606d-add5-4076-948d-3dd069696ef2">
+      <ventanaSecundaria Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" nombre="Info Cine" ancho="0" alto="0" esModal="false">
+        <boton>
+          <ventanaHasBoton Id="642d7aac-995b-46a4-9335-31a76894fcd6">
+            <boton Id="c3a8516d-f6e2-4177-ba30-a8efb173ef6e" titulo="Ver info en web">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="b3358f7a-5c6e-4b25-8411-9c23c469cc33">
+                  <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="eb14bc26-ae12-4a33-81f2-2a6a63e45e48">
+            <boton Id="6edab2c6-a926-4980-89fd-8d434e0f8f5e" titulo="Volver">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="217e4d53-2fe9-47d6-b9c8-6115c67e2a1f">
+                  <ventanaSecundariaMoniker Id="7bf25408-d6d4-446a-8c91-572daf92cca8" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+        </boton>
+      </ventanaSecundaria>
+    </tapizGUIHasVentanaSecundaria>
+  </ventanaSecundaria>
+</tapizGUI>

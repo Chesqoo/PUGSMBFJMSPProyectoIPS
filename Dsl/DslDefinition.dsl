@@ -38,7 +38,7 @@
     </DomainClass>
     <DomainClass Id="7fc839cd-5309-48d1-9a17-1a51437c88cb" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana" Name="Ventana" DisplayName="Ventana" InheritanceModifier="Abstract" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
       <Properties>
-        <DomainProperty Id="d76bdded-3c28-4363-b3c8-6a43cf103214" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Nombre" Name="nombre" DisplayName="Nombre">
+        <DomainProperty Id="d76bdded-3c28-4363-b3c8-6a43cf103214" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Nombre" Name="nombre" DisplayName="Nombre" IsElementName="true">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -273,23 +273,27 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <CompartmentShape Id="831d3dde-3ee6-41eb-962f-7ab6a883dd5c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana" Name="ShapeVentana" DisplayName="Shape Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Ventana" InitialWidth="2" InitialHeight="3" Geometry="RoundedRectangle" />
-    <CompartmentShape Id="0124312f-75cf-4418-8e03-a2d5cb9ce8c5" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu" Name="ShapeMenu" DisplayName="Shape Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Menu" FillColor="Yellow" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
+    <CompartmentShape Id="831d3dde-3ee6-41eb-962f-7ab6a883dd5c" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeVentana" Name="ShapeVentana" DisplayName="Shape Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Ventana" TextColor="White" InitialWidth="2.2" InitialHeight="3" OutlineThickness="0.04" Geometry="RoundedRectangle">
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="nombreDec" DisplayName="Nombre Dec" DefaultText="nombreDec" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+    </CompartmentShape>
+    <CompartmentShape Id="0124312f-75cf-4418-8e03-a2d5cb9ce8c5" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeMenu" Name="ShapeMenu" DisplayName="Shape Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Menu" FillColor="Yellow" InitialWidth="2" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="nombreMenu" DisplayName="Nombre Menu" DefaultText="nombreMenu" />
+        <TextDecorator Name="nombreDec" DisplayName="Nombre Dec" DefaultText="nombreDec" FontStyle="Bold, Underline" FontSize="10" />
       </ShapeHasDecorators>
     </CompartmentShape>
     <GeometryShape Id="ce659b56-086b-4edb-ae94-54e4a1e5c58f" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ShapeEstadoFin" Name="ShapeEstadoFin" DisplayName="Shape Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Shape Estado Fin" FillColor="DarkRed" InitialWidth="0.5" InitialHeight="0.5" OutlineThickness="0.005" FillGradientMode="None" Geometry="Circle" />
-    <CompartmentShape Id="5c617f95-13db-4fc0-bc31-7afcff35f19a" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonCompart" Name="BotonCompart" DisplayName="Boton Compart" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Boton Compart" FillColor="PowderBlue" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="nombreBoton" DisplayName="Nombre Boton" DefaultText="nombreBoton" />
+    <GeometryShape Id="b460f003-9a92-4383-988e-99c28b6f9fa3" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaBoton" Name="MetaforaBoton" DisplayName="Metafora Boton" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Metafora Boton" FillColor="LightCoral" InitialWidth="0.6" InitialHeight="0.6" FillGradientMode="None" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="nombreDec" DisplayName="Nombre Dec" DefaultText="nombreDec" />
       </ShapeHasDecorators>
-    </CompartmentShape>
-    <CompartmentShape Id="a87bc5bb-5944-465e-a996-3bcfb0486f4e" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenuComp" Name="ItemDeMenuComp" DisplayName="Item De Menu Comp" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Item De Menu Comp" FillColor="Orange" InitialHeight="0.5" FillGradientMode="None" Geometry="Rectangle">
-      <BaseCompartmentShape>
-        <CompartmentShapeMoniker Name="BotonCompart" />
-      </BaseCompartmentShape>
-    </CompartmentShape>
+    </GeometryShape>
+    <GeometryShape Id="877c9f21-2b8b-4d56-a4be-06658b47332e" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MetaforaItemMenu" Name="MetaforaItemMenu" DisplayName="Metafora Item Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Metafora Item Menu" FillColor="Orange" InitialWidth="1.8" InitialHeight="0.5" FillGradientMode="None" Geometry="Rectangle">
+      <BaseGeometryShape>
+        <GeometryShapeMoniker Name="MetaforaBoton" />
+      </BaseGeometryShape>
+    </GeometryShape>
   </Shapes>
   <Connectors>
     <Connector Id="0c1e583f-8192-4e2a-b75b-62a7e978ed51" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotonVentana" Name="ConectorBotonVentana" DisplayName="Conector Boton Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FixedTooltipText="Conector Boton Ventana" Color="Cyan" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow" />
@@ -409,12 +413,6 @@
       <XmlClassData TypeName="ConectorBotonFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectorBotonFinMoniker" ElementName="conectorBotonFin" MonikerTypeName="ConectorBotonFinMoniker">
         <ConnectorMoniker Name="ConectorBotonFin" />
       </XmlClassData>
-      <XmlClassData TypeName="BotonCompart" MonikerAttributeName="" SerializeId="true" MonikerElementName="botonCompartMoniker" ElementName="botonCompart" MonikerTypeName="BotonCompartMoniker">
-        <CompartmentShapeMoniker Name="BotonCompart" />
-      </XmlClassData>
-      <XmlClassData TypeName="ItemDeMenuComp" MonikerAttributeName="" SerializeId="true" MonikerElementName="itemDeMenuCompMoniker" ElementName="itemDeMenuComp" MonikerTypeName="ItemDeMenuCompMoniker">
-        <CompartmentShapeMoniker Name="ItemDeMenuComp" />
-      </XmlClassData>
       <XmlClassData TypeName="TapizGUIHasVentanaPrincipal" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIHasVentanaPrincipalMoniker" ElementName="tapizGUIHasVentanaPrincipal" MonikerTypeName="TapizGUIHasVentanaPrincipalMoniker">
         <DomainRelationshipMoniker Name="TapizGUIHasVentanaPrincipal" />
       </XmlClassData>
@@ -423,6 +421,12 @@
       </XmlClassData>
       <XmlClassData TypeName="BotonReferencesEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="botonReferencesEstadoFinMoniker" ElementName="botonReferencesEstadoFin" MonikerTypeName="BotonReferencesEstadoFinMoniker">
         <DomainRelationshipMoniker Name="BotonReferencesEstadoFin" />
+      </XmlClassData>
+      <XmlClassData TypeName="MetaforaBoton" MonikerAttributeName="" SerializeId="true" MonikerElementName="metaforaBotonMoniker" ElementName="metaforaBoton" MonikerTypeName="MetaforaBotonMoniker">
+        <GeometryShapeMoniker Name="MetaforaBoton" />
+      </XmlClassData>
+      <XmlClassData TypeName="MetaforaItemMenu" MonikerAttributeName="" SerializeId="true" MonikerElementName="metaforaItemMenuMoniker" ElementName="metaforaItemMenu" MonikerTypeName="MetaforaItemMenuMoniker">
+        <GeometryShapeMoniker Name="MetaforaItemMenu" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -478,7 +482,7 @@
           <DomainPath />
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="ShapeMenu/nombreMenu" />
+          <TextDecoratorMoniker Name="ShapeMenu/nombreDec" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="Menu/titulo" />
@@ -494,33 +498,31 @@
         </ParentElementPath>
         <GeometryShapeMoniker Name="ShapeEstadoFin" />
       </ShapeMap>
-      <CompartmentShapeMap HasCustomParentElement="true">
+      <ShapeMap HasCustomParentElement="true">
         <DomainClassMoniker Name="Boton" />
-        <ParentElementPath>
-          <DomainPath>VentanaHasBoton.Ventana/!Ventana</DomainPath>
-        </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="BotonCompart/nombreBoton" />
+          <TextDecoratorMoniker Name="MetaforaBoton/nombreDec" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="Boton/titulo" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <CompartmentShapeMoniker Name="BotonCompart" />
-      </CompartmentShapeMap>
-      <CompartmentShapeMap HasCustomParentElement="true">
-        <DomainClassMoniker Name="ItemDeMenu" />
-        <ParentElementPath>
-          <DomainPath />
-        </ParentElementPath>
-        <CompartmentShapeMoniker Name="ItemDeMenuComp" />
-      </CompartmentShapeMap>
+        <GeometryShapeMoniker Name="MetaforaBoton" />
+      </ShapeMap>
       <CompartmentShapeMap>
         <DomainClassMoniker Name="VentanaPrincipal" />
         <ParentElementPath>
           <DomainPath>TapizGUIHasVentanaPrincipal.TapizGUI/!TapizGUI</DomainPath>
         </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ShapeVentana/nombreDec" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Ventana/nombre" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
         <CompartmentShapeMoniker Name="ShapeVentana" />
       </CompartmentShapeMap>
       <CompartmentShapeMap>
@@ -528,8 +530,23 @@
         <ParentElementPath>
           <DomainPath>TapizGUIHasVentanaSecundaria.TapizGUI/!TapizGUI</DomainPath>
         </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ShapeVentana/nombreDec" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Ventana/nombre" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
         <CompartmentShapeMoniker Name="ShapeVentana" />
       </CompartmentShapeMap>
+      <ShapeMap HasCustomParentElement="true">
+        <DomainClassMoniker Name="ItemDeMenu" />
+        <ParentElementPath>
+          <DomainPath />
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="MetaforaItemMenu" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>

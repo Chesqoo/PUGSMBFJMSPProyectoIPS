@@ -356,6 +356,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (nombre = {nombrePropertyStorage})")]
 	[DslModeling::DomainObjectId("7fc839cd-5309-48d1-9a17-1a51437c88cb")]
 	public abstract partial class Ventana : DslModeling::ModelElement
 	{
@@ -393,6 +394,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/nombre.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana/nombre.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::ElementName]
 		[DslModeling::DomainObjectId("d76bdded-3c28-4363-b3c8-6a43cf103214")]
 		public global::System.String nombre
 		{
