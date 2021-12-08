@@ -89,6 +89,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					{
 						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton sourceBoton = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton)candidateSource;
 						global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana targetVentana = (global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana)candidateTarget;
+						if(sourceBoton == null || global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.GetLinkToVentanaTarget(sourceBoton) != null) return false;
 						if(targetVentana == null || sourceBoton == null || global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.GetLinks(sourceBoton, targetVentana).Count > 0) return false;
 						return true;
 					}

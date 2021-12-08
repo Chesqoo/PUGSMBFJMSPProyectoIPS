@@ -13,15 +13,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// Serializer TapizGUIsSerializer for DomainClass TapizGUIs.
+	/// Serializer TapizGUISerializer for DomainClass TapizGUI.
 	/// </summary>
-	public partial class TapizGUIsSerializer : DslModeling::DomainClassXmlSerializer
+	public partial class TapizGUISerializer : DslModeling::DomainClassXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// TapizGUIsSerializer Constructor
+		/// TapizGUISerializer Constructor
 		/// </summary>
-		public TapizGUIsSerializer ()
+		public TapizGUISerializer ()
 			: base ()
 		{
 		}
@@ -47,25 +47,25 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of TapizGUIs.
+		/// This is the XML tag name used to serialize an instance of TapizGUI.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"tapizGUIs"; }
+			get { return @"tapizGUI"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of TapizGUIs.
+		/// This is the XML tag name used to serialize a monikerized instance of TapizGUI.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"tapizGUIsMoniker"; }
+			get { return @"tapizGUIMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of TapizGUIs in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of TapizGUI in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -76,16 +76,16 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one TapizGUIs instance from XML.
+		/// Public Read() method that deserializes one TapizGUI instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the TapizGUIs element that is about to be deserialized. 
+		/// of the TapizGUI element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIs instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUI instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -143,7 +143,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIs instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUI instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -151,8 +151,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			TapizGUIs instanceOfTapizGUIs = element as TapizGUIs;
-			global::System.Diagnostics.Debug.Assert(instanceOfTapizGUIs != null, "Expecting an instance of TapizGUIs");
+			TapizGUI instanceOfTapizGUI = element as TapizGUI;
+			global::System.Diagnostics.Debug.Assert(instanceOfTapizGUI != null, "Expecting an instance of TapizGUI");
 	
 			// solucionGUIs
 			if (!serializationContext.Result.Failed)
@@ -163,7 +163,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					global::System.String valueOfsolucionGUIs;
 					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribsolucionGUIs, out valueOfsolucionGUIs))
 					{
-						instanceOfTapizGUIs.solucionGUIs = valueOfsolucionGUIs;
+						instanceOfTapizGUI.solucionGUIs = valueOfsolucionGUIs;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -187,19 +187,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIs instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUI instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
 			// Always call the base class so any extensions are deserialized
 			base.ReadElements(serializationContext, element, reader);
 	
-			TapizGUIs instanceOfTapizGUIs = element as TapizGUIs;
-			global::System.Diagnostics.Debug.Assert(instanceOfTapizGUIs != null, "Expecting an instance of TapizGUIs!");
+			TapizGUI instanceOfTapizGUI = element as TapizGUI;
+			global::System.Diagnostics.Debug.Assert(instanceOfTapizGUI != null, "Expecting an instance of TapizGUI!");
 	
 			// Read child model elements (which are always serialized as nested XML elements).
 			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-				ReadChildElements(serializationContext, instanceOfTapizGUIs, reader);
+				ReadChildElements(serializationContext, instanceOfTapizGUI, reader);
 		}
 	
 		/// <summary>
@@ -216,14 +216,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="element">In-memory TapizGUIs instance that will get the deserialized data.</param>
-		private static void ReadChildElements(DslModeling::SerializationContext serializationContext, TapizGUIs element, global::System.Xml.XmlReader reader)
+		/// <param name="element">In-memory TapizGUI instance that will get the deserialized data.</param>
+		private static void ReadChildElements(DslModeling::SerializationContext serializationContext, TapizGUI element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
 				switch (reader.LocalName)
 				{
-					case "ventana":	// Relationship "TapizGUIsHasVentana"
+					case "ventana":	// Relationship "TapizGUIHasVentana"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
 							DslModeling::SerializationUtilities.Skip(reader);
@@ -231,11 +231,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						else
 						{
 							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <ventana>
-							ReadTapizGUIsHasVentanaInstances(serializationContext, element, reader);
+							ReadTapizGUIHasVentanaInstances(serializationContext, element, reader);
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </ventana>
 						}
 						break;
-					case "estadoFin":	// Relationship "TapizGUIsHasEstadoFin"
+					case "estadoFin":	// Relationship "TapizGUIHasEstadoFin"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
 							DslModeling::SerializationUtilities.Skip(reader);
@@ -243,7 +243,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						else
 						{
 							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <estadoFin>
-							ReadTapizGUIsHasEstadoFinInstances(serializationContext, element, reader);
+							ReadTapizGUIHasEstadoFinInstances(serializationContext, element, reader);
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </estadoFin>
 						}
 						break;
@@ -254,7 +254,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship TapizGUIsHasVentana.
+		/// Reads all instances of relationship TapizGUIHasVentana.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
@@ -262,34 +262,34 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIs instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUI instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		private static void ReadTapizGUIsHasVentanaInstances(DslModeling::SerializationContext serializationContext, TapizGUIs element, global::System.Xml.XmlReader reader)
+		private static void ReadTapizGUIHasVentanaInstances(DslModeling::SerializationContext serializationContext, TapizGUI element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newTapizGUIsHasVentanaSerializer = serializationContext.Directory.GetSerializer(TapizGUIsHasVentana.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newTapizGUIsHasVentanaSerializer != null, "Cannot find serializer for TapizGUIsHasVentana!");
-				TapizGUIsHasVentana newTapizGUIsHasVentana = newTapizGUIsHasVentanaSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as TapizGUIsHasVentana;
-				if (newTapizGUIsHasVentana != null)
+				DslModeling::DomainClassXmlSerializer newTapizGUIHasVentanaSerializer = serializationContext.Directory.GetSerializer(TapizGUIHasVentana.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newTapizGUIHasVentanaSerializer != null, "Cannot find serializer for TapizGUIHasVentana!");
+				TapizGUIHasVentana newTapizGUIHasVentana = newTapizGUIHasVentanaSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as TapizGUIHasVentana;
+				if (newTapizGUIHasVentana != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newTapizGUIsHasVentana, TapizGUIsHasVentana.TapizGUIsDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newTapizGUIsHasVentana.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newTapizGUIsHasVentana.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newTapizGUIsHasVentana, reader);
+					DslModeling::DomainRoleInfo.SetRolePlayer (newTapizGUIHasVentana, TapizGUIHasVentana.TapizGUIDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newTapizGUIHasVentana.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newTapizGUIHasVentana.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newTapizGUIHasVentana, reader);
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newVentanaOfTapizGUIsHasVentanaSerializer = serializationContext.Directory.GetSerializer(Ventana.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newVentanaOfTapizGUIsHasVentanaSerializer != null, "Cannot find serializer for Ventana!");
-					Ventana newVentanaOfTapizGUIsHasVentana = newVentanaOfTapizGUIsHasVentanaSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as Ventana;
-					if (newVentanaOfTapizGUIsHasVentana != null)
+					DslModeling::DomainClassXmlSerializer newVentanaOfTapizGUIHasVentanaSerializer = serializationContext.Directory.GetSerializer(Ventana.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newVentanaOfTapizGUIHasVentanaSerializer != null, "Cannot find serializer for Ventana!");
+					Ventana newVentanaOfTapizGUIHasVentana = newVentanaOfTapizGUIHasVentanaSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as Ventana;
+					if (newVentanaOfTapizGUIHasVentana != null)
 					{
-						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(TapizGUIsHasVentana));
-						element.Ventana.Add(newVentanaOfTapizGUIsHasVentana);
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newVentanaOfTapizGUIsHasVentana.GetDomainClass().Id);	
-						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newVentanaOfTapizGUIsHasVentana.GetDomainClass().Name + "!");
-						targetSerializer.Read(serializationContext, newVentanaOfTapizGUIsHasVentana, reader);
+						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(TapizGUIHasVentana));
+						element.Ventana.Add(newVentanaOfTapizGUIHasVentana);
+						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newVentanaOfTapizGUIHasVentana.GetDomainClass().Id);	
+						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newVentanaOfTapizGUIHasVentana.GetDomainClass().Name + "!");
+						targetSerializer.Read(serializationContext, newVentanaOfTapizGUIHasVentana, reader);
 					}
 					else
 					{	// Unknown element, skip.
@@ -300,7 +300,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship TapizGUIsHasEstadoFin.
+		/// Reads all instances of relationship TapizGUIHasEstadoFin.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
@@ -308,34 +308,34 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIs instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUI instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		private static void ReadTapizGUIsHasEstadoFinInstances(DslModeling::SerializationContext serializationContext, TapizGUIs element, global::System.Xml.XmlReader reader)
+		private static void ReadTapizGUIHasEstadoFinInstances(DslModeling::SerializationContext serializationContext, TapizGUI element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newTapizGUIsHasEstadoFinSerializer = serializationContext.Directory.GetSerializer(TapizGUIsHasEstadoFin.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newTapizGUIsHasEstadoFinSerializer != null, "Cannot find serializer for TapizGUIsHasEstadoFin!");
-				TapizGUIsHasEstadoFin newTapizGUIsHasEstadoFin = newTapizGUIsHasEstadoFinSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as TapizGUIsHasEstadoFin;
-				if (newTapizGUIsHasEstadoFin != null)
+				DslModeling::DomainClassXmlSerializer newTapizGUIHasEstadoFinSerializer = serializationContext.Directory.GetSerializer(TapizGUIHasEstadoFin.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newTapizGUIHasEstadoFinSerializer != null, "Cannot find serializer for TapizGUIHasEstadoFin!");
+				TapizGUIHasEstadoFin newTapizGUIHasEstadoFin = newTapizGUIHasEstadoFinSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as TapizGUIHasEstadoFin;
+				if (newTapizGUIHasEstadoFin != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newTapizGUIsHasEstadoFin, TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newTapizGUIsHasEstadoFin.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newTapizGUIsHasEstadoFin.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newTapizGUIsHasEstadoFin, reader);
+					DslModeling::DomainRoleInfo.SetRolePlayer (newTapizGUIHasEstadoFin, TapizGUIHasEstadoFin.TapizGUIDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newTapizGUIHasEstadoFin.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newTapizGUIHasEstadoFin.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newTapizGUIHasEstadoFin, reader);
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newEstadoFinOfTapizGUIsHasEstadoFinSerializer = serializationContext.Directory.GetSerializer(EstadoFin.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newEstadoFinOfTapizGUIsHasEstadoFinSerializer != null, "Cannot find serializer for EstadoFin!");
-					EstadoFin newEstadoFinOfTapizGUIsHasEstadoFin = newEstadoFinOfTapizGUIsHasEstadoFinSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as EstadoFin;
-					if (newEstadoFinOfTapizGUIsHasEstadoFin != null)
+					DslModeling::DomainClassXmlSerializer newEstadoFinOfTapizGUIHasEstadoFinSerializer = serializationContext.Directory.GetSerializer(EstadoFin.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newEstadoFinOfTapizGUIHasEstadoFinSerializer != null, "Cannot find serializer for EstadoFin!");
+					EstadoFin newEstadoFinOfTapizGUIHasEstadoFin = newEstadoFinOfTapizGUIHasEstadoFinSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as EstadoFin;
+					if (newEstadoFinOfTapizGUIHasEstadoFin != null)
 					{
-						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(TapizGUIsHasEstadoFin));
-						element.EstadoFin.Add(newEstadoFinOfTapizGUIsHasEstadoFin);
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newEstadoFinOfTapizGUIsHasEstadoFin.GetDomainClass().Id);	
-						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newEstadoFinOfTapizGUIsHasEstadoFin.GetDomainClass().Name + "!");
-						targetSerializer.Read(serializationContext, newEstadoFinOfTapizGUIsHasEstadoFin, reader);
+						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(TapizGUIHasEstadoFin));
+						element.EstadoFin.Add(newEstadoFinOfTapizGUIHasEstadoFin);
+						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newEstadoFinOfTapizGUIHasEstadoFin.GetDomainClass().Id);	
+						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newEstadoFinOfTapizGUIHasEstadoFin.GetDomainClass().Name + "!");
+						targetSerializer.Read(serializationContext, newEstadoFinOfTapizGUIHasEstadoFin, reader);
 					}
 					else
 					{	// Unknown element, skip.
@@ -347,8 +347,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateInstance
 		/// <summary>
-		/// This method creates a correct instance of TapizGUIs based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized TapizGUIs, a new TapizGUIs instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of TapizGUI based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized TapizGUI, a new TapizGUI instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -358,7 +358,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created TapizGUIs instance, or null if the reader is not pointing to a serialized TapizGUIs instance.</returns>
+		/// <returns>Created TapizGUI instance, or null if the reader is not pointing to a serialized TapizGUI instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -378,18 +378,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "TapizGUIs" instance.
+				{	// New "TapizGUI" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "TapizGUIs".
+				{	// Check for derived classes of "TapizGUI".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class instance.
-						TapizGUIsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIsSerializer;
+						TapizGUISerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUISerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -400,8 +400,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// This method creates an instance of TapizGUIs based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of TapizGUIs.
+		/// This method creates an instance of TapizGUI based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of TapizGUI.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -409,8 +409,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new TapizGUIs instance should be created.</param>	
-		/// <returns>Created TapizGUIs instance.</returns>
+		/// <param name="partition">Partition in which new TapizGUI instance should be created.</param>	
+		/// <returns>Created TapizGUI instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -426,7 +426,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				{
 					id = new global::System.Guid (idStr);
 				}
-				return new TapizGUIs(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+				return new TapizGUI(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
 			}
 			catch (global::System.ArgumentNullException /* anEx */)
 			{	
@@ -444,12 +444,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from TapizGUIs, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from TapizGUI, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from TapizGUIs.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from TapizGUI.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -458,7 +458,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIs.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUI.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -490,7 +490,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including TapizGUIs itself) instance of TapizGUIs based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including TapizGUI itself) instance of TapizGUI based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -524,18 +524,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "TapizGUIs" moniker instance.
+				{	// New "TapizGUI" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "TapizGUIs".
+				{	// Check for derived classes of "TapizGUI".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						TapizGUIsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIsSerializer;
+						TapizGUISerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUISerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -546,7 +546,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of TapizGUIs based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of TapizGUI based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -571,7 +571,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, TapizGUIs.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, TapizGUI.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -595,12 +595,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIs, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUI, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIs.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUI.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -609,7 +609,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIs.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUI.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -635,13 +635,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized TapizGUIs instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized TapizGUI instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIs instance to be monikerized.</param>
+		/// <param name="element">TapizGUI instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the TapizGUIs instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the TapizGUIs instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the TapizGUI instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the TapizGUI instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -670,10 +670,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one TapizGUIs instance into XML.
+		/// Public Write() method that serializes one TapizGUI instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIs instance to be serialized.</param>
+		/// <param name="element">TapizGUI instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -734,7 +734,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIs instance to be serialized.</param>
+		/// <param name="element">TapizGUI instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -742,13 +742,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			TapizGUIs instanceOfTapizGUIs = element as TapizGUIs;
-			global::System.Diagnostics.Debug.Assert(instanceOfTapizGUIs != null, "Expecting an instance of TapizGUIs");
+			TapizGUI instanceOfTapizGUI = element as TapizGUI;
+			global::System.Diagnostics.Debug.Assert(instanceOfTapizGUI != null, "Expecting an instance of TapizGUI");
 	
 			// solucionGUIs
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfTapizGUIs.solucionGUIs;
+				global::System.String propValue = instanceOfTapizGUI.solucionGUIs;
 				if (!serializationContext.Result.Failed)
 				{
 					if (!string.IsNullOrEmpty(propValue))
@@ -762,15 +762,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIs instance to be serialized.</param>
+		/// <param name="element">TapizGUI instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
 			// Always call the base class so any extensions are serialized
 			base.WriteElements(serializationContext, element, writer);
 	
-			TapizGUIs instance = element as TapizGUIs;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIs!");
+			TapizGUI instance = element as TapizGUI;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUI!");
 	
 			// Write child model elements (which are always serialized as nested XML elements).
 			if (!serializationContext.Result.Failed)
@@ -782,42 +782,42 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Serialize all child model elements.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIs instance to be serialized.</param>
+		/// <param name="element">TapizGUI instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]		
-		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, TapizGUIs element, global::System.Xml.XmlWriter writer)
+		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, TapizGUI element, global::System.Xml.XmlWriter writer)
 		{
-			// TapizGUIsHasVentana
-			global::System.Collections.ObjectModel.ReadOnlyCollection<TapizGUIsHasVentana> allTapizGUIsHasVentanaInstances = TapizGUIsHasVentana.GetLinksToVentana(element);
-			if (!serializationContext.Result.Failed && allTapizGUIsHasVentanaInstances.Count > 0)
+			// TapizGUIHasVentana
+			global::System.Collections.ObjectModel.ReadOnlyCollection<TapizGUIHasVentana> allTapizGUIHasVentanaInstances = TapizGUIHasVentana.GetLinksToVentana(element);
+			if (!serializationContext.Result.Failed && allTapizGUIHasVentanaInstances.Count > 0)
 			{
 				writer.WriteStartElement("ventana");
-				foreach (TapizGUIsHasVentana eachTapizGUIsHasVentanaInstance in allTapizGUIsHasVentanaInstances)
+				foreach (TapizGUIHasVentana eachTapizGUIHasVentanaInstance in allTapizGUIHasVentanaInstances)
 				{
 					if (serializationContext.Result.Failed)
 						break;
 	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachTapizGUIsHasVentanaInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachTapizGUIsHasVentanaInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachTapizGUIsHasVentanaInstance, writer);
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachTapizGUIHasVentanaInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachTapizGUIHasVentanaInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachTapizGUIHasVentanaInstance, writer);
 				}
 				writer.WriteEndElement();
 			}
 	
-			// TapizGUIsHasEstadoFin
-			global::System.Collections.ObjectModel.ReadOnlyCollection<TapizGUIsHasEstadoFin> allTapizGUIsHasEstadoFinInstances = TapizGUIsHasEstadoFin.GetLinksToEstadoFin(element);
-			if (!serializationContext.Result.Failed && allTapizGUIsHasEstadoFinInstances.Count > 0)
+			// TapizGUIHasEstadoFin
+			global::System.Collections.ObjectModel.ReadOnlyCollection<TapizGUIHasEstadoFin> allTapizGUIHasEstadoFinInstances = TapizGUIHasEstadoFin.GetLinksToEstadoFin(element);
+			if (!serializationContext.Result.Failed && allTapizGUIHasEstadoFinInstances.Count > 0)
 			{
 				writer.WriteStartElement("estadoFin");
-				foreach (TapizGUIsHasEstadoFin eachTapizGUIsHasEstadoFinInstance in allTapizGUIsHasEstadoFinInstances)
+				foreach (TapizGUIHasEstadoFin eachTapizGUIHasEstadoFinInstance in allTapizGUIHasEstadoFinInstances)
 				{
 					if (serializationContext.Result.Failed)
 						break;
 	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachTapizGUIsHasEstadoFinInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachTapizGUIsHasEstadoFinInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachTapizGUIsHasEstadoFinInstance, writer);
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachTapizGUIHasEstadoFinInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachTapizGUIHasEstadoFinInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachTapizGUIHasEstadoFinInstance, writer);
 				}
 				writer.WriteEndElement();
 			}
@@ -827,11 +827,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given TapizGUIs instance.
+		/// This method calculates a moniker to a given TapizGUI instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">TapizGUIs instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the TapizGUIs instance.</returns>
+		/// <param name="element">TapizGUI instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the TapizGUI instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -843,8 +843,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			TapizGUIs instance = element as TapizGUIs;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIs!");
+			TapizGUI instance = element as TapizGUI;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUI!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -855,7 +855,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">TapizGUIs instance to get moniker qualifier from.</param>
+		/// <param name="element">TapizGUI instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -4488,7 +4488,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					else
 					{
 						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <ventanaTarget>
-						ReadBotonReferencesVentanaTargetInstances(serializationContext, element, reader);
+						ReadBotonReferencesVentanaTargetInstance(serializationContext, element, reader);
 						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </ventanaTarget>
 					}
 				}
@@ -4496,19 +4496,26 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship BotonReferencesVentanaTarget.
+		/// Reads instance of relationship BotonReferencesVentanaTarget.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
-		/// either the first instance, or a bogus tag. This method will deserialize all instances and ignore all bogus tags. When the
-		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
+		/// either the first instance, or a bogus tag. This method will deserialize only the first valid instance and ignore all the
+		/// rest tags (because the multiplicity allows only one instance). When the method returns, the reader will be positioned at 
+		/// the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="element">In-memory Boton instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
-		private static void ReadBotonReferencesVentanaTargetInstances(DslModeling::SerializationContext serializationContext, Boton element, global::System.Xml.XmlReader reader)
+		private static void ReadBotonReferencesVentanaTargetInstance(DslModeling::SerializationContext serializationContext, Boton element, global::System.Xml.XmlReader reader)
 		{
+			if (DslModeling::DomainRoleInfo.GetElementLinks<BotonReferencesVentanaTarget> (element, BotonReferencesVentanaTarget.BotonDomainRoleId).Count > 0)
+			{	// Only allow one instance, which already exists, so skip everything
+				DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
+				return;
+			}
+	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
 				DslModeling::DomainClassXmlSerializer newBotonReferencesVentanaTargetSerializer = serializationContext.Directory.GetSerializer(BotonReferencesVentanaTarget.DomainClassId);
@@ -4520,6 +4527,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newBotonReferencesVentanaTarget.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newBotonReferencesVentanaTarget.GetDomainClass().Name + "!");
 					targetSerializer.Read(serializationContext, newBotonReferencesVentanaTarget, reader);
+					break;	// Only allow one instance.
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
@@ -4531,6 +4539,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(BotonReferencesVentanaTarget));
 						new BotonReferencesVentanaTarget(element.Partition, new DslModeling::RoleAssignment(BotonReferencesVentanaTarget.BotonDomainRoleId, element), new DslModeling::RoleAssignment(BotonReferencesVentanaTarget.VentanaDomainRoleId, newVentanaMonikerOfBotonReferencesVentanaTarget));
 						DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
+						break;	// Only allow one instance.
 					}
 					else
 					{	// Unknown element, skip.
@@ -4984,19 +4993,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, Boton element, global::System.Xml.XmlWriter writer)
 		{
 			// BotonReferencesVentanaTarget
-			global::System.Collections.ObjectModel.ReadOnlyCollection<BotonReferencesVentanaTarget> allBotonReferencesVentanaTargetInstances = BotonReferencesVentanaTarget.GetLinksToVentanaTarget(element);
-			if (!serializationContext.Result.Failed && allBotonReferencesVentanaTargetInstances.Count > 0)
+			BotonReferencesVentanaTarget theBotonReferencesVentanaTargetInstance = BotonReferencesVentanaTarget.GetLinkToVentanaTarget(element);
+			if (!serializationContext.Result.Failed && theBotonReferencesVentanaTargetInstance != null)
 			{
 				writer.WriteStartElement("ventanaTarget");
-				foreach (BotonReferencesVentanaTarget eachBotonReferencesVentanaTargetInstance in allBotonReferencesVentanaTargetInstances)
-				{
-					if (serializationContext.Result.Failed)
-						break;
-	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachBotonReferencesVentanaTargetInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachBotonReferencesVentanaTargetInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachBotonReferencesVentanaTargetInstance, writer);
-				}
+				DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(theBotonReferencesVentanaTargetInstance.GetDomainClass().Id);
+				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + theBotonReferencesVentanaTargetInstance.GetDomainClass().Name + "!");
+				relSerializer.Write(serializationContext, theBotonReferencesVentanaTargetInstance, writer);
 				writer.WriteEndElement();
 			}
 	
@@ -5692,15 +5695,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// Serializer TapizGUIsHasVentanaSerializer for DomainClass TapizGUIsHasVentana.
+	/// Serializer TapizGUIHasVentanaSerializer for DomainClass TapizGUIHasVentana.
 	/// </summary>
-	public partial class TapizGUIsHasVentanaSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class TapizGUIHasVentanaSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// TapizGUIsHasVentanaSerializer Constructor
+		/// TapizGUIHasVentanaSerializer Constructor
 		/// </summary>
-		public TapizGUIsHasVentanaSerializer ()
+		public TapizGUIHasVentanaSerializer ()
 			: base ()
 		{
 		}
@@ -5726,25 +5729,25 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of TapizGUIsHasVentana.
+		/// This is the XML tag name used to serialize an instance of TapizGUIHasVentana.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"tapizGUIsHasVentana"; }
+			get { return @"tapizGUIHasVentana"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of TapizGUIsHasVentana.
+		/// This is the XML tag name used to serialize a monikerized instance of TapizGUIHasVentana.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"tapizGUIsHasVentanaMoniker"; }
+			get { return @"tapizGUIHasVentanaMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of TapizGUIsHasVentana in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of TapizGUIHasVentana in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -5755,16 +5758,16 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one TapizGUIsHasVentana instance from XML.
+		/// Public Read() method that deserializes one TapizGUIHasVentana instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the TapizGUIsHasVentana element that is about to be deserialized. 
+		/// of the TapizGUIHasVentana element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasVentana instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUIHasVentana instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -5812,7 +5815,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				}
 				else
 				{
-					PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIsHasVentana");
+					PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIHasVentana");
 				}
 			}
 	
@@ -5836,7 +5839,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasVentana instance that will link to the target Ventana instance.</param>
+		/// <param name="element">In-memory TapizGUIHasVentana instance that will link to the target Ventana instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -5863,7 +5866,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if (targetRolePlayer != null)
 				{
 					// Attach the target role-player.
-					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, TapizGUIsHasVentana.VentanaDomainRoleId, targetRolePlayer);
+					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, TapizGUIHasVentana.VentanaDomainRoleId, targetRolePlayer);
 					// Read target role-player.
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (targetRolePlayer.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + targetRolePlayer.GetDomainClass().Name + "!");
@@ -5876,7 +5879,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			if (targetRolePlayer == null)
 			{
-				PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIsHasVentana");
+				PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIHasVentana");
 			}
 		}
 	
@@ -5888,7 +5891,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasVentana instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUIHasVentana instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -5913,7 +5916,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasVentana instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUIHasVentana instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -5924,8 +5927,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of TapizGUIsHasVentana based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized TapizGUIsHasVentana, a new TapizGUIsHasVentana instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of TapizGUIHasVentana based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized TapizGUIHasVentana, a new TapizGUIHasVentana instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -5935,7 +5938,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created TapizGUIsHasVentana instance, or null if the reader is not pointing to a serialized TapizGUIsHasVentana instance.</returns>
+		/// <returns>Created TapizGUIHasVentana instance, or null if the reader is not pointing to a serialized TapizGUIHasVentana instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -5954,9 +5957,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of TapizGUIsHasVentana based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of TapizGUIHasVentana based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// TapizGUIsHasVentana type itself, only derived types are checked.
+		/// TapizGUIHasVentana type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -5965,7 +5968,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from TapizGUIsHasVentana, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from TapizGUIHasVentana, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -5997,18 +6000,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "TapizGUIsHasVentana" instance.
+				{	// New "TapizGUIHasVentana" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "TapizGUIsHasVentana".
+				{	// Check for derived classes of "TapizGUIHasVentana".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						TapizGUIsHasVentanaSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIsHasVentanaSerializer;
+						TapizGUIHasVentanaSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIHasVentanaSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -6019,8 +6022,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// This method creates an instance of TapizGUIsHasVentana based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of TapizGUIsHasVentana.
+		/// This method creates an instance of TapizGUIHasVentana based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of TapizGUIHasVentana.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -6028,8 +6031,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new TapizGUIsHasVentana instance should be created.</param>	
-		/// <returns>Created TapizGUIsHasVentana instance.</returns>
+		/// <param name="partition">Partition in which new TapizGUIHasVentana instance should be created.</param>	
+		/// <returns>Created TapizGUIHasVentana instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -6046,11 +6049,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new TapizGUIsHasVentana(
+				return new TapizGUIHasVentana(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIsHasVentana.TapizGUIsDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIsHasVentana.VentanaDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIHasVentana.TapizGUIDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIHasVentana.VentanaDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -6073,12 +6076,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from TapizGUIsHasVentana, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from TapizGUIHasVentana, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from TapizGUIsHasVentana.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from TapizGUIHasVentana.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -6087,7 +6090,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIsHasVentana.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIHasVentana.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -6119,7 +6122,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including TapizGUIsHasVentana itself) instance of TapizGUIsHasVentana based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including TapizGUIHasVentana itself) instance of TapizGUIHasVentana based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -6153,18 +6156,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "TapizGUIsHasVentana" moniker instance.
+				{	// New "TapizGUIHasVentana" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "TapizGUIsHasVentana".
+				{	// Check for derived classes of "TapizGUIHasVentana".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						TapizGUIsHasVentanaSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIsHasVentanaSerializer;
+						TapizGUIHasVentanaSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIHasVentanaSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -6175,7 +6178,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of TapizGUIsHasVentana based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of TapizGUIHasVentana based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -6200,7 +6203,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, TapizGUIsHasVentana.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, TapizGUIHasVentana.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -6224,12 +6227,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIsHasVentana, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIHasVentana, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIsHasVentana.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIHasVentana.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -6238,7 +6241,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIsHasVentana.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIHasVentana.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -6264,13 +6267,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized TapizGUIsHasVentana instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized TapizGUIHasVentana instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasVentana instance to be monikerized.</param>
+		/// <param name="element">TapizGUIHasVentana instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the TapizGUIsHasVentana instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the TapizGUIsHasVentana instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the TapizGUIHasVentana instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the TapizGUIHasVentana instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -6299,10 +6302,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one TapizGUIsHasVentana instance into XML.
+		/// Public Write() method that serializes one TapizGUIHasVentana instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasVentana instance to be serialized.</param>
+		/// <param name="element">TapizGUIHasVentana instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -6351,8 +6354,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 	
 			// Write the target role-player instance.
-			TapizGUIsHasVentana instance = element as TapizGUIsHasVentana;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIsHasVentana!");
+			TapizGUIHasVentana instance = element as TapizGUIHasVentana;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIHasVentana!");
 	
 			DslModeling::ModelElement targetElement = instance.Ventana;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
@@ -6372,7 +6375,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasVentana instance to be serialized.</param>
+		/// <param name="element">TapizGUIHasVentana instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -6387,7 +6390,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasVentana instance to be serialized.</param>
+		/// <param name="element">TapizGUIHasVentana instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -6400,11 +6403,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given TapizGUIsHasVentana instance.
+		/// This method calculates a moniker to a given TapizGUIHasVentana instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">TapizGUIsHasVentana instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the TapizGUIsHasVentana instance.</returns>
+		/// <param name="element">TapizGUIHasVentana instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the TapizGUIHasVentana instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -6416,8 +6419,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			TapizGUIsHasVentana instance = element as TapizGUIsHasVentana;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIsHasVentana!");
+			TapizGUIHasVentana instance = element as TapizGUIHasVentana;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIHasVentana!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -6428,7 +6431,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">TapizGUIsHasVentana instance to get moniker qualifier from.</param>
+		/// <param name="element">TapizGUIHasVentana instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -9706,15 +9709,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// Serializer TapizGUIsHasEstadoFinSerializer for DomainClass TapizGUIsHasEstadoFin.
+	/// Serializer TapizGUIHasEstadoFinSerializer for DomainClass TapizGUIHasEstadoFin.
 	/// </summary>
-	public partial class TapizGUIsHasEstadoFinSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class TapizGUIHasEstadoFinSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// TapizGUIsHasEstadoFinSerializer Constructor
+		/// TapizGUIHasEstadoFinSerializer Constructor
 		/// </summary>
-		public TapizGUIsHasEstadoFinSerializer ()
+		public TapizGUIHasEstadoFinSerializer ()
 			: base ()
 		{
 		}
@@ -9740,25 +9743,25 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of TapizGUIsHasEstadoFin.
+		/// This is the XML tag name used to serialize an instance of TapizGUIHasEstadoFin.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"tapizGUIsHasEstadoFin"; }
+			get { return @"tapizGUIHasEstadoFin"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of TapizGUIsHasEstadoFin.
+		/// This is the XML tag name used to serialize a monikerized instance of TapizGUIHasEstadoFin.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"tapizGUIsHasEstadoFinMoniker"; }
+			get { return @"tapizGUIHasEstadoFinMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of TapizGUIsHasEstadoFin in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of TapizGUIHasEstadoFin in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -9769,16 +9772,16 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one TapizGUIsHasEstadoFin instance from XML.
+		/// Public Read() method that deserializes one TapizGUIHasEstadoFin instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the TapizGUIsHasEstadoFin element that is about to be deserialized. 
+		/// of the TapizGUIHasEstadoFin element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasEstadoFin instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUIHasEstadoFin instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -9826,7 +9829,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				}
 				else
 				{
-					PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIsHasEstadoFin");
+					PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIHasEstadoFin");
 				}
 			}
 	
@@ -9850,7 +9853,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasEstadoFin instance that will link to the target EstadoFin instance.</param>
+		/// <param name="element">In-memory TapizGUIHasEstadoFin instance that will link to the target EstadoFin instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -9877,7 +9880,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				if (targetRolePlayer != null)
 				{
 					// Attach the target role-player.
-					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, TapizGUIsHasEstadoFin.EstadoFinDomainRoleId, targetRolePlayer);
+					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, TapizGUIHasEstadoFin.EstadoFinDomainRoleId, targetRolePlayer);
 					// Read target role-player.
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (targetRolePlayer.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + targetRolePlayer.GetDomainClass().Name + "!");
@@ -9890,7 +9893,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 			if (targetRolePlayer == null)
 			{
-				PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIsHasEstadoFin");
+				PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "TapizGUIHasEstadoFin");
 			}
 		}
 	
@@ -9902,7 +9905,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasEstadoFin instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUIHasEstadoFin instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -9927,7 +9930,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory TapizGUIsHasEstadoFin instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory TapizGUIHasEstadoFin instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -9938,8 +9941,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of TapizGUIsHasEstadoFin based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized TapizGUIsHasEstadoFin, a new TapizGUIsHasEstadoFin instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of TapizGUIHasEstadoFin based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized TapizGUIHasEstadoFin, a new TapizGUIHasEstadoFin instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -9949,7 +9952,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created TapizGUIsHasEstadoFin instance, or null if the reader is not pointing to a serialized TapizGUIsHasEstadoFin instance.</returns>
+		/// <returns>Created TapizGUIHasEstadoFin instance, or null if the reader is not pointing to a serialized TapizGUIHasEstadoFin instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -9968,9 +9971,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of TapizGUIsHasEstadoFin based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of TapizGUIHasEstadoFin based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// TapizGUIsHasEstadoFin type itself, only derived types are checked.
+		/// TapizGUIHasEstadoFin type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -9979,7 +9982,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from TapizGUIsHasEstadoFin, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from TapizGUIHasEstadoFin, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -10011,18 +10014,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "TapizGUIsHasEstadoFin" instance.
+				{	// New "TapizGUIHasEstadoFin" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "TapizGUIsHasEstadoFin".
+				{	// Check for derived classes of "TapizGUIHasEstadoFin".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						TapizGUIsHasEstadoFinSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIsHasEstadoFinSerializer;
+						TapizGUIHasEstadoFinSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIHasEstadoFinSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -10033,8 +10036,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// This method creates an instance of TapizGUIsHasEstadoFin based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of TapizGUIsHasEstadoFin.
+		/// This method creates an instance of TapizGUIHasEstadoFin based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of TapizGUIHasEstadoFin.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -10042,8 +10045,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new TapizGUIsHasEstadoFin instance should be created.</param>	
-		/// <returns>Created TapizGUIsHasEstadoFin instance.</returns>
+		/// <param name="partition">Partition in which new TapizGUIHasEstadoFin instance should be created.</param>	
+		/// <returns>Created TapizGUIHasEstadoFin instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -10060,11 +10063,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new TapizGUIsHasEstadoFin(
+				return new TapizGUIHasEstadoFin(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIsHasEstadoFin.EstadoFinDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIHasEstadoFin.TapizGUIDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (TapizGUIHasEstadoFin.EstadoFinDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -10087,12 +10090,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from TapizGUIsHasEstadoFin, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from TapizGUIHasEstadoFin, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from TapizGUIsHasEstadoFin.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from TapizGUIHasEstadoFin.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -10101,7 +10104,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIsHasEstadoFin.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIHasEstadoFin.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -10133,7 +10136,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including TapizGUIsHasEstadoFin itself) instance of TapizGUIsHasEstadoFin based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including TapizGUIHasEstadoFin itself) instance of TapizGUIHasEstadoFin based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -10167,18 +10170,18 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "TapizGUIsHasEstadoFin" moniker instance.
+				{	// New "TapizGUIHasEstadoFin" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "TapizGUIsHasEstadoFin".
+				{	// Check for derived classes of "TapizGUIHasEstadoFin".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						TapizGUIsHasEstadoFinSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIsHasEstadoFinSerializer;
+						TapizGUIHasEstadoFinSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as TapizGUIHasEstadoFinSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -10189,7 +10192,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of TapizGUIsHasEstadoFin based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of TapizGUIHasEstadoFin based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -10214,7 +10217,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, TapizGUIsHasEstadoFin.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, TapizGUIHasEstadoFin.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -10238,12 +10241,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIsHasEstadoFin, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIHasEstadoFin, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIsHasEstadoFin.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from TapizGUIHasEstadoFin.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -10252,7 +10255,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIsHasEstadoFin.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(TapizGUIHasEstadoFin.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -10278,13 +10281,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized TapizGUIsHasEstadoFin instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized TapizGUIHasEstadoFin instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasEstadoFin instance to be monikerized.</param>
+		/// <param name="element">TapizGUIHasEstadoFin instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the TapizGUIsHasEstadoFin instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the TapizGUIsHasEstadoFin instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the TapizGUIHasEstadoFin instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the TapizGUIHasEstadoFin instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -10313,10 +10316,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one TapizGUIsHasEstadoFin instance into XML.
+		/// Public Write() method that serializes one TapizGUIHasEstadoFin instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasEstadoFin instance to be serialized.</param>
+		/// <param name="element">TapizGUIHasEstadoFin instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -10365,8 +10368,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 	
 			// Write the target role-player instance.
-			TapizGUIsHasEstadoFin instance = element as TapizGUIsHasEstadoFin;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIsHasEstadoFin!");
+			TapizGUIHasEstadoFin instance = element as TapizGUIHasEstadoFin;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIHasEstadoFin!");
 	
 			DslModeling::ModelElement targetElement = instance.EstadoFin;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
@@ -10386,7 +10389,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasEstadoFin instance to be serialized.</param>
+		/// <param name="element">TapizGUIHasEstadoFin instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -10401,7 +10404,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">TapizGUIsHasEstadoFin instance to be serialized.</param>
+		/// <param name="element">TapizGUIHasEstadoFin instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -10414,11 +10417,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given TapizGUIsHasEstadoFin instance.
+		/// This method calculates a moniker to a given TapizGUIHasEstadoFin instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">TapizGUIsHasEstadoFin instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the TapizGUIsHasEstadoFin instance.</returns>
+		/// <param name="element">TapizGUIHasEstadoFin instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the TapizGUIHasEstadoFin instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -10430,8 +10433,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			TapizGUIsHasEstadoFin instance = element as TapizGUIsHasEstadoFin;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIsHasEstadoFin!");
+			TapizGUIHasEstadoFin instance = element as TapizGUIHasEstadoFin;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of TapizGUIHasEstadoFin!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -10442,7 +10445,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">TapizGUIsHasEstadoFin instance to get moniker qualifier from.</param>
+		/// <param name="element">TapizGUIHasEstadoFin instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -16494,7 +16497,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes = new global::System.Collections.Generic.List<DslModeling::DomainXmlSerializerDirectoryEntry>(24 + customSerializerCount);
 	
 					#region Serializers defined in this model
-					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TapizGUIs.DomainClassId, typeof(TapizGUIsSerializer)));
+					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TapizGUI.DomainClassId, typeof(TapizGUISerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(Ventana.DomainClassId, typeof(VentanaSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(VentanaPrincipal.DomainClassId, typeof(VentanaPrincipalSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(VentanaSecundaria.DomainClassId, typeof(VentanaSecundariaSerializer)));
@@ -16502,12 +16505,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ItemDeMenu.DomainClassId, typeof(ItemDeMenuSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(Boton.DomainClassId, typeof(BotonSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(EstadoFin.DomainClassId, typeof(EstadoFinSerializer)));
-					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TapizGUIsHasVentana.DomainClassId, typeof(TapizGUIsHasVentanaSerializer)));
+					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TapizGUIHasVentana.DomainClassId, typeof(TapizGUIHasVentanaSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(VentanaHasMenu.DomainClassId, typeof(VentanaHasMenuSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(MenuHasItemDeMenu.DomainClassId, typeof(MenuHasItemDeMenuSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(VentanaHasBoton.DomainClassId, typeof(VentanaHasBotonSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(BotonReferencesVentanaTarget.DomainClassId, typeof(BotonReferencesVentanaTargetSerializer)));
-					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TapizGUIsHasEstadoFin.DomainClassId, typeof(TapizGUIsHasEstadoFinSerializer)));
+					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TapizGUIHasEstadoFin.DomainClassId, typeof(TapizGUIHasEstadoFinSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(VentanaReferencesEstadoFin.DomainClassId, typeof(VentanaReferencesEstadoFinSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ShapeVentana.DomainClassId, typeof(ShapeVentanaSerializer)));
 					PUGSMBFJMSPProyectoIPSSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ShapeMenu.DomainClassId, typeof(ShapeMenuSerializer)));
@@ -17352,13 +17355,13 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		#region Load / Save model methods
 		
 		/// <summary>
-		/// Loads a TapizGUIs instance and its associated diagram file.
+		/// Loads a TapizGUI instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new TapizGUIs instance will be created.</param>
-		/// <param name="fileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
+		/// <param name="partition">Partition in which the new TapizGUI instance will be created.</param>
+		/// <param name="fileName">Name of the file from which the TapizGUI instance will be deserialized.</param>
 		/// <param name="serializerLocator">Used to locate any additional domain model types required to load the model. Can be null.</param>
-		/// <returns>The loaded TapizGUIs instance.</returns>
+		/// <returns>The loaded TapizGUI instance.</returns>
 		public virtual DslModeling::ModelElement LoadModel(DslModeling::SerializationResult serializationResult, 
 			DslModeling::Partition partition, 
 			string fileName, 
@@ -17375,9 +17378,9 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// Saves the given model root to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the TapizGUIs instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the TapizGUIs instance.</param>
+		/// <param name="modelRoot">TapizGUI instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the TapizGUI instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the TapizGUI instance.</param>
 		public void SaveModel(DslModeling::SerializationResult serializationResult, 
 			DslModeling::ModelElement modelRoot, 
 			string fileName, 
@@ -17387,7 +17390,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			if (modelRoot == null) { throw new global::System.ArgumentNullException("modelRoot"); }
 			if (string.IsNullOrEmpty("fileName")) { throw new global::System.ArgumentNullException("fileName"); }
 	
-			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs rootElement = modelRoot as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs;
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI rootElement = modelRoot as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI;
 			if (rootElement == null)
 			{
 				string errorMessage = string.Format(global::System.Globalization.CultureInfo.CurrentCulture,
@@ -17421,15 +17424,15 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Loads a TapizGUIs instance and its associated diagram file.
+		/// Loads a TapizGUI instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="modelPartition">Partition in which the new TapizGUIs instance will be created.</param>
-		/// <param name="modelFileName">Name of the file from which the TapizGUIs instance will be deserialized.</param>
+		/// <param name="modelPartition">Partition in which the new TapizGUI instance will be created.</param>
+		/// <param name="modelFileName">Name of the file from which the TapizGUI instance will be deserialized.</param>
 		/// <param name="diagramPartition">Partition in which the new PUGSMBFJMSPProyectoIPSDiagram instance will be created.</param>
 		/// <param name="diagramFileName">Name of the file from which the PUGSMBFJMSPProyectoIPSDiagram instance will be deserialized.</param>
 		/// <param name="serializerLocator">Used to locate any additional domain model types required to load the model. Can be null.</param>
-		/// <returns>The loaded TapizGUIs instance.</returns>
+		/// <returns>The loaded TapizGUI instance.</returns>
 		public DslModeling::ModelElement LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, 
 			DslModeling::Partition modelPartition, 
 			string modelFileName, 
@@ -17447,10 +17450,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 	
 		/// <summary>
-		/// Saves the given TapizGUIs and PUGSMBFJMSPProyectoIPSDiagram to the given files, with specified encoding.
+		/// Saves the given TapizGUI and PUGSMBFJMSPProyectoIPSDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">TapizGUIs instance to be saved.</param>
+		/// <param name="modelRoot">TapizGUI instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">PUGSMBFJMSPProyectoIPSDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
@@ -17468,7 +17471,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			if (diagram == null) { throw new global::System.ArgumentNullException("diagram"); }
 			if (string.IsNullOrEmpty("diagramFileName")) { throw new global::System.ArgumentNullException("diagramFileName"); }
 	
-			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs typedRoot = modelRoot as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs;
+			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI typedRoot = modelRoot as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI;
 			if (typedRoot == null)
 			{
 				string errorMessage = string.Format(global::System.Globalization.CultureInfo.CurrentCulture,

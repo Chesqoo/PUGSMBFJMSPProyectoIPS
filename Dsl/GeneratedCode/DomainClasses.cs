@@ -12,20 +12,20 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	/// <summary>
-	/// DomainClass TapizGUIs
+	/// DomainClass TapizGUI
 	/// The root in which all other elements are embedded. Appears as a diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("a09bf113-d90d-4cde-8cc8-9526f4784123")]
-	public partial class TapizGUIs : DslModeling::ModelElement
+	public partial class TapizGUI : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// TapizGUIs domain class Id.
+		/// TapizGUI domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xa09bf113, 0xd90d, 0x4cde, 0x8c, 0xc8, 0x95, 0x26, 0xf4, 0x78, 0x41, 0x23);
 		/// <summary>
@@ -33,7 +33,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public TapizGUIs(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public TapizGUI(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -43,7 +43,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public TapizGUIs(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public TapizGUI(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -62,10 +62,10 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		
 		/// <summary>
 		/// Gets or sets the value of solucionGUIs domain property.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Solucion GUIs
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI.Solucion GUIs
 		/// </summary>
-		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs/solucionGUIs.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs/solucionGUIs.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI/solucionGUIs.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI/solucionGUIs.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("1bd814c5-2747-4def-b0d4-acf3989bfb57")]
 		public global::System.String solucionGUIs
 		{
@@ -81,19 +81,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			}
 		}
 		/// <summary>
-		/// Value handler for the TapizGUIs.solucionGUIs domain property.
+		/// Value handler for the TapizGUI.solucionGUIs domain property.
 		/// </summary>
-		internal sealed partial class solucionGUIsPropertyHandler : DslModeling::DomainPropertyValueHandler<TapizGUIs, global::System.String>
+		internal sealed partial class solucionGUIsPropertyHandler : DslModeling::DomainPropertyValueHandler<TapizGUI, global::System.String>
 		{
 			private solucionGUIsPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the TapizGUIs.solucionGUIs domain property value handler.
+			/// Gets the singleton instance of the TapizGUI.solucionGUIs domain property value handler.
 			/// </summary>
 			public static readonly solucionGUIsPropertyHandler Instance = new solucionGUIsPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the TapizGUIs.solucionGUIs domain property.
+			/// Gets the Id of the TapizGUI.solucionGUIs domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -109,7 +109,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(TapizGUIs element)
+			public override sealed global::System.String GetValue(TapizGUI element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.solucionGUIsPropertyStorage;
@@ -120,7 +120,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(TapizGUIs element, global::System.String newValue)
+			public override sealed void SetValue(TapizGUI element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -139,14 +139,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		
 		/// <summary>
 		/// Gets a list of Ventana.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIs
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.TapizGUI
 		/// </summary>
 		public virtual DslModeling::LinkedElementCollection<Ventana> Ventana
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIsDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.TapizGUIDomainRoleId);
 			}
 		}
 		#endregion
@@ -154,14 +154,14 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		
 		/// <summary>
 		/// Gets a list of EstadoFin.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIs
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.TapizGUI
 		/// </summary>
 		public virtual DslModeling::LinkedElementCollection<EstadoFin> EstadoFin
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<EstadoFin>, EstadoFin>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<EstadoFin>, EstadoFin>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.TapizGUIDomainRoleId);
 			}
 		}
 		#endregion
@@ -222,7 +222,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana sourceVentana1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana;
 			if (sourceVentana1 != null)
 			{
-				// Create link for path TapizGUIsHasVentana.Ventana
+				// Create link for path TapizGUIHasVentana.Ventana
 				this.Ventana.Add(sourceVentana1);
 
 				return;
@@ -231,7 +231,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin sourceEstadoFin2 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin;
 			if (sourceEstadoFin2 != null)
 			{
-				// Create link for path TapizGUIsHasEstadoFin.EstadoFin
+				// Create link for path TapizGUIHasEstadoFin.EstadoFin
 				this.EstadoFin.Add(sourceEstadoFin2);
 
 				return;
@@ -262,12 +262,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana sourceVentana1 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana;
 			if (sourceVentana1 != null)
 			{
-				// Delete link for path TapizGUIsHasVentana.Ventana
+				// Delete link for path TapizGUIHasVentana.Ventana
 				
-				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs)this, sourceVentana1))
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI)this, sourceVentana1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIsDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId);
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.TapizGUIDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.VentanaDomainRoleId);
 				}
 
 				return;
@@ -276,12 +276,12 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 			global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin sourceEstadoFin2 = sourceElement as global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin;
 			if (sourceEstadoFin2 != null)
 			{
-				// Delete link for path TapizGUIsHasEstadoFin.EstadoFin
+				// Delete link for path TapizGUIHasEstadoFin.EstadoFin
 				
-				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs)this, sourceEstadoFin2))
+				foreach (DslModeling::ElementLink link in global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.GetLinks((global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI)this, sourceEstadoFin2))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIsDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId);
+					link.Delete(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.TapizGUIDomainRoleId, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.EstadoFinDomainRoleId);
 				}
 
 				return;
@@ -582,22 +582,22 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		#endregion
-		#region TapizGUIs opposite domain role accessor
+		#region TapizGUI opposite domain role accessor
 		/// <summary>
-		/// Gets or sets TapizGUIs.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.Ventana
+		/// Gets or sets TapizGUI.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.Ventana
 		/// </summary>
-		public virtual TapizGUIs TapizGUIs
+		public virtual TapizGUI TapizGUI
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId) as TapizGUIs;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.VentanaDomainRoleId) as TapizGUI;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.VentanaDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.VentanaDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -1424,18 +1424,22 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		#endregion
 		#region VentanaTarget opposite domain role accessor
-		
 		/// <summary>
-		/// Gets a list of VentanaTarget.
+		/// Gets or sets VentanaTarget.
 		/// Description for
 		/// UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Boton
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Ventana> VentanaTarget
+		public virtual Ventana VentanaTarget
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Ventana>, Ventana>(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.BotonDomainRoleId);
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.BotonDomainRoleId) as Ventana;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.BotonDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -1480,22 +1484,22 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 		}
 		#endregion
-		#region TapizGUIs opposite domain role accessor
+		#region TapizGUI opposite domain role accessor
 		/// <summary>
-		/// Gets or sets TapizGUIs.
-		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFin
+		/// Gets or sets TapizGUI.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.EstadoFin
 		/// </summary>
-		public virtual TapizGUIs TapizGUIs
+		public virtual TapizGUI TapizGUI
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId) as TapizGUIs;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.EstadoFinDomainRoleId) as TapizGUI;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFinDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.EstadoFinDomainRoleId, value);
 			}
 		}
 		#endregion

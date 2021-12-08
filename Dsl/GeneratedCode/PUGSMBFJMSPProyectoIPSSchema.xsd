@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema id="PUGSMBFJMSPProyectoIPSSchema" targetNamespace="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
-  <!-- TapizGUIs -->
-  <xsd:element name="tapizGUIs" type="TapizGUIs" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="TapizGUIs">
+  <!-- TapizGUI -->
+  <xsd:element name="tapizGUI" type="TapizGUI" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TapizGUI">
     <xsd:annotation>
       <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: TapizGUIsHasVentana -->
+          <!-- Relationship: TapizGUIHasVentana -->
           <xsd:element name="ventana" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of TapizGUIsHasVentana</xsd:documentation>
+              <xsd:documentation>Instances of TapizGUIHasVentana</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="tapizGUIsHasVentana" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="tapizGUIHasVentana" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of TapizGUIsHasVentana needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of TapizGUIHasVentana needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: TapizGUIsHasEstadoFin -->
+          <!-- Relationship: TapizGUIHasEstadoFin -->
           <xsd:element name="estadoFin" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of TapizGUIsHasEstadoFin</xsd:documentation>
+              <xsd:documentation>Instances of TapizGUIHasEstadoFin</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="tapizGUIsHasEstadoFin" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="tapizGUIHasEstadoFin" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of TapizGUIsHasEstadoFin needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of TapizGUIHasEstadoFin needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -59,11 +59,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TapizGUIs Moniker -->
-  <xsd:element name="tapizGUIsMoniker" type="TapizGUIsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="TapizGUIsMoniker">
+  <!-- TapizGUI Moniker -->
+  <xsd:element name="tapizGUIMoniker" type="TapizGUIMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TapizGUIMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for TapizGUIs instance.</xsd:documentation>
+      <xsd:documentation>Moniker for TapizGUI instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -302,13 +302,13 @@
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
           <!-- Relationship: BotonReferencesVentanaTarget -->
-          <xsd:element name="ventanaTarget" minOccurs="0" maxOccurs="1">
+          <xsd:element name="ventanaTarget" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of BotonReferencesVentanaTarget</xsd:documentation>
+              <xsd:documentation>Instance of BotonReferencesVentanaTarget</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="botonReferencesVentanaTarget" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="botonReferencesVentanaTarget" minOccurs="1" maxOccurs="1">
                   <xsd:annotation>
                     <xsd:documentation>[Instance of BotonReferencesVentanaTarget needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
@@ -378,9 +378,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TapizGUIsHasVentana -->
-  <xsd:element name="tapizGUIsHasVentana" type="TapizGUIsHasVentana" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="TapizGUIsHasVentana">
+  <!-- TapizGUIHasVentana -->
+  <xsd:element name="tapizGUIHasVentana" type="TapizGUIHasVentana" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TapizGUIHasVentana">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -401,11 +401,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TapizGUIsHasVentana Moniker -->
-  <xsd:element name="tapizGUIsHasVentanaMoniker" type="TapizGUIsHasVentanaMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="TapizGUIsHasVentanaMoniker">
+  <!-- TapizGUIHasVentana Moniker -->
+  <xsd:element name="tapizGUIHasVentanaMoniker" type="TapizGUIHasVentanaMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TapizGUIHasVentanaMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for TapizGUIsHasVentana instance.</xsd:documentation>
+      <xsd:documentation>Moniker for TapizGUIHasVentana instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -578,9 +578,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TapizGUIsHasEstadoFin -->
-  <xsd:element name="tapizGUIsHasEstadoFin" type="TapizGUIsHasEstadoFin" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="TapizGUIsHasEstadoFin">
+  <!-- TapizGUIHasEstadoFin -->
+  <xsd:element name="tapizGUIHasEstadoFin" type="TapizGUIHasEstadoFin" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TapizGUIHasEstadoFin">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -601,11 +601,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TapizGUIsHasEstadoFin Moniker -->
-  <xsd:element name="tapizGUIsHasEstadoFinMoniker" type="TapizGUIsHasEstadoFinMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="TapizGUIsHasEstadoFinMoniker">
+  <!-- TapizGUIHasEstadoFin Moniker -->
+  <xsd:element name="tapizGUIHasEstadoFinMoniker" type="TapizGUIHasEstadoFinMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TapizGUIHasEstadoFinMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for TapizGUIsHasEstadoFin instance.</xsd:documentation>
+      <xsd:documentation>Moniker for TapizGUIHasEstadoFin instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

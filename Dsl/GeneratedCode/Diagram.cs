@@ -568,17 +568,17 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					DslDiagrams::Diagram.FixUpDiagram(parentElement, childElement);
 				}
 			}
-			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs GetParentForVentana( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root )
+			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForVentana( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Ventana root )
 			{
 				// Segments 0 and 1
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs result = root.TapizGUIs;
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI result = root.TapizGUI;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs GetParentForEstadoFin( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin root )
+			public static global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI GetParentForEstadoFin( global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin root )
 			{
 				// Segments 0 and 1
-				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs result = root.TapizGUIs;
+				global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI result = root.TapizGUI;
 				if ( result == null ) return null;
 				return result;
 			}

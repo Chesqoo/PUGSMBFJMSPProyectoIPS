@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="118256bc-8d74-47bc-978d-1cb9d310e236" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPS" Name="PUGSMBFJMSPProyectoIPS" DisplayName="PUGSMBFJMSPProyectoIPS" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" ProductName="PUGSMBFJMSPProyectoIPS" CompanyName="UPM_IPS" PackageGuid="f6e633d7-c19f-4e35-ad59-b706deb224f6" PackageNamespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="a09bf113-d90d-4cde-8cc8-9526f4784123" Description="The root in which all other elements are embedded. Appears as a diagram." Name="TapizGUIs" DisplayName="Tapiz GUIs" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
+    <DomainClass Id="a09bf113-d90d-4cde-8cc8-9526f4784123" Description="The root in which all other elements are embedded. Appears as a diagram." Name="TapizGUI" DisplayName="Tapiz GUI" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
       <Properties>
-        <DomainProperty Id="1bd814c5-2747-4def-b0d4-acf3989bfb57" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.Solucion GUIs" Name="solucionGUIs" DisplayName="Solucion GUIs">
+        <DomainProperty Id="1bd814c5-2747-4def-b0d4-acf3989bfb57" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI.Solucion GUIs" Name="solucionGUIs" DisplayName="Solucion GUIs">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -15,7 +15,7 @@
             <DomainClassMoniker Name="Ventana" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>TapizGUIsHasVentana.Ventana</DomainPath>
+            <DomainPath>TapizGUIHasVentana.Ventana</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
         <ElementMergeDirective>
@@ -23,7 +23,7 @@
             <DomainClassMoniker Name="EstadoFin" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>TapizGUIsHasEstadoFin.EstadoFin</DomainPath>
+            <DomainPath>TapizGUIHasEstadoFin.EstadoFin</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -118,16 +118,16 @@
     <DomainClass Id="d9a87412-2844-4df2-a3a6-746210476a98" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" />
   </Classes>
   <Relationships>
-    <DomainRelationship Id="17558f14-286a-4fd6-87de-6544205db297" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana" Name="TapizGUIsHasVentana" DisplayName="Tapiz GUIs Has Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+    <DomainRelationship Id="17558f14-286a-4fd6-87de-6544205db297" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana" Name="TapizGUIHasVentana" DisplayName="Tapiz GUIHas Ventana" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
       <Source>
-        <DomainRole Id="f6d783b4-0e9c-4f94-ae99-7a4ef7955f06" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.TapizGUIs" Name="TapizGUIs" DisplayName="Tapiz GUIs" PropertyName="Ventana" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ventana">
+        <DomainRole Id="f6d783b4-0e9c-4f94-ae99-7a4ef7955f06" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.TapizGUI" Name="TapizGUI" DisplayName="Tapiz GUI" PropertyName="Ventana" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ventana">
           <RolePlayer>
-            <DomainClassMoniker Name="TapizGUIs" />
+            <DomainClassMoniker Name="TapizGUI" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="e6076d1f-e567-4604-83d5-aaa81a98d52d" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasVentana.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="TapizGUIs" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Tapiz GUIs">
+        <DomainRole Id="e6076d1f-e567-4604-83d5-aaa81a98d52d" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasVentana.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="TapizGUI" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Tapiz GUI">
           <RolePlayer>
             <DomainClassMoniker Name="Ventana" />
           </RolePlayer>
@@ -184,7 +184,7 @@
     </DomainRelationship>
     <DomainRelationship Id="8ddfefe0-570d-4915-b3af-deee023265d3" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget" Name="BotonReferencesVentanaTarget" DisplayName="Boton References Ventana Target" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
       <Source>
-        <DomainRole Id="1e7060a5-0c5b-4fa7-9f83-10ede79c5191" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Boton" Name="Boton" DisplayName="Boton" PropertyName="VentanaTarget" PropertyDisplayName="Ventana Target">
+        <DomainRole Id="1e7060a5-0c5b-4fa7-9f83-10ede79c5191" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Boton" Name="Boton" DisplayName="Boton" PropertyName="VentanaTarget" Multiplicity="One" PropertyDisplayName="Ventana Target">
           <RolePlayer>
             <DomainClassMoniker Name="Boton" />
           </RolePlayer>
@@ -198,16 +198,16 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="5006fedd-36df-43ad-880f-6f5ebb9e105b" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin" Name="TapizGUIsHasEstadoFin" DisplayName="Tapiz GUIs Has Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
+    <DomainRelationship Id="5006fedd-36df-43ad-880f-6f5ebb9e105b" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin" Name="TapizGUIHasEstadoFin" DisplayName="Tapiz GUIHas Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
       <Source>
-        <DomainRole Id="251bce3c-dfe3-4d97-bc68-98b7a95bd714" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.TapizGUIs" Name="TapizGUIs" DisplayName="Tapiz GUIs" PropertyName="EstadoFin" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Estado Fin">
+        <DomainRole Id="251bce3c-dfe3-4d97-bc68-98b7a95bd714" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.TapizGUI" Name="TapizGUI" DisplayName="Tapiz GUI" PropertyName="EstadoFin" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Estado Fin">
           <RolePlayer>
-            <DomainClassMoniker Name="TapizGUIs" />
+            <DomainClassMoniker Name="TapizGUI" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="5cc99b01-ce88-47c7-954d-978939255bec" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIsHasEstadoFin.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" PropertyName="TapizGUIs" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Tapiz GUIs">
+        <DomainRole Id="5cc99b01-ce88-47c7-954d-978939255bec" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIHasEstadoFin.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" PropertyName="TapizGUI" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Tapiz GUI">
           <RolePlayer>
             <DomainClassMoniker Name="EstadoFin" />
           </RolePlayer>
@@ -274,17 +274,17 @@
   </Connectors>
   <XmlSerializationBehavior Name="PUGSMBFJMSPProyectoIPSSerializationBehavior" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS">
     <ClassData>
-      <XmlClassData TypeName="TapizGUIs" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsMoniker" ElementName="tapizGUIs" MonikerTypeName="TapizGUIsMoniker">
-        <DomainClassMoniker Name="TapizGUIs" />
+      <XmlClassData TypeName="TapizGUI" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIMoniker" ElementName="tapizGUI" MonikerTypeName="TapizGUIMoniker">
+        <DomainClassMoniker Name="TapizGUI" />
         <ElementData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="ventana">
-            <DomainRelationshipMoniker Name="TapizGUIsHasVentana" />
+            <DomainRelationshipMoniker Name="TapizGUIHasVentana" />
           </XmlRelationshipData>
           <XmlPropertyData XmlName="solucionGUIs">
-            <DomainPropertyMoniker Name="TapizGUIs/solucionGUIs" />
+            <DomainPropertyMoniker Name="TapizGUI/solucionGUIs" />
           </XmlPropertyData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="estadoFin">
-            <DomainRelationshipMoniker Name="TapizGUIsHasEstadoFin" />
+            <DomainRelationshipMoniker Name="TapizGUIHasEstadoFin" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -314,8 +314,8 @@
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="TapizGUIsHasVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsHasVentanaMoniker" ElementName="tapizGUIsHasVentana" MonikerTypeName="TapizGUIsHasVentanaMoniker">
-        <DomainRelationshipMoniker Name="TapizGUIsHasVentana" />
+      <XmlClassData TypeName="TapizGUIHasVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIHasVentanaMoniker" ElementName="tapizGUIHasVentana" MonikerTypeName="TapizGUIHasVentanaMoniker">
+        <DomainRelationshipMoniker Name="TapizGUIHasVentana" />
       </XmlClassData>
       <XmlClassData TypeName="VentanaPrincipal" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaPrincipalMoniker" ElementName="ventanaPrincipal" MonikerTypeName="VentanaPrincipalMoniker">
         <DomainClassMoniker Name="VentanaPrincipal" />
@@ -371,8 +371,8 @@
       <XmlClassData TypeName="EstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="estadoFinMoniker" ElementName="estadoFin" MonikerTypeName="EstadoFinMoniker">
         <DomainClassMoniker Name="EstadoFin" />
       </XmlClassData>
-      <XmlClassData TypeName="TapizGUIsHasEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIsHasEstadoFinMoniker" ElementName="tapizGUIsHasEstadoFin" MonikerTypeName="TapizGUIsHasEstadoFinMoniker">
-        <DomainRelationshipMoniker Name="TapizGUIsHasEstadoFin" />
+      <XmlClassData TypeName="TapizGUIHasEstadoFin" MonikerAttributeName="" SerializeId="true" MonikerElementName="tapizGUIHasEstadoFinMoniker" ElementName="tapizGUIHasEstadoFin" MonikerTypeName="TapizGUIHasEstadoFinMoniker">
+        <DomainRelationshipMoniker Name="TapizGUIHasEstadoFin" />
       </XmlClassData>
       <XmlClassData TypeName="ConectorBotonVentana" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectorBotonVentanaMoniker" ElementName="conectorBotonVentana" MonikerTypeName="ConectorBotonVentanaMoniker">
         <ConnectorMoniker Name="ConectorBotonVentana" />
@@ -443,13 +443,13 @@
   </ConnectionBuilders>
   <Diagram Id="756a5d6c-4264-487d-9076-1f6c4b6280d7" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDiagram" Name="PUGSMBFJMSPProyectoIPSDiagram" DisplayName="Minimal Language Diagram" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" FillColor="DimGray">
     <Class>
-      <DomainClassMoniker Name="TapizGUIs" />
+      <DomainClassMoniker Name="TapizGUI" />
     </Class>
     <ShapeMaps>
       <CompartmentShapeMap>
         <DomainClassMoniker Name="Ventana" />
         <ParentElementPath>
-          <DomainPath>TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
+          <DomainPath>TapizGUIHasVentana.TapizGUI/!TapizGUI</DomainPath>
         </ParentElementPath>
         <CompartmentShapeMoniker Name="ShapeVentana" />
       </CompartmentShapeMap>
@@ -471,14 +471,14 @@
       <ShapeMap>
         <DomainClassMoniker Name="EstadoFin" />
         <ParentElementPath>
-          <DomainPath>TapizGUIsHasEstadoFin.TapizGUIs/!TapizGUIs</DomainPath>
+          <DomainPath>TapizGUIHasEstadoFin.TapizGUI/!TapizGUI</DomainPath>
         </ParentElementPath>
         <GeometryShapeMoniker Name="ShapeEstadoFin" />
       </ShapeMap>
       <CompartmentShapeMap HasCustomParentElement="true">
         <DomainClassMoniker Name="Boton" />
         <ParentElementPath>
-          <DomainPath>VentanaHasBoton.Ventana/!Ventana/TapizGUIsHasVentana.TapizGUIs/!TapizGUIs</DomainPath>
+          <DomainPath>VentanaHasBoton.Ventana/!Ventana/TapizGUIHasVentana.TapizGUI/!TapizGUI</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
           <TextDecoratorMoniker Name="BotonCompart/nombreBoton" />
@@ -511,7 +511,7 @@
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="PUGSMBFJMSP_DSLProyIPS" EditorGuid="49f976d1-261c-4397-a8ec-18a6df8ec66b">
     <RootClass>
-      <DomainClassMoniker Name="TapizGUIs" />
+      <DomainClassMoniker Name="TapizGUI" />
     </RootClass>
     <XmlSerializationDefinition CustomPostLoad="false">
       <XmlSerializationBehaviorMoniker Name="PUGSMBFJMSPProyectoIPSSerializationBehavior" />

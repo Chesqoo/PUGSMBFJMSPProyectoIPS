@@ -67,7 +67,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		///</summary>
 		protected override global::System.Guid RootElementDomainClassId
 		{
-			get { return global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUIs.DomainClassId; }
+			get { return global::UPM_IPS.PUGSMBFJMSPProyectoIPS.TapizGUI.DomainClassId; }
 		}
 		
 		/// <summary>
