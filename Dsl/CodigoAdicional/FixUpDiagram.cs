@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.Modeling;
+
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	partial class FixUpDiagram

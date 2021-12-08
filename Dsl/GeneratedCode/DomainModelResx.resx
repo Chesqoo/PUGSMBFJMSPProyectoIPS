@@ -557,56 +557,48 @@
     <value>Minimal Language Diagram</value>
     <comment>DisplayName for DomainClass &apos;PUGSMBFJMSPProyectoIPSDiagram&apos;</comment>
   </data>
-  <data name="PUGSMBFJMSPProyectoIPSToolboxTab" xml:space="preserve">
-    <value>PUGSMBFJMSPProyectoIPS</value>
+  <data name="PUGSMBFJMSP_GeneralToolboxTab" xml:space="preserve">
+    <value>PUGSMBFJMSP_General</value>
     <comment>Toolbox item tab name</comment>
   </data>
   <data name="VentanaBaseToolboxItem" xml:space="preserve">
-    <value>VentanaBase</value>
+    <value>Ventana Principal</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="VentanaBaseToolboxTooltip" xml:space="preserve">
-    <value>Ventana Base</value>
+    <value>Crea una Ventana Principal</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="VentanaSecToolboxItem" xml:space="preserve">
-    <value>VentanaSec</value>
+    <value>Ventana Secundaria</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="VentanaSecToolboxTooltip" xml:space="preserve">
-    <value>Ventana Sec</value>
+    <value>Crea una Ventana Secundaria</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ElemBotonToolboxItem" xml:space="preserve">
-    <value>ElemBoton</value>
+    <value>Boton</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="ElemBotonToolboxTooltip" xml:space="preserve">
-    <value>Elem Boton</value>
+    <value>Crea un Boton</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="MenuItemToolboxItem" xml:space="preserve">
-    <value>MenuItem</value>
+    <value>Item de Menu</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="MenuItemToolboxTooltip" xml:space="preserve">
-    <value>Menu Item</value>
+    <value>Crea un Item de Menu</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ElemMenuToolboxItem" xml:space="preserve">
-    <value>ElemMenu</value>
+    <value>Menu</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="ElemMenuToolboxTooltip" xml:space="preserve">
-    <value>Elem Menu</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
-  <data name="ConectorBotVentToolboxItem" xml:space="preserve">
-    <value>ConectorBotVent</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="ConectorBotVentToolboxTooltip" xml:space="preserve">
-    <value>Conector Bot Vent</value>
+    <value>Crea un Menu</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="FinToolboxItem" xml:space="preserve">
@@ -617,12 +609,24 @@
     <value>Fin</value>
     <comment>Toolbox tooltip text</comment>
   </data>
+  <data name="ConexionesToolboxTab" xml:space="preserve">
+    <value>Conexiones</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="ConectorBotVentToolboxItem" xml:space="preserve">
+    <value>Conector Boton_Ventana</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ConectorBotVentToolboxTooltip" xml:space="preserve">
+    <value>Conecta un Boton a Ventana</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
   <data name="ConectorVentFinToolboxItem" xml:space="preserve">
-    <value>ConectorVentFin</value>
+    <value>Conector Ventana_Fin</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="ConectorVentFinToolboxTooltip" xml:space="preserve">
-    <value>Conector Vent Fin</value>
+    <value>Conecta Ventana a Fin</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -770,12 +774,12 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\CustomIcons\Menu.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ConectorBotVentToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\CustomIcons\EnlaceAVentana.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
   <data name="FinToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\CustomIcons\FIN.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ConectorBotVentToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\CustomIcons\EnlaceAVentana.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="ConectorVentFinToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">

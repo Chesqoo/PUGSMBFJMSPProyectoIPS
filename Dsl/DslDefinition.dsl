@@ -516,29 +516,31 @@
     <XmlSerializationDefinition CustomPostLoad="false">
       <XmlSerializationBehaviorMoniker Name="PUGSMBFJMSPProyectoIPSSerializationBehavior" />
     </XmlSerializationDefinition>
-    <ToolboxTab TabText="PUGSMBFJMSPProyectoIPS">
-      <ElementTool Name="VentanaBase" ToolboxIcon="Resources\CustomIcons\VPrincipal.bmp" Caption="VentanaBase" Tooltip="Ventana Base" HelpKeyword="VentanaBase">
+    <ToolboxTab TabText="PUGSMBFJMSP_General">
+      <ElementTool Name="VentanaBase" ToolboxIcon="Resources\CustomIcons\VPrincipal.bmp" Caption="Ventana Principal" Tooltip="Crea una Ventana Principal" HelpKeyword="VentanaBase">
         <DomainClassMoniker Name="VentanaPrincipal" />
       </ElementTool>
-      <ElementTool Name="VentanaSec" ToolboxIcon="Resources\CustomIcons\VentSec.bmp" Caption="VentanaSec" Tooltip="Ventana Sec" HelpKeyword="VentanaSec">
+      <ElementTool Name="VentanaSec" ToolboxIcon="Resources\CustomIcons\VentSec.bmp" Caption="Ventana Secundaria" Tooltip="Crea una Ventana Secundaria" HelpKeyword="VentanaSec">
         <DomainClassMoniker Name="VentanaSecundaria" />
       </ElementTool>
-      <ElementTool Name="ElemBoton" ToolboxIcon="Resources\CustomIcons\Boton.bmp" Caption="ElemBoton" Tooltip="Elem Boton" HelpKeyword="ElemBoton">
+      <ElementTool Name="ElemBoton" ToolboxIcon="Resources\CustomIcons\Boton.bmp" Caption="Boton" Tooltip="Crea un Boton" HelpKeyword="ElemBoton">
         <DomainClassMoniker Name="Boton" />
       </ElementTool>
-      <ElementTool Name="MenuItem" ToolboxIcon="Resources\CustomIcons\ItemMenu.bmp" Caption="MenuItem" Tooltip="Menu Item" HelpKeyword="MenuItem">
+      <ElementTool Name="MenuItem" ToolboxIcon="Resources\CustomIcons\ItemMenu.bmp" Caption="Item de Menu" Tooltip="Crea un Item de Menu" HelpKeyword="MenuItem">
         <DomainClassMoniker Name="ItemDeMenu" />
       </ElementTool>
-      <ElementTool Name="ElemMenu" ToolboxIcon="Resources\CustomIcons\Menu.bmp" Caption="ElemMenu" Tooltip="Elem Menu" HelpKeyword="ElemMenu">
+      <ElementTool Name="ElemMenu" ToolboxIcon="Resources\CustomIcons\Menu.bmp" Caption="Menu" Tooltip="Crea un Menu" HelpKeyword="ElemMenu">
         <DomainClassMoniker Name="Menu" />
       </ElementTool>
-      <ConnectionTool Name="ConectorBotVent" ToolboxIcon="Resources\CustomIcons\EnlaceAVentana.bmp" Caption="ConectorBotVent" Tooltip="Conector Bot Vent" HelpKeyword="ConectorBotVent">
-        <ConnectionBuilderMoniker Name="PUGSMBFJMSPProyectoIPS/BotonReferencesVentanaTargetBuilder" />
-      </ConnectionTool>
       <ElementTool Name="Fin" ToolboxIcon="Resources\CustomIcons\FIN.bmp" Caption="Fin" Tooltip="Fin" HelpKeyword="Fin">
         <DomainClassMoniker Name="EstadoFin" />
       </ElementTool>
-      <ConnectionTool Name="ConectorVentFin" ToolboxIcon="Resources\CustomIcons\EAFin.bmp" Caption="ConectorVentFin" Tooltip="Conector Vent Fin" HelpKeyword="ConectorVentFin">
+    </ToolboxTab>
+    <ToolboxTab TabText="Conexiones">
+      <ConnectionTool Name="ConectorBotVent" ToolboxIcon="Resources\CustomIcons\EnlaceAVentana.bmp" Caption="Conector Boton_Ventana" Tooltip="Conecta un Boton a Ventana" HelpKeyword="ConectorBotVent">
+        <ConnectionBuilderMoniker Name="PUGSMBFJMSPProyectoIPS/BotonReferencesVentanaTargetBuilder" />
+      </ConnectionTool>
+      <ConnectionTool Name="ConectorVentFin" ToolboxIcon="Resources\CustomIcons\EAFin.bmp" Caption="Conector Ventana_Fin" Tooltip="Conecta Ventana a Fin" HelpKeyword="ConectorVentFin">
         <ConnectionBuilderMoniker Name="PUGSMBFJMSPProyectoIPS/VentanaReferencesEstadoFinBuilder" />
       </ConnectionTool>
     </ToolboxTab>

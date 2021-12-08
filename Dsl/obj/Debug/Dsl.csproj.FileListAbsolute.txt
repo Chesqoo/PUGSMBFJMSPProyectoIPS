@@ -71,7 +71,6 @@ C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\Dsl.csproj.AssemblyRefer
 C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx.resources
 C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\Dsl.csproj.GenerateResource.cache
 C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\Dsl.csproj.CoreCompileInputs.cache
-C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\Dsl.csproj.CopyComplete
 C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll
 C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Dsl\obj\Debug\UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.pdb
 C:\Users\Javier\Documents\Github\PUGSMBFJMSPProyectoIPS\Dsl\bin\Debug\GeneratedCode\PUGSMBFJMSPProyectoIPSSchema.xsd

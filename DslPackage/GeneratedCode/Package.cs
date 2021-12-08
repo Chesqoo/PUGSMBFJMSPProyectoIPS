@@ -28,8 +28,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 	[VSShell::PackageRegistration(RegisterUsing = VSShell::RegistrationMethod.Assembly, UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
 	[VSShell::ProvideToolWindow(typeof(PUGSMBFJMSPProyectoIPSExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
 	[VSShell::ProvideToolWindowVisibility(typeof(PUGSMBFJMSPProyectoIPSExplorerToolWindow), Constants.PUGSMBFJMSPProyectoIPSEditorFactoryId)]
-	[VSShell::ProvideStaticToolboxGroup("@PUGSMBFJMSPProyectoIPSToolboxTab;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", "UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab")]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxGroup("@PUGSMBFJMSP_GeneralToolboxTab;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", "UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab")]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab",
 					"@VentanaBaseToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaBaseToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
@@ -37,7 +37,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					"@VentanaBaseToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab",
 					"@VentanaSecToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
@@ -45,7 +45,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					"@VentanaSecToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab",
 					"@ElemBotonToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ElemBotonToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
@@ -53,7 +53,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					"@ElemBotonToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 2)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab",
 					"@MenuItemToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuItemToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
@@ -61,7 +61,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					"@MenuItemToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 3)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab",
 					"@ElemMenuToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ElemMenuToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
@@ -69,23 +69,24 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					"@ElemMenuToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 4)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
-					"@ConectorBotVentToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ConectorBotVent", 
-					"@ConectorBotVentToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
-					0xff00ff,
-					Index = 5)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab",
 					"@FinToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"Fin", 
 					"@FinToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					0xff00ff,
+					Index = 5)]
+	[VSShell::ProvideStaticToolboxGroup("@ConexionesToolboxTab;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", "UPM_IPS.PUGSMBFJMSPProyectoIPS.ConexionesToolboxTab")]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConexionesToolboxTab",
+					"@ConectorBotVentToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ConectorBotVent", 
+					"@ConectorBotVentToolboxBitmap;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
+					0xff00ff,
 					Index = 6)]
-	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab",
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.PUGSMBFJMSPProyectoIPS.ConexionesToolboxTab",
 					"@ConectorVentFinToolboxItem;UPM_IPS.PUGSMBFJMSPProyectoIPS.Dsl.dll", 
 					"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 

@@ -90,7 +90,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", global::System.Globalization.CultureInfo.CurrentUICulture);
+				return global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", global::System.Globalization.CultureInfo.CurrentUICulture);
 			}
 		}
 		
@@ -102,7 +102,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		{
 			get
 			{
-				return 8;
+				return 6;
 			}
 		}
 		
@@ -158,8 +158,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						1, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("VentanaBaseToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("VentanaBaseToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"VentanaBase", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("VentanaBaseToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaPrincipal.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
@@ -174,8 +174,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						2, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("VentanaSecToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("VentanaSecToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"VentanaSec", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("VentanaSecToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.VentanaSecundaria.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
@@ -190,8 +190,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						3, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("ElemBotonToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ElemBotonToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"ElemBoton", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("ElemBotonToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
@@ -206,8 +206,8 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						4, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("MenuItemToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("MenuItemToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"MenuItem", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("MenuItemToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.ItemDeMenu.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
@@ -222,11 +222,27 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 						5, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("ElemMenuToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ElemMenuToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"ElemMenu", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("ElemMenuToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.Menu.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem":
+					// Add Fin shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						6, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("FinToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("FinToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSP_GeneralToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PUGSMBFJMSP_GeneralToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Fin", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("FinToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
@@ -236,11 +252,11 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					// Add ConectorBotVent connector tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorBotVentToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						6, // Position relative to other items in the same toolbox tab.
+						1, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("ConectorBotVentToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConectorBotVentToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConexionesToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("ConexionesToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"ConectorBotVent", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("ConectorBotVentToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						null, // Connector toolbox items do not have an underlying data object.
@@ -249,32 +265,16 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ConectorBotVentFilterString)
 						});
 					break;
-				case "UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem":
-					// Add Fin shape tool.
-					result = new DslDesign::ModelingToolboxItem(
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.FinToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						7, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("FinToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("FinToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"Fin", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("FinToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
-						});
-					break;
 				case "UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem":
 
 					// Add ConectorVentFin connector tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConectorVentFinToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						8, // Position relative to other items in the same toolbox tab.
+						2, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("ConectorVentFinToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConectorVentFinToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
-						"UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PUGSMBFJMSPProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UPM_IPS.PUGSMBFJMSPProyectoIPS.ConexionesToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("ConexionesToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"ConectorVentFin", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("ConectorVentFinToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						null, // Connector toolbox items do not have an underlying data object.
