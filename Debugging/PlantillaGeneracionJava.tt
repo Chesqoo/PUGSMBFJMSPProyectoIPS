@@ -1,0 +1,107 @@
+﻿<#@ template
+inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".java" #>
+<#@ PUGSMBFJMSPProyectoIPS processor="PUGSMBFJMSPProyectoIPSDirectiveProcessor" 
+requires="fileName='Test.PUGSMBFJMSP_DSLProyIPS'" #>
+
+<#  //METODO PRINCIPAL
+imports();
+procesarVentana(this.TapizGUI.VentanaPrincipal);
+
+foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
+{
+ procesarVentana(va);
+}
+#>
+
+
+
+<#+ //METODO IMPORTS
+ private void imports(){
+ WriteLine("import java.awt.*;");
+ WriteLine("import java.awt.event.*; \n");
+ }
+#>
+
+
+
+<#+ //METODO PROCESAR VENTANAS
+ private void procesarVentana(Ventana v){
+
+//si la ventana es Vprincipal, nombre Frame_v.nombre, si no Dialogv
+
+if(v is VentanaPrincipal){
+WriteLine("public class Framev_"+v.nombre+" extends Frame impements ActionListener{ \n");
+}else{
+WriteLine("public class Dialogv_"+v.nombre+" extends Dialog impements ActionListener{ \n");
+}
+
+//TODO: desarrollar atributos tipo Ventana
+atributosVentana(v); 
+//TODO: desarrollar atributos tipo boton o item de menu
+atributosClickable(v); Write("\n");
+//TODO: esqueleto funcion procesarConstructor
+generarConstructor(v); Write("\n");
+//TODO: esqueleto funcion procesaractionPerformed
+generarActionPerformed(v);
+
+WriteLine("}"); //Fin de la clase
+Write("\n");
+}
+#>
+
+
+<#+
+private void generarConstructor(Ventana v){
+WriteLine("//Aqui va el constructor");
+}
+#>
+
+<#+
+private void generarActionPerformed(Ventana v){
+WriteLine("//Aqui va la funcion actionPerformed");
+}
+#>
+
+<#+ //METODO ATR. VENTANAS
+private void atributosVentana(Ventana v){
+
+foreach(Boton bot in v.Boton){//Botones
+
+	//Obtener la ventana a la que lleva el boton
+	if(bot.VentanaTarget!=null){
+		if(bot.VentanaTarget is VentanaSecundaria){
+			WriteLine("private Dialogv_"+bot.VentanaTarget.nombre+" ventanav_"+bot.VentanaTarget.nombre+";");
+			}
+	}//ifBot
+}//foreachBot
+
+foreach(Menu m in v.Menu){
+	foreach(ItemDeMenu it in m.ItemDeMenu){
+		if(it.VentanaTarget!=null){
+			if(it.VentanaTarget is VentanaSecundaria){
+			WriteLine("private Dialogv_"+it.VentanaTarget.nombre+" ventanav_"+it.VentanaTarget.nombre+";");
+			}
+		}
+	}
+}
+
+}
+#>
+
+
+
+
+<#+ //METODO CLICKABLES
+private void atributosClickable(Ventana v){
+foreach(Boton bot in v.Boton)
+{
+ WriteLine("private Button "+bot.titulo+";");
+}
+foreach(Menu m in v.Menu){
+	foreach(ItemDeMenu it in m.ItemDeMenu){
+	WriteLine("private MenuItem "+it.titulo+";");
+	}
+}
+}
+#>

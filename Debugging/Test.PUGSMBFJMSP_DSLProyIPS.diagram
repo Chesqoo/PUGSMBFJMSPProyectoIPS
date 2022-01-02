@@ -1,1 +1,66 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pUGSMBFJMSPProyectoIPSDiagram dslVersion="1.0.0.0" Id="d9a393a0-8b6e-4526-80b8-72037cd0fd84" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <tapizGUIMoniker Id="63e8428f-971f-4d22-b825-cbd6d98991b1" />
+  <nestedChildShapes>
+    <shapeVentana Id="d686cade-ed6e-4899-8703-06b1db0e4a6c" absoluteBounds="1, 1.875, 2.5, 3.3499999999999996">
+      <ventanaPrincipalMoniker Id="afb34e04-8300-4902-9f10-04655b8528fb" />
+      <relativeChildShapes />
+      <nestedChildShapes>
+        <shapeMenu Id="5eef9a5d-51b0-43e3-9fac-a4c5f7480595" absoluteBounds="1.25, 2, 2, 0.97500000000000009">
+          <menuMoniker Id="b3e59041-0cd2-49a9-b7ef-2a2a8d979c7d" />
+          <nestedChildShapes>
+            <metaforaItemMenu Id="e9373418-a97e-434b-babf-58a3c385f9f1" absoluteBounds="1.375, 2.375, 1.75, 0.5">
+              <itemDeMenuMoniker Id="984e90bb-bdfe-48b9-b2c5-1832400f9176" />
+            </metaforaItemMenu>
+          </nestedChildShapes>
+        </shapeMenu>
+        <metaforaBoton Id="0d399b42-22cb-41e9-92d8-a4750b45fe47" absoluteBounds="1.875, 4.5, 0.625, 0.625">
+          <botonMoniker Id="a4c112c8-2ff0-4d9d-b113-d966ac115735" />
+        </metaforaBoton>
+      </nestedChildShapes>
+    </shapeVentana>
+    <shapeVentana Id="16f8dfc2-41c6-43ba-9fef-caea4b20d158" absoluteBounds="4.625, 1.875, 2.75, 3.3499999999999996">
+      <ventanaSecundariaMoniker Id="7ffdf474-4093-4c02-a913-017cafa983a5" />
+      <relativeChildShapes />
+      <nestedChildShapes>
+        <metaforaBoton Id="a62b28a2-847c-4668-b2a0-f46134595b05" absoluteBounds="4.75, 4.5, 0.625, 0.625">
+          <botonMoniker Id="8107ac15-d201-4e20-8cb0-5ac530d8093c" />
+        </metaforaBoton>
+        <metaforaBoton Id="3a5f9216-e507-4738-8dba-facee3d7d6cb" absoluteBounds="5, 2.125, 2.125, 1.5">
+          <botonMoniker Id="a389d917-55cc-4066-bb94-28fa32398ef4" />
+        </metaforaBoton>
+      </nestedChildShapes>
+    </shapeVentana>
+    <shapeEstadoFin Id="6109dd8b-c9f8-4d12-bcfb-77fa6ed1b64f" absoluteBounds="4.125, 5.5, 0.5, 0.5">
+      <estadoFinMoniker Id="e4254d40-c6e2-4abd-9e3b-a8b37f83e3f9" />
+    </shapeEstadoFin>
+    <conectorBotonFin Id="db5825eb-7b61-48e8-9219-1602b4644e3d" edgePoints="[(2.20744680851064 : 5.125); (2.20744680851064 : 5.75); (4.125 : 5.75)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <botonReferencesEstadoFinMoniker Id="0d1796a9-2a1a-4140-a613-17da13489057" />
+      <nodes>
+        <metaforaBotonMoniker Id="0d399b42-22cb-41e9-92d8-a4750b45fe47" />
+        <shapeEstadoFinMoniker Id="6109dd8b-c9f8-4d12-bcfb-77fa6ed1b64f" />
+      </nodes>
+    </conectorBotonFin>
+    <conectorBotonVentana Id="23f0e42e-7e5a-400d-8f91-4a3e8292c6e0" edgePoints="[(4.75 : 4.8125); (3.5 : 4.8125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <botonReferencesVentanaTargetMoniker Id="a47e13de-9297-4b7b-a3b8-947ade5678d0" />
+      <nodes>
+        <metaforaBotonMoniker Id="a62b28a2-847c-4668-b2a0-f46134595b05" />
+        <shapeVentanaMoniker Id="d686cade-ed6e-4899-8703-06b1db0e4a6c" />
+      </nodes>
+    </conectorBotonVentana>
+    <conectorBotonVentana Id="33483519-2cb7-401d-a2f3-702c2d7257c6" edgePoints="[(3.125 : 2.625); (4.625 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <botonReferencesVentanaTargetMoniker Id="366508ea-af2b-413b-96e3-161cf0532b74" />
+      <nodes>
+        <metaforaItemMenuMoniker Id="e9373418-a97e-434b-babf-58a3c385f9f1" />
+        <shapeVentanaMoniker Id="16f8dfc2-41c6-43ba-9fef-caea4b20d158" />
+      </nodes>
+    </conectorBotonVentana>
+    <conectorBotonFin Id="e526637c-7b55-4572-9b5c-36cf981f4f22" edgePoints="[(6.28125 : 3.625); (6.28125 : 5.75); (4.625 : 5.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <botonReferencesEstadoFinMoniker Id="39cdb62f-d014-43f5-94b1-290f902c8fd5" />
+      <nodes>
+        <metaforaBotonMoniker Id="3a5f9216-e507-4738-8dba-facee3d7d6cb" />
+        <shapeEstadoFinMoniker Id="6109dd8b-c9f8-4d12-bcfb-77fa6ed1b64f" />
+      </nodes>
+    </conectorBotonFin>
+  </nestedChildShapes>
+</pUGSMBFJMSPProyectoIPSDiagram>

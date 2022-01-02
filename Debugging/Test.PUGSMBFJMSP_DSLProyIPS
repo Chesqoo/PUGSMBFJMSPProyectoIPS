@@ -1,1 +1,68 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tapizGUI xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="63e8428f-971f-4d22-b825-cbd6d98991b1" xmlns="http://schemas.microsoft.com/dsltools/PUGSMBFJMSPProyectoIPS">
+  <estadoFin>
+    <tapizGUIHasEstadoFin Id="3aafce85-ac14-4899-a257-2ab9a11b8f02">
+      <estadoFin Id="e4254d40-c6e2-4abd-9e3b-a8b37f83e3f9" />
+    </tapizGUIHasEstadoFin>
+  </estadoFin>
+  <ventanaPrincipal>
+    <tapizGUIHasVentanaPrincipal Id="60dcaa94-92c3-4ba7-9c83-56c471d03e98">
+      <ventanaPrincipal Id="afb34e04-8300-4902-9f10-04655b8528fb" nombre="VentanaPrin" ancho="0" alto="0">
+        <menu>
+          <ventanaHasMenu Id="fba1e0c2-34bf-48da-a06c-907c30e9f833">
+            <menu Id="b3e59041-0cd2-49a9-b7ef-2a2a8d979c7d" titulo="MenuPrincipal">
+              <itemDeMenu>
+                <menuHasItemDeMenu Id="e5e58abe-0a1e-4b81-bb5b-d20afb46ce69">
+                  <itemDeMenu Id="984e90bb-bdfe-48b9-b2c5-1832400f9176" titulo="Item1">
+                    <ventanaTarget>
+                      <botonReferencesVentanaTarget Id="366508ea-af2b-413b-96e3-161cf0532b74">
+                        <ventanaSecundariaMoniker Id="7ffdf474-4093-4c02-a913-017cafa983a5" />
+                      </botonReferencesVentanaTarget>
+                    </ventanaTarget>
+                  </itemDeMenu>
+                </menuHasItemDeMenu>
+              </itemDeMenu>
+            </menu>
+          </ventanaHasMenu>
+        </menu>
+        <boton>
+          <ventanaHasBoton Id="3cb6dc22-0920-4fd4-8c62-ed0189f64e5c">
+            <boton Id="a4c112c8-2ff0-4d9d-b113-d966ac115735" titulo="Boton">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="0d1796a9-2a1a-4140-a613-17da13489057">
+                  <estadoFinMoniker Id="e4254d40-c6e2-4abd-9e3b-a8b37f83e3f9" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+        </boton>
+      </ventanaPrincipal>
+    </tapizGUIHasVentanaPrincipal>
+  </ventanaPrincipal>
+  <ventanaSecundaria>
+    <tapizGUIHasVentanaSecundaria Id="6e07b09c-c323-48f5-b0e3-f6c346c94972">
+      <ventanaSecundaria Id="7ffdf474-4093-4c02-a913-017cafa983a5" nombre="VentanaSec" ancho="0" alto="0" esModal="false">
+        <boton>
+          <ventanaHasBoton Id="2f1f586d-f87d-4374-918a-e8f2468e93ef">
+            <boton Id="8107ac15-d201-4e20-8cb0-5ac530d8093c" titulo="Atras">
+              <ventanaTarget>
+                <botonReferencesVentanaTarget Id="a47e13de-9297-4b7b-a3b8-947ade5678d0">
+                  <ventanaPrincipalMoniker Id="afb34e04-8300-4902-9f10-04655b8528fb" />
+                </botonReferencesVentanaTarget>
+              </ventanaTarget>
+            </boton>
+          </ventanaHasBoton>
+          <ventanaHasBoton Id="a17657d2-44d0-4755-9689-d14a19b0687a">
+            <boton Id="a389d917-55cc-4066-bb94-28fa32398ef4" titulo="Salir">
+              <estadoFin>
+                <botonReferencesEstadoFin Id="39cdb62f-d014-43f5-94b1-290f902c8fd5">
+                  <estadoFinMoniker Id="e4254d40-c6e2-4abd-9e3b-a8b37f83e3f9" />
+                </botonReferencesEstadoFin>
+              </estadoFin>
+            </boton>
+          </ventanaHasBoton>
+        </boton>
+      </ventanaSecundaria>
+    </tapizGUIHasVentanaSecundaria>
+  </ventanaSecundaria>
+</tapizGUI>

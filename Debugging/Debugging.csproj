@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.10318</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f58e9cc2-3d57-41c6-a0b1-34e856f02c0a}</ProjectGuid>
+    <ProjectGuid>{F58E9CC2-3D57-41C6-A0B1-34E856F02C0A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Debugging</RootNamespace>
@@ -65,6 +65,15 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PlantillaGeneracionJava.java">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
+    </Content>
+    <Content Include="PlantillaGeneracionJava.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PlantillaGeneracionJava.java</LastGenOutput>
+    </Content>
     <Content Include="PUGSMBFJMSPProyectoIPSReport.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
