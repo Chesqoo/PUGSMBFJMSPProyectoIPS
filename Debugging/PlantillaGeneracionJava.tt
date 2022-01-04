@@ -6,6 +6,7 @@ requires="fileName='Test.PUGSMBFJMSP_DSLProyIPS'" #>
 
 <#  //METODO PRINCIPAL
 imports();
+procesarMain(this.TapizGUI.VentanaPrincipal);
 procesarVentana(this.TapizGUI.VentanaPrincipal);
 
 foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
@@ -14,7 +15,14 @@ foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
 }
 #>
 
-
+<#+ //METODO PROCESAR MAIN
+private void procesarMain(VentanaPrincipal v){
+WriteLine("public class "+this.TapizGUI.solucionGUIs+"{");
+WriteLine("public static void main (String[] args){");
+WriteLine("new Frame_"+v.nombre+"();");
+WriteLine("}\n}");
+}
+#>
 
 <#+ //METODO IMPORTS
  private void imports(){
@@ -31,9 +39,9 @@ foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
 //si la ventana es Vprincipal, nombre Frame_v.nombre, si no Dialogv
 
 if(v is VentanaPrincipal){
-WriteLine("public class Framev_"+v.nombre+" extends Frame impements ActionListener{ \n");
+WriteLine("public class Frame_"+v.nombre+" extends Frame impements ActionListener{ \n");
 }else{
-WriteLine("public class Dialogv_"+v.nombre+" extends Dialog impements ActionListener{ \n");
+WriteLine("public class Dialog_"+v.nombre+" extends Dialog impements ActionListener{ \n");
 }
 
 //TODO: desarrollar atributos tipo Ventana
@@ -71,7 +79,7 @@ foreach(Boton bot in v.Boton){//Botones
 	//Obtener la ventana a la que lleva el boton
 	if(bot.VentanaTarget!=null){
 		if(bot.VentanaTarget is VentanaSecundaria){
-			WriteLine("private Dialogv_"+bot.VentanaTarget.nombre+" ventanav_"+bot.VentanaTarget.nombre+";");
+			WriteLine("private Dialog_"+bot.VentanaTarget.nombre+" ventanav_"+bot.VentanaTarget.nombre+";");
 			}
 	}//ifBot
 }//foreachBot
@@ -80,7 +88,7 @@ foreach(Menu m in v.Menu){
 	foreach(ItemDeMenu it in m.ItemDeMenu){
 		if(it.VentanaTarget!=null){
 			if(it.VentanaTarget is VentanaSecundaria){
-			WriteLine("private Dialogv_"+it.VentanaTarget.nombre+" ventanav_"+it.VentanaTarget.nombre+";");
+			WriteLine("private Dialog_"+it.VentanaTarget.nombre+" ventanav_"+it.VentanaTarget.nombre+";");
 			}
 		}
 	}

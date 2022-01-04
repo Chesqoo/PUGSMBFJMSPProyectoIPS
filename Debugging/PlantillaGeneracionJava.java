@@ -2,9 +2,14 @@
 import java.awt.*;
 import java.awt.event.*; 
 
-public class Framev_VentanaPrin extends Frame impements ActionListener{ 
+public class {
+public static void main (String[] args){
+new Frame_VentanaPrin();
+}
+}
+public class Frame_VentanaPrin extends Frame impements ActionListener{ 
 
-private Dialogv_VentanaSec ventanav_VentanaSec;
+private Dialog_VentanaSec ventanav_VentanaSec;
 private Button Boton;
 private MenuItem Item1;
 
@@ -13,7 +18,7 @@ private MenuItem Item1;
 //Aqui va la funcion actionPerformed
 }
 
-public class Dialogv_VentanaSec extends Dialog impements ActionListener{ 
+public class Dialog_VentanaSec extends Dialog impements ActionListener{ 
 
 private Button Atras;
 private Button Salir;
@@ -22,7 +27,5 @@ private Button Salir;
 
 //Aqui va la funcion actionPerformed
 }
-
-
 
 
