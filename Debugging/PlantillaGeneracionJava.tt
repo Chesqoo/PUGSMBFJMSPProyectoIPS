@@ -17,7 +17,7 @@ foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
 
 <#+ //METODO PROCESAR MAIN
 private void procesarMain(VentanaPrincipal v){
-WriteLine("public class "+this.TapizGUI.solucionGUIs+"{");
+WriteLine("public class App_GUI"+this.TapizGUI.solucionGUIs+"{");
 WriteLine("public static void main (String[] args){");
 WriteLine("new Frame_"+v.nombre+"();");
 WriteLine("}\n}");
@@ -79,7 +79,7 @@ foreach(Boton bot in v.Boton){//Botones
 	//Obtener la ventana a la que lleva el boton
 	if(bot.VentanaTarget!=null){
 		if(bot.VentanaTarget is VentanaSecundaria){
-			WriteLine("private Dialog_"+bot.VentanaTarget.nombre+" ventanav_"+bot.VentanaTarget.nombre+";");
+			WriteLine("private Dialog_"+bot.VentanaTarget.nombre+" ventana_"+bot.VentanaTarget.nombre+";");
 			}
 	}//ifBot
 }//foreachBot
@@ -88,7 +88,7 @@ foreach(Menu m in v.Menu){
 	foreach(ItemDeMenu it in m.ItemDeMenu){
 		if(it.VentanaTarget!=null){
 			if(it.VentanaTarget is VentanaSecundaria){
-			WriteLine("private Dialog_"+it.VentanaTarget.nombre+" ventanav_"+it.VentanaTarget.nombre+";");
+			WriteLine("private Dialog_"+it.VentanaTarget.nombre+" ventana_"+it.VentanaTarget.nombre+";");
 			}
 		}
 	}

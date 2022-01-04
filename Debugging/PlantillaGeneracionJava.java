@@ -2,14 +2,14 @@
 import java.awt.*;
 import java.awt.event.*; 
 
-public class {
+public class App_GUI{
 public static void main (String[] args){
 new Frame_VentanaPrin();
 }
 }
 public class Frame_VentanaPrin extends Frame impements ActionListener{ 
 
-private Dialog_VentanaSec ventanav_VentanaSec;
+private Dialog_VentanaSec ventana_VentanaSec;
 private Button Boton;
 private MenuItem Item1;
 
