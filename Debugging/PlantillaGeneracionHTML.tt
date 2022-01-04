@@ -1,0 +1,103 @@
+﻿<#@ template
+inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" 
+language="C#" hostspecific="True"#>
+<#@ output extension=".html" #>
+<#@ PUGSMBFJMSPProyectoIPS processor="PUGSMBFJMSPProyectoIPSDirectiveProcessor" 
+requires="fileName='Test.PUGSMBFJMSP_DSLProyIPS'" #>
+
+<#@ include file="EF.utility.CS.ttinclude" #>
+
+<# //METODO PRINCIPAL
+var fileManager=EntityFrameworkTemplateFileManager.Create(this); 
+fileManager.StartNewFile(this.TapizGUI.VentanaPrincipal.nombre + ".html");
+//WriteLine("Fichero para "+this.TapizGUI.VentanaPrincipal.nombre);
+procesarVentana(this.TapizGUI.VentanaPrincipal);
+foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
+{
+ fileManager.StartNewFile(va.nombre + ".html");
+	procesarVentana(va);
+}
+fileManager.Process();
+#>
+
+<#+ //METODO PROCESAR VENTANA
+private void procesarVentana(Ventana v){
+WriteLine("<html>");
+procesarHead(v);
+procesarBody(v);
+WriteLine("</html>");
+}
+#>
+
+<#+ //METODO PROCESAR HEAD
+private void procesarHead(Ventana v){
+WriteLine("\t<head>");
+//Cuerpo del head
+WriteLine("\t<title>"+v.nombre+"</title>");
+procesarStyle();
+procesarScript();
+WriteLine("\t</head>");
+}
+#>
+
+<#+ //METODO PROCESAR BODY
+private void procesarBody(Ventana v){
+WriteLine("\t<body>");
+if(v.Menu.Count > 0){
+procesarMenus(v);
+}
+WriteLine("<br><br><br>");
+//TODO: procesar botones
+
+WriteLine("\t</body>");
+}
+#>
+
+<#+ //METODO PROCESAR MENUS
+private void procesarMenus(Ventana v){
+WriteLine("<table>\n\t<tr>");
+foreach(Menu m in v.Menu){
+WriteLine("<td onmouseover=\"showmenu(\'"+m.titulo+"\')\" onmouseout=\"hidemenu(\'"+m.titulo+"\')\">");
+WriteLine("\t<p>"+m.titulo+"</p>");
+WriteLine("\t<table class=\"menu\" id=\""+m.titulo+"\" width=\"50%\">");
+procesarItemsDeMenu(v,m);
+WriteLine("\t</table>\n</td>");
+}
+WriteLine("\t</tr>\n</table>");
+}
+#>
+
+<#+ //METODO PROCESAR ITEMS DE MENU
+private void procesarItemsDeMenu(Ventana v, Menu m){
+foreach(ItemDeMenu it in m.ItemDeMenu){
+WriteLine("<tr>\n\t<td class=\"menu\">");
+WriteLine("<a href=\""+it.VentanaTarget.nombre+".html\">"+it.titulo+"</a>");
+WriteLine("\t</td>\n</tr>");
+}
+}
+#>
+
+<#+ //METODO PROCESAR STYLE
+private void procesarStyle(){
+WriteLine("<style>\n body{font-family:arial;} \n"+
+"table{font-size:80%;background:rgb(0,110,110)} \n"+
+"p{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;} \n"+
+"td.menu{background:rgb(0,150,150)} \n"+
+"table.menu{ \n font-size:100%; \n position:absolute; \n visibility:hidden; \n }"+
+"\n </style>");
+}
+#>
+
+<#+ //METODO PROCESAR SCRIPT
+private void procesarScript(){
+WriteLine("<script type=\"text/javascript\"> \n"+
+ "function showmenu(elmnt) \n"+
+ "{document.getElementById(elmnt).style.visibility=\"visible\";} \n"+
+ "function hidemenu(elmnt) \n"+
+ "{document.getElementById(elmnt).style.visibility=\"hidden\";} \n"+
+ "</script>");
+}
+#>
+
+
+
