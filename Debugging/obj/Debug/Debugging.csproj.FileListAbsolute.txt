@@ -1,0 +1,6 @@
+C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Debugging\bin\Debug\Debugging.dll
+C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Debugging\bin\Debug\Debugging.pdb
+C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Debugging\obj\Debug\Debugging.csproj.AssemblyReference.cache
+C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Debugging\obj\Debug\Debugging.csproj.CoreCompileInputs.cache
+C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Debugging\obj\Debug\Debugging.dll
+C:\Users\sar10\git\PUGSMBFJMSPProyectoIPS\Debugging\obj\Debug\Debugging.pdb

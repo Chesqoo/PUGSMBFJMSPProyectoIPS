@@ -53,15 +53,80 @@ generarConstructor(v); Write("\n");
 //TODO: esqueleto funcion procesaractionPerformed
 generarActionPerformed(v);
 
-WriteLine("}"); //Fin de la clase
-Write("\n");
+WriteLine("}\n"); //Fin de la clase
 }
 #>
 
 
 <#+
 private void generarConstructor(Ventana v){
-WriteLine("//Aqui va el constructor");
+	if(v is VentanaPrincipal) {
+		WriteLine("public Frame_"+v.nombre+"() {");
+		WriteLine("\t super();");
+		WriteLine("\t this.setTitle(\"Frame_"+v.nombre+"\");");
+
+		WriteLine("\t ventanav_Peliculas = new Dialog_Peliculas(this,true);");
+		WriteLine("\t ventanav_Cines = new Dialog_Cines(this,true);");
+
+		WriteLine("\t this.setLayout(new FlowLayout());");
+		
+		//Instanciacion botones
+		WriteLine("\n\t botonPeliculas = new Button(\"Cartelera\");");
+		WriteLine("\t this.add(botonPeliculas);");
+		WriteLine("\t botonCines = new Button(\"Nuestros Cines\");");
+		WriteLine("\t this.add(botonCines);");
+		WriteLine("\t botonSalir = new Button(\"Salir\");");
+		WriteLine("\t this.add(botonSalir);");
+
+		//Action Listeners
+		WriteLine("\t botonSalir.addActionListener(this)");
+		WriteLine("\t botonPeliculas.addActionListener(this)");
+		WriteLine("\t botonCines.addActionListener(this)");
+
+		//Formato pagina
+		WriteLine("\n\t this.setSize(500,300);");
+		WriteLine("\t this.setVisible(true);");
+		WriteLine("}\n");
+	} else {
+		WriteLine("public Dialog_"+v.nombre+"() {");
+		WriteLine("\t super();");
+
+		foreach(Boton b in v.Boton) {
+			if(b.VentanaTarget != null)
+				WriteLine("\t ventanav_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
+		}
+
+		WriteLine("\t this.setLayout(new FlowLayout());\n");
+
+		//Creacion menus
+		if(v.Menu.Count>0) {
+			WriteLine("\t MenuBar MB = new MenuBar();");
+			WriteLine("\t this.setMenuBar(MB)");
+			foreach(Menu m in v.Menu) {
+				WriteLine("\t Menu menu"+m.titulo+" = new Menu(\"m.titulo\");");
+				foreach(ItemDeMenu im in m.ItemDeMenu) {
+					WriteLine("item"+im.titulo+" = new ItemDeMenu(\"im.titulo\");");
+					WriteLine("menu"+m.titulo+".add(item"+im.titulo+");");
+				}
+				WriteLine("\t MB.add(menu"+m.titulo+");");
+			}
+		}
+
+		//Instanciacion botones
+		foreach(Boton b in v.Boton) {
+			if(b is ItemDeMenu) {
+				
+			} else {
+				WriteLine("\t boton"+b.titulo+" = new Button(\""+b.titulo+"\");");
+				WriteLine("\t this.add(boton"+b.titulo+");");
+				WriteLine("\t boton"+b.titulo+".addActionListener(this);");
+			}
+		}
+		
+		WriteLine("\n\t this.setSize(250,150)");
+		WriteLine("}\n");
+	}
+
 }
 #>
 
