@@ -2,7 +2,7 @@
 inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ output extension=".java" #>
 <#@ PUGSMBFJMSPProyectoIPS processor="PUGSMBFJMSPProyectoIPSDirectiveProcessor" 
-requires="fileName='Test.PUGSMBFJMSP_DSLProyIPS'" #>
+requires="fileName='Sample.PUGSMBFJMSP_DSLProyIPS'" #>
 
 <#  //METODO PRINCIPAL
 imports();
@@ -58,28 +58,28 @@ WriteLine("}\n"); //Fin de la clase
 #>
 
 
-<#+
+<#+ //METODO GENERAR CONSTRUCTOR
 private void generarConstructor(Ventana v){
 	if(v is VentanaPrincipal) {
 		WriteLine("public Frame_"+v.nombre+"() {");
 		WriteLine("\t super();");
 		WriteLine("\t this.setTitle(\"Frame_"+v.nombre+"\");");
 
-		WriteLine("\t ventanav_Peliculas = new Dialog_Peliculas(this,true);");
-		WriteLine("\t ventanav_Cines = new Dialog_Cines(this,true);");
+		WriteLine("\t ventanav_Peliculas = new Dialog_Peliculas(this,true);"); //NO
+		WriteLine("\t ventanav_Cines = new Dialog_Cines(this,true);"); //NO
 
 		WriteLine("\t this.setLayout(new FlowLayout());");
 		
-		//Instanciacion botones
-		WriteLine("\n\t botonPeliculas = new Button(\"Cartelera\");");
-		WriteLine("\t this.add(botonPeliculas);");
-		WriteLine("\t botonCines = new Button(\"Nuestros Cines\");");
-		WriteLine("\t this.add(botonCines);");
-		WriteLine("\t botonSalir = new Button(\"Salir\");");
-		WriteLine("\t this.add(botonSalir);");
+		//Instanciacion botones //REPETIR
+		WriteLine("\n\t botonPeliculas = new Button(\"Cartelera\");"); //NO
+		WriteLine("\t this.add(botonPeliculas);"); //NO
+		WriteLine("\t botonCines = new Button(\"Nuestros Cines\");"); //NO
+		WriteLine("\t this.add(botonCines);"); //NO
+		WriteLine("\t botonSalir = new Button(\"Salir\");"); //NO
+		WriteLine("\t this.add(botonSalir);"); //NO
 
-		//Action Listeners
-		WriteLine("\t botonSalir.addActionListener(this)");
+		//Action Listeners //REPETIR
+		WriteLine("\t botonSalir.addActionListener(this)"); //NO
 		WriteLine("\t botonPeliculas.addActionListener(this)");
 		WriteLine("\t botonCines.addActionListener(this)");
 
@@ -88,7 +88,7 @@ private void generarConstructor(Ventana v){
 		WriteLine("\t this.setVisible(true);");
 		WriteLine("}\n");
 	} else {
-		WriteLine("public Dialog_"+v.nombre+"() {");
+		WriteLine("public Dialog_"+v.nombre+"() {"); 
 		WriteLine("\t super();");
 
 		foreach(Boton b in v.Boton) {
@@ -130,7 +130,7 @@ private void generarConstructor(Ventana v){
 }
 #>
 
-<#+
+<#+ //METODO GENERAR ACTION PERFORMED
 private void generarActionPerformed(Ventana v){
 WriteLine("//Aqui va la funcion actionPerformed");
 }
