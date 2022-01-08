@@ -65,6 +65,21 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cines.html">
+      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
+    </Content>
+    <Content Include="CINESA.html">
+      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
+    </Content>
+    <Content Include="CompraEntradas.html">
+      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
+    </Content>
+    <Content Include="InfoCine.html">
+      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
+    </Content>
+    <Content Include="Peliculas.html">
+      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
+    </Content>
     <Content Include="PlantillaGeneracionHTML.html">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,12 +107,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PUGSMBFJMSPProyectoIPSReportVB.tt</DependentUpon>
-    </Content>
-    <Content Include="VentanaPrin.html">
-      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
-    </Content>
-    <Content Include="VentanaSec.html">
-      <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

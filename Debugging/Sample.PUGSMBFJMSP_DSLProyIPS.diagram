@@ -124,7 +124,7 @@
         </metaforaBoton>
       </nestedChildShapes>
     </shapeVentana>
-    <conectorBotonVentana Id="e1d88080-9d70-4a56-b704-4236e3e62736" edgePoints="[(15.125 : 5.5); (12.6339285714286 : 5.5); (12.6339285714286 : 5.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <conectorBotonVentana Id="e1d88080-9d70-4a56-b704-4236e3e62736" edgePoints="[(15.125 : 5.5); (13.3958333333333 : 5.5 : JumpStart); (13.2291666666667 : 5.5 : JumpEnd); (12.6339285714286 : 5.5); (12.6339285714286 : 5.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <botonReferencesVentanaTargetMoniker Id="54a092ff-4de5-4dec-bad9-1d4c4f1f35a9" />
       <nodes>
         <metaforaBotonMoniker Id="c8f566a9-6145-456e-8f96-e30a0cb22d28" />

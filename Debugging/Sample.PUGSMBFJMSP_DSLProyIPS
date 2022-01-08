@@ -115,7 +115,7 @@
       <ventanaSecundaria Id="7bf25408-d6d4-446a-8c91-572daf92cca8" nombre="Cines" ancho="0" alto="0" esModal="false">
         <menu>
           <ventanaHasMenu Id="d52be996-4957-4a38-bb8f-fc178ab595c2">
-            <menu Id="ea4afeb6-1c00-44d2-9997-d092a5bb4853" titulo="Nuestros Cines">
+            <menu Id="ea4afeb6-1c00-44d2-9997-d092a5bb4853" titulo="Nuestros_Cines">
               <itemDeMenu>
                 <menuHasItemDeMenu Id="e3a3c00a-cad5-4db5-88fb-8c77621f6c9f">
                   <itemDeMenu Id="94ba4f0b-eba3-4b18-b240-dee7d6e71ad6" titulo="Manoteras">

@@ -3,7 +3,7 @@ inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformatio
 language="C#" hostspecific="True"#>
 <#@ output extension=".html" #>
 <#@ PUGSMBFJMSPProyectoIPS processor="PUGSMBFJMSPProyectoIPSDirectiveProcessor" 
-requires="fileName='Test.PUGSMBFJMSP_DSLProyIPS'" #>
+requires="fileName='Sample.PUGSMBFJMSP_DSLProyIPS'" #>
 
 <#@ include file="EF.utility.CS.ttinclude" #>
 

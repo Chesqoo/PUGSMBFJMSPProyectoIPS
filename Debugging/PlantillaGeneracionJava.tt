@@ -39,9 +39,9 @@ WriteLine("}\n}");
 //si la ventana es Vprincipal, nombre Frame_v.nombre, si no Dialogv
 
 if(v is VentanaPrincipal){
-WriteLine("public class Frame_"+v.nombre+" extends Frame impements ActionListener{ \n");
+WriteLine("public class Frame_"+v.nombre+" extends Frame implements ActionListener{ \n");
 }else{
-WriteLine("public class Dialog_"+v.nombre+" extends Dialog impements ActionListener{ \n");
+WriteLine("public class Dialog_"+v.nombre+" extends Dialog implements ActionListener{ \n");
 }
 
 //TODO: desarrollar atributos tipo Ventana
@@ -61,7 +61,7 @@ WriteLine("}\n"); //Fin de la clase
 <#+ //METODO GENERAR CONSTRUCTOR
 private void generarConstructor(Ventana v){
 
-	if(v is VentanaPrincipal) {
+	if(v is VentanaPrincipal) { //Si es principal
 		WriteLine("\tpublic Frame_"+v.nombre+"() {");
 		WriteLine("\t\tsuper();");
 		WriteLine("\t\tthis.setTitle(\"Frame_"+v.nombre+"\");");
@@ -82,7 +82,7 @@ private void generarConstructor(Ventana v){
 		//Creacion Menus
 		if(v.Menu.Count>0) {
 			WriteLine("\t\tMenuBar MB = new MenuBar();");
-			WriteLine("\t\tthis.setMenuBar(MB)");
+			WriteLine("\t\tthis.setMenuBar(MB);");
 			foreach(Menu m in v.Menu) {
 				WriteLine("\t\tMenu menu"+m.titulo+" = new Menu(\""+m.titulo+"\");");
 				foreach(ItemDeMenu im in m.ItemDeMenu) {
@@ -104,7 +104,7 @@ private void generarConstructor(Ventana v){
 		WriteLine("\t\tthis.setVisible(true);");
 		WriteLine("\t}\n");
 
-	} else {
+	} else { //Si NO es principal, si SI es secundaria
 		//Determina quien es la ventana padre
 		Ventana owner = null;
 		foreach(Boton b in v.Boton) {
@@ -122,12 +122,12 @@ private void generarConstructor(Ventana v){
 		//Declara las ventanas dependientes de esta
 		foreach(Boton b in v.Boton) {
 			if(b.VentanaTarget != null && !(b.VentanaTarget == owner))
-				WriteLine("\t ventanav_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
+				WriteLine("\t ventana_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
 		}
 		foreach(Menu m in v.Menu) {
 			foreach(ItemDeMenu im in m.ItemDeMenu)
 				if (im.VentanaTarget != null && !(im.VentanaTarget == owner))
-					WriteLine("\t ventanav_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,true);");
+					WriteLine("\t ventana_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,true);");
 		}
 
 		WriteLine("\t this.setLayout(new FlowLayout());\n");
@@ -135,9 +135,9 @@ private void generarConstructor(Ventana v){
 		//Creacion items de menu (como botones por restriccion del enunciado)
 		foreach(Menu m in v.Menu) {
 			foreach(ItemDeMenu im in m.ItemDeMenu) {
-				WriteLine("\t item"+im.titulo+" = new Button(\""+im.titulo+"\");");
-				WriteLine("\t this.add(item"+im.titulo+");");
-				WriteLine("\t item"+im.titulo+".addActionListener(this);");
+				WriteLine("\t boton"+im.titulo+" = new Button(\""+im.titulo+"\");");
+				WriteLine("\t this.add(boton"+im.titulo+");");
+				WriteLine("\t boton"+im.titulo+".addActionListener(this);");
 			}
 		}
 
@@ -148,7 +148,7 @@ private void generarConstructor(Ventana v){
 			WriteLine("\t boton"+b.titulo+".addActionListener(this);");
 		}
 		
-		WriteLine("\n\t this.setSize(250,150)");
+		WriteLine("\n\t this.setSize(250,150);");
 		WriteLine("}\n");
 	}
 
@@ -164,24 +164,30 @@ WriteLine("public void actionPerformed (ActionEvent ae) {");
 WriteLine("\tObject o = ae.getSource();");
 
 foreach(Boton b in v.Boton){
-	WriteLine("\t\tif(o == " + b.titulo + ")");
+	WriteLine("\t\tif(o == boton" + b.titulo + "){");
 	if( b.isBack )
 	WriteLine("\t\t\tthis.setVisible(false);");
 	else if ( b.VentanaTarget != null )
 	WriteLine("\t\t\tventana_" + b.VentanaTarget.nombre + ".setVisible(true);");
 	else if (b.EstadoFin != null)
 	WriteLine("\t\t\tSystem.exit(0);");
+	WriteLine("\t\t}");
 }
 
 foreach(Menu m in v.Menu)
 foreach(ItemDeMenu im in m.ItemDeMenu){
-	WriteLine("\t\tif(o == " + im.titulo + ")");
+	if(v is VentanaPrincipal){
+	WriteLine("\t\tif(o == item" + im.titulo + "){");
+	}else{
+	WriteLine("\t\tif(o == boton" + im.titulo + "){");
+	}
 	if( im.isBack )
 	WriteLine("\t\t\tthis.setVisible(false);");
 	else if ( im.VentanaTarget != null )
 	WriteLine("\t\t\tventana_" + im.VentanaTarget.nombre + ".setVisible(true);");
 	else if (im.EstadoFin != null)
 	WriteLine("\t\t\tSystem.exit(0);");
+	WriteLine("\t\t}");
 }
 
 WriteLine("}");
@@ -197,7 +203,7 @@ String ventanaAnterior="";
 
 foreach(Boton bot in v.Boton){//Botones
 	//Obtener la ventana a la que lleva el boton
-	if(bot.VentanaTarget!=null){
+	if(bot.VentanaTarget!=null && !bot.isBack){
 		if(bot.VentanaTarget is VentanaSecundaria){
 			if(String.Equals(ventanaAnterior, bot.VentanaTarget.nombre)==false){
 					WriteLine("\tprivate Dialog_"+bot.VentanaTarget.nombre+" ventana_"+bot.VentanaTarget.nombre+";");

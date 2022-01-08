@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<title>Cines</title>
+<style>
+ body{font-family:arial;} 
+table{font-size:80%;background:rgb(0,110,110)} 
+p{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;} 
+td.menu{background:rgb(0,150,150)} 
+table.menu{ 
+ font-size:100%; 
+ position:absolute; 
+ visibility:hidden; 
+ }
+ </style>
+<script type="text/javascript"> 
+function showmenu(elmnt) 
+{document.getElementById(elmnt).style.visibility="visible";} 
+function hidemenu(elmnt) 
+{document.getElementById(elmnt).style.visibility="hidden";} 
+</script>
+	</head>
+	<body>
+<table>
+	<tr>
+<td onmouseover="showmenu('Nuestros_Cines')" onmouseout="hidemenu('Nuestros_Cines')">
+	<p>Nuestros_Cines</p>
+	<table class="menu" id="Nuestros_Cines" width="50%">
+<tr>
+	<td class="menu">
+<a href="InfoCine.html">Manoteras</a>
+	</td>
+</tr>
+<tr>
+	<td class="menu">
+<a href="InfoCine.html">Mendez_Alvaro</a>
+	</td>
+</tr>
+<tr>
+	<td class="menu">
+<a href="InfoCine.html">Nassica</a>
+	</td>
+</tr>
+	</table>
+</td>
+	</tr>
+</table>
+<br><br><br>
+	</body>
+</html>
