@@ -62,76 +62,90 @@ WriteLine("}\n"); //Fin de la clase
 private void generarConstructor(Ventana v){
 
 	if(v is VentanaPrincipal) {
-		WriteLine("public Frame_"+v.nombre+"() {");
-		WriteLine("\t super();");
-		WriteLine("\t this.setTitle(\"Frame_"+v.nombre+"\");");
+		WriteLine("\tpublic Frame_"+v.nombre+"() {");
+		WriteLine("\t\tsuper();");
+		WriteLine("\t\tthis.setTitle(\"Frame_"+v.nombre+"\");");
 
-		WriteLine("\t ventanav_Peliculas = new Dialog_Peliculas(this,true);"); //NO
-		WriteLine("\t ventanav_Cines = new Dialog_Cines(this,true);"); //NO
-
-		WriteLine("\t this.setLayout(new FlowLayout());");
-		
-		//Instanciacion botones //REPETIR
-		WriteLine("\n\t botonPeliculas = new Button(\"Cartelera\");"); //NO
-		WriteLine("\t this.add(botonPeliculas);"); //NO
-		WriteLine("\t botonCines = new Button(\"Nuestros Cines\");"); //NO
-		WriteLine("\t this.add(botonCines);"); //NO
-		WriteLine("\t botonSalir = new Button(\"Salir\");"); //NO
-		WriteLine("\t this.add(botonSalir);"); //NO
-
-		//Action Listeners //REPETIR
-		WriteLine("\t botonSalir.addActionListener(this)"); //NO
-		WriteLine("\t botonPeliculas.addActionListener(this)");
-		WriteLine("\t botonCines.addActionListener(this)");
-
-		//Formato pagina
-		WriteLine("\n\t this.setSize(500,300);");
-		WriteLine("\t this.setVisible(true);");
-		WriteLine("}\n");
-
-	} else {
-		//Bucle para saber quien es el la ventana padre de esta
+		//Declara las ventanas dependientes de esta
 		foreach(Boton b in v.Boton) {
-			if (b.isBack){
-				if(b.VentanaTarget is VentanaPrincipal) {
-					WriteLine("public Dialog_"+v.nombre+"(Frame owner, boolean modal) {");
-				} else {
-					WriteLine("public Dialog_"+v.nombre+"(Dialog owner, boolean modal) {");
+			if(b.VentanaTarget != null)
+				WriteLine("\t\tventana_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
+		}
+		foreach(Menu m in v.Menu) {
+			foreach(ItemDeMenu im in m.ItemDeMenu)
+				if (im.VentanaTarget != null)
+					WriteLine("\t\tventana_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,true);");
+		}
+
+		WriteLine("\t\tthis.setLayout(new FlowLayout());\n");
+
+		//Creacion Menus
+		if(v.Menu.Count>0) {
+			WriteLine("\t\tMenuBar MB = new MenuBar();");
+			WriteLine("\t\tthis.setMenuBar(MB)");
+			foreach(Menu m in v.Menu) {
+				WriteLine("\t\tMenu menu"+m.titulo+" = new Menu(\"m.titulo\");");
+				foreach(ItemDeMenu im in m.ItemDeMenu) {
+					WriteLine("\t\titem"+im.titulo+" = new MenuItem(\"im.titulo\");");
+					WriteLine("\t\tmenu"+m.titulo+".add(item"+im.titulo+");");
 				}
+				WriteLine("\t\tMB.add(menu"+m.titulo+");");
 			}
 		}
+		
+		foreach(Boton b in v.Boton) {
+			WriteLine("\t\tboton"+b.titulo+" = new Button(\""+b.titulo+"\");");
+			WriteLine("\t\tthis.add(boton"+b.titulo+");");
+			WriteLine("\t\tboton"+b.titulo+".addActionListener(this);");
+		}
+
+		//Formato pagina
+		WriteLine("\n\t\tthis.setSize(500,300);");
+		WriteLine("\t\tthis.setVisible(true);");
+		WriteLine("\t}\n");
+
+	} else {
+		//Determina quien es la ventana padre
+		Ventana owner = null;
+		foreach(Boton b in v.Boton) {
+			if (b.isBack)
+				owner = b.VentanaTarget;
+		}
+		if(owner is VentanaPrincipal) {
+			WriteLine("public Dialog_"+v.nombre+"(Frame owner, boolean modal) {");
+		} else {
+			WriteLine("public Dialog_"+v.nombre+"(Dialog owner, boolean modal) {");
+		}
+
 		WriteLine("\t super(owner, \"Dialog_"+v.nombre+"\", modal);");
 
+		//Declara las ventanas dependientes de esta
 		foreach(Boton b in v.Boton) {
-			//if(b.VentanaTarget != null && !(b.VentanaTarget is owner))
+			if(b.VentanaTarget != null && !(b.VentanaTarget == owner))
 				WriteLine("\t ventanav_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
+		}
+		foreach(Menu m in v.Menu) {
+			foreach(ItemDeMenu im in m.ItemDeMenu)
+				if (im.VentanaTarget != null && !(im.VentanaTarget == owner))
+					WriteLine("\t ventanav_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,true);");
 		}
 
 		WriteLine("\t this.setLayout(new FlowLayout());\n");
 
-		//Creacion menus
-		if(v.Menu.Count>0) {
-			WriteLine("\t MenuBar MB = new MenuBar();");
-			WriteLine("\t this.setMenuBar(MB)");
-			foreach(Menu m in v.Menu) {
-				WriteLine("\t Menu menu"+m.titulo+" = new Menu(\"m.titulo\");");
-				foreach(ItemDeMenu im in m.ItemDeMenu) {
-					WriteLine("item"+im.titulo+" = new ItemDeMenu(\"im.titulo\");");
-					WriteLine("menu"+m.titulo+".add(item"+im.titulo+");");
-				}
-				WriteLine("\t MB.add(menu"+m.titulo+");");
+		//Creacion items de menu (como botones por restriccion del enunciado)
+		foreach(Menu m in v.Menu) {
+			foreach(ItemDeMenu im in m.ItemDeMenu) {
+				WriteLine("\t item"+im.titulo+" = new Button(\"im.titulo\");");
+				WriteLine("\t this.add(item"+im.titulo+");");
+				WriteLine("\t item"+im.titulo+".addActionListener(this);");
 			}
 		}
 
 		//Instanciacion botones
 		foreach(Boton b in v.Boton) {
-			if(b is ItemDeMenu) {
-				
-			} else {
-				WriteLine("\t boton"+b.titulo+" = new Button(\""+b.titulo+"\");");
-				WriteLine("\t this.add(boton"+b.titulo+");");
-				WriteLine("\t boton"+b.titulo+".addActionListener(this);");
-			}
+			WriteLine("\t boton"+b.titulo+" = new Button(\""+b.titulo+"\");");
+			WriteLine("\t this.add(boton"+b.titulo+");");
+			WriteLine("\t boton"+b.titulo+".addActionListener(this);");
 		}
 		
 		WriteLine("\n\t this.setSize(250,150)");
@@ -155,7 +169,7 @@ foreach(Boton bot in v.Boton){//Botones
 	//Obtener la ventana a la que lleva el boton
 	if(bot.VentanaTarget!=null){
 		if(bot.VentanaTarget is VentanaSecundaria){
-			WriteLine("private Dialog_"+bot.VentanaTarget.nombre+" ventana_"+bot.VentanaTarget.nombre+";");
+			WriteLine("\tprivate Dialog_"+bot.VentanaTarget.nombre+" ventana_"+bot.VentanaTarget.nombre+";");
 			}
 	}//ifBot
 }//foreachBot
@@ -164,7 +178,7 @@ foreach(Menu m in v.Menu){
 	foreach(ItemDeMenu it in m.ItemDeMenu){
 		if(it.VentanaTarget!=null){
 			if(it.VentanaTarget is VentanaSecundaria){
-			WriteLine("private Dialog_"+it.VentanaTarget.nombre+" ventana_"+it.VentanaTarget.nombre+";");
+			WriteLine("\tprivate Dialog_"+it.VentanaTarget.nombre+" ventana_"+it.VentanaTarget.nombre+";");
 			}
 		}
 	}
@@ -180,11 +194,11 @@ foreach(Menu m in v.Menu){
 private void atributosClickable(Ventana v){
 foreach(Boton bot in v.Boton)
 {
- WriteLine("private Button "+bot.titulo+";");
+ WriteLine("\tprivate Button boton"+bot.titulo+";");
 }
 foreach(Menu m in v.Menu){
 	foreach(ItemDeMenu it in m.ItemDeMenu){
-	WriteLine("private MenuItem "+it.titulo+";");
+	WriteLine("\tprivate MenuItem item"+it.titulo+";");
 	}
 }
 }

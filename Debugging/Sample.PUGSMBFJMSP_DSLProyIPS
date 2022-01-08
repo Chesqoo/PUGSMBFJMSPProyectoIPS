@@ -22,7 +22,7 @@
                   </itemDeMenu>
                 </menuHasItemDeMenu>
                 <menuHasItemDeMenu Id="313c15e9-99f4-48fd-a30a-943daa5c90b4">
-                  <itemDeMenu Id="25332b7e-0f66-467f-b654-7331d2555d12" titulo="Nuestros Cines">
+                  <itemDeMenu Id="25332b7e-0f66-467f-b654-7331d2555d12" titulo="Nuestros_Cines">
                     <ventanaTarget>
                       <botonReferencesVentanaTarget Id="1eeb7e0a-a71d-4019-bc01-83ae31fb6b7d">
                         <ventanaSecundariaMoniker Id="7bf25408-d6d4-446a-8c91-572daf92cca8" />
@@ -56,7 +56,7 @@
             <menu Id="f94b32bc-31ad-49e7-947b-1d187402a435" titulo="Cartelera">
               <itemDeMenu>
                 <menuHasItemDeMenu Id="63a6ecfb-8207-4557-9efc-8a9da8545f76">
-                  <itemDeMenu Id="568fa9e8-012f-4146-9097-e12749315bd4" titulo="Spudreman: De camino a casa">
+                  <itemDeMenu Id="568fa9e8-012f-4146-9097-e12749315bd4" titulo="Spudreman">
                     <ventanaTarget>
                       <botonReferencesVentanaTarget Id="5f0ce602-c962-4cda-9afe-3556bf9a25ed">
                         <ventanaSecundariaMoniker Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" />
@@ -65,7 +65,7 @@
                   </itemDeMenu>
                 </menuHasItemDeMenu>
                 <menuHasItemDeMenu Id="6f2d0387-1d17-4488-a39c-d64b5072a135">
-                  <itemDeMenu Id="681945ab-2748-43c9-8091-9db3891e8c6f" titulo="Avotar 2: Otra vez?">
+                  <itemDeMenu Id="681945ab-2748-43c9-8091-9db3891e8c6f" titulo="Avotar2">
                     <ventanaTarget>
                       <botonReferencesVentanaTarget Id="342c8aa0-09c0-48da-a085-4379e4683b87">
                         <ventanaSecundariaMoniker Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" />
@@ -74,7 +74,7 @@
                   </itemDeMenu>
                 </menuHasItemDeMenu>
                 <menuHasItemDeMenu Id="a2ca3bbb-7f8c-4f03-9af3-8afd1197dce4">
-                  <itemDeMenu Id="ee598523-46c4-421e-bea8-dfd97d9ec4fa" titulo="Matriz: Resurrecciones">
+                  <itemDeMenu Id="ee598523-46c4-421e-bea8-dfd97d9ec4fa" titulo="Matriz_Resurrecciones">
                     <ventanaTarget>
                       <botonReferencesVentanaTarget Id="a3e65ce2-fa7b-4600-b0ff-9dac9b2071c6">
                         <ventanaSecundariaMoniker Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" />
@@ -127,7 +127,7 @@
                   </itemDeMenu>
                 </menuHasItemDeMenu>
                 <menuHasItemDeMenu Id="9f4245f5-3c12-4c2b-adcb-34e23b4b0c81">
-                  <itemDeMenu Id="b5722569-ec57-4e72-8d25-631033f55316" titulo="Mendez Alvaro">
+                  <itemDeMenu Id="b5722569-ec57-4e72-8d25-631033f55316" titulo="Mendez_Alvaro">
                     <ventanaTarget>
                       <botonReferencesVentanaTarget Id="59c1b7d2-61bf-47a9-bb6a-ae17d8511c62">
                         <ventanaSecundariaMoniker Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" />
@@ -171,7 +171,7 @@
       </ventanaSecundaria>
     </tapizGUIHasVentanaSecundaria>
     <tapizGUIHasVentanaSecundaria Id="caccd7e0-7f65-46fe-8674-0fb3642993cc">
-      <ventanaSecundaria Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" nombre="Compra entradas" ancho="0" alto="0" esModal="false">
+      <ventanaSecundaria Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" nombre="CompraEntradas" ancho="0" alto="0" esModal="false">
         <boton>
           <ventanaHasBoton Id="c33b8b6c-9d66-479a-89e3-5bee4de1436a">
             <boton Id="dfcab6ce-c73a-4137-bb35-d5a7e58ffcb0" titulo="Comprar entradas en web">
@@ -195,7 +195,7 @@
       </ventanaSecundaria>
     </tapizGUIHasVentanaSecundaria>
     <tapizGUIHasVentanaSecundaria Id="e739606d-add5-4076-948d-3dd069696ef2">
-      <ventanaSecundaria Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" nombre="Info Cine" ancho="0" alto="0" esModal="false">
+      <ventanaSecundaria Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" nombre="InfoCine" ancho="0" alto="0" esModal="false">
         <boton>
           <ventanaHasBoton Id="642d7aac-995b-46a4-9335-31a76894fcd6">
             <boton Id="c3a8516d-f6e2-4177-ba30-a8efb173ef6e" titulo="Ver info en web">

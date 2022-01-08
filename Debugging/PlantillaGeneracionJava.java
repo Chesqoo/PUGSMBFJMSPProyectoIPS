@@ -9,38 +9,34 @@ new Frame_CINESA();
 }
 public class Frame_CINESA extends Frame impements ActionListener{ 
 
-private Dialog_Peliculas ventana_Peliculas;
-private Dialog_Cines ventana_Cines;
-<<<<<<< HEAD
-private Button Salir;
-private MenuItem Cartelera;
-private MenuItem Nuestros Cines;
-=======
-private Button Cartelera;
-private Button Nuestros Cines;
-private Button Salir;
->>>>>>> d2b1c37bbcd2c704b3f97c0f361b3a8e3bb7d294
+	private Dialog_Peliculas ventana_Peliculas;
+	private Dialog_Cines ventana_Cines;
+	private Button botonSalir;
+	private MenuItem itemCartelera;
+	private MenuItem itemNuestros_Cines;
 
-public Frame_CINESA() {
-	 super();
-	 this.setTitle("Frame_CINESA");
-	 ventanav_Peliculas = new Dialog_Peliculas(this,true);
-	 ventanav_Cines = new Dialog_Cines(this,true);
-	 this.setLayout(new FlowLayout());
+	public Frame_CINESA() {
+		super();
+		this.setTitle("Frame_CINESA");
+		ventana_Peliculas = new Dialog_Peliculas(this,true);
+		ventana_Cines = new Dialog_Cines(this,true);
+		this.setLayout(new FlowLayout());
 
-	 botonPeliculas = new Button("Cartelera");
-	 this.add(botonPeliculas);
-	 botonCines = new Button("Nuestros Cines");
-	 this.add(botonCines);
-	 botonSalir = new Button("Salir");
-	 this.add(botonSalir);
-	 botonSalir.addActionListener(this)
-	 botonPeliculas.addActionListener(this)
-	 botonCines.addActionListener(this)
+		MenuBar MB = new MenuBar();
+		this.setMenuBar(MB)
+		Menu menuSecciones = new Menu("m.titulo");
+		itemCartelera = new MenuItem("im.titulo");
+		menuSecciones.add(itemCartelera);
+		itemNuestros_Cines = new MenuItem("im.titulo");
+		menuSecciones.add(itemNuestros_Cines);
+		MB.add(menuSecciones);
+		botonSalir = new Button("Salir");
+		this.add(botonSalir);
+		botonSalir.addActionListener(this);
 
-	 this.setSize(500,300);
-	 this.setVisible(true);
-}
+		this.setSize(500,300);
+		this.setVisible(true);
+	}
 
 
 //Aqui va la funcion actionPerformed
@@ -48,42 +44,41 @@ public Frame_CINESA() {
 
 public class Dialog_Peliculas extends Dialog impements ActionListener{ 
 
-private Dialog_Compra entradas ventana_Compra entradas;
-private Dialog_Compra entradas ventana_Compra entradas;
-private Dialog_Compra entradas ventana_Compra entradas;
-private Button Volver;
-private Button Salir;
-private Button ;
-private MenuItem Spudreman: De camino a casa;
-private MenuItem Avotar 2: Otra vez?;
-private MenuItem Matriz: Resurrecciones;
+	private Dialog_CompraEntradas ventana_CompraEntradas;
+	private Dialog_CompraEntradas ventana_CompraEntradas;
+	private Dialog_CompraEntradas ventana_CompraEntradas;
+	private Button botonVolver;
+	private Button botonSalir;
+	private Button boton;
+	private MenuItem itemSpudreman;
+	private MenuItem itemAvotar2;
+	private MenuItem itemMatriz_Resurrecciones;
 
-<<<<<<< HEAD
 public Dialog_Peliculas(Frame owner, boolean modal) {
 	 super(owner, "Dialog_Peliculas", modal);
-	 ventanav_CINESA = new Dialog_CINESA(this,true);
-=======
-public Dialog_Peliculas() {
-	 super();
-	 ventanav_CINESA = new Dialog_CINESA(this,true);
+	 ventanav_CompraEntradas = new Dialog_CompraEntradas(this,true);
+	 ventanav_CompraEntradas = new Dialog_CompraEntradas(this,true);
+	 ventanav_CompraEntradas = new Dialog_CompraEntradas(this,true);
 	 this.setLayout(new FlowLayout());
 
-	 MenuBar MB = new MenuBar();
-	 this.setMenuBar(MB)
-	 Menu menuCartelera = new Menu("m.titulo");
-itemSpudreman: De camino a casa = new ItemDeMenu("im.titulo");
-menuCartelera.add(itemSpudreman: De camino a casa);
-itemAvotar 2: Otra vez? = new ItemDeMenu("im.titulo");
-menuCartelera.add(itemAvotar 2: Otra vez?);
-itemMatriz: Resurrecciones = new ItemDeMenu("im.titulo");
-menuCartelera.add(itemMatriz: Resurrecciones);
-	 MB.add(menuCartelera);
+	 itemSpudreman = new Button("im.titulo");
+	 this.add(itemSpudreman);
+	 itemSpudreman.addActionListener(this);
+	 itemAvotar2 = new Button("im.titulo");
+	 this.add(itemAvotar2);
+	 itemAvotar2.addActionListener(this);
+	 itemMatriz_Resurrecciones = new Button("im.titulo");
+	 this.add(itemMatriz_Resurrecciones);
+	 itemMatriz_Resurrecciones.addActionListener(this);
 	 botonVolver = new Button("Volver");
 	 this.add(botonVolver);
 	 botonVolver.addActionListener(this);
 	 botonSalir = new Button("Salir");
 	 this.add(botonSalir);
 	 botonSalir.addActionListener(this);
+	 boton = new Button("");
+	 this.add(boton);
+	 boton.addActionListener(this);
 
 	 this.setSize(250,150)
 }
@@ -94,30 +89,31 @@ menuCartelera.add(itemMatriz: Resurrecciones);
 
 public class Dialog_Cines extends Dialog impements ActionListener{ 
 
-private Dialog_Info Cine ventana_Info Cine;
-private Dialog_Info Cine ventana_Info Cine;
-private Dialog_Info Cine ventana_Info Cine;
-private Button Volver;
-private Button Salir;
-private MenuItem Manoteras;
-private MenuItem Mendez Alvaro;
-private MenuItem Nassica;
+	private Dialog_InfoCine ventana_InfoCine;
+	private Dialog_InfoCine ventana_InfoCine;
+	private Dialog_InfoCine ventana_InfoCine;
+	private Button botonVolver;
+	private Button botonSalir;
+	private MenuItem itemManoteras;
+	private MenuItem itemMendez_Alvaro;
+	private MenuItem itemNassica;
 
-public Dialog_Cines() {
-	 super();
-	 ventanav_CINESA = new Dialog_CINESA(this,true);
+public Dialog_Cines(Frame owner, boolean modal) {
+	 super(owner, "Dialog_Cines", modal);
+	 ventanav_InfoCine = new Dialog_InfoCine(this,true);
+	 ventanav_InfoCine = new Dialog_InfoCine(this,true);
+	 ventanav_InfoCine = new Dialog_InfoCine(this,true);
 	 this.setLayout(new FlowLayout());
 
-	 MenuBar MB = new MenuBar();
-	 this.setMenuBar(MB)
-	 Menu menuNuestros Cines = new Menu("m.titulo");
-itemManoteras = new ItemDeMenu("im.titulo");
-menuNuestros Cines.add(itemManoteras);
-itemMendez Alvaro = new ItemDeMenu("im.titulo");
-menuNuestros Cines.add(itemMendez Alvaro);
-itemNassica = new ItemDeMenu("im.titulo");
-menuNuestros Cines.add(itemNassica);
-	 MB.add(menuNuestros Cines);
+	 itemManoteras = new Button("im.titulo");
+	 this.add(itemManoteras);
+	 itemManoteras.addActionListener(this);
+	 itemMendez_Alvaro = new Button("im.titulo");
+	 this.add(itemMendez_Alvaro);
+	 itemMendez_Alvaro.addActionListener(this);
+	 itemNassica = new Button("im.titulo");
+	 this.add(itemNassica);
+	 itemNassica.addActionListener(this);
 	 botonVolver = new Button("Volver");
 	 this.add(botonVolver);
 	 botonVolver.addActionListener(this);
@@ -132,15 +128,14 @@ menuNuestros Cines.add(itemNassica);
 //Aqui va la funcion actionPerformed
 }
 
-public class Dialog_Compra entradas extends Dialog impements ActionListener{ 
+public class Dialog_CompraEntradas extends Dialog impements ActionListener{ 
 
-private Dialog_Peliculas ventana_Peliculas;
-private Button Comprar entradas en web;
-private Button Volver;
+	private Dialog_Peliculas ventana_Peliculas;
+	private Button botonComprar entradas en web;
+	private Button botonVolver;
 
-public Dialog_Compra entradas() {
-	 super();
-	 ventanav_Peliculas = new Dialog_Peliculas(this,true);
+public Dialog_CompraEntradas(Dialog owner, boolean modal) {
+	 super(owner, "Dialog_CompraEntradas", modal);
 	 this.setLayout(new FlowLayout());
 
 	 botonComprar entradas en web = new Button("Comprar entradas en web");
@@ -157,15 +152,14 @@ public Dialog_Compra entradas() {
 //Aqui va la funcion actionPerformed
 }
 
-public class Dialog_Info Cine extends Dialog impements ActionListener{ 
+public class Dialog_InfoCine extends Dialog impements ActionListener{ 
 
-private Dialog_Cines ventana_Cines;
-private Button Ver info en web;
-private Button Volver;
+	private Dialog_Cines ventana_Cines;
+	private Button botonVer info en web;
+	private Button botonVolver;
 
-public Dialog_Info Cine() {
-	 super();
-	 ventanav_Cines = new Dialog_Cines(this,true);
+public Dialog_InfoCine(Dialog owner, boolean modal) {
+	 super(owner, "Dialog_InfoCine", modal);
 	 this.setLayout(new FlowLayout());
 
 	 botonVer info en web = new Button("Ver info en web");
@@ -183,4 +177,3 @@ public Dialog_Info Cine() {
 }
 
 
->>>>>>> d2b1c37bbcd2c704b3f97c0f361b3a8e3bb7d294
