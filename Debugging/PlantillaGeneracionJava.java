@@ -24,10 +24,10 @@ public class Frame_CINESA extends Frame impements ActionListener{
 
 		MenuBar MB = new MenuBar();
 		this.setMenuBar(MB)
-		Menu menuSecciones = new Menu("m.titulo");
-		itemCartelera = new MenuItem("im.titulo");
+		Menu menuSecciones = new Menu("Secciones");
+		itemCartelera = new MenuItem("Cartelera");
 		menuSecciones.add(itemCartelera);
-		itemNuestros_Cines = new MenuItem("im.titulo");
+		itemNuestros_Cines = new MenuItem("Nuestros_Cines");
 		menuSecciones.add(itemNuestros_Cines);
 		MB.add(menuSecciones);
 		botonSalir = new Button("Salir");
@@ -53,14 +53,12 @@ public void actionPerformed (ActionEvent ae) {
 public class Dialog_Peliculas extends Dialog impements ActionListener{ 
 
 	private Dialog_CompraEntradas ventana_CompraEntradas;
-	private Dialog_CompraEntradas ventana_CompraEntradas;
-	private Dialog_CompraEntradas ventana_CompraEntradas;
 	private Button botonVolver;
 	private Button botonSalir;
 	private Button boton;
-	private MenuItem itemSpudreman;
-	private MenuItem itemAvotar2;
-	private MenuItem itemMatriz_Resurrecciones;
+	private Button botonSpudreman;
+	private Button botonAvotar2;
+	private Button botonMatriz_Resurrecciones;
 
 public Dialog_Peliculas(Frame owner, boolean modal) {
 	 super(owner, "Dialog_Peliculas", modal);
@@ -69,13 +67,13 @@ public Dialog_Peliculas(Frame owner, boolean modal) {
 	 ventanav_CompraEntradas = new Dialog_CompraEntradas(this,true);
 	 this.setLayout(new FlowLayout());
 
-	 itemSpudreman = new Button("im.titulo");
+	 itemSpudreman = new Button("Spudreman");
 	 this.add(itemSpudreman);
 	 itemSpudreman.addActionListener(this);
-	 itemAvotar2 = new Button("im.titulo");
+	 itemAvotar2 = new Button("Avotar2");
 	 this.add(itemAvotar2);
 	 itemAvotar2.addActionListener(this);
-	 itemMatriz_Resurrecciones = new Button("im.titulo");
+	 itemMatriz_Resurrecciones = new Button("Matriz_Resurrecciones");
 	 this.add(itemMatriz_Resurrecciones);
 	 itemMatriz_Resurrecciones.addActionListener(this);
 	 botonVolver = new Button("Volver");
@@ -111,13 +109,11 @@ public void actionPerformed (ActionEvent ae) {
 public class Dialog_Cines extends Dialog impements ActionListener{ 
 
 	private Dialog_InfoCine ventana_InfoCine;
-	private Dialog_InfoCine ventana_InfoCine;
-	private Dialog_InfoCine ventana_InfoCine;
 	private Button botonVolver;
 	private Button botonSalir;
-	private MenuItem itemManoteras;
-	private MenuItem itemMendez_Alvaro;
-	private MenuItem itemNassica;
+	private Button botonManoteras;
+	private Button botonMendez_Alvaro;
+	private Button botonNassica;
 
 public Dialog_Cines(Frame owner, boolean modal) {
 	 super(owner, "Dialog_Cines", modal);
@@ -126,13 +122,13 @@ public Dialog_Cines(Frame owner, boolean modal) {
 	 ventanav_InfoCine = new Dialog_InfoCine(this,true);
 	 this.setLayout(new FlowLayout());
 
-	 itemManoteras = new Button("im.titulo");
+	 itemManoteras = new Button("Manoteras");
 	 this.add(itemManoteras);
 	 itemManoteras.addActionListener(this);
-	 itemMendez_Alvaro = new Button("im.titulo");
+	 itemMendez_Alvaro = new Button("Mendez_Alvaro");
 	 this.add(itemMendez_Alvaro);
 	 itemMendez_Alvaro.addActionListener(this);
-	 itemNassica = new Button("im.titulo");
+	 itemNassica = new Button("Nassica");
 	 this.add(itemNassica);
 	 itemNassica.addActionListener(this);
 	 botonVolver = new Button("Volver");
@@ -164,16 +160,16 @@ public void actionPerformed (ActionEvent ae) {
 public class Dialog_CompraEntradas extends Dialog impements ActionListener{ 
 
 	private Dialog_Peliculas ventana_Peliculas;
-	private Button botonComprar entradas en web;
+	private Button botoncomprar_entradas_en_web;
 	private Button botonVolver;
 
 public Dialog_CompraEntradas(Dialog owner, boolean modal) {
 	 super(owner, "Dialog_CompraEntradas", modal);
 	 this.setLayout(new FlowLayout());
 
-	 botonComprar entradas en web = new Button("Comprar entradas en web");
-	 this.add(botonComprar entradas en web);
-	 botonComprar entradas en web.addActionListener(this);
+	 botoncomprar_entradas_en_web = new Button("comprar_entradas_en_web");
+	 this.add(botoncomprar_entradas_en_web);
+	 botoncomprar_entradas_en_web.addActionListener(this);
 	 botonVolver = new Button("Volver");
 	 this.add(botonVolver);
 	 botonVolver.addActionListener(this);
@@ -184,7 +180,7 @@ public Dialog_CompraEntradas(Dialog owner, boolean modal) {
 
 public void actionPerformed (ActionEvent ae) {
 	Object o = ae.getSource();
-		if(o == Comprar entradas en web)
+		if(o == comprar_entradas_en_web)
 			System.exit(0);
 		if(o == Volver)
 			this.setVisible(false);
@@ -194,16 +190,16 @@ public void actionPerformed (ActionEvent ae) {
 public class Dialog_InfoCine extends Dialog impements ActionListener{ 
 
 	private Dialog_Cines ventana_Cines;
-	private Button botonVer info en web;
+	private Button botonver_info_en_web;
 	private Button botonVolver;
 
 public Dialog_InfoCine(Dialog owner, boolean modal) {
 	 super(owner, "Dialog_InfoCine", modal);
 	 this.setLayout(new FlowLayout());
 
-	 botonVer info en web = new Button("Ver info en web");
-	 this.add(botonVer info en web);
-	 botonVer info en web.addActionListener(this);
+	 botonver_info_en_web = new Button("ver_info_en_web");
+	 this.add(botonver_info_en_web);
+	 botonver_info_en_web.addActionListener(this);
 	 botonVolver = new Button("Volver");
 	 this.add(botonVolver);
 	 botonVolver.addActionListener(this);
@@ -214,7 +210,7 @@ public Dialog_InfoCine(Dialog owner, boolean modal) {
 
 public void actionPerformed (ActionEvent ae) {
 	Object o = ae.getSource();
-		if(o == Ver info en web)
+		if(o == ver_info_en_web)
 			System.exit(0);
 		if(o == Volver)
 			this.setVisible(false);

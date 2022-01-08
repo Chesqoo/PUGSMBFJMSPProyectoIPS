@@ -174,7 +174,7 @@
       <ventanaSecundaria Id="6cc37028-8c9c-47a7-b52d-78cd1aa0b30c" nombre="CompraEntradas" ancho="0" alto="0" esModal="false">
         <boton>
           <ventanaHasBoton Id="c33b8b6c-9d66-479a-89e3-5bee4de1436a">
-            <boton Id="dfcab6ce-c73a-4137-bb35-d5a7e58ffcb0" titulo="Comprar entradas en web">
+            <boton Id="dfcab6ce-c73a-4137-bb35-d5a7e58ffcb0" titulo="comprar_entradas_en_web">
               <estadoFin>
                 <botonReferencesEstadoFin Id="0f8fe34e-9590-48b7-8bf4-5bff01fb8c99">
                   <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
@@ -198,7 +198,7 @@
       <ventanaSecundaria Id="31b2ca0f-0e1f-4045-ac39-777062cbd4e5" nombre="InfoCine" ancho="0" alto="0" esModal="false">
         <boton>
           <ventanaHasBoton Id="642d7aac-995b-46a4-9335-31a76894fcd6">
-            <boton Id="c3a8516d-f6e2-4177-ba30-a8efb173ef6e" titulo="Ver info en web">
+            <boton Id="c3a8516d-f6e2-4177-ba30-a8efb173ef6e" titulo="ver_info_en_web">
               <estadoFin>
                 <botonReferencesEstadoFin Id="b3358f7a-5c6e-4b25-8411-9c23c469cc33">
                   <estadoFinMoniker Id="fb67daae-302f-49dc-9565-c4385af4c455" />
