@@ -65,6 +65,9 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_GUI.java">
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
+    </Content>
     <Content Include="Cines.html">
       <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
     </Content>
@@ -73,6 +76,21 @@
     </Content>
     <Content Include="CompraEntradas.html">
       <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
+    </Content>
+    <Content Include="Dialog_Cines.java">
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
+    </Content>
+    <Content Include="Dialog_CompraEntradas.java">
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
+    </Content>
+    <Content Include="Dialog_InfoCine.java">
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
+    </Content>
+    <Content Include="Dialog_Peliculas.java">
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
+    </Content>
+    <Content Include="Frame_CINESA.java">
+      <DependentUpon>PlantillaGeneracionJava.tt</DependentUpon>
     </Content>
     <Content Include="InfoCine.html">
       <DependentUpon>PlantillaGeneracionHTML.tt</DependentUpon>
