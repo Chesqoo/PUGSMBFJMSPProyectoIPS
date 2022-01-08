@@ -84,7 +84,7 @@
         <shapeEstadoFinMoniker Id="425ee73e-263a-4238-9bae-a66a8926502e" />
       </nodes>
     </conectorBotonFin>
-    <conectorBotonFin Id="1046a5d8-2a43-4c32-b40e-57c15ed54d0c" edgePoints="[(13.3125 : 5); (13.3125 : 6.75); (9.75 : 6.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <conectorBotonFin Id="1046a5d8-2a43-4c32-b40e-57c15ed54d0c" edgePoints="[(13.3125 : 5); (13.3125 : 6.75); (9.75 : 6.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <botonReferencesEstadoFinMoniker Id="739cfc72-e0d6-49bb-8706-373a2757e78e" />
       <nodes>
         <metaforaBotonMoniker Id="09cd79fb-e59a-4b13-a85d-3b23fbb41ca7" />
@@ -124,7 +124,7 @@
         </metaforaBoton>
       </nestedChildShapes>
     </shapeVentana>
-    <conectorBotonVentana Id="e1d88080-9d70-4a56-b704-4236e3e62736" edgePoints="[(15.125 : 5.5); (13.3958333333333 : 5.5 : JumpStart); (13.2291666666667 : 5.5 : JumpEnd); (12.6339285714286 : 5.5); (12.6339285714286 : 5.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <conectorBotonVentana Id="e1d88080-9d70-4a56-b704-4236e3e62736" edgePoints="[(15.125 : 5.5); (13.3958333333333 : 5.5 : JumpStart); (13.2291666666667 : 5.5 : JumpEnd); (12.6339285714286 : 5.5); (12.6339285714286 : 5.1)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <botonReferencesVentanaTargetMoniker Id="54a092ff-4de5-4dec-bad9-1d4c4f1f35a9" />
       <nodes>
         <metaforaBotonMoniker Id="c8f566a9-6145-456e-8f96-e30a0cb22d28" />
@@ -178,21 +178,21 @@
         <shapeVentanaMoniker Id="66fdaf62-a944-43d6-8a28-f34436bc43a7" />
       </nodes>
     </conectorBotonVentana>
-    <conectorBotonVentana Id="90a0eecc-5e6d-4b77-8ce6-b13237957d2c" edgePoints="[(13.5 : 2.6875); (14.375 : 2.6875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <conectorBotonVentana Id="90a0eecc-5e6d-4b77-8ce6-b13237957d2c" edgePoints="[(13.5 : 2.6875); (14.375 : 2.6875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <botonReferencesVentanaTargetMoniker Id="5f0ce602-c962-4cda-9afe-3556bf9a25ed" />
       <nodes>
         <metaforaItemMenuMoniker Id="f98dc4ee-89a3-444b-b2db-eca4cbaf4b90" />
         <shapeVentanaMoniker Id="926f6e77-b106-40d3-b601-179b8aa38319" />
       </nodes>
     </conectorBotonVentana>
-    <conectorBotonVentana Id="e8a4fe01-0963-46cf-98b7-9db55aff24ca" edgePoints="[(13.5 : 3.25); (14.375 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <conectorBotonVentana Id="e8a4fe01-0963-46cf-98b7-9db55aff24ca" edgePoints="[(13.5 : 3.25); (14.375 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <botonReferencesVentanaTargetMoniker Id="342c8aa0-09c0-48da-a085-4379e4683b87" />
       <nodes>
         <metaforaItemMenuMoniker Id="3543c308-2c34-4630-8d1c-49e3ec2e8a2b" />
         <shapeVentanaMoniker Id="926f6e77-b106-40d3-b601-179b8aa38319" />
       </nodes>
     </conectorBotonVentana>
-    <conectorBotonVentana Id="a3c36ccc-ad2f-4512-bd46-94fefc57c5f5" edgePoints="[(13.5 : 3.875); (14.375 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <conectorBotonVentana Id="a3c36ccc-ad2f-4512-bd46-94fefc57c5f5" edgePoints="[(13.5 : 3.875); (14.375 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <botonReferencesVentanaTargetMoniker Id="a3e65ce2-fa7b-4600-b0ff-9dac9b2071c6" />
       <nodes>
         <metaforaItemMenuMoniker Id="debf2928-2f50-4766-b38d-2982b261c98c" />
