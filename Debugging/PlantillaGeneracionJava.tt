@@ -143,7 +143,20 @@ private void generarConstructor(Ventana v){
 
 <#+ //METODO GENERAR ACTION PERFORMED
 private void generarActionPerformed(Ventana v){
-WriteLine("//Aqui va la funcion actionPerformed");
+WriteLine("public void actionPerformed (ActionEvent ae) {");
+WriteLine("\t Object o = ae.getSource();");
+
+foreach(Boton b in v.Boton){
+	WriteLine("\t\t if(o == " + b.titulo + "){");
+	if( b.isBack )
+	WriteLine("\t\t\t this.setVisible(false);");
+	else if ( b.VentanaTarget != null )
+	WriteLine("\t\t\t ventana_" + b.VentanaTarget.nombre + ".setVisible(true);");
+	else if (b.EstadoFin != null)
+	WriteLine("System.exit(0);");
+}
+
+WriteLine("}");
 }
 #>
 
