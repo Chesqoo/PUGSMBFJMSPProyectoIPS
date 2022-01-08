@@ -37,6 +37,54 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 {
 	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
+	public abstract partial class Ventana
+	{
+		/// <summary>
+		/// Checks that the relationships that have a multiplicity of One or OneMany do actually have a link.
+		/// </summary>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "Generated code.")]
+		[DslValidation::ValidationMethod(DslValidation::ValidationCategories.Open | DslValidation::ValidationCategories.Save | DslValidation::ValidationCategories.Menu)]
+		private void ValidateVentanaMultiplicity (DslValidation::ValidationContext context)
+		{
+			if (this.BotonSource.Count == 0)
+			{
+				context.LogViolation(DslValidation::ViolationType.Error,
+					string.Format(global::System.Globalization.CultureInfo.CurrentCulture, 
+						UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("MinimumMultiplicityMissingLink"), 
+						"Ventana", this.nombre, "BotonSource"),
+						"DSL0001", this);
+			}
+		} // ValidateVentanaMultiplicity
+	} // class Ventana
+} // UPM_IPS.PUGSMBFJMSPProyectoIPS
+
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
+	public partial class Menu
+	{
+		/// <summary>
+		/// Checks that the relationships that have a multiplicity of One or OneMany do actually have a link.
+		/// </summary>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "Generated code.")]
+		[DslValidation::ValidationMethod(DslValidation::ValidationCategories.Open | DslValidation::ValidationCategories.Save | DslValidation::ValidationCategories.Menu)]
+		private void ValidateMenuMultiplicity (DslValidation::ValidationContext context)
+		{
+			if (this.ItemDeMenu.Count == 0)
+			{
+				context.LogViolation(DslValidation::ViolationType.Error,
+					string.Format(global::System.Globalization.CultureInfo.CurrentCulture, 
+						UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel.SingletonResourceManager.GetString("MinimumMultiplicityMissingLink"), 
+						"Menu", "", "ItemDeMenu"),
+						"DSL0001", this);
+			}
+		} // ValidateMenuMultiplicity
+	} // class Menu
+} // UPM_IPS.PUGSMBFJMSPProyectoIPS
+
+namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
+{
+	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
 	public partial class EstadoFin
 	{
 		/// <summary>

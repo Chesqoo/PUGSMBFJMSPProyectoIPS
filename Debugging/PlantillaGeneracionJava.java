@@ -4,18 +4,20 @@ import java.awt.event.*;
 
 public class App_GUI{
 public static void main (String[] args){
-new Frame_VentanaPrin();
+new Frame_CINESA();
 }
 }
-public class Frame_VentanaPrin extends Frame impements ActionListener{ 
+public class Frame_CINESA extends Frame impements ActionListener{ 
 
-private Dialog_VentanaSec ventana_VentanaSec;
-private Button Boton;
-private MenuItem Item1;
+private Dialog_Peliculas ventana_Peliculas;
+private Dialog_Cines ventana_Cines;
+private Button Salir;
+private MenuItem Cartelera;
+private MenuItem Nuestros Cines;
 
-public Frame_VentanaPrin() {
+public Frame_CINESA() {
 	 super();
-	 this.setTitle("Frame_VentanaPrin");
+	 this.setTitle("Frame_CINESA");
 	 ventanav_Peliculas = new Dialog_Peliculas(this,true);
 	 ventanav_Cines = new Dialog_Cines(this,true);
 	 this.setLayout(new FlowLayout());
@@ -38,28 +40,18 @@ public Frame_VentanaPrin() {
 //Aqui va la funcion actionPerformed
 }
 
-public class Dialog_VentanaSec extends Dialog impements ActionListener{ 
+public class Dialog_Peliculas extends Dialog impements ActionListener{ 
 
-private Button Atras;
+private Dialog_Compra entradas ventana_Compra entradas;
+private Dialog_Compra entradas ventana_Compra entradas;
+private Dialog_Compra entradas ventana_Compra entradas;
+private Button Volver;
 private Button Salir;
+private Button ;
+private MenuItem Spudreman: De camino a casa;
+private MenuItem Avotar 2: Otra vez?;
+private MenuItem Matriz: Resurrecciones;
 
-public Dialog_VentanaSec() {
-	 super();
-	 ventanav_VentanaPrin = new Dialog_VentanaPrin(this,true);
-	 this.setLayout(new FlowLayout());
-
-	 botonAtras = new Button("Atras");
-	 this.add(botonAtras);
-	 botonAtras.addActionListener(this);
-	 botonSalir = new Button("Salir");
-	 this.add(botonSalir);
-	 botonSalir.addActionListener(this);
-
-	 this.setSize(250,150)
-}
-
-
-//Aqui va la funcion actionPerformed
-}
-
-
+public Dialog_Peliculas(Frame owner, boolean modal) {
+	 super(owner, "Dialog_Peliculas", modal);
+	 ventanav_CINESA = new Dialog_CINESA(this,true);

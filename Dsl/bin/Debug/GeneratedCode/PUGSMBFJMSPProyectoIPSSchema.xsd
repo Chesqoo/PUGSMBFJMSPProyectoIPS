@@ -224,13 +224,13 @@
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
           <!-- Relationship: MenuHasItemDeMenu -->
-          <xsd:element name="itemDeMenu" minOccurs="0" maxOccurs="1">
+          <xsd:element name="itemDeMenu" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>Instances of MenuHasItemDeMenu</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="menuHasItemDeMenu" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="menuHasItemDeMenu" minOccurs="1" maxOccurs="unbounded">
                   <xsd:annotation>
                     <xsd:documentation>[Instance of MenuHasItemDeMenu needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
@@ -340,6 +340,8 @@
         </xsd:attribute>
         <!-- Property: titulo -->
         <xsd:attribute name="titulo" type="xsd:string" />
+        <!-- Property: isBack -->
+        <xsd:attribute name="isBack" type="xsd:boolean" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

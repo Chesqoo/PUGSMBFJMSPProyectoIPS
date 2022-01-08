@@ -1465,6 +1465,93 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 		}
 		
 		#endregion
+		#region isBack domain property code
+		
+		/// <summary>
+		/// isBack domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid isBackDomainPropertyId = new global::System.Guid(0x5494c298, 0x077a, 0x47cd, 0xb5, 0x06, 0xf9, 0x69, 0x48, 0xf5, 0x7f, 0x36);
+		
+		/// <summary>
+		/// Storage for isBack
+		/// </summary>
+		private global::System.Boolean isBackPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of isBack domain property.
+		/// Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Is Back
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton/isBack.DisplayName", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton/isBack.Description", typeof(global::UPM_IPS.PUGSMBFJMSPProyectoIPS.PUGSMBFJMSPProyectoIPSDomainModel), "UPM_IPS.PUGSMBFJMSPProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("5494c298-077a-47cd-b506-f96948f57f36")]
+		public global::System.Boolean isBack
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return isBackPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				isBackPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Boton.isBack domain property.
+		/// </summary>
+		internal sealed partial class isBackPropertyHandler : DslModeling::DomainPropertyValueHandler<Boton, global::System.Boolean>
+		{
+			private isBackPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Boton.isBack domain property value handler.
+			/// </summary>
+			public static readonly isBackPropertyHandler Instance = new isBackPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Boton.isBack domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return isBackDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(Boton element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.isBackPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Boton element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.isBackPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Ventana opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Ventana.

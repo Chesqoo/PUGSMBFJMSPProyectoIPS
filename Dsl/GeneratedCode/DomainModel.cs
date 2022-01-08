@@ -112,6 +112,7 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 				new DomainMemberInfo(typeof(VentanaSecundaria), "esModal", VentanaSecundaria.esModalDomainPropertyId, typeof(VentanaSecundaria.esModalPropertyHandler)),
 				new DomainMemberInfo(typeof(Menu), "titulo", Menu.tituloDomainPropertyId, typeof(Menu.tituloPropertyHandler)),
 				new DomainMemberInfo(typeof(Boton), "titulo", Boton.tituloDomainPropertyId, typeof(Boton.tituloPropertyHandler)),
+				new DomainMemberInfo(typeof(Boton), "isBack", Boton.isBackDomainPropertyId, typeof(Boton.isBackPropertyHandler)),
 			};
 		}
 		/// <summary>

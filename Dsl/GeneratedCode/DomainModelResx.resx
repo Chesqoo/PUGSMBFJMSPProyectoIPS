@@ -237,6 +237,14 @@
     <value>Titulo</value>
     <comment>DisplayName for DomainProperty &apos;titulo&apos; on DomainClass &apos;Boton&apos;</comment>
   </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton/isBack.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Is Back</value>
+    <comment>Description for DomainProperty &apos;isBack&apos; on DomainClass &apos;Boton&apos;</comment>
+  </data>
+  <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton/isBack.DisplayName" xml:space="preserve">
+    <value>Is Back</value>
+    <comment>DisplayName for DomainProperty &apos;isBack&apos; on DomainClass &apos;Boton&apos;</comment>
+  </data>
   <data name="UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin.Description" xml:space="preserve">
     <value>Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin</value>
     <comment>Description for DomainClass &apos;EstadoFin&apos;</comment>

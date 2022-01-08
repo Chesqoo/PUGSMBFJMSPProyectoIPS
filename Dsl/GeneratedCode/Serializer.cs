@@ -4433,6 +4433,23 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					}
 				}
 			}
+			// isBack
+			if (!serializationContext.Result.Failed)
+			{
+				string attribisBack = PUGSMBFJMSPProyectoIPSSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "isBack");
+				if (attribisBack != null)
+				{
+					global::System.Boolean valueOfisBack;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Boolean>(serializationContext, attribisBack, out valueOfisBack))
+					{
+						instanceOfBoton.isBack = valueOfisBack;
+					}
+					else
+					{	// Invalid property value, ignored.
+						PUGSMBFJMSPProyectoIPSSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "isBack", typeof(global::System.Boolean), attribisBack);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -5032,6 +5049,19 @@ namespace UPM_IPS.PUGSMBFJMSPProyectoIPS
 					if (!string.IsNullOrEmpty(propValue))
 						PUGSMBFJMSPProyectoIPSSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "titulo", propValue);
 	
+				}
+			}
+			// isBack
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.Boolean propValue = instanceOfBoton.isBack;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Boolean>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "false") != 0)
+					{	// No need to write the value out if it's the same as default value.
+						PUGSMBFJMSPProyectoIPSSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "isBack", serializedPropValue);
+					}
 				}
 			}
 		}

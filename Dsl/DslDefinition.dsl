@@ -121,6 +121,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="5494c298-077a-47cd-b506-f96948f57f36" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.Boton.Is Back" Name="isBack" DisplayName="Is Back" DefaultValue="false">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="d9a87412-2844-4df2-a3a6-746210476a98" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.EstadoFin" Name="EstadoFin" DisplayName="Estado Fin" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" />
@@ -144,7 +149,7 @@
     </DomainRelationship>
     <DomainRelationship Id="b0901aaa-c39e-4d65-affa-dcf2baae4e86" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu" Name="MenuHasItemDeMenu" DisplayName="Menu Has Item De Menu" Namespace="UPM_IPS.PUGSMBFJMSPProyectoIPS" IsEmbedding="true">
       <Source>
-        <DomainRole Id="1a9485da-bfff-4be8-ab5a-589558b5f6ef" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu" Name="Menu" DisplayName="Menu" PropertyName="ItemDeMenu" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Item De Menu">
+        <DomainRole Id="1a9485da-bfff-4be8-ab5a-589558b5f6ef" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.MenuHasItemDeMenu.Menu" Name="Menu" DisplayName="Menu" PropertyName="ItemDeMenu" Multiplicity="OneMany" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Item De Menu">
           <RolePlayer>
             <DomainClassMoniker Name="Menu" />
           </RolePlayer>
@@ -183,7 +188,7 @@
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="e8080c99-f79e-4390-bde3-f4caec0f435d" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="BotonSource" PropertyDisplayName="Boton Source">
+        <DomainRole Id="e8080c99-f79e-4390-bde3-f4caec0f435d" Description="Description for UPM_IPS.PUGSMBFJMSPProyectoIPS.BotonReferencesVentanaTarget.Ventana" Name="Ventana" DisplayName="Ventana" PropertyName="BotonSource" Multiplicity="OneMany" PropertyDisplayName="Boton Source">
           <RolePlayer>
             <DomainClassMoniker Name="Ventana" />
           </RolePlayer>
@@ -387,6 +392,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="estadoFin">
             <DomainRelationshipMoniker Name="BotonReferencesEstadoFin" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="isBack">
+            <DomainPropertyMoniker Name="Boton/isBack" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="VentanaHasBoton" MonikerAttributeName="" SerializeId="true" MonikerElementName="ventanaHasBotonMoniker" ElementName="ventanaHasBoton" MonikerTypeName="VentanaHasBotonMoniker">

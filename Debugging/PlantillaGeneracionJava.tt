@@ -2,7 +2,7 @@
 inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ output extension=".java" #>
 <#@ PUGSMBFJMSPProyectoIPS processor="PUGSMBFJMSPProyectoIPSDirectiveProcessor" 
-requires="fileName='Test.PUGSMBFJMSP_DSLProyIPS'" #>
+requires="fileName='Sample.PUGSMBFJMSP_DSLProyIPS'" #>
 
 <#  //METODO PRINCIPAL
 imports();
@@ -60,6 +60,7 @@ WriteLine("}\n"); //Fin de la clase
 
 <#+
 private void generarConstructor(Ventana v){
+
 	if(v is VentanaPrincipal) {
 		WriteLine("public Frame_"+v.nombre+"() {");
 		WriteLine("\t super();");
@@ -87,12 +88,22 @@ private void generarConstructor(Ventana v){
 		WriteLine("\n\t this.setSize(500,300);");
 		WriteLine("\t this.setVisible(true);");
 		WriteLine("}\n");
+
 	} else {
-		WriteLine("public Dialog_"+v.nombre+"() {");
-		WriteLine("\t super();");
+		//Bucle para saber quien es el la ventana padre de esta
+		foreach(Boton b in v.Boton) {
+			if (b.isBack){
+				if(b.VentanaTarget is VentanaPrincipal) {
+					WriteLine("public Dialog_"+v.nombre+"(Frame owner, boolean modal) {");
+				} else {
+					WriteLine("public Dialog_"+v.nombre+"(Dialog owner, boolean modal) {");
+				}
+			}
+		}
+		WriteLine("\t super(owner, \"Dialog_"+v.nombre+"\", modal);");
 
 		foreach(Boton b in v.Boton) {
-			if(b.VentanaTarget != null)
+			//if(b.VentanaTarget != null && !(b.VentanaTarget is owner))
 				WriteLine("\t ventanav_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
 		}
 
