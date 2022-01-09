@@ -12,9 +12,7 @@ public class Dialog_Cines extends Dialog implements ActionListener{
 
 public Dialog_Cines(Frame owner, boolean modal) {
 	 super(owner, "Dialog_Cines", modal);
-	 ventana_InfoCine = new Dialog_InfoCine(this,true);
-	 ventana_InfoCine = new Dialog_InfoCine(this,true);
-	 ventana_InfoCine = new Dialog_InfoCine(this,true);
+	 ventana_InfoCine = new Dialog_InfoCine(this,false);
 	 this.setLayout(new FlowLayout());
 
 	 botonManoteras = new Button("Manoteras");

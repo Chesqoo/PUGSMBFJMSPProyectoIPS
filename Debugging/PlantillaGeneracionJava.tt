@@ -76,14 +76,27 @@ private void generarConstructor(Ventana v){
 		WriteLine("\t\tthis.setTitle(\"Frame_"+v.nombre+"\");");
 
 		//Declara las ventanas dependientes de esta
+		String ventanaAnterior="";
 		foreach(Boton b in v.Boton) {
-			if(b.VentanaTarget != null)
-				WriteLine("\t\tventana_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
+			if((b.VentanaTarget != null) && (!b.isBack)){
+				if(String.Equals(ventanaAnterior, b.VentanaTarget.nombre)==false){
+				VentanaSecundaria target=(VentanaSecundaria)b.VentanaTarget;
+				String valor=procesarBooleano(target);
+				WriteLine("\t\tventana_"+target.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,"+valor+");");
+				ventanaAnterior=b.VentanaTarget.nombre;
+					}
+				}
 		}
 		foreach(Menu m in v.Menu) {
-			foreach(ItemDeMenu im in m.ItemDeMenu)
-				if (im.VentanaTarget != null)
-					WriteLine("\t\tventana_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,true);");
+			foreach(ItemDeMenu im in m.ItemDeMenu){
+				if (im.VentanaTarget != null){
+					if(String.Equals(ventanaAnterior, im.VentanaTarget.nombre)==false){
+					VentanaSecundaria target=(VentanaSecundaria)im.VentanaTarget;
+					String valor=procesarBooleano(target);
+					WriteLine("\t\tventana_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,"+valor+");");
+					}
+				}
+			}	
 		}
 
 		WriteLine("\t\tthis.setLayout(new FlowLayout());\n");
@@ -130,14 +143,27 @@ private void generarConstructor(Ventana v){
 		WriteLine("\t super(owner, \"Dialog_"+v.nombre+"\", modal);");
 
 		//Declara las ventanas dependientes de esta
+		String ventanaAnterior="";
 		foreach(Boton b in v.Boton) {
-			if(b.VentanaTarget != null && !(b.VentanaTarget == owner))
-				WriteLine("\t ventana_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,true);");
+			if(b.VentanaTarget != null && !(b.VentanaTarget == owner)){
+				if(String.Equals(ventanaAnterior, b.VentanaTarget.nombre)==false){
+				VentanaSecundaria target=(VentanaSecundaria)b.VentanaTarget;
+				String valor=procesarBooleano(target);
+				WriteLine("\t ventana_"+b.VentanaTarget.nombre+" = new Dialog_"+b.VentanaTarget.nombre+"(this,"+valor+");");
+				ventanaAnterior=b.VentanaTarget.nombre;
+				}
+			}
 		}
 		foreach(Menu m in v.Menu) {
 			foreach(ItemDeMenu im in m.ItemDeMenu)
-				if (im.VentanaTarget != null && !(im.VentanaTarget == owner))
-					WriteLine("\t ventana_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,true);");
+				if (im.VentanaTarget != null && !(im.VentanaTarget == owner)){
+					if(String.Equals(ventanaAnterior, im.VentanaTarget.nombre)==false){
+					VentanaSecundaria target=(VentanaSecundaria)im.VentanaTarget;
+					String valor=procesarBooleano(target);
+					WriteLine("\t ventana_"+im.VentanaTarget.nombre+" = new Dialog_"+im.VentanaTarget.nombre+"(this,"+valor+");");
+					ventanaAnterior=im.VentanaTarget.nombre;
+					}
+				}
 		}
 
 		WriteLine("\t this.setLayout(new FlowLayout());\n");
@@ -165,7 +191,15 @@ private void generarConstructor(Ventana v){
 }
 #>
 
-
+<#+ //METODO PROESAR BOOLEANO
+private String procesarBooleano(VentanaSecundaria v){
+	if(v.esModal){
+	return "true";
+	}else{
+	return "false";
+	}
+}
+#>
 
 
 <#+ //METODO GENERAR ACTION PERFORMED

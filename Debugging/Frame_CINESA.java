@@ -12,8 +12,8 @@ public class Frame_CINESA extends Frame implements ActionListener{
 	public Frame_CINESA() {
 		super();
 		this.setTitle("Frame_CINESA");
-		ventana_Peliculas = new Dialog_Peliculas(this,true);
-		ventana_Cines = new Dialog_Cines(this,true);
+		ventana_Peliculas = new Dialog_Peliculas(this,false);
+		ventana_Cines = new Dialog_Cines(this,false);
 		this.setLayout(new FlowLayout());
 
 		MenuBar MB = new MenuBar();

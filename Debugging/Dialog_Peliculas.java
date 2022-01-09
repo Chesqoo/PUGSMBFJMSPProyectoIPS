@@ -13,9 +13,7 @@ public class Dialog_Peliculas extends Dialog implements ActionListener{
 
 public Dialog_Peliculas(Frame owner, boolean modal) {
 	 super(owner, "Dialog_Peliculas", modal);
-	 ventana_CompraEntradas = new Dialog_CompraEntradas(this,true);
-	 ventana_CompraEntradas = new Dialog_CompraEntradas(this,true);
-	 ventana_CompraEntradas = new Dialog_CompraEntradas(this,true);
+	 ventana_CompraEntradas = new Dialog_CompraEntradas(this,false);
 	 this.setLayout(new FlowLayout());
 
 	 botonSpudreman = new Button("Spudreman");

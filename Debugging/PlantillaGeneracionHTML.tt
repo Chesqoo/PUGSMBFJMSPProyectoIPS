@@ -54,7 +54,7 @@ private void procesarBody(Ventana v){
 
 <#+ //METODO PROCESAR MENUS
 private void procesarMenus(Ventana v) {
-	WriteLine("\t\t<table>\n\t\t\t<tr>");
+	WriteLine("\t\t<table width=\"100%\">\n\t\t\t<tr>");
 	foreach(Menu m in v.Menu){
 		WriteLine("\t\t\t\t<td onmouseover=\"showmenu(\'"+m.titulo+"\')\" onmouseout=\"hidemenu(\'"+m.titulo+"\')\">");
 		WriteLine("\t\t\t\t\t<p>"+m.titulo+"</p>");
