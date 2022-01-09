@@ -80,13 +80,13 @@ private void procesarItemsDeMenu(Ventana v, Menu m){
 private void procesarBotones(Ventana v) {
 	foreach(Boton b in v.Boton) {
 		if(b.EstadoFin != null)
-			WriteLine("\t\t<button onclick=\"javascript:alert('Fin de la Aplicacion'); window.close();\";> Salir </button>");
+			WriteLine("\t\t<button onclick=\"javascript:alert('Fin de la Aplicacion'); window.close();\";> "+b.titulo+" </button>");
 		else {
 			Ventana target = b.VentanaTarget;
 			if(target is VentanaPrincipal)
-				WriteLine("\t\t<button onclick=\"javascript:document.location='Frame_"+target.nombre+".html'\";> "+target.nombre+" </button>");
+				WriteLine("\t\t<button onclick=\"javascript:document.location=\'"+target.nombre+".html'\";> "+b.titulo+" </button>");
 			else if(target is VentanaSecundaria)
-				WriteLine("\t\t<button onclick=\"javascript:document.location='Dialog_"+target.nombre+".html'\";> "+target.nombre+" </button>");
+				WriteLine("\t\t<button onclick=\"javascript:document.location=\'"+target.nombre+".html'\";> "+b.titulo+" </button>");
 		}
 	}
 }
@@ -97,7 +97,7 @@ private void procesarStyle(){
 	WriteLine("\t\t<style>\n"+
 	"\t\t\tbody{font-family:arial;}\n"+
 	"\t\t\ttable{font-size:80%;background:rgb(0,110,110)}\n"+
-	"\t\t\tp{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;}\n"+
+	"\t\t\tp{color:rgb(0,250,140);font:bold; margin-bottom:5px; padding-bottom:3px;}\n"+
 	"\t\t\ttd.menu{background:rgb(0,150,150)}\n"+
 	"\t\t\ttable.menu{\n"+
 	"\t\t\t\tfont-size:100%;\n"+
