@@ -1,18 +1,27 @@
 ﻿<#@ template
-inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"
+language="C#" hostspecific="True"#>
 <#@ output extension=".java" #>
 <#@ PUGSMBFJMSPProyectoIPS processor="PUGSMBFJMSPProyectoIPSDirectiveProcessor" 
 requires="fileName='Sample.PUGSMBFJMSP_DSLProyIPS'" #>
 
+<#@ include file="EF.utility.CS.ttinclude" #>
+
 <#  //METODO PRINCIPAL
-imports();
+var fileManager=EntityFrameworkTemplateFileManager.Create(this);
+fileManager.StartNewFile("App_GUI"+this.TapizGUI.solucionGUIs+".java");
 procesarMain(this.TapizGUI.VentanaPrincipal);
+fileManager.StartNewFile("Frame_"+this.TapizGUI.VentanaPrincipal.nombre+".java");
+imports();
 procesarVentana(this.TapizGUI.VentanaPrincipal);
 
 foreach(Ventana va in this.TapizGUI.VentanaSecundaria)
 {
+fileManager.StartNewFile("Dialog_"+va.nombre+".java");
+ imports();
  procesarVentana(va);
 }
+fileManager.Process();
 #>
 
 <#+ //METODO PROCESAR MAIN
@@ -88,6 +97,7 @@ private void generarConstructor(Ventana v){
 				foreach(ItemDeMenu im in m.ItemDeMenu) {
 					WriteLine("\t\titem"+im.titulo+" = new MenuItem(\""+im.titulo+"\");");
 					WriteLine("\t\tmenu"+m.titulo+".add(item"+im.titulo+");");
+					WriteLine("\t\titem"+im.titulo+".addActionListener(this);");
 				}
 				WriteLine("\t\tMB.add(menu"+m.titulo+");");
 			}
